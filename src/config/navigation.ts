@@ -99,6 +99,12 @@ export const CATEGORIES_CALC: CategorieCalc[] = [
         disponible: true,
       },
       {
+        href: '/vente-vs-donation',
+        nom: 'Vendre ou donner un bien à un proche',
+        desc: 'Comparez le coût fiscal d\'une vente (PV + droits d\'enregistrement) et d\'une donation (Art. 777) d\'un bien immobilier à un membre de la famille.',
+        disponible: true,
+      },
+      {
         href: '/succession',
         nom: 'Droits de succession',
         desc: 'Calcul des droits par héritier selon les abattements légaux et le barème progressif.',

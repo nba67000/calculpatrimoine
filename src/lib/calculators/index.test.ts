@@ -31,6 +31,7 @@ import { calculerLmnpRegime } from '@/lib/lmnpRegime'
 import { calculerSciRegime } from '@/lib/sciRegime'
 import { calculerCsgRetraite } from '@/lib/csgRetraite'
 import { calculerDeficitFoncier } from '@/lib/deficitFoncier'
+import { calculerVenteVsDonation } from '@/lib/venteVsDonation'
 import type { PERInputs } from '@/types/per'
 import type { AssuranceVieInputs } from '@/types/assuranceVie'
 import type { IFIInputs } from '@/types/ifi'
@@ -57,6 +58,7 @@ describe('calculator registry , exhaustivité', () => {
       'sci-is-vs-ir',
       'succession',
       'tmi',
+      'vente-vs-donation',
     ])
   })
 
@@ -265,6 +267,24 @@ describe('calculator registry , formatContexteChat retourne une chaîne non vide
     }
     const results = calculerDeficitFoncier(inputs)
     const txt = getCalculator('deficit-foncier')!.formatContexteChat(inputs, results)
+    expect(txt.length).toBeGreaterThan(20)
+  })
+
+  it('vente-vs-donation', () => {
+    const inputs = {
+      valeurBien: 400000,
+      dateAcquisition: '2010-01-01',
+      prixAcquisition: 200000,
+      fraisAcquisitionMode: 'forfait' as const,
+      fraisAcquisitionReels: 0,
+      travauxMode: 'forfait' as const,
+      travauxReels: 0,
+      lienBeneficiaire: 'enfant' as const,
+      donationsAnterieures: 0,
+      tauxDroitsEnregistrement: 5.80665,
+    }
+    const results = calculerVenteVsDonation(inputs)
+    const txt = getCalculator('vente-vs-donation')!.formatContexteChat(inputs, results)
     expect(txt.length).toBeGreaterThan(20)
   })
 })

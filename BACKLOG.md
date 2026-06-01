@@ -31,18 +31,13 @@ début de chaque session et **met à jour les statuts** au fil de l'eau.
 | `sci-is-vs-ir` | SCI à l'IS vs à l'IR (V1 impôt annuel seul) | `done` | 2026-06-01 |
 | `csg-csds-retraite` | CSG/CRDS sur pensions de retraite (4 paliers) | `done` | 2026-06-01 |
 | `deficit-foncier` | Déficit foncier (Art. 156 I-3° CGI) | `done` | 2026-06-01 |
+| `vente-vs-donation` | Vente vs donation intrafamiliale d'un bien immobilier | `done` | 2026-06-01 |
 
-**18 calculateurs livrés au 2026-06-01.**
+**20 calculateurs livrés au 2026-06-01.**
 
 ---
 
 ## Prochains calculateurs
-
-### P3 - Propositions issues du forum-watch
-
-| Slug | Nom | Statut | Source | Notes |
-|------|-----|--------|--------|-------|
-| `vente-vs-donation-intrafamiliale` | Vente vs donation d'un bien à un proche | `in-progress` | MoneyVox 2026-06-01 | Comparateur côté vendeur/donateur : PV immobilière + droits d'enregistrement côté vente vs droits de donation + abattement par lien de parenté côté don. Cas type : parent → neveu, grand-parent → petit-enfant. |
 
 ### À considérer en suivi des V1 simplifiées
 
@@ -93,4 +88,4 @@ complète :
   une description minimale. Ne jamais faire un calculateur `proposed` sans
   validation humaine - seuls les `todo` sont autorisés à l'implémentation.
 
-Last updated: 2026-06-01 (forum-watch 2e scan : 2 propositions P3 ajoutées).
+Last updated: 2026-06-01 (deficit-foncier et vente-vs-donation livrés ; backlog vide).
