@@ -301,9 +301,28 @@ Ajouter l'article dans `src/app/sitemap.ts` :
 
 Vérifier qu'aucune entrée n'existe déjà pour ce slug.
 
-#### 7b. Homepage (liste des articles)
+#### 7b. Listing du blog (`/blog`)
 
-Dans `src/app/page.tsx`, ajouter une entrée dans le tableau `ARTICLES` :
+Dans `src/app/blog/page.tsx`, ajouter une entrée en TÊTE du tableau
+`ARTICLES` (ordre chronologique inverse) :
+
+```ts
+{
+  slug: '<slug>',
+  titre: '<titre>',
+  extrait: '<extrait 1-2 phrases, différent de la meta description>',
+  date: 'YYYY-MM-DD',
+  duree: '<N> min',
+  tag: '<tag>',
+},
+```
+
+**Sans cette étape, l'article est invisible sur la page index du blog.**
+
+#### 7c. Homepage (liste des articles)
+
+Dans `src/app/page.tsx`, ajouter une entrée en TÊTE du tableau `ARTICLES`
+(ordre chronologique inverse, format DIFFÉRENT de blog/page.tsx) :
 
 ```ts
 {
@@ -311,13 +330,15 @@ Dans `src/app/page.tsx`, ajouter une entrée dans le tableau `ARTICLES` :
   tag: '<tag>',
   duree: '<N> min',
   titre: '<titre>',
-  accroche: '<accroche 1 phrase>',
+  accroche: '<accroche 1 phrase, peut différer de l'extrait blog/page.tsx>',
 },
 ```
 
-Placer la nouvelle entrée en tête (ordre chronologique inverse).
+Note : les deux tableaux `ARTICLES` ne sont pas factorisés (V1 du site),
+il faut ajouter l'entrée DANS LES DEUX FICHIERS sinon l'article apparaît
+soit uniquement en homepage, soit uniquement en index blog.
 
-#### 7c. Pas de schema JSON-LD séparé
+#### 7d. Pas de schema JSON-LD séparé
 
 Le `Schema Article` n'est pas géré globalement. Pour cette V1, on s'appuie
 sur les balises Open Graph (`type: 'article'`, `publishedTime`) déjà

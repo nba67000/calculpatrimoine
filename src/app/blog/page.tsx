@@ -11,6 +11,14 @@ export const metadata: Metadata = {
 
 const ARTICLES = [
   {
+    slug: 'tmi-tranche-marginale-comprendre',
+    titre: 'TMI : à quoi sert votre tranche marginale en 2026',
+    extrait: 'Votre TMI n\'est pas le taux que vous payez. Comment elle se calcule, à quoi elle sert pour le PER, l\'assurance-vie, et l\'épargne en général.',
+    date: '2026-06-02',
+    duree: '12 min',
+    tag: 'Fiscalité',
+  },
+  {
     slug: 'per-individuel-deduction-fiscalite',
     titre: 'PER individuel : ce que vous gagnez à l\'entrée, ce que vous payez à la sortie',
     extrait: 'Déduction fiscale, plafond épargne retraite, fiscalité des retraits en capital ou en rente. Les mécanismes exacts, avec formules et comparaison PER vs assurance-vie.',
