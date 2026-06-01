@@ -37,9 +37,12 @@ début de chaque session et **met à jour les statuts** au fil de l'eau.
 
 ## Prochains calculateurs
 
-Aucun calculateur en attente. Pour proposer un nouveau besoin :
-- Lancer `/forum-watch` pour scanner les forums MoneyVox.
-- Ajouter une entrée `proposed` ci-dessous avec sources et complexité.
+### P3 - Propositions issues du forum-watch
+
+| Slug | Nom | Statut | Source | Notes |
+|------|-----|--------|--------|-------|
+| `deficit-foncier` | Déficit foncier (revenu nu) | `proposed` | MoneyVox 2026-06-01 | Imputation 10 700 €/an sur revenu global (hors intérêts), excédent reportable 10 ans sur revenus fonciers (Art. 156 I-3° CGI). Variante à prévoir : déficit généré par une SCI translucide imputable sur revenus fonciers nom propre du même associé. |
+| `vente-vs-donation-intrafamiliale` | Vente vs donation d'un bien à un proche | `proposed` | MoneyVox 2026-06-01 | Comparateur côté vendeur/donateur : PV immobilière + droits d'enregistrement côté vente vs droits de donation + abattement par lien de parenté côté don. Cas type : parent → neveu, grand-parent → petit-enfant. |
 
 ### À considérer en suivi des V1 simplifiées
 
@@ -72,6 +75,13 @@ complète :
   Les V2 d'amélioration sont listées dans "À considérer en suivi des V1
   simplifiées" ci-dessus.
 
+- **2026-06-01 (2e scan)** : 5 catégories MoneyVox rescannées, 29 fils
+  analysés. 5 opportunités de réponse vers calculateurs existants
+  (`/pret-intrafamilial`, `/donation/droits` x2, `/per-individuel` x2,
+  dont 2 partielles). 2 idées nouvelles ajoutées en P3 :
+  `deficit-foncier` et `vente-vs-donation-intrafamiliale`. La variante
+  "déficit foncier SCI à l'IR" est fusionnée dans `deficit-foncier`.
+
 ---
 
 ## Règles de mise à jour
@@ -83,4 +93,4 @@ complète :
   une description minimale. Ne jamais faire un calculateur `proposed` sans
   validation humaine - seuls les `todo` sont autorisés à l'implémentation.
 
-Last updated: 2026-06-01 (10 calculateurs livrés en une session, backlog vidé).
+Last updated: 2026-06-01 (forum-watch 2e scan : 2 propositions P3 ajoutées).
