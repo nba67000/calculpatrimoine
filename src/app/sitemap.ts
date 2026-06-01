@@ -1,6 +1,7 @@
 // src/app/sitemap.ts
 import { MetadataRoute } from 'next'
 import { CATEGORIES_CALC } from '@/config/navigation'
+import { ARTICLES } from '@/lib/blog/articles'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://calculpatrimoine.fr'
@@ -25,6 +26,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }))
 
+  // Blog articles - derived from ARTICLES, single source of truth
+  const blogPages: MetadataRoute.Sitemap = ARTICLES.map(article => ({
+    url: `${baseUrl}/blog/${article.slug}`,
+    lastModified: new Date(article.date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
   return [
     // Home
     {
@@ -40,37 +49,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Category landing pages (derived)
     ...categoryPages,
 
-    // Blog
+    // Blog index
     {
       url: `${baseUrl}/blog`,
       lastModified,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
-    {
-      url: `${baseUrl}/blog/rente-viagere-seuil-rentabilite`,
-      lastModified: new Date('2026-04-16'),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog/assurance-vie-fiscalite-rachat`,
-      lastModified: new Date('2026-04-18'),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog/per-individuel-deduction-fiscalite`,
-      lastModified: new Date('2026-04-20'),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/blog/tmi-tranche-marginale-comprendre`,
-      lastModified: new Date('2026-06-02'),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
+
+    // Blog articles (derived from ARTICLES)
+    ...blogPages,
 
     // FAQ
     {

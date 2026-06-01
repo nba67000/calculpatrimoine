@@ -2,47 +2,13 @@
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { ARTICLES } from '@/lib/blog/articles'
 
 export const metadata: Metadata = {
   title: 'Blog - CalculPatrimoine',
   description: 'Articles sur la fiscalité du patrimoine, les calculs actuariels, et la finance personnelle. Mécanismes exacts, exemples chiffrés, sources officielles.',
   alternates: { canonical: 'https://calculpatrimoine.fr/blog' },
 }
-
-const ARTICLES = [
-  {
-    slug: 'tmi-tranche-marginale-comprendre',
-    titre: 'TMI : à quoi sert votre tranche marginale en 2026',
-    extrait: 'Votre TMI n\'est pas le taux que vous payez. Comment elle se calcule, à quoi elle sert pour le PER, l\'assurance-vie, et l\'épargne en général.',
-    date: '2026-06-02',
-    duree: '12 min',
-    tag: 'Fiscalité',
-  },
-  {
-    slug: 'per-individuel-deduction-fiscalite',
-    titre: 'PER individuel : ce que vous gagnez à l\'entrée, ce que vous payez à la sortie',
-    extrait: 'Déduction fiscale, plafond épargne retraite, fiscalité des retraits en capital ou en rente. Les mécanismes exacts, avec formules et comparaison PER vs assurance-vie.',
-    date: '2026-05-05',
-    duree: '12 min',
-    tag: 'Fiscalité',
-  },
-  {
-    slug: 'assurance-vie-fiscalite-rachat',
-    titre: 'Assurance-vie : combien vous allez vraiment payer sur un rachat',
-    extrait: 'Règle proportionnelle, abattement 8 ans, PFU vs IR, date du 27 septembre 2017. Guide complet avec exemples chiffrés et formules détaillées.',
-    date: '2026-04-18',
-    duree: '11 min',
-    tag: 'Fiscalité',
-  },
-  {
-    slug: 'rente-viagere-seuil-rentabilite',
-    titre: 'Pourquoi le seuil de rentabilité est après votre espérance de vie',
-    extrait: 'À 72 ans avec 250 000 €, le seuil tombe à 15,8 ans alors que l\'espérance est de 14 ans. Découvrez pourquoi c\'est normal.',
-    date: '2026-04-16',
-    duree: '15 min',
-    tag: 'Rente viagère',
-  },
-]
 
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })

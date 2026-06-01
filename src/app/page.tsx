@@ -5,6 +5,7 @@ import Footer from '@/components/Footer'
 import HomeHeroWidget from '@/components/HomeHeroWidget'
 import SimHistoryWidget from '@/components/SimHistoryWidget'
 import { CATEGORIES_CALC } from '@/config/navigation'
+import { ARTICLES } from '@/lib/blog/articles'
 
 export const metadata: Metadata = {
   title: 'CalculPatrimoine - Calculateurs patrimoniaux gratuits et open-source',
@@ -18,37 +19,6 @@ export const metadata: Metadata = {
 
   alternates: { canonical: 'https://calculpatrimoine.fr' },
 }
-
-const ARTICLES = [
-  {
-    href: '/blog/tmi-tranche-marginale-comprendre',
-    tag: 'Fiscalité',
-    duree: '12 min',
-    titre: 'TMI : à quoi sert votre tranche marginale en 2026',
-    accroche: 'Votre TMI n\'est pas le taux que vous payez. Pourquoi cet écart commande vos décisions PER, assurance-vie et plus-value.',
-  },
-  {
-    href: '/blog/per-individuel-deduction-fiscalite',
-    tag: 'Fiscalité',
-    duree: '12 min',
-    titre: 'PER individuel : ce que vous gagnez à l\'entrée, ce que vous payez à la sortie',
-    accroche: 'Déduction fiscale, plafond épargne retraite, fiscalité des retraits. Les mécanismes exacts avec formules et comparaison PER vs assurance-vie.',
-  },
-  {
-    href: '/blog/assurance-vie-fiscalite-rachat',
-    tag: 'Fiscalité',
-    duree: '11 min',
-    titre: 'Assurance-vie : combien vous allez vraiment payer sur un rachat',
-    accroche: 'Règle proportionnelle, abattement 8 ans, PFU vs IR, versements avant 2017. Tout le détail.',
-  },
-  {
-    href: '/blog/rente-viagere-seuil-rentabilite',
-    tag: 'Rente viagère',
-    duree: '15 min',
-    titre: 'Pourquoi le seuil de rentabilité est après votre espérance de vie',
-    accroche: 'À 72 ans avec 250 000 €, le seuil tombe à 15,8 ans. Ce n\'est pas une anomalie.',
-  },
-]
 
 // Flat list of active calculators for mobile quick-access
 const CALCULATEURS_ACTIFS = CATEGORIES_CALC.flatMap(cat =>
@@ -217,8 +187,8 @@ export default function HomePage() {
           <div className="border-t border-neutral-300">
             {ARTICLES.map((article) => (
               <Link
-                key={article.href}
-                href={article.href}
+                key={article.slug}
+                href={`/blog/${article.slug}`}
                 className="group flex flex-col gap-1.5 py-6 border-b border-neutral-200 hover:bg-surface-card transition-colors px-5"
                 style={{ borderLeft: '3px solid #D4AF37' }}
               >
