@@ -143,13 +143,15 @@ export default function VenteVsDonationCalculator() {
                 onChange={e => set('donationsAnterieures', Number(e.target.value))}
                 className="w-full px-3 py-2 border border-neutral-200 rounded text-right" />
               <p className="text-xs text-neutral-500 mt-1">
-                Rappel fiscal Art. 784 CGI : consommation de l&apos;abattement et des tranches basses.
+                Les donations faites au même bénéficiaire dans les 15 dernières années s&apos;additionnent
+                (Art. 784 CGI) : elles consomment d&apos;abord votre abattement, puis les premières tranches
+                du barème, pour éviter qu&apos;on les compte deux fois.
               </p>
             </div>
 
             <div>
               <label className="text-sm font-medium text-neutral-700 block mb-1">
-                Taux DMTO (droits d&apos;enregistrement) - %
+                Droits d&apos;enregistrement (DMTO) payés par l&apos;acheteur - %
               </label>
               <input type="number" min="0" max="10" step="0.001" value={inputs.tauxDroitsEnregistrement}
                 onChange={e => set('tauxDroitsEnregistrement', Number(e.target.value))}

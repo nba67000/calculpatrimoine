@@ -69,8 +69,9 @@ export default function DeficitFoncierCalculator() {
                 onChange={e => set('interetsEmprunt', Number(e.target.value))}
                 className="w-full px-3 py-2 border border-neutral-200 rounded text-right" />
               <p className="text-xs text-neutral-500 mt-1">
-                Traités à part : ils s&apos;imputent en priorité sur les revenus fonciers. L&apos;excédent
-                éventuel ne peut PAS être imputé sur le revenu global.
+                Traités à part : les intérêts se déduisent d&apos;abord des loyers. S&apos;il en reste plus que les
+                loyers, l&apos;excédent ne réduit PAS votre salaire ou retraite imposable, il sera seulement
+                déduit des loyers des 10 années suivantes.
               </p>
             </div>
           </div>
@@ -102,8 +103,9 @@ export default function DeficitFoncierCalculator() {
                   <strong>Rénovation énergétique passoire (plafond 21 400 €)</strong>
                   <br />
                   <span className="text-xs text-neutral-500">
-                    Travaux faisant passer le logement d&apos;une classe E/F/G à A/B/C/D en DPE
-                    (LF 2023 art. 12, dépenses payées 01/01/2023 - 31/12/2025).
+                    Travaux faisant passer le logement d&apos;une mauvaise classe énergétique (E, F ou G
+                    au DPE) à une bonne classe (A, B, C ou D). Dépenses payées du 01/01/2023 au
+                    31/12/2025 (LF 2023 art. 12). À vérifier en cas de prorogation après 2025.
                   </span>
                 </span>
               </label>

@@ -121,7 +121,7 @@ export function calculerDeficitFoncier(
   if (deficitLieAuxInterets > 0) {
     warnings.push({
       type: 'warning',
-      message: `${eur(deficitLieAuxInterets)} de déficit lié aux intérêts d'emprunt : cette part n'ouvre PAS le droit à imputation sur le revenu global. Elle ne pourra être déduite que des revenus fonciers des ${REPORT_REVENUS_FONCIERS_ANS} années suivantes.`,
+      message: `${eur(deficitLieAuxInterets)} de déficit lié aux intérêts d'emprunt : cette part ne peut PAS être déduite de votre salaire ou retraite. Elle sera reportée pour réduire vos loyers imposables des ${REPORT_REVENUS_FONCIERS_ANS} années suivantes.`,
     })
   }
 

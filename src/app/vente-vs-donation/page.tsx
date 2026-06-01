@@ -18,10 +18,10 @@ export const metadata: Metadata = {
 const LIMITES = [
   'Le calculateur traite la transmission d\'un bien immobilier autre que la résidence principale. La vente d\'une RP est exonérée de plus-value (Art. 150 U II 1° CGI) ; la donation d\'une RP suit les règles communes.',
   'Les frais de notaire (émoluments + débours) sont applicables aux deux opérations et ne sont pas chiffrés. Ils dépendent de la valeur du bien selon un barème dégressif réglementé.',
-  'Le don familial 790 G (+31 865 € d\'abattement) n\'est PAS applicable ici : il est réservé aux dons de sommes d\'argent, pas aux donations en nature comme un bien immobilier.',
+  'L\'abattement supplémentaire de 31 865 € du don familial (Art. 790 G CGI) ne s\'applique PAS ici : il est réservé aux dons d\'argent (chèque, virement, espèces), pas aux biens immobiliers. Seul l\'abattement standard joue (100 000 € pour un enfant, 7 967 € pour un neveu, etc.).',
   'L\'angle "le vendeur garde le cash et le retransmet plus tard" n\'est pas modélisé. En pratique, le cash de la vente rentre dans le patrimoine du vendeur, donc dans sa future succession.',
   'Pour neutraliser le cash flow côté acheteur, un prêt intrafamilial peut être consenti par le vendeur (voir /pret-intrafamilial). Cette combinaison n\'est pas calculée ici.',
-  'Le taux DMTO par défaut (5,80665 %) est le standard national. Certains départements ont relevé le DMTO départemental à 5 % (au lieu de 4,50 %), portant le total à environ 6,32 %. Ajustez le champ "Taux DMTO" selon votre département.',
+  'Le taux DMTO par défaut (5,80665 %) est le standard national. Certains départements ont majoré leur part départementale de 4,50 % à 5 %, ce qui porte le total à environ 6,32 %. Ajustez le champ "Taux DMTO" selon le département où se trouve le bien.',
   'Le risque de requalification en donation déguisée (prix sous-évalué, paiement non effectif) n\'est pas modélisé.',
 ]
 

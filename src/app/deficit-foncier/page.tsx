@@ -17,9 +17,9 @@ export const metadata: Metadata = {
 
 const LIMITES = [
   'Ce calculateur concerne uniquement la location nue en régime réel. La location meublée (LMNP/LMP) suit le régime BIC : voir /lmnp-reel-vs-micro.',
-  'Le report sur le revenu global (6 ans, si la TMI ne permet pas d\'absorber le plafond la première année) n\'est pas modélisé. Seule l\'économie d\'impôt immédiate est chiffrée.',
+  'Si votre revenu imposable de l\'année est trop faible pour absorber tout le déficit déductible, l\'excédent peut se reporter 6 ans sur le revenu global. Ce report n\'est pas modélisé : seule l\'économie d\'impôt immédiate est chiffrée.',
   'Le calculateur suppose que toutes les charges saisies sont déductibles au sens de l\'Art. 31 CGI. Il ne fait pas la distinction entre travaux d\'entretien/réparation (déductibles) et travaux d\'agrandissement/reconstruction (non déductibles).',
-  'L\'engagement de location 3 ans (Art. 156 I-3° dernier alinéa) est signalé en warning mais le calcul de recapture en cas de cession anticipée n\'est pas implémenté.',
+  'L\'engagement de location 3 ans (Art. 156 I-3° dernier alinéa) est signalé en warning. Si vous vendez ou cessez la location avant ce délai, l\'administration reprend les déficits déjà déduits (impôt rétroactif). Ce calcul de reprise n\'est pas implémenté.',
   'Le dispositif majoré 21 400 € est applicable aux dépenses payées du 01/01/2023 au 31/12/2025 (LF 2023 art. 12). Le calculateur ne vérifie pas la date des dépenses. Vérifiez la prorogation pour 2026 et au-delà.',
   'Le calculateur n\'intègre pas les régimes spécifiques (Pinel, Denormandie, Malraux, monuments historiques) qui ont leurs propres règles de déduction et de plafonnement.',
 ]

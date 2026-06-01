@@ -132,7 +132,7 @@ export function calculerVenteVsDonation(
   if (inputs.lienBeneficiaire === 'neveu_niece' || inputs.lienBeneficiaire === 'autre') {
     warnings.push({
       type: 'warning',
-      message: `Lien fiscal éloigné : le barème de donation applique un taux unique de ${inputs.lienBeneficiaire === 'neveu_niece' ? '55' : '60'} % au-delà de l'abattement (${eur(abattement)}). Sur un bien immobilier, la vente est souvent moins coûteuse, à condition que le bénéficiaire puisse financer l'achat.`,
+      message: `Lien fiscal éloigné : au-delà de l'abattement de ${eur(abattement)}, les droits de donation sont calculés à un taux unique de ${inputs.lienBeneficiaire === 'neveu_niece' ? '55' : '60'} %. Sur un bien immobilier de valeur, la vente est souvent moins coûteuse, à condition que le bénéficiaire puisse financer l'achat.`,
     })
   }
 
@@ -153,7 +153,7 @@ export function calculerVenteVsDonation(
   if (inputs.donationsAnterieures >= abattement) {
     warnings.push({
       type: 'info',
-      message: `L'abattement personnel ${eur(abattement)} est intégralement consommé par les donations antérieures (${eur(inputs.donationsAnterieures)}). La nouvelle donation démarre directement au barème.`,
+      message: `L'abattement personnel de ${eur(abattement)} est intégralement consommé par les donations antérieures (${eur(inputs.donationsAnterieures)}). La nouvelle donation est donc taxée dès le premier euro selon le barème, sans franchise.`,
     })
   }
 
