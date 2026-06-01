@@ -21,6 +21,13 @@ export const metadata: Metadata = {
 
 const ARTICLES = [
   {
+    href: '/blog/tmi-tranche-marginale-comprendre',
+    tag: 'Fiscalité',
+    duree: '12 min',
+    titre: 'TMI : à quoi sert votre tranche marginale en 2026',
+    accroche: 'Votre TMI n\'est pas le taux que vous payez. Pourquoi cet écart commande vos décisions PER, assurance-vie et plus-value.',
+  },
+  {
     href: '/blog/per-individuel-deduction-fiscalite',
     tag: 'Fiscalité',
     duree: '12 min',

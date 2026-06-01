@@ -38,28 +38,13 @@ calculateur du site, qu'il alimente en trafic qualifié.
 | `rente-viagere-seuil-rentabilite` | Rente viagère : pourquoi le seuil de rentabilité est après votre espérance de vie | `/rente-viagere` | 2026-04-16 |
 | `assurance-vie-fiscalite-rachat` | Assurance-vie : combien vous allez vraiment payer sur un rachat | `/assurance-vie/fiscalite-rachat` | 2026-04-18 |
 | `per-individuel-deduction-fiscalite` | PER individuel : ce que vous gagnez à l'entrée, ce que vous payez à la sortie | `/per-individuel` | 2026-04-20 |
+| `tmi-tranche-marginale-comprendre` | TMI : à quoi sert votre tranche marginale en 2026 | `/tmi` | 2026-06-02 |
 
 ---
 
 ## P1 : forte valeur SEO (volume + intention)
 
-### 1. TMI : à quoi sert votre tranche marginale dans votre déclaration
-
-- **Slug** : `tmi-tranche-marginale-comprendre`
-- **Titre SEO (54 c.)** : `TMI : à quoi sert votre tranche marginale en 2026`
-- **Meta (155 c.)** : `Votre TMI n'est pas le taux que vous payez. Comment elle se calcule, à quoi elle sert pour le PER, l'assurance-vie, et l'épargne en général.`
-- **Calc lié** : `/tmi`
-- **Mots-clés** : tmi, tranche marginale imposition, taux marginal, comment calculer tmi, barème ir 2026, quotient familial, décote
-- **Angle** : Beaucoup de gens confondent TMI et taux d'imposition. L'article explique la distinction, montre pourquoi la TMI compte plus que le taux moyen quand on choisit un placement (PER, AV, plus-value), et chiffre la différence sur un cas concret.
-- **Plan H2** :
-  1. La TMI n'est pas le taux que vous payez sur tout votre revenu
-  2. Comment lire le barème 2026 sans se tromper (avec exemple à 45 000 €)
-  3. Pourquoi le PER, l'assurance-vie et la plus-value se calculent à la TMI
-  4. Le piège du quotient familial et du plafonnement
-  5. Combien vous économisez en passant de la TMI 30 % à 11 %
-- **Longueur cible** : 1 800 mots
-
-### 2. À partir de quel patrimoine paie-t-on vraiment l'IFI
+### 1. À partir de quel patrimoine paie-t-on vraiment l'IFI
 
 - **Slug** : `ifi-seuil-reel-1300000`
 - **Titre SEO (52 c.)** : `IFI 2026 : à partir de quel patrimoine on paie vraiment`
@@ -75,7 +60,7 @@ calculateur du site, qu'il alimente en trafic qualifié.
   5. Trois patrimoines types et leur IFI réel
 - **Longueur cible** : 2 000 mots
 
-### 3. Donner 100 000 € à son enfant sans payer d'impôt : la règle
+### 2. Donner 100 000 € à son enfant sans payer d'impôt : la règle
 
 - **Slug** : `donation-enfant-100000-abattement`
 - **Titre SEO (59 c.)** : `Donner 100 000 € à son enfant sans payer d'impôt : la règle`
@@ -91,7 +76,7 @@ calculateur du site, qu'il alimente en trafic qualifié.
   5. Trois cas chiffrés (parent seul, couple, famille recomposée)
 - **Longueur cible** : 1 700 mots
 
-### 4. Assurance-vie au décès : ce qui change avant et après 70 ans
+### 3. Assurance-vie au décès : ce qui change avant et après 70 ans
 
 - **Slug** : `assurance-vie-deces-avant-apres-70-ans`
 - **Titre SEO (52 c.)** : `Assurance-vie au décès : avant et après 70 ans`
@@ -376,4 +361,4 @@ calculateur du site, qu'il alimente en trafic qualifié.
 - Pas d'article hors backlog. Si une idée surgit, l'ajouter en `proposed`
   sous une section dédiée et attendre validation.
 
-Last updated: 2026-06-01 (backlog initial, 18 sujets P1/P2/P3).
+Last updated: 2026-06-02 (article TMI publié, reste 17 sujets P1/P2/P3).

@@ -108,7 +108,8 @@
       "Bash(xargs -I {} sh -c 'echo \"=== {} ===\" && head -30 \"{}\"')",
       "Bash(xargs -I {} sh -c 'echo \"=== {} ===\" && head -20 \"{}\"')",
       "Bash(grep -v \"^$\")",
-      "WebFetch(domain:codes.legifrance.gouv.fr)"
+      "WebFetch(domain:codes.legifrance.gouv.fr)",
+      "Bash(rg -cP '\\\\x{2014}' src/app/blog/tmi-tranche-marginale-comprendre/page.tsx)"
     ]
   }
 }
