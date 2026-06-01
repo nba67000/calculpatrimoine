@@ -128,7 +128,7 @@ const sections: FAQSection[] = [
         answer: (
           <>
             <p className="mb-3">
-              Pour les patrimoines entre 1 300 000 € et 1 400 000 €, une décote atténue l&apos;entrée dans l&apos;IFI.
+              Pour les patrimoines entre 1 300 000 € et 1 400 000 €, une décote vient réduire l&apos;IFI à payer.
               La formule est : <strong>17 500 € − 1,25 % × patrimoine net taxable</strong>.
             </p>
             <p className="mb-3">

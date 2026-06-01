@@ -64,7 +64,7 @@ const sections: FAQSection[] = [
               <strong>Étape 1</strong> : Vous versez votre capital à un assureur (exemple : 150 000€).
             </p>
             <p className="mb-3">
-              <strong>Étape 2</strong> : L&apos;assureur calcule combien vous verser chaque mois en fonction de :
+              <strong>Étape 2</strong> : L&apos;assureur calcule le montant à vous verser chaque mois en fonction de :
             </p>
             <ul className="list-disc pl-6 mb-3 space-y-1">
               <li>Votre âge (plus vous êtes âgé, plus la rente est élevée)</li>

@@ -77,8 +77,8 @@ const sections: FAQSection[] = [
         answer: (
           <>
             <p className="mb-3">
-              Le barème de l&apos;article 777 CGI tableau I s&apos;applique à ce qui reste après
-              abattement (donation - abattements). Il est progressif : chaque taux ne
+              Le barème de l&apos;article 777 CGI tableau I s&apos;applique sur la base taxable,
+              c&apos;est-à-dire le montant de la donation moins l&apos;abattement personnel applicable. Il est progressif : chaque taux ne
               s&apos;applique que sur la part du montant qui tombe dans sa tranche. Concrètement,
               sur 100 000 € taxables, vous ne payez pas 20 % sur 100 000 € : vous payez 5 % sur
               les 8 072 premiers, 10 % sur la tranche suivante, etc.
