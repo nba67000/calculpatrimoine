@@ -256,7 +256,7 @@ Utiliser la tool Grep avec le pattern Unicode (PCRE `\x{2014}`) ou ripgrep
 en ligne de commande :
 
 ```bash
-rg -c '—' src/app/blog/<slug>/page.tsx
+rg -cP '\x{2014}' src/app/blog/<slug>/page.tsx
 ```
 
 Doit retourner `0` ou `No matches found`. Sinon, remplacer chaque
