@@ -181,6 +181,12 @@ export const CATEGORIES_CALC: CategorieCalc[] = [
         disponible: true,
       },
       {
+        href: '/deficit-foncier',
+        nom: 'Déficit foncier',
+        desc: 'Location nue régime réel : plafond 10 700 €/an sur revenu global, report 10 ans, plafond majoré 21 400 € pour rénovation énergétique (Art. 156 I-3° CGI).',
+        disponible: true,
+      },
+      {
         href: '/scpi',
         nom: 'SCPI',
         desc: 'Revenus locatifs papier et rentabilité comparée entre véhicules.',

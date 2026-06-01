@@ -30,6 +30,7 @@ import { calculerPea } from '@/lib/pea'
 import { calculerLmnpRegime } from '@/lib/lmnpRegime'
 import { calculerSciRegime } from '@/lib/sciRegime'
 import { calculerCsgRetraite } from '@/lib/csgRetraite'
+import { calculerDeficitFoncier } from '@/lib/deficitFoncier'
 import type { PERInputs } from '@/types/per'
 import type { AssuranceVieInputs } from '@/types/assuranceVie'
 import type { IFIInputs } from '@/types/ifi'
@@ -41,6 +42,7 @@ describe('calculator registry , exhaustivité', () => {
       'assurance-vie/transmission',
       'comparateur-locatif-placement',
       'csg-csds-retraite',
+      'deficit-foncier',
       'donation/demembrement',
       'donation/droits',
       'ifi',
@@ -253,6 +255,16 @@ describe('calculator registry , formatContexteChat retourne une chaîne non vide
     }
     const results = calculerSuccession(inputs)
     const txt = getCalculator('succession')!.formatContexteChat(inputs, results)
+    expect(txt.length).toBeGreaterThan(20)
+  })
+
+  it('deficit-foncier', () => {
+    const inputs = {
+      revenusFoncierBruts: 12000, chargesHorsInterets: 18000, interetsEmprunt: 3000,
+      tmi: 30, renovationEnergetiquePassoire: false,
+    }
+    const results = calculerDeficitFoncier(inputs)
+    const txt = getCalculator('deficit-foncier')!.formatContexteChat(inputs, results)
     expect(txt.length).toBeGreaterThan(20)
   })
 })

@@ -107,7 +107,8 @@
       "Bash(npx vitest *)",
       "Bash(xargs -I {} sh -c 'echo \"=== {} ===\" && head -30 \"{}\"')",
       "Bash(xargs -I {} sh -c 'echo \"=== {} ===\" && head -20 \"{}\"')",
-      "Bash(grep -v \"^$\")"
+      "Bash(grep -v \"^$\")",
+      "WebFetch(domain:codes.legifrance.gouv.fr)"
     ]
   }
 }

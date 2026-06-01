@@ -30,6 +30,7 @@ début de chaque session et **met à jour les statuts** au fil de l'eau.
 | `lmnp-reel-vs-micro` | LMNP réel vs micro-BIC (LF 2025) | `done` | 2026-06-01 |
 | `sci-is-vs-ir` | SCI à l'IS vs à l'IR (V1 impôt annuel seul) | `done` | 2026-06-01 |
 | `csg-csds-retraite` | CSG/CRDS sur pensions de retraite (4 paliers) | `done` | 2026-06-01 |
+| `deficit-foncier` | Déficit foncier (Art. 156 I-3° CGI) | `done` | 2026-06-01 |
 
 **18 calculateurs livrés au 2026-06-01.**
 
@@ -41,8 +42,7 @@ début de chaque session et **met à jour les statuts** au fil de l'eau.
 
 | Slug | Nom | Statut | Source | Notes |
 |------|-----|--------|--------|-------|
-| `deficit-foncier` | Déficit foncier (revenu nu) | `proposed` | MoneyVox 2026-06-01 | Imputation 10 700 €/an sur revenu global (hors intérêts), excédent reportable 10 ans sur revenus fonciers (Art. 156 I-3° CGI). Variante à prévoir : déficit généré par une SCI translucide imputable sur revenus fonciers nom propre du même associé. |
-| `vente-vs-donation-intrafamiliale` | Vente vs donation d'un bien à un proche | `proposed` | MoneyVox 2026-06-01 | Comparateur côté vendeur/donateur : PV immobilière + droits d'enregistrement côté vente vs droits de donation + abattement par lien de parenté côté don. Cas type : parent → neveu, grand-parent → petit-enfant. |
+| `vente-vs-donation-intrafamiliale` | Vente vs donation d'un bien à un proche | `in-progress` | MoneyVox 2026-06-01 | Comparateur côté vendeur/donateur : PV immobilière + droits d'enregistrement côté vente vs droits de donation + abattement par lien de parenté côté don. Cas type : parent → neveu, grand-parent → petit-enfant. |
 
 ### À considérer en suivi des V1 simplifiées
 
