@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+node_modules/
 /.pnp
 .pnp.js
 .yarn/install-state.gz
@@ -52,4 +52,12 @@ scripts/*.xlsx
 # Claude Code
 .claude/worktrees/
 .claude/settings.local.json
+
+# Remotion (projet video/)
+video/out/
+video/.remotion-cache/
+video/src/audio/*.mp3
+video/src/audio/*.wav
+video/src/assets/*.mp4
+video/src/assets/*.mov
 
