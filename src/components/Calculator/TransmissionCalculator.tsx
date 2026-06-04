@@ -356,6 +356,25 @@ export default function TransmissionCalculator() {
  {/* Disclaimer */}
  <LegalDisclaimer />
 
+ {/* AVERTISSEMENT CALCUL PARTIEL — visible uniquement si versements après 70 ans */}
+ {results && results.totalVersementsApres70 > 0 && (
+   <div className="bg-orange-50 border-2 border-orange-400 rounded-xl p-5">
+     <p className="font-bold text-orange-900 mb-2 text-sm uppercase tracking-wider">
+       Calcul partiel — versements après 70 ans
+     </p>
+     <p className="text-sm text-orange-900 leading-relaxed mb-3">
+       Les versements après 70 ans (Art. 757 B) doivent normalement être <strong>agrégés à la part successorale ordinaire</strong> de chaque bénéficiaire pour l&apos;application du barème Art. 777 et de l&apos;abattement Art. 779 (BOFiP BOI-ENR-DMTG-10-10-20-20 § 230). Les droits affichés ci-dessous sont calculés <strong>en silo</strong> et peuvent surévaluer le montant réel.
+     </p>
+     <p className="text-sm text-orange-900 leading-relaxed">
+       Pour un calcul exact, utilisez aussi le{' '}
+       <a href="/succession" className="underline font-bold hover:text-orange-700">
+         calculateur succession
+       </a>
+       {' '}en y reportant les parts d&apos;AV taxables après 70 ans (champ <code className="bg-orange-100 px-1 py-0.5 rounded text-xs">primes 757 B</code>).
+     </p>
+   </div>
+ )}
+
  {/* Graphique résultats */}
  {results && <TransmissionChart results={results} />}
  {results && <AlertList items={results.warnings} />}

@@ -107,6 +107,26 @@ Lister au moins 3 cas chiffrés de référence venant de sources officielles
 - Si un écart est constaté, corriger avant de continuer.
 - **Si tu n'arrives pas à reproduire un cas officiel → s'arrêter et demander.**
 
+**Cas piège — agrégation entre régimes fiscaux** : si le calculateur touche
+plusieurs régimes qui pourraient se croiser (ex : 757 B + succession ordinaire,
+PER capital + revenus du foyer, plus-value mobilière + plus-value immobilière),
+vérifier explicitement dans le **BOFiP** comment ces régimes s'articulent :
+
+- L'abattement personnel s'applique-t-il sur chaque silo, ou sur l'agrégat ?
+- Le barème progressif tourne-t-il en plusieurs passes, ou en une seule sur la
+  somme ?
+- L'ordre d'imputation des abattements est-il documenté ?
+
+**Le bug 757 B (2026-06-04) est arrivé exactement là**. La lib traitait l'AV
+versée après 70 ans en silo séparé avec son propre barème, alors que le BOFiP
+BOI-ENR-DMTG-10-10-20-20 § 230 impose l'agrégation à la part successorale
+ordinaire avant application de l'abattement Art. 779 et du barème Art. 777.
+Conséquences : chiffres affichés au public faux pendant des mois.
+
+**Règle dure** : pour tout calcul qui combine plusieurs régimes, WebFetch
+le BOFiP correspondant et lire le paragraphe précis sur l'articulation avant
+d'écrire la fonction.
+
 ---
 
 ### 6. UI - composant calculateur
@@ -170,6 +190,37 @@ Lister au moins 3 cas chiffrés de référence venant de sources officielles
   calquer le pattern.
 - Créer les tests pour le nouveau calculateur (logique pure + composant si
   couverture UI existe déjà).
+
+**Règle dure — test contre source primaire obligatoire** : chaque fonction
+de calcul fiscal exportée DOIT avoir au moins un test vitest qui valide un
+cas chiffré contre une source primaire (BOFiP, exemple officiel
+service-public.fr, doctrine fiscale citée explicitement dans le commentaire
+du test). Les tests qui valident uniquement la manipulation de données
+(ajout/suppression/cascade d'éléments) ne suffisent **pas** : ils auraient
+laissé passer le bug 757 B.
+
+Le commentaire du test doit citer :
+1. Le cas de référence (source : BOFiP § X, service-public.fr exemple Y, etc.)
+2. Le calcul attendu pas à pas (montant taxable, abattement, barème par tranche)
+3. La valeur finale exacte avec sa marge de tolérance (±1 € sur les arrondis)
+
+**Cas piège — agrégation entre régimes** : si la fonction agrège plusieurs
+régimes fiscaux (cf. étape 5), ajouter au moins un test "scénario complet"
+qui valide l'agrégation correcte. Exemple :
+
+```ts
+it('scénario X : régime A + régime B agrégés (BOFiP § Y)', () => {
+  // Source : BOI-XXX-YYY § Z
+  // Montant régime A : 125 000 €
+  // Montant régime B taxable (après abattement spécifique) : 134 750 €
+  // Agrégat : 259 750 €
+  // Abattement personnel Art. ZZZ : 100 000 € (une seule fois sur l'agrégat)
+  // Base taxable : 159 750 €
+  // Barème Art. WWW en une passe : 30 144 €
+  expect(result.totalDroits).toBe(30144)
+})
+```
+
 - Lancer **tous** les tests existants :
 
 ```bash
@@ -178,15 +229,18 @@ npm run test
 
 - Produire un rapport en tableau compact :
 
-| Fichier test | Statut | Écart vs pattern |
-|---|---|---|
-| ... | ✅ / ❌ | ... |
+| Fichier test | Statut | Écart vs pattern | Source primaire validée |
+|---|---|---|---|
+| ... | ✅ / ❌ | ... | ✅ BOFiP § X / ❌ aucune |
 
 - Si des écarts de pattern sont détectés entre tests existants →
   proposer une harmonisation en diff minimal.
 
 **STOP si des tests échouent ou si une harmonisation est proposée -
 attends validation avant toute modification.**
+
+**STOP supplémentaire si une fonction de calcul fiscal n'a pas de test
+contre source primaire** — ne pas committer.
 
 ---
 
@@ -693,11 +747,20 @@ fiscal du code n'a pas soit (a) une source primaire en catégorie ✅ OK, soit
 ## Règles de sécurité
 
 - **Doute sur un chiffre fiscal** → s'arrêter, demander à Nicolas.
+- **Doute sur l'agrégation entre régimes fiscaux** → WebFetch le BOFiP avant
+  d'écrire la fonction. Ne pas deviner l'articulation.
 - **Source non trouvée** → ne pas inventer, documenter le manque dans
   `docs/sources/<slug>.md`, signaler avec ⚠️, attendre.
+- **Commentaire `// Simplification` dans le code** → suspect par défaut.
+  Soit le calcul est exact (et le commentaire est trompeur, à retirer), soit
+  il est approximatif et il FAUT un warning visible dans l'UI qui alerte
+  l'utilisateur, plus une issue documentée pour le corriger.
 - **Build qui échoue malgré 2 tentatives** → s'arrêter, résumer l'erreur,
   demander.
 - **Tests qui échouent malgré 2 tentatives** → s'arrêter, résumer, demander.
+- **Fonction de calcul fiscal sans test contre source primaire** → bloquant.
+  Ne pas committer tant qu'au moins un test ne valide pas un cas chiffré
+  contre BOFiP / service-public.fr / doctrine fiscale citée.
 - **Correction perf Med/High non validée** → ne pas appliquer, attendre.
 - **Correction conformité structurelle non validée** → ne pas appliquer,
   attendre.
@@ -705,3 +768,24 @@ fiscal du code n'a pas soit (a) une source primaire en catégorie ✅ OK, soit
 - **Fichier existant en conflit** → s'arrêter, montrer le chemin, demander.
 
 Mieux vaut 1 calculateur juste que 3 approximatifs.
+
+## Le bug 757 B — leçon de référence (2026-06-04)
+
+Pour éviter de répéter ce type d'erreur, en rappel :
+
+- `src/lib/transmission.ts` traitait les versements AV après 70 ans (Art. 757 B)
+  dans un **silo séparé** : barème ligne directe redémarré à 5 %, abattement
+  personnel Art. 779 non appliqué sur l'agrégat.
+- Le BOFiP BOI-ENR-DMTG-10-10-20-20 § 230 prescrit l'**agrégation** à la part
+  successorale ordinaire, abattement Art. 779 appliqué une seule fois, barème
+  Art. 777 en une passe.
+- **Conséquence** : chiffres affichés au public surévalués pendant des mois.
+- **Cause racine** : aucun test vitest ne validait le calcul des droits contre
+  une source primaire. Les tests existants ne couvraient que la manipulation
+  de la liste des bénéficiaires. Le commentaire `// Simplification : on applique
+  le barème directement` n'était pas accompagné d'un warning utilisateur.
+- **Fix** : `succession.ts` accepte désormais un champ `primes757B` qui s'agrège
+  à `partRecue` avant abattement et barème. `transmission.ts` expose
+  `calculerPartsTaxables757B` pour produire la quote-part à passer en input.
+- **Reproduit comme test de référence** : `src/lib/transmission.test.ts`
+  décrit `intégration scénario Pierre`.
