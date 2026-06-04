@@ -1,6 +1,6 @@
 # Sources - PER individuel : économie d'impôt sur versement
 
-**Dernière vérification** : 2026-05-03
+**Dernière vérification** : 2026-06-03 (URLs Légifrance toujours mortes au 2026-06-03, chiffres re-cross-checkés sur service-public.gouv.fr le 2026-06-03 - cohérents)
 **Millésime fiscal** : Revenus 2025 / Barème 2026
 
 > ⚠ **Crawl 2026-05-31** : 3 URLs Légifrance + 1 BOFiP de ce document sont
@@ -46,7 +46,7 @@
 | Abattement frais pro max | 14 555 € | Art. 83 CGI, LF 2026 | 2026 |
 | Report plafonds non utilisés | 5 ans (N-1 à N-5) - LF 2026 art. 10 | Art. 163 quatervicies I b) CGI | 2026 |
 
-Sources des montants 2026 vérifiées sur service-public.gouv.fr le 2026-05-01.
+Sources des montants 2026 vérifiées sur https://www.service-public.gouv.fr le 2026-05-01, re-vérifiées le 2026-06-03.
 
 ---
 

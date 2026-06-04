@@ -206,64 +206,70 @@ structurée et sert de source unique pour le rendu.
 
 ## 6. Sourçage légal - obligation par calculateur
 
-**Chaque nouveau calculateur nécessite un fichier `docs/sources/<slug>.md`** au
-format suivant :
+### 6.1. Réalité du crawl Légifrance/BOFiP
 
-```markdown
-# Sources - <Nom du calculateur>
+**Cette section a été révisée après le crawl 2026-05-31** qui a montré que :
+- 50 % des URLs Légifrance (LEGIARTI) testées renvoyaient 404.
+- 17 % renvoyaient 200 mais pointaient vers le **mauvais article**.
+- Les URLs BOFiP nues `<id>-PGP.html` re-routent souvent ailleurs.
 
-**Dernière vérification** : YYYY-MM-DD
-**Millésime fiscal** : Revenus <année> / Barème <année+1>
+**Conséquence** : on ne peut pas se fier à la mémoire du modèle pour citer
+des URLs Légifrance et BOFiP. **Chaque URL doit être testée au moment de
+l'écriture du fichier sources** et son statut explicitement consigné.
 
-## Textes de loi
+### 6.2. Hiérarchie des sources - règle révisée
 
-- **Article <numéro> du Code général des impôts** - <objet>
-  URL Légifrance : https://www.legifrance.gouv.fr/...
-  Extrait pertinent : "<citation courte - 1 phrase max>"
+L'ordre de priorité pour **citer** une donnée fiscale est :
 
-- **Article L.<...> du Code des assurances** - <objet>
-  URL Légifrance : https://...
+1. **Texte légal officiel** (CGI, code des assurances, etc.) - **référence
+   textuelle obligatoire** (numéro d'article, code).
+2. **BOFiP avec identifiant BOI complet** (`?identifiant=BOI-XXX-XX-XX-DATE`)
+   si l'URL est testée OK.
+3. **service-public.fr** (fiches F\<numéro\>) - URLs historiquement stables,
+   excellente vérification croisée.
+4. **impots.gouv.fr** - tableaux récapitulatifs des barèmes, stables.
+5. **BOSS** (boss.gouv.fr) pour la protection sociale.
+6. **Légifrance LEGIARTI** - **mis volontairement en dernier** : la référence
+   textuelle de l'article reste primaire, mais l'URL LEGIARTI est instable.
+   À tester systématiquement avant de la citer.
 
-## Doctrine administrative
+**Différence clé** vs la version précédente :
+- Avant : "priorité Légifrance > BOFiP > service-public.fr"
+- Maintenant : la **référence textuelle** prime sur l'URL. service-public.fr
+  et impots.gouv.fr sont préférés pour la **vérification de la valeur** car
+  leurs URLs sont stables et leur contenu lisible.
 
-- **BOFiP BOI-<ref>** - <titre>
-  URL : https://bofip.impots.gouv.fr/bofip/...
-  Date publication : YYYY-MM-DD
+### 6.3. Format obligatoire du fichier sources
 
-- **BOSS <ref>** (si applicable)
-  URL : https://boss.gouv.fr/...
+**Chaque nouveau calculateur nécessite un fichier `docs/sources/<slug>.md`**.
+Le template canonique est `docs/sources/_TEMPLATE.md` - il doit être suivi
+sans déviation. Points-clés :
 
-## Barèmes et taux
+- Chaque URL externe doit porter un **statut de vérification** : `✅ OK`,
+  `❌ 404`, `⚠️ MAUVAIS CONTENU` ou `☐ NON TESTÉE`.
+- Une section dédiée **"URLs vérifiées manuellement par Nicolas"** liste les
+  URLs qui ont nécessité une confirmation visuelle (Légifrance bloque ou
+  rate-limit, contenu ambigu, divergence détectée).
+- Une section **"Cross-check des chiffres"** liste chaque taux/seuil avec
+  au minimum **deux sources concordantes** quand la source primaire
+  (Légifrance) est inaccessible.
+- L'historique des vérifications est tracé.
 
-| Paramètre | Valeur | Source | Date |
-|-----------|--------|--------|------|
-| Taux PFU IR | 12,8 % | Art. 200 A CGI | 2026 |
-| Prélèvements sociaux | 17,2 % | Art. L.136-6 CSS | 2026 |
+### 6.4. Règles de sourçage strictes
 
-## Exemples de référence
-
-Cas chiffrés issus de sources officielles pour validation :
-
-### Exemple 1 (source : BOFiP BOI-...)
-- Inputs : ...
-- Résultat attendu : ...
-
-## Notes et limites connues
-
-- Ce calculateur ne traite pas : <cas non gérés explicitement>
-- Il suppose : <hypothèses simplificatrices>
-```
-
-**Règles de sourçage strictes** :
-
-- **Tout taux, tout seuil, tout barème doit avoir une source primaire.**
-- Priorité : Légifrance > BOFiP / BOSS > service-public.fr > impots.gouv.fr.
-- **Pas de source secondaire** (blogs fiscaux, articles de presse, IA). Jamais.
+- **Tout taux, tout seuil, tout barème doit avoir une source primaire** -
+  un article de loi ou un BOFiP - **identifié par sa référence textuelle**
+  (l'URL est secondaire).
+- **Pas de source tertiaire** (blogs fiscaux, articles de presse, sortie IA
+  non vérifiée). Jamais.
 - Les citations sont **très courtes** (une phrase, moins de 15 mots) ou en
   reformulation. Jamais de paragraphe entier copié.
 - La date de consultation est obligatoire.
 - Si un texte a été modifié récemment, signaler la version applicable
   (ex: "Version issue de la LF 2026").
+- **Aucun calculateur ne peut être committé si la section "URLs vérifiées
+  manuellement" est vide ET que la source primaire est en catégorie B/C/D**
+  (cf. `/verif-sources`). Dans ce cas : STOP, demander à Nicolas.
 
 ---
 

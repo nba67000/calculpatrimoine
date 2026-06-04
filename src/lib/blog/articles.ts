@@ -33,7 +33,7 @@ export const ARTICLES: BlogArticle[] = [
     tag: 'Fiscalité',
     date: '2026-06-02',
     duree: '12 min',
-    extrait: "Votre TMI n'est pas le taux que vous payez. Comment elle se calcule, à quoi elle sert pour le PER, l'assurance-vie, et l'épargne en général.",
+    extrait: "Votre TMI n'est pas le taux que vous payez. Comment elle se calcule, à quoi elle sert vraiment pour le PER, l'assurance-vie et le reste de votre épargne.",
     accroche: "Votre TMI n'est pas le taux que vous payez. Pourquoi cet écart commande vos décisions PER, assurance-vie et plus-value.",
   },
   {
@@ -42,8 +42,8 @@ export const ARTICLES: BlogArticle[] = [
     tag: 'Fiscalité',
     date: '2026-05-05',
     duree: '12 min',
-    extrait: "Déduction fiscale, plafond épargne retraite, fiscalité des retraits en capital ou en rente. Les mécanismes exacts, avec formules et comparaison PER vs assurance-vie.",
-    accroche: "Déduction fiscale, plafond épargne retraite, fiscalité des retraits. Les mécanismes exacts avec formules et comparaison PER vs assurance-vie.",
+    extrait: "Déduction fiscale, plafond épargne retraite, fiscalité des retraits en capital ou en rente. La mécanique exacte, avec formules et comparaison PER vs assurance-vie.",
+    accroche: "Déduction fiscale, plafond épargne retraite, fiscalité des retraits. La mécanique exacte, avec formules et comparaison PER vs assurance-vie.",
   },
   {
     slug: 'assurance-vie-fiscalite-rachat',
@@ -51,8 +51,8 @@ export const ARTICLES: BlogArticle[] = [
     tag: 'Fiscalité',
     date: '2026-04-18',
     duree: '11 min',
-    extrait: "Règle proportionnelle, abattement 8 ans, PFU vs IR, date du 27 septembre 2017. Guide complet avec exemples chiffrés et formules détaillées.",
-    accroche: "Règle proportionnelle, abattement 8 ans, PFU vs IR, versements avant 2017. Tout le détail.",
+    extrait: "Règle proportionnelle, abattement 8 ans, PFU vs IR, date du 27 septembre 2017. Le détail des règles avec exemples chiffrés et formules.",
+    accroche: "Règle proportionnelle, abattement 8 ans, PFU vs IR, versements avant 2017. Le détail.",
   },
   {
     slug: 'rente-viagere-seuil-rentabilite',
@@ -60,7 +60,7 @@ export const ARTICLES: BlogArticle[] = [
     tag: 'Rente viagère',
     date: '2026-04-16',
     duree: '15 min',
-    extrait: "À 72 ans avec 250 000 €, le seuil tombe à 15,8 ans alors que l'espérance est de 14 ans. Découvrez pourquoi c'est normal.",
-    accroche: "À 72 ans avec 250 000 €, le seuil tombe à 15,8 ans. Ce n'est pas une anomalie.",
+    extrait: "À 72 ans avec 250 000 €, le seuil tombe à 15,8 ans, l'espérance de vie est à 14 ans. Pourquoi ce n'est pas une arnaque.",
+    accroche: "À 72 ans avec 250 000 €, le seuil tombe à 15,8 ans. Pas une anomalie : c'est par construction.",
   },
 ]

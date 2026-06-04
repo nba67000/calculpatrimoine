@@ -1,6 +1,6 @@
 # Sources - Calculateur TMI (Tranche Marginale d'Imposition)
 
-**Dernière vérification** : 2026-05-03
+**Dernière vérification** : 2026-06-03 (Art 197 CGI LEGIARTI000051212954 re-testé OK le 2026-06-03, tranches 11 600/29 579/84 577/181 917 et décote 897/1483 confirmées)
 **Millésime fiscal** : Revenus 2025 / Barème 2026
 
 > ⚠ **Crawl 2026-05-31** : plusieurs URLs Légifrance citées ci-dessous sont

@@ -1,6 +1,6 @@
 # Sources - Fiscalité Rachat Assurance-Vie
 
-**Dernière vérification** : 2026-05-03
+**Dernière vérification** : 2026-06-03 (Art 125-0 A CGI LEGIARTI000044989424 re-testé OK le 2026-06-03, contenu confirmé ; F22414 service-public.gouv.fr confirme tous les chiffres)
 **Millésime fiscal** : Revenus 2025 / Barème 2026
 
 > ⚠ **Crawl 2026-05-31** : 1 URL Légifrance de ce document est morte
@@ -63,7 +63,7 @@
 
 ## Notes et limites connues
 
-- **DIVERGENCE MAJEURE** : Le calculateur n'implémente pas le seuil de 150 000€ pour le PFU réduit à 7,5 % sur les versements post-27/09/2017 dans les contrats > 8 ans. Pour tout encours ≤ 150 000€, le calculateur affiche à tort 30 % au lieu de 24,7 %. Correction à valider par Nicolas avant implémentation (voir audit 2026-05-03).
+- **Note historique** : un audit du 2026-05-03 avait identifié une divergence majeure sur l'absence du seuil 150 000 € dans le calculateur. **Corrigé depuis** dans `src/lib/assuranceVie.ts` (constante `SEUIL_ENCOURS_PFU_REDUIT = 150_000`, fonction `tauxIRPost2017` avec prorata). Vérifié le 2026-06-03.
 - Le calculateur ne traite pas les contrats "vie-génération" (abattement de 20 % supplémentaire).
 - L'abattement annuel est présenté comme disponible en totalité, sans tenir compte de son usage dans l'année (non-cumul d'une année à l'autre non modélisé).
 - Les cas < 4 ans et 4-8 ans avec PFL (avant 2018) ne sont pas distingués : le calculateur n'est pas rétroactif sur les contrats anciens avec PFL 35 %/15 %.

@@ -1,6 +1,6 @@
 # Sources - Plus-value immobilière
 
-**Dernière vérification** : 2026-05-03
+**Dernière vérification** : 2026-06-03 (URLs Légifrance OK confirmées, F10864 confirmé sur service-public.gouv.fr)
 **Millésime fiscal** : Cessions en 2026 / Barème applicable au 03/05/2026
 
 > ⚠ **Crawl 2026-05-31** : les URLs Légifrance de ce document sont OK (testées
@@ -85,7 +85,7 @@
 | Surtaxe PV 210 001 – 250 000 € | 5 % | Art. 1609 nonies G CGI | 2026 |
 | Surtaxe PV > 250 000 € | 6 % | Art. 1609 nonies G CGI | 2026 |
 
-Source de référence vérifiée : service-public.gouv.fr/particuliers/vosdroits/F10864 (consulté le 2026-05-02)
+Source de référence vérifiée : https://www.service-public.gouv.fr/particuliers/vosdroits/F10864 (re-consulté le 2026-06-03)
 
 ## Exemples de référence
 

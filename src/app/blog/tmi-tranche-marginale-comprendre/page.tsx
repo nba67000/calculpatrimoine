@@ -49,13 +49,13 @@ export default function ArticleTMIPage() {
           {/* Intro */}
           <div className="mb-12">
             <p className="text-xl text-neutral-700 leading-relaxed mb-6">
-              Vous gagnez 45 000 euros nets imposables. Votre TMI est de 30 %. Cela ne veut pas
-              dire que vous payez 30 % d&apos;impôt sur ces 45 000 euros. En réalité, votre impôt net
-              tourne autour de 5 500 euros, soit un taux moyen de 12 %. Cet écart, c&apos;est tout
-              l&apos;enjeu de la TMI.
+              Vous gagnez 45 000 euros nets imposables. Votre TMI, c&apos;est 30 %. Mais attention :
+              ça ne veut pas dire que vous payez 30 % sur ces 45 000 euros. Votre impôt net tourne
+              plutôt autour de 5 500 euros, soit un taux moyen de 12 %. C&apos;est tout l&apos;écart
+              entre TMI et taux moyen qu&apos;il faut comprendre.
             </p>
             <p className="text-neutral-700">
-              Dans cet article : ce que la TMI mesure exactement, comment lire le barème 2026, et
+              Au programme : ce que la TMI mesure exactement, comment lire le barème 2026, et
               pourquoi votre TMI commande la plupart de vos décisions d&apos;épargne (PER,
               assurance-vie, PFU contre barème).
             </p>
@@ -65,8 +65,8 @@ export default function ArticleTMIPage() {
           <div className="border-l-4 border-warning-400 bg-warning-50 px-5 py-4 mb-12">
             <p className="font-mono text-xs font-bold text-warning-800 uppercase tracking-wider mb-1">Avertissement</p>
             <p className="text-sm text-warning-700 leading-relaxed">
-              Cet article décrit le barème de l&apos;impôt sur le revenu 2026 (revenus 2025) et les
-              mécanismes de calcul. Il ne constitue pas un conseil fiscal personnalisé.
+              Cet article explique le barème de l&apos;impôt sur le revenu 2026 (revenus 2025) et la
+              mécanique du calcul. Il ne remplace pas un conseil fiscal personnalisé.
             </p>
           </div>
 
@@ -75,7 +75,7 @@ export default function ArticleTMIPage() {
             <p className="font-mono text-xs text-primary-300 uppercase tracking-wider mb-2">Outil associé</p>
             <p className="text-white font-bold text-lg mb-1">Calculez votre TMI et votre impôt</p>
             <p className="text-primary-200 text-sm mb-4">
-              Le calculateur TMI affiche le détail tranche par tranche, le quotient familial et la
+              Le calculateur TMI sort le détail tranche par tranche, le quotient familial et la
               décote sur votre situation réelle. Barème 2026, gratuit, sans inscription.
             </p>
             <Link href="/tmi" className="inline-block bg-surface-card text-primary-700 px-6 py-2.5 font-medium text-sm hover:bg-neutral-100 transition-colors font-mono">
@@ -90,19 +90,19 @@ export default function ArticleTMIPage() {
               {[
                 {
                   terme: 'Revenu net imposable',
-                  def: "Le revenu sur lequel l'administration calcule votre impôt, après abattement de 10 % pour frais professionnels (ou frais réels). Pour un salarié, c'est environ 90 % du salaire net annuel. C'est ce chiffre qui figure ligne 1AJ de votre déclaration et qui sert d'entrée au barème.",
+                  def: "Le revenu sur lequel le fisc calcule votre impôt, après l'abattement de 10 % pour frais pros (ou frais réels). Pour un salarié, c'est environ 90 % du salaire net annuel. C'est ce chiffre qui apparaît ligne 1AJ de votre déclaration et qui entre dans le barème.",
                 },
                 {
                   terme: 'TMI (tranche marginale d\'imposition)',
-                  def: "Le taux qui s'applique sur votre dernier euro de revenu. Pas sur le total. Si vous gagnez 45 000 euros et que la tranche à 30 % commence à 29 579 euros, votre TMI est 30 %, mais les premiers euros restent taxés à 0 % puis à 11 %.",
+                  def: "Le taux qui s'applique sur votre dernier euro de revenu. Pas sur le total. Si vous gagnez 45 000 euros et que la tranche à 30 % démarre à 29 579 euros, votre TMI est à 30 %. Mais les premiers euros restent à 0 %, puis à 11 %.",
                 },
                 {
                   terme: 'Taux moyen d\'imposition',
-                  def: "L'impôt net divisé par le revenu net imposable. Toujours inférieur à la TMI (sauf cas extrême). C'est le taux réel sur l'ensemble de votre revenu, pas sur le dernier euro.",
+                  def: "L'impôt net divisé par le revenu net imposable. Toujours plus bas que la TMI (sauf cas extrême). C'est le taux réel sur tout votre revenu, pas seulement sur le dernier euro.",
                 },
                 {
                   terme: 'Quotient familial (QF)',
-                  def: "Mécanisme qui divise votre revenu par un nombre de parts (1 pour célibataire, 2 pour couple, +0,5 par enfant). Le barème s'applique au revenu par part, ce qui peut faire baisser la TMI quand vous avez des enfants à charge.",
+                  def: "Mécanisme qui divise votre revenu par un nombre de parts (1 pour célibataire, 2 pour couple, +0,5 par enfant). Le barème s'applique au revenu par part. Avec des enfants à charge, ça peut faire chuter votre TMI.",
                 },
               ].map(({ terme, def }) => (
                 <div key={terme} className="border-b border-neutral-100 pb-5 last:border-0 last:pb-0">
@@ -132,15 +132,15 @@ export default function ArticleTMIPage() {
 
             <p className="text-neutral-700 mb-4">
               En France, l&apos;impôt sur le revenu est progressif (Art. 197 CGI). Votre revenu net
-              imposable est découpé en tranches, et chaque tranche est taxée à un taux croissant. Le
-              premier euro est exonéré, le dernier peut tomber à 45 %.
+              imposable est découpé en tranches, et chaque tranche est taxée à un taux qui monte. Le
+              premier euro est à 0 %, le dernier peut grimper à 45 %.
             </p>
 
             <p className="text-neutral-700 mb-6">
               Votre TMI, c&apos;est le taux qui s&apos;applique sur la dernière tranche atteinte par votre
-              revenu. Sur le dernier euro gagné cette année, pas sur l&apos;ensemble. Le mot
-              &laquo;&nbsp;marginal&nbsp;&raquo; signifie justement &laquo;&nbsp;à la
-              marge&nbsp;&raquo;, c&apos;est-à-dire au bout, sur l&apos;euro supplémentaire.
+              revenu. Sur le dernier euro gagné cette année, pas sur le reste. Le mot
+              &laquo;&nbsp;marginal&nbsp;&raquo; veut dire &laquo;&nbsp;à la marge&nbsp;&raquo;, donc
+              au bout, sur l&apos;euro supplémentaire.
             </p>
 
             <div className="bg-neutral-50 border border-neutral-200 p-5 my-6">
@@ -162,10 +162,10 @@ export default function ArticleTMIPage() {
             </div>
 
             <p className="text-neutral-700">
-              Confondre TMI et taux moyen est l&apos;erreur la plus fréquente. Sophie ne paie pas 30 %
-              de ses 45 000 euros, soit 13 500 euros. Elle paie environ 5 500 euros, parce que les
-              premiers 11 600 euros sont à 0 % et la tranche entre 11 600 et 29 579 euros à 11 %
-              seulement.
+              Confondre TMI et taux moyen, c&apos;est l&apos;erreur la plus fréquente. Sophie ne paie pas
+              30 % de ses 45 000 euros, soit 13 500 euros. Elle paie environ 5 500 euros, parce que
+              les premiers 11 600 euros sont à 0 % et la tranche entre 11 600 et 29 579 euros à
+              seulement 11 %.
             </p>
           </section>
 
@@ -174,9 +174,9 @@ export default function ArticleTMIPage() {
             <h2 className="font-serif text-3xl font-bold text-neutral-900 mb-6">Lire le barème 2026 sans se tromper</h2>
 
             <p className="text-neutral-700 mb-6">
-              Pour les revenus de 2025, déclarés au printemps 2026, le barème en vigueur est fixé
-              par la loi de finances 2026 (Art. 4 LF 2026), avec une indexation de 0,9 % sur les
-              tranches de l&apos;année précédente.
+              Pour les revenus 2025, déclarés au printemps 2026, le barème vient de la loi de
+              finances 2026 (Art. 4 LF 2026), avec une indexation de 0,9 % sur les tranches de
+              l&apos;année précédente.
             </p>
 
             <div className="overflow-x-auto mb-6">
@@ -230,9 +230,8 @@ export default function ArticleTMIPage() {
             </div>
 
             <p className="text-neutral-700">
-              Sophie est à TMI 30 % mais paie en réalité 14,7 % de ses revenus en impôt. Cette
-              différence est mécanique : elle vient du fait que les premiers euros sont peu ou pas
-              taxés.
+              Sophie est à TMI 30 % mais elle paie en réalité 14,7 % de ses revenus en impôt.
+              L&apos;écart est mécanique : les premiers euros sont peu ou pas taxés.
             </p>
 
             <p className="text-xs text-neutral-500 font-mono mt-6">
@@ -246,16 +245,16 @@ export default function ArticleTMIPage() {
             <h2 className="font-serif text-3xl font-bold text-neutral-900 mb-6">À quoi sert vraiment la TMI</h2>
 
             <p className="text-neutral-700 mb-6">
-              La TMI dit le taux auquel vous serez taxé sur tout euro supplémentaire. C&apos;est la clé
-              de presque toutes les décisions d&apos;épargne et de défiscalisation.
+              La TMI vous dit à quel taux sera taxé chaque euro supplémentaire. C&apos;est la clé de
+              presque toutes les décisions d&apos;épargne et de défiscalisation.
             </p>
 
             <h3 className="font-serif text-xl font-bold text-neutral-900 mb-3">PER : économie d&apos;impôt = versement × TMI</h3>
 
             <p className="text-neutral-700 mb-4">
-              Quand vous versez sur un PER, le montant versé est retiré de votre revenu imposable.
-              L&apos;économie d&apos;impôt immédiate est exactement égale au versement multiplié par votre
-              TMI.
+              Quand vous versez sur un PER, le montant versé sort de votre revenu imposable.
+              L&apos;économie d&apos;impôt immédiate, c&apos;est exactement votre versement multiplié par
+              votre TMI.
             </p>
 
             <div className="bg-neutral-50 border border-neutral-200 p-5 my-6 font-mono text-sm">
@@ -267,8 +266,8 @@ export default function ArticleTMIPage() {
                 <li>À TMI 45 % : économie d&apos;impôt = 2 250 €</li>
               </ul>
               <p className="text-neutral-500 text-xs mt-3">
-                Le PER est mécaniquement plus efficace à TMI élevée. Plus le taux est haut, plus
-                chaque euro versé vous rembourse d&apos;impôt.
+                Le PER est mécaniquement plus rentable à TMI élevée. Plus le taux grimpe, plus chaque
+                euro versé vous fait économiser d&apos;impôt.
               </p>
             </div>
 
@@ -277,7 +276,7 @@ export default function ArticleTMIPage() {
             </h3>
 
             <p className="text-neutral-700 mb-4">
-              Lors d&apos;un rachat d&apos;assurance-vie, vous choisissez entre le prélèvement forfaitaire
+              À un rachat d&apos;assurance-vie, vous avez le choix entre le prélèvement forfaitaire
               unique (PFU) à 12,8 % d&apos;impôt sur le revenu (plus 17,2 % de prélèvements sociaux),
               ou le barème progressif (votre TMI plus 17,2 % de prélèvements sociaux).
             </p>
@@ -290,8 +289,8 @@ export default function ArticleTMIPage() {
                 <li>TMI 30 % et plus : PFU gagnant (12,8 % &lt; 30 %)</li>
               </ul>
               <p className="text-neutral-500 text-xs mt-3">
-                Le bon choix dépend exclusivement de votre TMI au moment du rachat. À TMI 11 %, le
-                barème vous fait économiser 1,8 point d&apos;IR sur les gains imposables.
+                Le bon choix dépend uniquement de votre TMI au moment du rachat. À TMI 11 %, le
+                barème vous économise 1,8 point d&apos;IR sur les gains imposables.
               </p>
             </div>
 
@@ -300,15 +299,15 @@ export default function ArticleTMIPage() {
             </h3>
 
             <p className="text-neutral-700 mb-4">
-              Pour les plus-values sur titres hors PEA, le choix est identique : PFU 30 % par défaut,
-              ou option pour le barème. Si votre TMI est inférieure à 12,8 %, le barème reste
-              avantageux pour la partie impôt sur le revenu.
+              Pour les plus-values sur titres hors PEA, c&apos;est pareil : PFU 30 % par défaut, ou
+              option pour le barème. Si votre TMI passe sous 12,8 %, le barème reste plus avantageux
+              côté impôt sur le revenu.
             </p>
 
             <p className="text-neutral-700 mb-4">
-              Pour les plus-values immobilières, la logique est différente (taux fixe 19 % d&apos;IR
-              et 17,2 % de PS) : votre TMI ne joue pas. Voir le calculateur dédié pour le détail
-              des abattements pour durée de détention.
+              Pour les plus-values immobilières, autre logique (taux fixe 19 % d&apos;IR et 17,2 %
+              de PS) : votre TMI ne joue pas. Voir le calculateur dédié pour le détail des
+              abattements pour durée de détention.
             </p>
 
             <p className="text-xs text-neutral-500 font-mono">
@@ -325,14 +324,13 @@ export default function ArticleTMIPage() {
 
             <p className="text-neutral-700 mb-4">
               Le quotient familial divise votre revenu par un nombre de parts (Art. 194 CGI). Avant
-              d&apos;appliquer le barème, l&apos;administration calcule votre revenu par part. Le barème
-              s&apos;applique sur ce revenu par part, puis le résultat est remultiplié par le nombre
-              de parts.
+              de passer au barème, le fisc calcule votre revenu par part. Le barème s&apos;applique
+              à ce revenu par part, puis le résultat est remultiplié par le nombre de parts.
             </p>
 
             <p className="text-neutral-700 mb-6">
-              Cela peut faire baisser votre TMI, parce que vos enfants &laquo;&nbsp;diluent&nbsp;&raquo;
-              votre revenu sur plus de parts.
+              Du coup, votre TMI peut chuter : vos enfants
+              &laquo;&nbsp;diluent&nbsp;&raquo; votre revenu sur plus de parts.
             </p>
 
             <div className="bg-neutral-50 border border-neutral-200 p-5 my-6">
@@ -364,8 +362,8 @@ export default function ArticleTMIPage() {
                 </div>
               </div>
               <p className="text-xs text-neutral-500 mt-4">
-                Différence : 3 175 euros d&apos;impôt en moins grâce au quotient familial, et une TMI
-                qui chute de 30 % à 11 %.
+                Écart : 3 175 euros d&apos;impôt en moins grâce au quotient familial, et une TMI qui
+                tombe de 30 % à 11 %.
               </p>
             </div>
 
@@ -374,26 +372,26 @@ export default function ArticleTMIPage() {
             </h3>
 
             <p className="text-neutral-700 mb-4">
-              Pour éviter que les foyers à hauts revenus profitent trop du mécanisme, la réduction
-              d&apos;impôt liée à chaque demi-part supplémentaire (chaque enfant compte pour 0,5 part
+              Pour empêcher les foyers à hauts revenus d&apos;abuser du mécanisme, la réduction
+              d&apos;impôt liée à chaque demi-part supplémentaire (chaque enfant vaut 0,5 part
               jusqu&apos;au deuxième) est plafonnée à 1 807 euros en 2026 (Art. 197-IV CGI).
             </p>
 
             <p className="text-neutral-700 mb-4">
-              Concrètement, dès que vos revenus dépassent un certain seuil, votre réduction
-              d&apos;impôt par enfant ne progresse plus, même si vos revenus augmentent. Le QF perd
-              alors progressivement son efficacité.
+              En pratique, à partir d&apos;un certain seuil de revenus, votre réduction d&apos;impôt par
+              enfant arrête de monter, même si vos revenus continuent à grimper. Le QF perd petit à
+              petit son efficacité.
             </p>
 
             <div className="bg-neutral-50 border border-neutral-200 p-5 my-6 font-mono text-sm">
               <p className="font-bold mb-2">Couple marié, 2 enfants, plafonnement actif</p>
               <ul className="space-y-1 text-neutral-800">
                 <li>2 demi-parts supplémentaires : 2 × 1 807 = 3 614 €</li>
-                <li>Réduction effective limitée à 3 614 €, même si l&apos;avantage théorique du QF en aurait donné davantage</li>
+                <li>Réduction effective bloquée à 3 614 €, même si le QF théorique aurait donné plus</li>
               </ul>
               <p className="text-neutral-500 text-xs mt-3">
-                Au-delà du seuil de plafonnement, chaque euro de revenu supplémentaire est à
-                nouveau taxé à la TMI &laquo;&nbsp;sans enfant&nbsp;&raquo;.
+                Une fois le plafond atteint, chaque euro de revenu supplémentaire repart à la TMI
+                &laquo;&nbsp;sans enfant&nbsp;&raquo;.
               </p>
             </div>
 
@@ -412,8 +410,8 @@ export default function ArticleTMIPage() {
 
             <p className="text-neutral-700 mb-4">
               Pour les revenus modestes, l&apos;État applique automatiquement une réduction sur
-              l&apos;impôt brut (avant tout crédit ou réduction). C&apos;est la décote (Art. 197-I-4-a CGI).
-              Elle ne diminue pas la TMI, mais elle peut faire tomber l&apos;impôt à zéro en bas du
+              l&apos;impôt brut (avant les crédits et réductions). C&apos;est la décote (Art. 197-I-4-a CGI).
+              Elle ne touche pas votre TMI, mais elle peut faire tomber l&apos;impôt à zéro en bas du
               barème.
             </p>
 
@@ -426,12 +424,12 @@ export default function ArticleTMIPage() {
                 <p>Couple marié ou pacsé : décote si impôt brut &lt; 3 277 €</p>
               </div>
               <p className="text-xs text-neutral-500 mt-3">
-                Au-delà de ces seuils, la décote est nulle et le barème s&apos;applique tel quel.
+                Au-dessus de ces seuils, la décote tombe à zéro et le barème s&apos;applique tel quel.
               </p>
             </div>
 
             <p className="text-neutral-700 mb-4">
-              La formule officielle utilise une limite et un coefficient (Art. 197-I-4-a CGI) :
+              La formule officielle s&apos;appuie sur une limite et un coefficient (Art. 197-I-4-a CGI) :
             </p>
 
             <div className="bg-surface-card border border-neutral-200 p-5 my-6">
@@ -455,9 +453,9 @@ export default function ArticleTMIPage() {
                 <p>Impôt net = 1 000 − 445 = <strong className="text-primary-700">555 €</strong></p>
               </div>
               <p className="text-xs text-neutral-500 mt-3">
-                Plus l&apos;impôt brut est faible, plus la décote rogne fort. À 700 euros d&apos;impôt
-                brut, la décote vaut 897 − 0,4525 × 700 = 580 euros, ce qui ramène l&apos;impôt net à
-                120 euros.
+                Plus l&apos;impôt brut est petit, plus la décote rogne dessus. À 700 euros d&apos;impôt
+                brut, la décote vaut 897 − 0,4525 × 700 = 580 euros, et l&apos;impôt net tombe à 120
+                euros.
               </p>
             </div>
 
@@ -478,24 +476,23 @@ export default function ArticleTMIPage() {
               <li>
                 <strong>Revenus exceptionnels.</strong> Une indemnité de licenciement, une prime de
                 départ ou un arriéré de salaire peut être lissé via le mécanisme du quotient
-                (Art. 163-0 A CGI), qui amortit l&apos;effet de saut de tranche. Ce système n&apos;est
-                pas couvert ici.
+                (Art. 163-0 A CGI), qui amortit l&apos;effet de saut de tranche. Pas géré ici.
               </li>
               <li>
                 <strong>Réductions et crédits d&apos;impôt.</strong> Dons aux associations, garde
                 d&apos;enfants, emploi à domicile, investissement locatif : ces dispositifs viennent
-                s&apos;imputer sur l&apos;impôt après décote, et peuvent ramener l&apos;impôt final à zéro.
-                Ils ne changent ni le barème ni la TMI affichée.
+                s&apos;imputer sur l&apos;impôt après décote, et peuvent vous ramener à zéro d&apos;impôt
+                final. Ils ne touchent pas au barème ni à la TMI affichée.
               </li>
               <li>
-                <strong>Revenus du capital au barème.</strong> Si vous renoncez au PFU pour les
-                intérêts, dividendes ou plus-values mobilières, ces revenus s&apos;ajoutent au revenu
-                net imposable et peuvent vous faire changer de tranche. À simuler avant de cocher la
-                case 2OP de la déclaration.
+                <strong>Revenus du capital au barème.</strong> Si vous laissez tomber le PFU pour
+                vos intérêts, dividendes ou plus-values mobilières, ces revenus s&apos;ajoutent au
+                revenu net imposable et peuvent vous faire changer de tranche. À simuler avant de
+                cocher la case 2OP de la déclaration.
               </li>
               <li>
-                <strong>Évolution annuelle.</strong> La TMI affichée est annuelle. Si vos revenus
-                varient en cours d&apos;année (prime exceptionnelle, départ à la retraite, perte
+                <strong>Évolution annuelle.</strong> La TMI affichée est une TMI à l&apos;année. Si
+                vos revenus bougent en cours d&apos;année (prime, départ à la retraite, perte
                 d&apos;emploi), la TMI réelle sur le total final peut différer de la projection.
               </li>
             </ul>
@@ -503,11 +500,10 @@ export default function ArticleTMIPage() {
 
           {/* CTA final */}
           <div className="bg-primary-700 px-8 py-6 mb-12">
-            <p className="text-white font-bold text-lg mb-1">Calculez votre cas avec vos chiffres</p>
+            <p className="text-white font-bold text-lg mb-1">Calculez votre TMI avec vos chiffres</p>
             <p className="text-primary-200 text-sm mb-4">
-              Le calculateur TMI affiche le détail tranche par tranche, l&apos;effet du quotient
-              familial, le plafonnement et la décote. Barème 2026 officiel, gratuit, zéro donnée
-              conservée.
+              Le calculateur TMI sort le détail tranche par tranche, l&apos;effet du quotient familial,
+              le plafonnement et la décote. Barème 2026 officiel, gratuit, zéro donnée conservée.
             </p>
             <Link href="/tmi" className="inline-block bg-surface-card text-primary-700 px-6 py-2.5 font-medium text-sm hover:bg-neutral-100 transition-colors font-mono">
               Accéder au calculateur TMI →

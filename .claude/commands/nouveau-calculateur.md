@@ -34,31 +34,48 @@ défini dans `CLAUDE.md` §7 sans dévier.
 
 ### 2. Recherche des sources légales
 
-- **Utiliser WebFetch** pour vérifier les articles de loi et barèmes sur
-  Légifrance et BOFiP. **Ne pas s'en remettre à la mémoire du modèle** pour
-  les chiffres - toujours vérifier la version en vigueur.
-- URLs à privilégier (du plus fiable au moins fiable) :
-  1. `legifrance.gouv.fr`
-  2. `bofip.impots.gouv.fr`
-  3. `boss.gouv.fr` (pour la protection sociale)
-  4. `service-public.fr` (dernier recours - confirme les chiffres mais cite
-     la source primaire dans le code)
-- Pour chaque article ou barème tenté :
-  - Si succès → extrait les données clés (montants, seuils, taux) en tableau
-    compact.
-  - Si échec → écrire EXACTEMENT :
-    ```
-    ⚠️ ACCÈS IMPOSSIBLE
-    Article : <nom complet>
-    URL tentée : <url>
-    Donnée manquante : <ce qu'il faut chercher>
-    Action requise : fournis-moi ce chiffre avant que je continue.
-    ```
-- **Créer `docs/sources/<slug>.md`** selon le template de `CLAUDE.md` §6.
-- Lister au moins 3 cas chiffrés de référence venant de sources officielles.
+**Lire `CLAUDE.md` §6 avant toute chose** : Légifrance et BOFiP sont
+structurellement instables au crawl (50 % de 404, 17 % de mauvais contenu
+mesurés au crawl 2026-05-31). La stratégie est donc :
 
-**STOP si au moins un ⚠️ - attends que Nicolas fournisse les données
-manquantes avant de continuer.**
+1. Identifier les **références textuelles** des articles applicables (Art X
+   du code Y) - c'est ça la source primaire, pas l'URL.
+2. **Tester chaque URL** avec WebFetch et un prompt qui vérifie le contenu
+   (pas juste le code HTTP). Si le contenu affiché ne correspond pas à
+   l'article annoncé, classer en `⚠️ MAUVAIS CONTENU`.
+3. **Cross-check obligatoire** : pour chaque taux/seuil utilisé, trouver
+   au moins **deux sources concordantes**. URLs à privilégier pour le
+   cross-check (stables) :
+   - `service-public.fr/particuliers/vosdroits/F<numéro>`
+   - `impots.gouv.fr` (tableaux récapitulatifs)
+   - `boss.gouv.fr` (protection sociale)
+
+Pour chaque article ou barème vérifié :
+- **Statut A (✅ OK)** : URL testée + contenu correspond → noter le statut
+  dans le fichier sources.
+- **Statut B (❌ 404 / 403 / timeout)** : marquer la référence textuelle
+  comme valide, l'URL en `~~strikethrough~~`, ajouter à
+  `docs/broken-links-to-fix.md`.
+- **Statut C (⚠️ MAUVAIS CONTENU)** : retirer le lien, conserver la
+  référence textuelle, ajouter à `docs/broken-links-to-fix.md`.
+- **Statut D (☐ NON TESTABLE)** : marquer comme à vérifier, mentionner dans
+  la section "URLs vérifiées manuellement par Nicolas" du fichier sources.
+
+**Créer `docs/sources/<slug>.md`** en partant de `docs/sources/_TEMPLATE.md`.
+Remplir TOUTES les colonnes du tableau "Barèmes et taux appliqués" avec
+au minimum 2 cross-checks par ligne.
+
+Lister au moins 3 cas chiffrés de référence venant de sources officielles
+(service-public.fr ou BOFiP de préférence, leurs cas chiffrés sont stables).
+
+**STOP - lister :**
+1. Les URLs en statut A (vérifiables automatiquement)
+2. Les URLs en statut B/C/D qui nécessitent une vérification humaine
+   par Nicolas avant que le calculateur puisse être committé
+3. Les chiffres dont la source primaire est en B/C/D ET qui n'ont que
+   1 cross-check (insuffisant - on en exige 2)
+
+**Attends que Nicolas confirme avant de continuer.**
 
 ---
 
@@ -616,6 +633,39 @@ Balises canoniques :
   JSON-LD → appliquer directement.
 - Modifications structurelles (nouveau composant, refonte maillage) →
   proposer en diff, **STOP - attends validation.**
+
+---
+
+### 16bis. Garde-fou sources - obligatoire avant commit
+
+**Avant le commit**, vérifier dans `docs/sources/<slug>.md` :
+
+1. **Tableau "Barèmes et taux appliqués"** : chaque ligne a-t-elle bien
+   2 cross-checks ? Si non → STOP, compléter.
+2. **Chiffres dans le code dont la source primaire est ❌/⚠️/☐** : ces
+   chiffres sont-ils tous listés dans la section "URLs vérifiées manuellement
+   par Nicolas" avec un statut `✅ Confirmé` daté ?
+   - Si **OUI** → ok, on peut committer.
+   - Si **NON** → STOP. Produire le tableau récapitulatif :
+
+```
+URLs à faire vérifier manuellement par Nicolas avant publication :
+
+| URL à ouvrir | Article/chiffre à confirmer | Chiffre dans le code |
+|--------------|------------------------------|----------------------|
+| https://...  | Art X reste à Y % en 2026   | Z %                  |
+```
+
+Attendre que Nicolas confirme chaque ligne et remplir la section "URLs
+vérifiées manuellement" du fichier sources avant de pouvoir passer à
+l'étape 17.
+
+3. **Champ "Dernière vérification"** dans le fichier sources : à la date
+   du jour ? Si pas → mettre à jour.
+
+**Règle dure** : aucun commit `feat(calc):` ne peut être créé si un chiffre
+fiscal du code n'a pas soit (a) une source primaire en catégorie ✅ OK, soit
+(b) une confirmation 👁 HUMAINE explicite de Nicolas dans le fichier sources.
 
 ---
 

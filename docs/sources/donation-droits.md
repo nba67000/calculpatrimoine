@@ -1,6 +1,6 @@
 # Sources - Donation : droits de mutation à titre gratuit
 
-**Dernière vérification** : 2026-05-30
+**Dernière vérification** : 2026-06-03 (Art 779 CGI LEGIARTI000026292566 re-testé OK le 2026-06-03 ; service-public.gouv.fr F14203 confirme tous les abattements)
 **Millésime fiscal** : Barème 2026 (abattements et tarifs indexés par la LF 2026)
 **Calculateur concerné** : `src/app/donation/droits/page.tsx`
 
@@ -226,6 +226,10 @@ Source : barème Art. 777-IV CGI + abattement Art. 779-V CGI.
 
 ### Ce que le calculateur **ne traite pas** (volontairement)
 
+- **Donation aux petits-enfants et arrière-petits-enfants** : abattements
+  spécifiques (31 865 € petits-enfants, 5 310 € arrière-petits-enfants,
+  Art. 790 B CGI). Confirmé sur service-public.gouv.fr F14203 le 2026-06-03.
+  À ajouter au backlog si besoin.
 - Donation avec démembrement (nue-propriété / usufruit, art. 669 CGI) :
   fera l'objet d'un calculateur séparé (`donation-demembrement` - backlog P3).
 - Réduction de droits pour charges de famille (art. 780 CGI, supprimée pour
@@ -248,6 +252,7 @@ page du calculateur.
 | Date | Vérifié par | Changements | Commit |
 |------|-------------|-------------|--------|
 | 2026-05-30 | Claude Code | Création initiale | _à venir_ |
+| 2026-06-03 | Claude Code (/verif-sources) | Art 779 CGI re-testé OK, F14203 cross-check OK, ajout note sur petits-enfants/arrière-petits-enfants non couverts | _audit-2026-06-03_ |
 
 ### Points de vigilance
 

@@ -49,16 +49,16 @@ export default function ArticleAssuranceViePage() {
           {/* Intro */}
           <div className="mb-12">
             <p className="text-xl text-neutral-700 leading-relaxed mb-6">
-              Vous avez 100 000 euros sur une assurance-vie. 70 000 euros de versements, 30 000 euros de gains. Vous voulez retirer 50 000 euros. Combien allez-vous payer d&apos;impôts ?
+              Vous avez 100 000 euros sur une assurance-vie : 70 000 euros de versements, 30 000 euros de gains. Vous voulez retirer 50 000 euros. Combien allez-vous payer d&apos;impôts ?
             </p>
             <p className="text-neutral-700 mb-4">
-              Si vous demandez à votre banquier, votre beau-frère, et Google, vous obtiendrez trois réponses différentes. Et aucune ne sera complète.
+              Posez la question à votre banquier, à votre beau-frère, et à Google : vous aurez trois réponses différentes. Et aucune ne sera complète.
             </p>
             <p className="text-neutral-700 mb-4">
-              La fiscalité du rachat d&apos;assurance-vie n&apos;est pas une simple multiplication. C&apos;est un empilement de règles qui interagissent : la règle proportionnelle, l&apos;abattement des 8 ans, la date pivot du 27 septembre 2017, le choix entre PFU et impôt sur le revenu.
+              La fiscalité du rachat d&apos;assurance-vie, ce n&apos;est pas une simple multiplication. C&apos;est un empilement de règles qui se cumulent : la règle proportionnelle, l&apos;abattement des 8 ans, la date pivot du 27 septembre 2017, le choix entre PFU et impôt sur le revenu.
             </p>
             <p className="text-neutral-700">
-              Dans cet article, on décortique tout. Formules, calculs, pièges, exemples chiffrés. Pas de marketing.
+              On décortique tout. Formules, calculs, pièges, exemples chiffrés. Zéro marketing.
             </p>
           </div>
 
@@ -66,7 +66,7 @@ export default function ArticleAssuranceViePage() {
           <div className="border-l-4 border-warning-400 bg-warning-50 px-5 py-4 mb-12">
             <p className="font-mono text-xs font-bold text-warning-800 uppercase tracking-wider mb-1">Avertissement</p>
             <p className="text-sm text-warning-700 leading-relaxed">
-              Cet article compare les options fiscales disponibles. Il ne constitue pas un conseil fiscal personnalisé. Chaque situation est unique. Pour une décision adaptée à votre cas, consultez un expert-comptable, un avocat fiscaliste ou un conseiller en gestion de patrimoine indépendant.
+              Cet article compare les options fiscales possibles. Il ne remplace pas un conseil fiscal personnalisé. Chaque situation est unique. Pour une décision adaptée à votre cas, voyez un expert-comptable, un avocat fiscaliste ou un conseiller en gestion de patrimoine indépendant.
             </p>
           </div>
 
@@ -77,23 +77,23 @@ export default function ArticleAssuranceViePage() {
               {[
                 {
                   terme: 'Rachat',
-                  def: "En assurance-vie, on ne dit pas « retrait » mais « rachat ». Un rachat partiel, c'est retirer une partie de votre épargne tout en gardant le contrat actif. Un rachat total, c'est clôturer le contrat et récupérer l'intégralité du capital. Ce vocabulaire n'a aucune conséquence pratique sur le calcul de l'impôt.",
+                  def: "En assurance-vie, on ne dit pas « retrait » mais « rachat ». Rachat partiel : vous retirez une partie en gardant le contrat ouvert. Rachat total : vous clôturez et récupérez tout. Ça n'a aucune incidence sur le calcul de l'impôt, juste sur le vocabulaire.",
                 },
                 {
                   terme: 'Plus-value (ou gain)',
-                  def: "La différence entre ce que votre contrat vaut aujourd'hui et ce que vous avez versé. Si vous avez versé 70 000 euros et que votre contrat vaut 100 000 euros, votre plus-value est de 30 000 euros. C'est uniquement sur cette plus-value que l'impôt est calculé, pas sur l'ensemble du contrat.",
+                  def: "L'écart entre ce que votre contrat vaut aujourd'hui et ce que vous avez versé. 70 000 euros versés, contrat à 100 000 euros : plus-value de 30 000 euros. L'impôt porte uniquement sur cette plus-value, pas sur l'ensemble du contrat.",
                 },
                 {
                   terme: 'PFU - Prélèvement Forfaitaire Unique',
-                  def: "Un taux d'imposition fixe de 30 % qui s'applique sur les gains financiers. Il se décompose en 12,8 % d'impôt sur le revenu et 17,2 % de prélèvements sociaux. On l'appelle aussi « flat tax ». Il s'applique par défaut sur vos rachats d'assurance-vie, sauf si vous choisissez l'option IR.",
+                  def: "Un taux fixe de 30 % sur les gains financiers : 12,8 % d'impôt sur le revenu + 17,2 % de prélèvements sociaux. Aussi appelé « flat tax ». S'applique par défaut sur vos rachats, sauf si vous demandez l'option IR.",
                 },
                 {
                   terme: 'TMI - Taux Marginal d\'Imposition',
-                  def: "Le taux qui s'applique sur votre dernière tranche de revenus. En 2025, les tranches sont 0 %, 11 %, 30 %, 41 % et 45 %. Un salarié qui gagne 45 000 euros nets imposables est à 30 % de TMI. Ce taux est important parce qu'il détermine si le PFU ou l'option IR est plus avantageuse pour vous.",
+                  def: "Le taux qui s'applique sur votre dernière tranche de revenus. En 2025, les tranches sont 0 %, 11 %, 30 %, 41 % et 45 %. Un salarié à 45 000 euros nets imposables est à TMI 30 %. C'est ce taux qui détermine si le PFU ou l'option IR est plus avantageux.",
                 },
                 {
                   terme: 'Antériorité fiscale',
-                  def: "L'ancienneté de votre contrat d'assurance-vie, calculée depuis la date d'ouverture. Un contrat ouvert il y a 9 ans a une antériorité de 9 ans. C'est cette ancienneté qui détermine si vous bénéficiez de l'abattement des 8 ans. Si vous clôturez un vieux contrat et en ouvrez un nouveau, vous perdez cette antériorité.",
+                  def: "L'âge de votre contrat depuis l'ouverture. Un contrat ouvert il y a 9 ans, c'est 9 ans d'antériorité. C'est elle qui vous donne droit à l'abattement des 8 ans. Si vous clôturez un vieux contrat pour en ouvrir un neuf, vous perdez tout.",
                 },
               ].map(({ terme, def }) => (
                 <div key={terme} className="border-b border-neutral-100 pb-5 last:border-0 last:pb-0">
@@ -107,9 +107,9 @@ export default function ArticleAssuranceViePage() {
           {/* CTA */}
           <div className="bg-primary-700 px-8 py-6 mb-12">
             <p className="font-mono text-xs text-primary-300 uppercase tracking-wider mb-2">Outil associé</p>
-            <p className="text-white font-bold text-lg mb-1">Calculez votre fiscalité en 2 minutes</p>
+            <p className="text-white font-bold text-lg mb-1">Calculez votre fiscalité en deux minutes</p>
             <p className="text-primary-200 text-sm mb-4">
-              Notre calculateur applique automatiquement toutes les règles : règle proportionnelle, abattement 8 ans, taux réduit 2017, comparaison PFU vs IR.
+              Le calculateur applique automatiquement toutes les règles : règle proportionnelle, abattement 8 ans, taux réduit 2017, comparaison PFU vs IR.
             </p>
             <Link href="/assurance-vie" className="inline-block bg-surface-card text-primary-700 px-6 py-2.5 font-medium text-sm hover:bg-neutral-100 transition-colors font-mono">
               Accéder au calculateur →
@@ -147,10 +147,10 @@ export default function ArticleAssuranceViePage() {
             <h3 className="font-serif text-2xl font-bold text-neutral-900 mb-4">La règle proportionnelle</h3>
 
             <p className="text-neutral-700 mb-4">
-              Quand vous retirez de l&apos;argent, l&apos;administration fiscale applique une règle simple. Votre rachat contient la même proportion de plus-value que l&apos;ensemble de votre contrat.
+              Quand vous retirez de l&apos;argent, le fisc applique une règle simple : votre rachat contient la même proportion de plus-value que l&apos;ensemble de votre contrat.
             </p>
             <p className="text-neutral-700 mb-6">
-              Si votre contrat est composé à 30 % de gains, alors chaque euro que vous retirez contient 30 centimes de gains taxables. Pas plus.
+              Si votre contrat est composé à 30 % de gains, chaque euro que vous retirez contient 30 centimes de gains taxables. Pas plus.
             </p>
 
             <div className="bg-surface-card border border-neutral-200 p-5 my-6">
@@ -169,7 +169,7 @@ export default function ArticleAssuranceViePage() {
                 <p>Capital remboursé (non taxé) : 50 000 − 15 000 = 35 000 euros</p>
               </div>
               <div className="mt-4 pt-4 border-t border-neutral-200">
-                <p className="text-sm font-bold text-neutral-900">Vous paierez des impôts sur 15 000 euros de plus-value. Pas sur les 50 000 euros retirés.</p>
+                <p className="text-sm font-bold text-neutral-900">Vous payez des impôts sur 15 000 euros de plus-value. Pas sur les 50 000 euros retirés.</p>
               </div>
             </div>
 
@@ -184,10 +184,10 @@ export default function ArticleAssuranceViePage() {
             <h2 className="font-serif text-3xl font-bold text-neutral-900 mb-6">L&apos;abattement des 8 ans</h2>
 
             <p className="text-neutral-700 mb-4">
-              Si votre contrat a plus de 8 ans, l&apos;État vous accorde une réduction annuelle sur la plus-value taxable. C&apos;est l&apos;abattement des 8 ans.
+              Si votre contrat a plus de 8 ans, l&apos;État vous accorde une réduction annuelle sur la plus-value taxable : c&apos;est l&apos;abattement des 8 ans.
             </p>
             <p className="text-neutral-700 mb-6">
-              Le montant de cet abattement est de 4 600 euros par an pour une personne seule, et de 9 200 euros pour un couple marié ou pacsé. Il se renouvelle chaque année civile.
+              Le montant : 4 600 euros par an pour une personne seule, 9 200 euros pour un couple marié ou pacsé. Il se renouvelle à chaque année civile.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
@@ -210,16 +210,16 @@ export default function ArticleAssuranceViePage() {
             </div>
 
             <div className="border-l-4 border-accent-400 bg-accent-100 px-5 py-4 my-6">
-              <p className="font-mono text-xs text-neutral-600 uppercase tracking-wider mb-1">Ce que ça représente concrètement</p>
+              <p className="font-mono text-xs text-neutral-600 uppercase tracking-wider mb-1">Ce que ça donne en cash</p>
               <p className="text-sm text-neutral-800">
-                4 600 euros × 30 % (PFU) = <strong>1 380 euros d&apos;impôts économisés</strong> chaque année, uniquement grâce à l&apos;ancienneté du contrat.
+                4 600 euros × 30 % (PFU) = <strong>1 380 euros d&apos;impôts économisés</strong> chaque année, juste grâce à l&apos;ancienneté du contrat.
               </p>
             </div>
 
             <h3 className="font-serif text-xl font-bold text-neutral-900 mt-8 mb-4">Le piège du &laquo;&nbsp;presque 8 ans&nbsp;&raquo;</h3>
 
             <p className="text-neutral-700 mb-4">
-              Votre contrat a 7 ans et 11 mois. Vous avez un besoin urgent de liquidités. Deux options s&apos;offrent à vous.
+              Votre contrat a 7 ans et 11 mois. Vous avez besoin de liquidités. Deux options.
             </p>
 
             <div className="bg-surface-card border border-neutral-200 p-5 my-6">
@@ -243,6 +243,7 @@ export default function ArticleAssuranceViePage() {
             <p className="text-neutral-600 text-sm leading-relaxed">
               C&apos;est souvent la période la plus rentable de toute la vie d&apos;un contrat. Un mois d&apos;attente peut valoir plusieurs milliers d&apos;euros.
             </p>
+
           </section>
 
           {/* SECTION 3 */}
@@ -257,16 +258,16 @@ export default function ArticleAssuranceViePage() {
               <div className="bg-surface-card border border-neutral-200 p-5">
                 <p className="font-mono text-xs text-neutral-500 uppercase tracking-wider mb-2">Option 1 - PFU (Prélèvement Forfaitaire Unique)</p>
                 <p className="text-sm text-neutral-700 mb-3">
-                  Taux fixe de 30 % sur vos plus-values, quelle que soit votre tranche d&apos;imposition. Il se décompose en 12,8 % d&apos;impôt sur le revenu et 17,2 % de prélèvements sociaux. C&apos;est l&apos;option appliquée par défaut si vous ne demandez rien.
+                  Taux fixe de 30 % sur vos plus-values, peu importe votre tranche d&apos;imposition. Composé de 12,8 % d&apos;impôt sur le revenu et 17,2 % de prélèvements sociaux. C&apos;est l&apos;option par défaut, appliquée automatiquement si vous ne demandez rien.
                 </p>
-                <p className="font-mono text-xs text-neutral-400">Avantage : simple. Inconvénient : peut être coûteux si votre taux marginal est faible.</p>
+                <p className="font-mono text-xs text-neutral-400">Pour : simple. Contre : coûteux si votre taux marginal est bas.</p>
               </div>
               <div className="bg-surface-card border border-neutral-200 p-5">
                 <p className="font-mono text-xs text-neutral-500 uppercase tracking-wider mb-2">Option 2 - IR + prélèvements sociaux</p>
                 <p className="text-sm text-neutral-700 mb-3">
-                  Vos plus-values sont intégrées à votre revenu imposable et taxées à votre taux marginal, auquel s&apos;ajoutent les 17,2 % de prélèvements sociaux. Vous devez le demander explicitement lors de votre déclaration.
+                  Vos plus-values rejoignent votre revenu imposable et sont taxées à votre taux marginal, plus 17,2 % de prélèvements sociaux. Vous devez le demander explicitement à la déclaration.
                 </p>
-                <p className="font-mono text-xs text-neutral-400">Avantage : souvent moins cher si votre TMI est à 0 ou 11 %. Inconvénient : plus complexe à gérer.</p>
+                <p className="font-mono text-xs text-neutral-400">Pour : souvent moins cher à TMI 0 ou 11 %. Contre : à demander à la main chaque année.</p>
               </div>
             </div>
 
@@ -295,7 +296,7 @@ export default function ArticleAssuranceViePage() {
             <div className="border-l-4 border-primary-300 bg-primary-50 px-5 py-4 my-6">
               <p className="font-mono text-xs text-primary-600 uppercase tracking-wider mb-2">La règle simple</p>
               <p className="text-sm text-primary-800 leading-relaxed">
-                Le calculateur compare les deux options en temps réel. À TMI ≤ 11 %, l&apos;IR est systématiquement moins cher ; à 30 % et au-delà, le PFU l&apos;est presque toujours.
+                Le calculateur compare les deux options en temps réel. À TMI ≤ 11 %, l&apos;IR gagne toujours. À 30 % et au-dessus, c&apos;est le PFU presque tout le temps.
               </p>
             </div>
 
@@ -310,10 +311,10 @@ export default function ArticleAssuranceViePage() {
             <h2 className="font-serif text-3xl font-bold text-neutral-900 mb-6">La date du 27 septembre 2017</h2>
 
             <p className="text-neutral-700 mb-4">
-              Si vous avez effectué des versements avant le 27 septembre 2017, vous bénéficiez d&apos;un taux réduit sur ces versements, à condition que votre contrat ait plus de 8 ans.
+              Si vous avez fait des versements avant le 27 septembre 2017, vous bénéficiez d&apos;un taux réduit sur ces versements, à condition que votre contrat ait plus de 8 ans.
             </p>
             <p className="text-neutral-700 mb-6">
-              Voici pourquoi. La loi de finances 2018 a créé le PFU à 30 %. Pour ne pas pénaliser rétroactivement les épargnants qui avaient ouvert leur contrat sous l&apos;ancien régime, le législateur a instauré un taux préférentiel sur les versements antérieurs à cette date.
+              Pourquoi cette date pivot ? La loi de finances 2018 a créé le PFU à 30 %. Pour ne pas pénaliser rétroactivement les épargnants qui avaient ouvert leur contrat sous l&apos;ancien régime, le législateur a accordé un taux préférentiel sur les versements antérieurs.
             </p>
 
             <div className="bg-neutral-50 border border-neutral-200 p-5 my-6">
@@ -323,13 +324,13 @@ export default function ArticleAssuranceViePage() {
                 <p>Prélèvements sociaux : 17,2 % (inchangés)</p>
                 <p className="font-bold text-primary-700 pt-2 border-t border-neutral-200 mt-2">Total : 24,7 % au lieu de 30 %</p>
               </div>
-              <p className="mt-3 text-sm text-neutral-700">Sur 10 000 euros de plus-value, cela représente 530 euros d&apos;économie.</p>
+              <p className="mt-3 text-sm text-neutral-700">Sur 10 000 euros de plus-value, ça fait 530 euros d&apos;économie.</p>
             </div>
 
             <h3 className="font-bold text-neutral-900 mt-8 mb-4">Le cas mixte : versements avant et après 2017</h3>
 
             <p className="text-neutral-700 mb-4">
-              Vous avez versé 50 000 euros avant 2017 et 20 000 euros après. L&apos;administration fiscale calcule un taux moyen pondéré en fonction de la proportion de chaque type de versements.
+              Vous avez versé 50 000 euros avant 2017 et 20 000 euros après. Le fisc calcule un taux moyen pondéré selon la proportion de chaque type de versements.
             </p>
 
             <div className="bg-neutral-50 border border-neutral-200 p-5 my-6">
@@ -346,7 +347,7 @@ export default function ArticleAssuranceViePage() {
 
             <div className="border-l-4 border-primary-300 bg-primary-50 px-5 py-4 my-6">
               <p className="text-sm text-primary-800 leading-relaxed">
-                Notre calculateur gère ce cas automatiquement. Vous entrez le montant des versements avant 2017, il fait le reste.
+                Le calculateur gère ce cas automatiquement. Vous entrez le montant des versements avant 2017, il fait le reste.
               </p>
             </div>
 
@@ -361,7 +362,7 @@ export default function ArticleAssuranceViePage() {
             <h2 className="font-serif text-3xl font-bold text-neutral-900 mb-6">Le cas des contrats de plus de 150 000 euros</h2>
 
             <p className="text-neutral-700 mb-6">
-              Si vos versements totaux, tous contrats d&apos;assurance-vie confondus, dépassent 150 000 euros, une règle supplémentaire peut s&apos;appliquer. Beaucoup de gens la comprennent mal.
+              Si vos versements totaux, tous contrats d&apos;assurance-vie confondus, passent les 150 000 euros, une règle supplémentaire peut s&apos;appliquer. Et elle est massivement mal comprise.
             </p>
 
             <div className="border-l-4 border-warning-400 bg-warning-50 px-5 py-4 mb-6">
@@ -372,18 +373,18 @@ export default function ArticleAssuranceViePage() {
             <div className="border-l-4 border-primary-400 bg-primary-50 px-5 py-4 mb-6">
               <p className="font-mono text-xs text-primary-600 uppercase tracking-wider mb-1">Ce qui se passe réellement</p>
               <p className="text-primary-800 text-sm leading-relaxed">
-                Cette règle ne concerne pas les rachats effectués de votre vivant. Elle concerne uniquement les versements effectués après vos 70 ans et qui dépassent 152 500 euros. Et même dans ce cas, elle ne s&apos;applique qu&apos;au moment de votre décès, pour les bénéficiaires.
+                Cette règle ne touche pas vos rachats de votre vivant. Elle vise uniquement les versements faits après vos 70 ans qui dépassent 152 500 euros. Et même là, elle ne s&apos;applique qu&apos;à votre décès, pour les bénéficiaires.
               </p>
             </div>
 
             <p className="text-neutral-700 mb-4">
-              Si vous avez versé 200 000 euros avant vos 70 ans et que votre capital a grandi jusqu&apos;à 300 000 euros, vous n&apos;êtes pas concerné par cette taxe. Ni pour vos rachats, ni pour la transmission à votre décès.
+              Si vous avez versé 200 000 euros avant vos 70 ans et que votre capital est monté à 300 000 euros, vous n&apos;êtes pas concerné. Ni sur vos rachats, ni sur la transmission à votre décès.
             </p>
 
             <div className="bg-neutral-50 border border-neutral-200 p-5 my-6">
-              <p className="font-mono text-xs text-neutral-400 uppercase tracking-wider mb-3">Les trois conditions cumulatives pour que cette taxe s&apos;applique</p>
+              <p className="font-mono text-xs text-neutral-400 uppercase tracking-wider mb-3">Les trois conditions cumulatives pour que la taxe s&apos;applique</p>
               <div className="font-mono text-sm space-y-2 text-neutral-800">
-                <p>1. Les versements ont été effectués après vos 70 ans</p>
+                <p>1. Les versements ont été faits après vos 70 ans</p>
                 <p>2. Ces versements dépassent 152 500 euros au total, tous contrats confondus</p>
                 <p>3. L&apos;assureur verse le capital aux bénéficiaires après votre décès</p>
               </div>
@@ -402,7 +403,7 @@ export default function ArticleAssuranceViePage() {
             {[
               {
                 titre: '1. Retirer juste avant les 8 ans',
-                desc: 'Votre contrat a 7 ans et 10 mois. Vous avez besoin d\'argent et vous retirez maintenant. L\'écart : 1 380 euros pour 60 jours de différence.',
+                desc: 'Votre contrat a 7 ans et 10 mois. Vous avez besoin d\'argent et vous retirez tout de suite. L\'écart : 1 380 euros pour 60 jours de différence.',
                 cols: [
                   { label: 'Retrait immédiat', lines: ['Plus-value : 15 000 euros', 'Abattement : 0 euro', 'Impôt à 30 % : 4 500 euros'] },
                   { label: 'Attente de 2 mois', lines: ['Plus-value : 15 000 euros', 'Abattement : 4 600 euros', 'Impôt à 30 % : 3 120 euros'] },
@@ -411,7 +412,7 @@ export default function ArticleAssuranceViePage() {
               },
               {
                 titre: '2. Faire un gros rachat en décembre plutôt qu\'à cheval sur deux ans',
-                desc: 'L\'abattement de 4 600 euros se renouvelle à chaque année civile. Fractionner un retrait important entre décembre et janvier permet de l\'utiliser deux fois.',
+                desc: 'L\'abattement de 4 600 euros se renouvelle à chaque année civile. Fractionner un gros retrait entre décembre et janvier permet de l\'utiliser deux fois.',
                 cols: [
                   { label: 'Rachat unique en décembre', lines: ['Plus-value : 24 000 euros', 'Abattement : 4 600 euros', 'Plus-value taxable : 19 400 euros', 'Impôt : 5 820 euros'] },
                   { label: 'Fractionné déc. + janv.', lines: ['Déc. : 12 000 euros de PV → 7 400 euros taxables', 'Janv. : 12 000 euros de PV → 7 400 euros taxables', 'Total taxable : 14 800 euros', 'Impôt : 4 440 euros'] },
@@ -420,12 +421,12 @@ export default function ArticleAssuranceViePage() {
               },
               {
                 titre: '3. Laisser le PFU s\'appliquer sans vérifier',
-                desc: 'Le PFU s\'applique automatiquement si vous ne demandez rien. Si votre TMI est à 11 %, l\'option IR est moins taxée que le PFU mais elle n\'est jamais appliquée par défaut.',
+                desc: 'Le PFU s\'applique automatiquement si vous ne demandez rien. Avec une TMI à 11 %, l\'option IR est moins taxée que le PFU. Mais elle ne s\'applique jamais par défaut.',
                 cols: [
                   { label: 'PFU par défaut', lines: ['Plus-value taxable : 10 000 euros', 'Taux : 30 %', 'Impôt : 3 000 euros'] },
                   { label: 'Option IR + prél. sociaux', lines: ['Plus-value taxable : 10 000 euros', 'Taux : 11 % + 17,2 % = 28,2 %', 'Impôt : 2 820 euros'] },
                 ],
-                cout: '180 euros sur cet exemple, bien plus sur de gros montants',
+                cout: '180 euros sur cet exemple, beaucoup plus sur de gros montants',
               },
             ].map(({ titre, desc, cols, cout }) => (
               <div key={titre} className="mb-10">
@@ -448,7 +449,7 @@ export default function ArticleAssuranceViePage() {
             <div className="mb-10">
               <h3 className="font-bold text-neutral-900 mb-2">4. Oublier les versements avant 2017</h3>
               <p className="text-sm text-neutral-700 mb-4 leading-relaxed">
-                Vous avez ouvert votre contrat en 2010 et versé 100 000 euros. Vous pensez que tout sera taxé à 30 %. C&apos;est faux. Tous vos versements effectués avant le 27 septembre 2017 bénéficient du taux réduit de 24,7 %.
+                Vous avez ouvert votre contrat en 2010 et versé 100 000 euros. Vous croyez que tout est taxé à 30 % ? Faux. Vos versements avant le 27 septembre 2017 bénéficient du taux réduit de 24,7 %.
               </p>
               <div className="bg-neutral-50 border border-neutral-200 p-4 font-mono text-xs text-neutral-700 space-y-1">
                 <p>Taux 30 % sur 20 000 euros de plus-value : 6 000 euros d&apos;impôt</p>
@@ -458,9 +459,9 @@ export default function ArticleAssuranceViePage() {
             </div>
 
             <div className="mb-10">
-              <h3 className="font-bold text-neutral-900 mb-2">5. Confondre le montant retiré et la plus-value taxable</h3>
+              <h3 className="font-bold text-neutral-900 mb-2">5. Confondre montant retiré et plus-value taxable</h3>
               <p className="text-sm text-neutral-700 mb-4 leading-relaxed">
-                Vous retirez 50 000 euros. Vous pensez payer des impôts sur 50 000 euros. C&apos;est l&apos;erreur la plus courante et la plus coûteuse en termes d&apos;anxiété inutile.
+                Vous retirez 50 000 euros, vous croyez payer des impôts sur 50 000 euros. C&apos;est l&apos;erreur la plus fréquente, et celle qui génère le plus d&apos;angoisse inutile.
               </p>
               <div className="bg-neutral-50 border border-neutral-200 p-4 font-mono text-xs space-y-1.5 text-neutral-700">
                 <p>Impôt imaginé : 50 000 × 30 % = <strong>15 000 euros</strong></p>
@@ -478,7 +479,7 @@ export default function ArticleAssuranceViePage() {
             <h2 className="font-serif text-3xl font-bold text-neutral-900 mb-6">Cas concrets : 3 profils, 3 calculs</h2>
 
             <p className="text-neutral-700 mb-8">
-              Pour chaque exemple, on part du même contrat : plus de 8 ans d&apos;ancienneté, 100 000 euros de capital, 70 000 euros de versements, 30 000 euros de plus-value.
+              On part du même contrat à chaque fois : plus de 8 ans d&apos;ancienneté, 100 000 euros de capital, 70 000 euros de versements, 30 000 euros de plus-value.
             </p>
 
             {[
@@ -493,7 +494,7 @@ export default function ArticleAssuranceViePage() {
                 ],
                 pfu: '10 400 × 30 % = 3 120 euros',
                 ir: '10 400 × (0 % + 17,2 %) = 1 789 euros',
-                conclusion: 'Avec un taux marginal à 0 %, l\'option IR est moins coûteuse de 1 331 euros. Jean doit le demander explicitement lors de sa déclaration.',
+                conclusion: 'À TMI 0 %, l\'option IR fait économiser 1 331 euros. Jean doit le demander explicitement à la déclaration.',
                 gagnant: 'IR',
               },
               {
@@ -507,7 +508,7 @@ export default function ArticleAssuranceViePage() {
                 ],
                 pfu: '4 400 × 30 % = 1 320 euros',
                 ir: '4 400 × (41 % + 17,2 %) = 2 561 euros',
-                conclusion: 'Avec un taux marginal à 41 %, le PFU est moins coûteux de 1 241 euros. Le PFU s\'applique ici par défaut, ce qui est la bonne option.',
+                conclusion: 'À TMI 41 %, le PFU fait économiser 1 241 euros. Et il s\'applique par défaut, donc rien à faire.',
                 gagnant: 'PFU',
               },
               {
@@ -522,7 +523,7 @@ export default function ArticleAssuranceViePage() {
                 ],
                 pfu: '8 800 × 24,7 % = 2 174 euros',
                 ir: '8 800 × (11 % + 17,2 %) = 2 482 euros',
-                conclusion: 'Le PFU avec taux réduit est moins coûteux de 308 euros. Les versements pré-2017 jouent ici en faveur du PFU malgré un taux marginal faible.',
+                conclusion: 'Le PFU à taux réduit fait économiser 308 euros. Les versements pré-2017 basculent l\'arbitrage côté PFU malgré un TMI faible.',
                 gagnant: 'PFU',
               },
             ].map(cas => (
@@ -563,24 +564,24 @@ export default function ArticleAssuranceViePage() {
           {/* SECTION 8 */}
           <section id="optimisations" className="mb-16">
             <h2 className="font-serif text-3xl font-bold text-neutral-900 mb-6">Optimisations légales</h2>
-            <p className="text-neutral-700 mb-6">Quatre réflexes à adopter pour réduire votre fiscalité dans le respect total de la loi.</p>
+            <p className="text-neutral-700 mb-6">Quatre réflexes pour réduire votre fiscalité, dans le respect total de la loi.</p>
             <div className="space-y-4">
               {[
                 {
-                  titre: '1. Fractionner les rachats importants à cheval sur deux années civiles',
-                  desc: 'L\'abattement de 4 600 euros (ou 9 200 euros en couple) se renouvelle le 1er janvier. Si vous avez besoin de 100 000 euros, retirez 50 000 euros en décembre et 50 000 euros en janvier. Vous utilisez deux fois l\'abattement annuel.',
+                  titre: '1. Fractionner les gros rachats à cheval sur deux années civiles',
+                  desc: 'L\'abattement de 4 600 euros (ou 9 200 euros en couple) se renouvelle le 1er janvier. Besoin de 100 000 euros ? Retirez 50 000 euros en décembre et 50 000 euros en janvier. Vous utilisez deux fois l\'abattement annuel.',
                 },
                 {
                   titre: '2. Attendre les 8 ans si vous en êtes proche',
-                  desc: 'Si votre contrat a entre 7 ans et 8 mois et 8 ans, patientez avant de retirer. Sur 10 000 euros de plus-value, l\'abattement représente 1 380 euros d\'impôts économisés.',
+                  desc: 'Votre contrat a entre 7 ans et 8 mois et 8 ans ? Attendez avant de retirer. Sur 10 000 euros de plus-value, l\'abattement représente 1 380 euros d\'impôts économisés.',
                 },
                 {
                   titre: '3. Toujours comparer PFU et option IR avant de retirer',
-                  desc: 'Ne laissez jamais le PFU s\'appliquer automatiquement sans avoir vérifié votre taux marginal. Si vous êtes à 0 ou 11 %, l\'option IR vous fera économiser de l\'argent. Il faut le demander lors de votre déclaration annuelle.',
+                  desc: 'Ne laissez pas le PFU s\'appliquer par défaut sans vérifier votre TMI. À TMI 0 ou 11 %, l\'option IR vous fait économiser de l\'argent. Il faut la demander lors de la déclaration annuelle.',
                 },
                 {
                   titre: '4. Préférer les rachats partiels au rachat total',
-                  desc: 'Clôturer votre contrat pour en ouvrir un nouveau remet le compteur à zéro. Vous perdez votre antériorité fiscale et votre abattement des 8 ans, s\'il était acquis. Un rachat partiel préserve tout cela.',
+                  desc: 'Clôturer votre contrat pour en ouvrir un neuf remet le compteur à zéro. Vous perdez votre antériorité fiscale et votre abattement des 8 ans s\'il était acquis. Un rachat partiel préserve tout ça.',
                 },
               ].map(opt => (
                 <div key={opt.titre} className="bg-surface-card border border-neutral-200 px-5 py-4">
@@ -595,7 +596,7 @@ export default function ArticleAssuranceViePage() {
           <div className="bg-primary-700 px-8 py-6 mb-12">
             <p className="text-white font-bold text-lg mb-1">Calculez votre fiscalité réelle</p>
             <p className="text-primary-200 text-sm mb-4">
-              Notre calculateur applique toutes les règles de cet article automatiquement. Gratuit, sans inscription, zéro donnée conservée.
+              Le calculateur applique toutes les règles de cet article automatiquement. Gratuit, sans inscription, zéro donnée conservée.
             </p>
             <Link href="/assurance-vie" className="inline-block bg-surface-card text-primary-700 px-6 py-2.5 font-medium text-sm hover:bg-neutral-100 transition-colors font-mono">
               Accéder au calculateur →

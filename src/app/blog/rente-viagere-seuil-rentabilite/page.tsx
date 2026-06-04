@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Rente viagère : pourquoi le seuil de rentabilité est après votre espérance de vie',
-  description: 'À 72 ans avec 250 000 euros, le seuil de rentabilité tombe à 15,8 ans alors que l\'espérance de vie est de 14 ans. Pourquoi c\'est normal et ce que ça signifie.',
+  description: 'À 72 ans avec 250 000 euros, le seuil de rentabilité tombe à 15,8 ans alors que l\'espérance de vie est de 14 ans. Pourquoi ce n\'est pas une anomalie.',
   keywords: 'rente viagère, seuil rentabilité, espérance de vie, calcul rente, assurance vie, PER, retraite',
   openGraph: {
     title: 'Rente viagère : pourquoi le seuil de rentabilité est après votre espérance de vie',
@@ -49,16 +49,16 @@ export default function ArticleRenteViagere() {
           {/* Intro */}
           <div className="mb-12">
             <p className="text-xl text-neutral-700 leading-relaxed mb-6">
-              Supposons que vous ayez 72 ans et 255 000 euros d&apos;épargne. Vous convertissez ce capital en rente viagère. Vous percevez 1 340 euros par mois. Vous devrez vivre jusqu&apos;à 87,8 ans pour récupérer votre capital de départ. Or, l&apos;espérance de vie d&apos;un homme de 72 ans est d&apos;environ 86 ans selon les tables INSEE 2022. Le seuil de rentabilité est donc après l&apos;espérance de vie. Est-ce une arnaque ? Non.
+              Vous avez 72 ans, 255 000 euros d&apos;épargne. Vous convertissez tout en rente viagère. L&apos;assureur vous verse 1 340 euros par mois. Pour récupérer votre capital, il faut vivre jusqu&apos;à 87,8 ans. Sauf que l&apos;espérance de vie d&apos;un homme de 72 ans, c&apos;est 86 ans (tables INSEE 2022). Le seuil de rentabilité tombe donc après l&apos;espérance de vie. Arnaque ? Non.
             </p>
             <p className="text-neutral-700 mb-4">
-              C&apos;est le fonctionnement normal de ce produit. La rente viagère n&apos;est pas un placement conçu pour maximiser le rendement de votre capital. C&apos;est une assurance contre le risque de vivre trop longtemps.
+              C&apos;est le fonctionnement normal du produit. La rente viagère n&apos;est pas un placement pour faire rendre votre capital. C&apos;est une assurance contre le risque de vivre trop longtemps.
             </p>
             <p className="text-neutral-700 mb-4">
-              La distinction est importante. Si vous comprenez ce que la rente fait vraiment, vous pouvez juger objectivement si elle correspond à votre situation.
+              La nuance change tout. Une fois que vous savez ce que la rente fait vraiment, vous pouvez décider si ça correspond à votre situation.
             </p>
             <p className="text-neutral-700">
-              Dans cet article : le mécanisme expliqué simplement, pourquoi le seuil de rentabilité est structurellement au-delà de l&apos;espérance de vie, et les situations où la rente présente un intérêt réel.
+              Au programme : le mécanisme expliqué simplement, pourquoi le seuil dépasse l&apos;espérance de vie par construction, et les cas où la rente a du sens.
             </p>
           </div>
 
@@ -66,15 +66,15 @@ export default function ArticleRenteViagere() {
           <div className="border-l-4 border-warning-400 bg-warning-50 px-5 py-4 mb-12">
             <p className="font-mono text-xs font-bold text-warning-800 uppercase tracking-wider mb-1">Avertissement</p>
             <p className="text-sm text-warning-700 leading-relaxed">
-              Cet article compare différentes options de gestion du patrimoine à la retraite. Il ne constitue pas un conseil patrimonial personnalisé.
+              Cet article compare des options de gestion du patrimoine à la retraite. Il ne remplace pas un conseil patrimonial personnalisé.
             </p>
           </div>
 
           {/* Clarification */}
           <div className="border-l-4 border-neutral-300 bg-surface-card px-5 py-4 mb-12">
-            <p className="font-bold text-sm text-neutral-900 mb-1.5">Clarification : de quelle rente parle-t-on ?</p>
+            <p className="font-bold text-sm text-neutral-900 mb-1.5">À ne pas confondre avec le viager immobilier</p>
             <p className="text-sm text-neutral-600 leading-relaxed">
-              Cet article traite de la rente viagère financière. C&apos;est la conversion d&apos;un capital financier (assurance-vie, PER, épargne) en revenus mensuels à vie. Ce n&apos;est pas le viager immobilier, qui est la vente d&apos;un bien immobilier contre un bouquet et une rente mensuelle. Ces deux produits n&apos;ont rien à voir.
+              On parle ici de rente viagère financière : un capital (assurance-vie, PER, épargne) converti en revenu mensuel à vie. Rien à voir avec le viager immobilier, qui est la vente d&apos;un bien contre un bouquet et une rente. Deux produits différents, qui se ressemblent juste par leur nom.
             </p>
           </div>
 
@@ -85,27 +85,27 @@ export default function ArticleRenteViagere() {
               {[
                 {
                   terme: 'Rente viagère',
-                  def: "Vous donnez définitivement un capital à un assureur. En échange, l'assureur vous verse un revenu mensuel jusqu'à votre décès, quelle que soit votre durée de vie. Si vous vivez jusqu'à 105 ans, il continue de payer. Si vous décédez à 74 ans, il arrête les versements et conserve le capital restant.",
+                  def: "Vous cédez un capital à un assureur. En échange, il vous verse un revenu mensuel jusqu'à votre décès. Si vous vivez jusqu'à 105 ans, il continue. Si vous décédez à 74 ans, il s'arrête et garde le capital restant.",
                 },
                 {
                   terme: 'Taux de conversion',
-                  def: "Le rapport entre la rente annuelle que vous percevrez et le capital que vous avez versé. Un taux de 5 % signifie qu'un capital de 100 000 euros génère 5 000 euros de rente par an, soit environ 417 euros par mois. Ce taux dépend de votre âge au moment de la conversion : plus vous êtes âgé, plus le taux est élevé.",
+                  def: "Le rapport entre la rente annuelle et le capital versé. Un taux de 5 %, ça veut dire que 100 000 euros donnent 5 000 euros par an, soit environ 417 euros par mois. Plus vous êtes âgé au moment de la conversion, plus le taux est élevé.",
                 },
                 {
                   terme: 'Seuil de rentabilité',
-                  def: "Le nombre d'années qu'il faut vivre après la conversion pour avoir perçu autant en rentes que le capital versé. Si vous avez donné 100 000 euros et que vous percevez 5 000 euros par an, votre seuil de rentabilité est à 20 ans.",
+                  def: "Le nombre d'années à vivre après la conversion pour avoir touché en rentes l'équivalent du capital versé. 100 000 euros versés, 5 000 euros par an : le seuil est à 20 ans.",
                 },
                 {
                   terme: 'Espérance de vie',
-                  def: "Le nombre d'années moyen qu'une personne de votre âge peut s'attendre à vivre, selon les tables de mortalité INSEE. C'est une moyenne statistique, pas une prédiction individuelle. La moitié des personnes de votre âge vivront moins longtemps, l'autre moitié vivront plus longtemps.",
+                  def: "Le nombre d'années qu'une personne de votre âge peut espérer vivre en moyenne, selon les tables INSEE. C'est une moyenne, pas une prédiction. La moitié des gens de votre âge vivront moins, l'autre moitié plus.",
                 },
                 {
                   terme: 'Réversion',
-                  def: "Une clause optionnelle qui garantit qu'en cas de décès, une fraction de la rente continue d'être versée à votre conjoint survivant. Cette garantie a un coût : elle réduit le montant de la rente initiale de 15 à 30 % environ.",
+                  def: "Une option : à votre décès, une fraction de la rente continue à être versée à votre conjoint. Ça a un prix : la rente initiale baisse de 15 à 30 %.",
                 },
                 {
                   terme: 'Mutualisation',
-                  def: "Le mécanisme par lequel l'assureur équilibre ses engagements. Les personnes qui décèdent avant d'avoir récupéré leur capital financent les rentes versées à ceux qui vivent au-delà de l'espérance de vie. L'assureur prélève sa marge technique au passage.",
+                  def: "Le mécanisme qui équilibre les comptes de l'assureur. Ceux qui décèdent avant le seuil de rentabilité financent les rentes de ceux qui vivent au-delà. L'assureur prend sa marge au passage.",
                 },
               ].map(({ terme, def }) => (
                 <div key={terme} className="border-b border-neutral-100 pb-5 last:border-0 last:pb-0">
@@ -119,9 +119,9 @@ export default function ArticleRenteViagere() {
           {/* CTA */}
           <div className="bg-primary-700 px-8 py-6 mb-12">
             <p className="font-mono text-xs text-primary-300 uppercase tracking-wider mb-2">Outil associé</p>
-            <p className="text-white font-bold text-lg mb-1">Calculez votre seuil de rentabilité personnel</p>
+            <p className="text-white font-bold text-lg mb-1">Calculez votre seuil de rentabilité</p>
             <p className="text-primary-200 text-sm mb-4">
-              Notre calculateur détermine votre seuil précis et le compare à votre espérance de vie selon les tables INSEE 2021.
+              Le calculateur sort votre seuil précis et le compare à votre espérance de vie selon les tables INSEE 2021.
             </p>
             <Link href="/rente-viagere" className="inline-block bg-surface-card text-primary-700 px-6 py-2.5 font-medium text-sm hover:bg-neutral-100 transition-colors font-mono">
               Accéder au calculateur →
@@ -145,32 +145,32 @@ export default function ArticleRenteViagere() {
             <h2 className="font-serif text-3xl font-bold text-neutral-900 mb-6">Comment fonctionne la rente viagère</h2>
 
             <p className="text-neutral-700 mb-4">
-              Imaginons que vous avez constitué un capital de 200 000 euros via votre assurance-vie ou votre PER. Vous arrivez à la retraite. Deux stratégies s&apos;offrent à vous pour transformer ce capital en revenus.
+              Vous arrivez à la retraite avec 200 000 euros sur une assurance-vie ou un PER. Pour transformer ce capital en revenus, vous avez deux options.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-8">
               <div className="bg-surface-card border border-neutral-200 p-5 border-l-4 border-l-neutral-400">
-                <p className="font-bold text-sm text-neutral-900 mb-3">Stratégie A - Retraits programmés</p>
+                <p className="font-bold text-sm text-neutral-900 mb-3">Option A - Retraits programmés</p>
                 <p className="text-sm text-neutral-600 leading-relaxed">
-                  Vous gardez votre capital. Vous retirez chaque mois ce dont vous avez besoin. Vous conservez la propriété de l&apos;argent et pouvez le transmettre à vos héritiers. Mais si vous vivez très longtemps, vous risquez d&apos;épuiser votre épargne avant votre décès.
+                  Vous gardez le capital. Vous retirez chaque mois ce dont vous avez besoin. Vous restez propriétaire et vous pouvez transmettre à vos héritiers. Risque : si vous vivez très longtemps, vous pouvez vider la cagnotte avant votre décès.
                 </p>
               </div>
               <div className="bg-surface-card border border-neutral-200 p-5 border-l-4 border-l-primary-700">
-                <p className="font-bold text-sm text-neutral-900 mb-3">Stratégie B - Rente viagère</p>
+                <p className="font-bold text-sm text-neutral-900 mb-3">Option B - Rente viagère</p>
                 <p className="text-sm text-neutral-600 leading-relaxed">
-                  Vous cédez définitivement vos 200 000 euros à un assureur. Il s&apos;engage à vous verser par exemple 1 100 euros par mois jusqu&apos;à votre décès. Peu importe si vous vivez jusqu&apos;à 75 ans ou jusqu&apos;à 105 ans. En contrepartie, si vous décédez tôt, vos héritiers ne récupèrent rien.
+                  Vous donnez vos 200 000 euros à un assureur. Il s&apos;engage à vous verser, par exemple, 1 100 euros par mois jusqu&apos;à votre décès. Que vous viviez jusqu&apos;à 75 ans ou jusqu&apos;à 105 ans, il continue. Contrepartie : si vous partez tôt, vos héritiers ne touchent rien.
                 </p>
               </div>
             </div>
 
             <p className="text-neutral-700 mb-6">
-              La rente viagère fonctionne comme une assurance longévité. L&apos;assureur prend le risque de vous payer très longtemps. Vous cédez le risque de manquer d&apos;argent à un âge avancé. C&apos;est un échange de risques, pas un placement.
+              La rente viagère, c&apos;est une assurance longévité. L&apos;assureur prend le risque de vous verser une rente pendant très longtemps. Vous cédez le risque de manquer d&apos;argent à 95 ans. Échange de risques, pas placement.
             </p>
 
             <div className="bg-neutral-50 border border-neutral-200 p-5 my-6">
-              <p className="font-mono text-xs text-neutral-400 uppercase tracking-wider mb-3">Fiscalité de la rente viagère (information générale)</p>
+              <p className="font-mono text-xs text-neutral-400 uppercase tracking-wider mb-3">Fiscalité de la rente (info générale)</p>
               <p className="text-sm text-neutral-700 leading-relaxed">
-                La rente est imposée partiellement et d&apos;autant moins que vous commencez à la percevoir tard. La fraction imposable est : 70 % avant 50 ans, 50 % de 50 à 59 ans, 40 % de 60 à 69 ans, 30 % à partir de 70 ans (Art. 158-6 CGI). La logique : plus vous attendez, plus chaque versement est assimilé à un retour de capital et moins à un revenu.
+                La rente n&apos;est imposée qu&apos;en partie, et d&apos;autant moins que vous commencez à la percevoir tard. La fraction imposable : 70 % avant 50 ans, 50 % de 50 à 59 ans, 40 % de 60 à 69 ans, 30 % à partir de 70 ans (Art. 158-6 CGI). La logique : plus vous attendez, plus chaque versement ressemble à un remboursement de votre capital, et moins à un revenu.
               </p>
             </div>
           </section>
@@ -180,7 +180,7 @@ export default function ArticleRenteViagere() {
             <h2 className="font-serif text-3xl font-bold text-neutral-900 mb-6">Pourquoi le seuil de rentabilité est après l&apos;espérance de vie</h2>
 
             <p className="text-neutral-700 mb-6">
-              C&apos;est la question centrale. Voici les chiffres, puis les trois raisons.
+              Voici les chiffres, puis les trois raisons qui expliquent l&apos;écart.
             </p>
 
             <div className="bg-surface-card border border-neutral-200 p-6 my-6">
@@ -212,7 +212,7 @@ export default function ArticleRenteViagere() {
                 </div>
               </div>
               <div className="mt-4 pt-4 border-t border-neutral-200">
-                <p className="text-sm text-neutral-700">Le seuil de rentabilité se situe après l&apos;espérance de vie moyenne pour les hommes, et légèrement avant pour les femmes.</p>
+                <p className="text-sm text-neutral-700">Le seuil tombe après l&apos;espérance de vie moyenne pour un homme, et juste avant pour une femme.</p>
               </div>
             </div>
 
@@ -220,61 +220,61 @@ export default function ArticleRenteViagere() {
 
             <div className="space-y-6">
               <div className="bg-surface-card border border-neutral-200 p-5">
-                <p className="font-bold text-sm text-neutral-900 mb-2">1. L&apos;assureur prélève une marge</p>
+                <p className="font-bold text-sm text-neutral-900 mb-2">1. L&apos;assureur prend une marge</p>
                 <p className="text-sm text-neutral-600 leading-relaxed">
-                  Sur 255 000 euros versés, l&apos;assureur ne redistribue pas tout sous forme de rentes. Il retient une marge de l&apos;ordre de 20 à 30 % pour couvrir sa rémunération, ses frais de gestion et ses provisions pour risque de longévité exceptionnelle. Concrètement, sur 255 000 euros, environ 180 000 euros sont effectivement redistribués en rentes mensuelles.
+                  Sur 255 000 euros versés, l&apos;assureur ne redistribue pas tout. Il garde 20 à 30 % pour sa marge, ses frais de gestion et ses provisions pour les gens qui vivent vraiment très vieux. En pratique : sur 255 000 euros, environ 180 000 euros partent réellement en rentes.
                 </p>
               </div>
 
               <div className="bg-surface-card border border-neutral-200 p-5">
-                <p className="font-bold text-sm text-neutral-900 mb-2">2. La mutualisation des risques</p>
+                <p className="font-bold text-sm text-neutral-900 mb-2">2. La mutualisation</p>
                 <p className="text-sm text-neutral-600 leading-relaxed">
-                  L&apos;assureur ne mise pas sur votre durée de vie individuelle. Il gère un portefeuille de milliers d&apos;assurés. Sur 1 000 personnes, environ la moitié décédera avant l&apos;espérance de vie statistique. Les capitaux non distribués de ces personnes financent les rentes prolongées de ceux qui vivent au-delà. C&apos;est le même principe que l&apos;assurance automobile : vos primes financent les accidents des autres.
+                  L&apos;assureur ne parie pas sur votre durée de vie à vous. Il gère un portefeuille de milliers d&apos;assurés. Sur 1 000 personnes, à peu près la moitié décédera avant l&apos;espérance de vie. Le capital non distribué de celles-là finance la rente de celles qui vivent au-delà. C&apos;est le même principe que l&apos;assurance auto : vos primes paient les accidents des autres.
                 </p>
               </div>
 
               <div className="bg-surface-card border border-neutral-200 p-5">
-                <p className="font-bold text-sm text-neutral-900 mb-2">3. C&apos;est une assurance, pas un investissement</p>
+                <p className="font-bold text-sm text-neutral-900 mb-2">3. C&apos;est une assurance, pas un placement</p>
                 <p className="text-sm text-neutral-600 leading-relaxed">
-                  On ne mesure pas l&apos;utilité d&apos;une assurance au fait de ne jamais l&apos;avoir utilisée. Si vous assurez votre maison contre l&apos;incendie et qu&apos;il n&apos;y a jamais d&apos;incendie, vous n&apos;avez pas &quot;perdu&quot; vos primes. Vous avez payé pour une tranquillité d&apos;esprit. La rente viagère fonctionne de la même façon. Si vous décédez avant le seuil de rentabilité, vous avez payé pour la garantie de ne jamais manquer de revenus, quoi qu&apos;il arrive.
+                  Une assurance ne se juge pas au fait de l&apos;avoir &quot;rentabilisée&quot;. Si vous assurez votre maison contre l&apos;incendie et qu&apos;il n&apos;y a jamais d&apos;incendie, vous n&apos;avez pas perdu vos primes. Vous avez payé pour la tranquillité. La rente viagère, pareil. Si vous décédez avant le seuil, vous avez payé pour la garantie de ne jamais manquer de revenus, quoi qu&apos;il arrive.
                 </p>
               </div>
             </div>
 
             <div className="border-l-4 border-primary-300 bg-primary-50 px-5 py-4 my-8">
-              <p className="font-mono text-xs text-primary-600 uppercase tracking-wider mb-2">Ce que ça signifie concrètement</p>
+              <p className="font-mono text-xs text-primary-600 uppercase tracking-wider mb-2">En pratique</p>
               <p className="text-sm text-primary-800 leading-relaxed">
-                La rente viagère est financièrement avantageuse si vous vivez longtemps. Elle l&apos;est d&apos;autant plus si vous dépassez l&apos;espérance de vie de votre tranche d&apos;âge. C&apos;est précisément le risque qu&apos;elle couvre.
+                La rente vous est financièrement favorable si vous vivez longtemps. Plus vous dépassez l&apos;espérance de vie de votre tranche d&apos;âge, plus vous y gagnez. C&apos;est exactement le risque qu&apos;elle couvre.
               </p>
             </div>
           </section>
 
           {/* SECTION 3 */}
           <section id="avantages" className="mb-16">
-            <h2 className="font-serif text-3xl font-bold text-neutral-900 mb-6">Trois situations où la rente présente un intérêt réel</h2>
+            <h2 className="font-serif text-3xl font-bold text-neutral-900 mb-6">Trois situations où la rente a du sens</h2>
 
             <div className="space-y-6">
               <div className="bg-surface-card border border-neutral-200 p-6 border-l-4 border-l-primary-700">
-                <p className="font-bold text-neutral-900 mb-3">1. Vous anticipez une longévité supérieure à la moyenne</p>
+                <p className="font-bold text-neutral-900 mb-3">1. Vous tablez sur une longévité supérieure à la moyenne</p>
                 <p className="text-sm text-neutral-600 leading-relaxed mb-3">
-                  Excellente santé, parents et grands-parents ayant vécu au-delà de 90 ans, mode de vie sain. Si vous vivez 5 à 10 ans de plus que l&apos;espérance de vie statistique, vous percevrez potentiellement entre 30 et 50 % de plus que votre capital initial.
+                  Bonne santé, parents et grands-parents qui ont passé les 90 ans, mode de vie sain. Si vous vivez 5 à 10 ans de plus que l&apos;espérance de vie statistique, vous touchez 30 à 50 % de plus que le capital versé au départ.
                 </p>
                 <p className="font-mono text-xs text-neutral-400">
-                  Exemple : avec un seuil à 15,8 ans et une longévité réelle de 22 ans, vous percevez 354 000 euros en rentes pour 255 000 euros versés.
+                  Exemple : seuil à 15,8 ans, longévité réelle de 22 ans. Vous touchez 354 000 euros de rentes pour 255 000 euros versés.
                 </p>
               </div>
 
               <div className="bg-surface-card border border-neutral-200 p-6 border-l-4 border-l-primary-700">
-                <p className="font-bold text-neutral-900 mb-3">2. Vous n&apos;avez pas d&apos;objectif de transmission</p>
+                <p className="font-bold text-neutral-900 mb-3">2. Vous n&apos;avez personne à qui transmettre</p>
                 <p className="text-sm text-neutral-600 leading-relaxed">
-                  Si vous n&apos;avez pas d&apos;héritiers à qui transmettre du capital, la question de la transmission ne se pose pas. Dans ce cas, optimiser vos revenus de votre vivant a plus de sens que de conserver un capital qui n&apos;ira à personne. La rente répond exactement à cet objectif.
+                  Pas d&apos;héritiers ? La question de la transmission ne se pose pas. Du coup, autant optimiser vos revenus de votre vivant plutôt que de garder un capital qui n&apos;ira à personne. La rente est faite pour ça.
                 </p>
               </div>
 
               <div className="bg-surface-card border border-neutral-200 p-6 border-l-4 border-l-primary-700">
-                <p className="font-bold text-neutral-900 mb-3">3. Vous voulez déléguer totalement la gestion</p>
+                <p className="font-bold text-neutral-900 mb-3">3. Vous ne voulez plus gérer votre capital</p>
                 <p className="text-sm text-neutral-600 leading-relaxed">
-                  Certaines personnes ne souhaitent pas gérer un capital en phase de retraite. Peur des mauvaises décisions, des marchés financiers, ou simple préférence pour la tranquillité. La rente offre une délégation totale. Aucune gestion requise. Les versements sont automatiques jusqu&apos;au décès, même en cas de perte d&apos;autonomie ou de difficultés cognitives.
+                  Certains n&apos;ont pas envie de gérer un portefeuille à la retraite. Peur des mauvais arbitrages, peur des marchés, ou simple envie de paix. La rente délègue tout. Zéro gestion. Les versements tombent automatiquement jusqu&apos;au décès, même en cas de perte d&apos;autonomie.
                 </p>
               </div>
             </div>
@@ -282,30 +282,30 @@ export default function ArticleRenteViagere() {
 
           {/* SECTION 4 */}
           <section id="limites" className="mb-16">
-            <h2 className="font-serif text-3xl font-bold text-neutral-900 mb-6">Cinq situations où d&apos;autres solutions sont préférables</h2>
+            <h2 className="font-serif text-3xl font-bold text-neutral-900 mb-6">Cinq situations où d&apos;autres solutions valent mieux</h2>
 
             <div className="space-y-6">
               <div className="bg-surface-card border border-neutral-200 p-6">
-                <p className="font-bold text-neutral-900 mb-3">1. Vous souhaitez transmettre un patrimoine</p>
+                <p className="font-bold text-neutral-900 mb-3">1. Vous voulez transmettre un capital</p>
                 <p className="text-sm text-neutral-600 leading-relaxed mb-3">
-                  La rente viagère consomme le capital. Sauf clauses spécifiques, vos héritiers ne perçoivent rien à votre décès. Si transmettre à vos enfants ou petits-enfants est un objectif important, la rente est inadaptée.
+                  La rente viagère consomme le capital. Sauf option spécifique, vos héritiers ne touchent rien à votre décès. Si transmettre à vos enfants ou petits-enfants compte vraiment, la rente n&apos;est pas le bon outil.
                 </p>
                 <p className="font-mono text-xs text-neutral-400">
-                  Alternative : conserver le capital en assurance-vie avec retraits programmés. Vous pouvez retirer 4 600 euros de gains par an en exonération d&apos;impôt (9 200 euros en couple), et transmettre le solde avec un abattement de 152 500 euros par bénéficiaire.
+                  Alternative : garder le capital en assurance-vie avec retraits programmés. Vous pouvez retirer 4 600 euros de gains par an sans impôt (9 200 euros en couple), et transmettre le solde avec 152 500 euros d&apos;abattement par bénéficiaire.
                 </p>
               </div>
 
               <div className="bg-surface-card border border-neutral-200 p-6">
-                <p className="font-bold text-neutral-900 mb-3">2. Vous pourriez avoir besoin de liquidités ponctuelles</p>
+                <p className="font-bold text-neutral-900 mb-3">2. Vous pourriez avoir besoin de liquidités</p>
                 <p className="text-sm text-neutral-600 leading-relaxed">
-                  Une fois le capital transféré à l&apos;assureur, il est irrécupérable. Pas partiellement. Pas en urgence. Si des travaux importants, une aide à vos enfants, ou des frais de dépendance surviennent, vous n&apos;aurez aucune marge de manœuvre. Les frais d&apos;hébergement en EHPAD dépassent souvent 3 000 euros par mois, et les aides publiques ne couvrent pas tout.
+                  Une fois le capital chez l&apos;assureur, c&apos;est fini. Plus moyen de récupérer quoi que ce soit, même en urgence. Travaux lourds, coup de pouce aux enfants, dépendance : zéro marge de manœuvre. Un hébergement en EHPAD coûte facilement 3 000 euros par mois, et les aides publiques ne couvrent pas tout.
                 </p>
               </div>
 
               <div className="bg-surface-card border border-neutral-200 p-6">
-                <p className="font-bold text-neutral-900 mb-3">3. Votre état de santé laisse prévoir une espérance de vie réduite</p>
+                <p className="font-bold text-neutral-900 mb-3">3. Votre santé laisse présager une espérance de vie réduite</p>
                 <p className="text-sm text-neutral-600 leading-relaxed mb-3">
-                  Si une maladie chronique ou une pathologie lourde vous laisse espérer vivre 8 ans de plus, et que le seuil de rentabilité est à 15 ans, vous ne récupérerez qu&apos;environ la moitié de votre capital.
+                  Une maladie chronique ou une pathologie lourde qui réduit votre horizon à 8 ans, face à un seuil de rentabilité à 15 ans : vous ne récupérez que la moitié de votre capital.
                 </p>
                 <div className="bg-neutral-50 border border-neutral-200 p-4 font-mono text-xs text-neutral-700">
                   <p>Capital versé : 255 000 euros</p>
@@ -317,7 +317,7 @@ export default function ArticleRenteViagere() {
               <div className="bg-surface-card border border-neutral-200 p-6">
                 <p className="font-bold text-neutral-900 mb-3">4. Vous avez moins de 65 ans</p>
                 <p className="text-sm text-neutral-600 leading-relaxed mb-3">
-                  Le taux de conversion augmente avec l&apos;âge. Avant 65 ans, les montants de rente sont peu attractifs.
+                  Le taux de conversion monte avec l&apos;âge. Avant 65 ans, les rentes sont vraiment maigres.
                 </p>
                 <div className="bg-neutral-50 border border-neutral-200 p-4 font-mono text-xs text-neutral-700">
                   <p>Capital de 200 000 euros</p>
@@ -325,14 +325,14 @@ export default function ArticleRenteViagere() {
                   <p>À 70 ans : environ 780 euros par mois (+43 %)</p>
                 </div>
                 <p className="text-sm text-neutral-600 mt-3 leading-relaxed">
-                  En reportant la conversion de 10 ans, la rente est presque doublée. Pendant cette période, le capital peut continuer à fructifier en assurance-vie ou PER.
+                  En attendant 10 ans, la rente est presque doublée. Pendant ce temps, le capital continue à travailler en assurance-vie ou PER.
                 </p>
               </div>
 
               <div className="bg-surface-card border border-neutral-200 p-6">
-                <p className="font-bold text-neutral-900 mb-3">5. L&apos;inflation est une préoccupation importante</p>
+                <p className="font-bold text-neutral-900 mb-3">5. L&apos;inflation vous inquiète</p>
                 <p className="text-sm text-neutral-600 leading-relaxed">
-                  Certaines rentes sont indexées sur l&apos;inflation, mais la revalorisation est souvent inférieure à l&apos;inflation réelle. Avec 3 % d&apos;inflation et une revalorisation limitée à 1,5 %, vous perdez 1,5 % de pouvoir d&apos;achat chaque année. Sur 20 ans, la perte cumulée approche 30 %. Un capital investi en unités de compte peut offrir une meilleure protection contre l&apos;érosion monétaire.
+                  Certaines rentes sont indexées sur l&apos;inflation, mais la revalorisation reste souvent en dessous de l&apos;inflation réelle. Avec 3 % d&apos;inflation et 1,5 % de revalorisation, vous perdez 1,5 % de pouvoir d&apos;achat par an. Sur 20 ans, ça fait presque 30 % de perte cumulée. Un capital en unités de compte encaisse mieux l&apos;érosion monétaire.
                 </p>
               </div>
             </div>
@@ -344,16 +344,16 @@ export default function ArticleRenteViagere() {
 
             <div className="space-y-4">
               {[
-                "La rente viagère est un mécanisme d'assurance longévité, pas un placement. Vous transférez à l'assureur le risque de vivre très longtemps en échange d'un revenu garanti à vie.",
-                "Le seuil de rentabilité est structurellement après l'espérance de vie. C'est inhérent au modèle, pas une anomalie. La marge de l'assureur et la mutualisation des risques l'expliquent entièrement.",
-                "Le taux de conversion augmente avec l'âge. La période de conversion la plus favorable se situe entre 70 et 75 ans. Avant 65 ans, les montants sont peu attractifs.",
-                "La décision est irrévocable. Une fois le capital transféré, vous ne pouvez pas le récupérer, même partiellement. C'est le point le plus important à intégrer avant de signer.",
-                "L'option de réversion au profit du conjoint réduit la rente initiale de 15 à 30 %. Évaluez les besoins réels de votre conjoint avant d'opter pour cette clause.",
-                "La rente est pertinente si vous anticipez une longévité supérieure à la moyenne. Si votre état de santé est fragile, des alternatives comme les retraits programmés en assurance-vie conservent le capital accessible.",
-                "La rente est inadaptée si vous souhaitez transmettre un patrimoine. L'assurance-vie avec retraits programmés permet de concilier revenus réguliers et transmission.",
-                "Les taux de conversion varient de façon significative entre assureurs pour un même profil. Un écart de 10 % sur le taux représente 10 % de revenus en plus ou en moins à vie.",
-                "La fiscalité de la rente est plus lourde que celle des retraits en assurance-vie. Prenez-la en compte dans votre calcul de revenu net réel.",
-                "La décision est définitive. Une fois le capital transféré, il est irrécupérable. Comparer avec les alternatives (retraits programmés en assurance-vie, conservation du capital) avant de signer.",
+                "La rente viagère, c'est une assurance longévité, pas un placement. Vous refilez à l'assureur le risque de vivre très longtemps, en échange d'un revenu garanti à vie.",
+                "Le seuil de rentabilité tombe par construction après l'espérance de vie. Ce n'est pas une anomalie : la marge de l'assureur et la mutualisation des risques expliquent tout.",
+                "Le taux de conversion grimpe avec l'âge. La fenêtre la plus favorable se situe entre 70 et 75 ans. Avant 65 ans, les montants sont vraiment maigres.",
+                "La décision est irrévocable. Capital transféré, capital perdu pour vous et vos héritiers. C'est le point à bien intégrer avant de signer.",
+                "L'option de réversion au profit du conjoint coûte 15 à 30 % sur la rente initiale. À évaluer en fonction des besoins réels du conjoint.",
+                "La rente prend son sens si vous tablez sur une longévité supérieure à la moyenne. Si votre santé est fragile, les retraits programmés en assurance-vie gardent le capital accessible.",
+                "La rente n'est pas adaptée si vous voulez transmettre. L'assurance-vie avec retraits programmés permet de cumuler revenus réguliers et transmission.",
+                "Les taux de conversion varient pas mal d'un assureur à l'autre pour un même profil. 10 % d'écart sur le taux, c'est 10 % de revenus en plus ou en moins, à vie.",
+                "La fiscalité de la rente est plus lourde que celle des retraits en assurance-vie. À intégrer dans votre calcul de revenu net réel.",
+                "Capital transféré, capital irrécupérable. Comparez avec les alternatives (retraits programmés en assurance-vie, conservation du capital) avant de signer.",
               ].map((point, i) => (
                 <div key={i} className="flex items-start gap-5 bg-surface-card border border-neutral-200 px-5 py-4">
                   <span className="font-mono font-bold text-primary-300 text-lg shrink-0 w-6">{i + 1}</span>
@@ -365,9 +365,9 @@ export default function ArticleRenteViagere() {
 
           {/* CTA final */}
           <div className="bg-primary-700 px-8 py-6 mb-12">
-            <p className="text-white font-bold text-lg mb-1">Simulez votre rente viagère en quelques clics</p>
+            <p className="text-white font-bold text-lg mb-1">Simulez votre rente viagère en deux minutes</p>
             <p className="text-primary-200 text-sm mb-4">
-              Projection sur 30 ans, seuil de rentabilité précis, comparaison avec l&apos;espérance de vie INSEE, simulation des stratégies couple. Gratuit, sans inscription, zéro donnée conservée.
+              Projection sur 30 ans, seuil de rentabilité précis, comparaison avec l&apos;espérance de vie INSEE, stratégies couple. Gratuit, sans inscription, zéro donnée conservée.
             </p>
             <Link href="/rente-viagere" className="inline-block bg-surface-card text-primary-700 px-6 py-2.5 font-medium text-sm hover:bg-neutral-100 transition-colors font-mono">
               Accéder au calculateur →
