@@ -6,6 +6,7 @@ import { videoConfig } from './theme'
 import { MontantAnimeDemo } from './compositions/MontantAnimeDemo'
 import { TypoDemo } from './compositions/TypoDemo'
 import { DiagrammesDemo } from './compositions/DiagrammesDemo'
+import { PersonaFluxDemo } from './compositions/PersonaFluxDemo'
 
 export function RemotionRoot() {
   return (
@@ -35,6 +36,16 @@ export function RemotionRoot() {
         id="DiagrammesDemo"
         component={DiagrammesDemo}
         durationInFrames={690}
+        fps={videoConfig.fps}
+        width={videoConfig.width}
+        height={videoConfig.height}
+      />
+
+      {/* Démo vague 3 — Persona (famille Pierre) + FluxCapital (AV avant/après 70). 21 s à 30 fps. */}
+      <Composition
+        id="PersonaFluxDemo"
+        component={PersonaFluxDemo}
+        durationInFrames={630}
         fps={videoConfig.fps}
         width={videoConfig.width}
         height={videoConfig.height}

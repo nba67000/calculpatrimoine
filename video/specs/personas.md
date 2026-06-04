@@ -1,162 +1,119 @@
 # Spec personas — chaîne YouTube CalcPatrimoine
 
-Style retenu pour la chaîne : **flat-design détaillé**, palette restreinte, cohérent avec la charte du site (bleu marine + doré sur beige chaud).
+Style retenu : **monogrammes typographiques**. Cercle coloré selon le rôle, initiale du nom en serif Playfair au centre. Pas de visage, pas d'illustration de personnage.
 
-Choix validé le 2026-06-04 lors du brief de l'épisode 01.
+Choix validé le 2026-06-04. Première tentative en flat-design SVG abandonnée — rendu trop "smiley dessiné main", incompatible avec la charte "vieille banque privée moderne".
 
 ---
 
 ## Principes visuels
 
-**Forme générale** : cercle de fond ~140 px de diamètre, contenant le visage stylisé. Pas de carré, pas de cadre rectangulaire — le cercle est plus chaleureux et plus universel en motion design.
+**Référence** : avatars Apple Music / Linear / Stripe quand pas de photo. Sobre, premium, lisible immédiatement.
 
-**Style du visage** : flat-design, traits clean, palette restreinte (3-4 couleurs max par persona). Pas de tridimensionnel, pas d'ombrage complexe. Inspiration : icônes Notion, Stripe, Wise — clean mais pas froid.
+**Composition** :
+- Cercle de fond ~200 px de diamètre (paramètre `taille`)
+- Une initiale unique au centre, en serif Playfair, taille `0.5 × diamètre`
+- Drop-shadow discret pour donner de la profondeur
+- Bordure dorée optionnelle (cercle pointillé interne) pour signaler "bénéficiaire AV"
 
-**Détails du visage** :
-- Yeux : deux points simples
-- Bouche : ligne discrète ou sourire minimaliste (pas plus)
-- Cheveux : élément clé de différenciation (âge, genre)
-- Lunettes optionnelles pour les personas seniors
-- Pas de nez détaillé (juste une indication très discrète éventuellement)
-
-**Ce qu'on évite** :
-- Le stick figure (rejeté, casse la crédibilité)
-- Les visages "cartoon" exagérés
-- Les sourires forcés à la "stock image"
-- Trop de détails (rides, accessoires, vêtements travaillés)
-- Style "startup fintech 2018"
+**Ce qu'on évite explicitement** :
+- Visages dessinés (smiley, stick figure, cartoon)
+- Illustrations de personnages flat-design
+- Emojis, avatars génériques de stock
+- Tout style "startup fintech 2018"
 
 ---
 
 ## Code visuel des rôles
 
-Chaque persona porte deux informations visuelles redondantes : **couleur du cercle** et **annotation mono Lora**.
+| Rôle | Couleur cercle | Couleur initiale | Annotation mono Lora |
+|---|---|---|---|
+| **Défunt (Pierre)** | `#2E4A6F` (primary-600, bleu marine) | `#F5F0E8` (beige clair) | "Défunt" |
+| **Conjoint exonéré TEPA (Catherine)** | `#D4AF37` (accent-400, doré) | `#1E3A5F` (bleu marine foncé) | "Conjoint — exonéré TEPA" |
+| **Héritier ligne directe (Marie, Thomas)** | `#F5F0E8` (surface-card, beige clair) | `#1E3A5F` (bleu marine foncé) | "Héritier" |
+| **Bénéficiaire AV** | couleur du rôle de base | couleur du rôle de base | "Bénéficiaire AV" |
+| **Notaire** (futur épisode) | `#1E3A5F` (primary-700, bleu marine foncé) | `#E5C77F` (accent-300, doré clair) | "Notaire" |
+| **Banquier/assureur** (futur épisode) | `#7C5E07` (accent-700, ocre foncé) | `#F5F0E8` (beige clair) | "Assureur" |
 
-| Rôle | Couleur cercle | Annotation mono Lora |
-|---|---|---|
-| **Défunt (Pierre)** | `#2E4A6F` (primary-600, bleu marine) | "Défunt" |
-| **Conjoint exonéré TEPA (Catherine)** | `#D4AF37` (accent-400, doré) | "Conjoint — exonéré TEPA" |
-| **Héritier ligne directe (Marie, Thomas)** | `#F5F0E8` (surface-card, beige clair) | "Héritière" / "Héritier" |
-| **Bénéficiaire AV** | bordure dorée `#D4AF37` sur cercle de la couleur du rôle | "Bénéficiaire AV" |
-| **Notaire** (futur épisode) | `#1E3A5F` (primary-700, bleu marine foncé) | "Notaire" |
-| **Banquier/assureur** (futur épisode) | `#7C5E07` (accent-700, ocre foncé) | "Assureur" |
-
-**Visage et cheveux** : les figures restent en bleu marine `#2E4A6F` sur le cercle de fond, quelle que soit la couleur du cercle (excepté quand le cercle est déjà bleu marine — dans ce cas, le visage passe en beige clair pour le contraste).
-
-**Annotation visible quand** :
-- Première apparition du persona dans la vidéo
-- Première apparition dans une nouvelle scène
-- Quand la voix off parle spécifiquement du rôle du persona
-
-Sinon, l'annotation disparaît pour ne pas alourdir l'image.
+**Bénéficiaire AV** : signalé par une **bordure dorée pointillée** (cercle interne) autour du cercle de fond, en plus du code couleur du rôle de base. Lecture : "ce qui se passe sur l'AV cible cette personne".
 
 ---
 
 ## Différenciation des personas
 
-**Pierre (62 ans, défunt à 80 ans)**
-- Cheveux gris, courts
-- Lunettes
-- Cercle bleu marine `#2E4A6F`
-- Annotation : "Pierre, 62 ans" puis "Défunt" selon la scène
+Comme on n'a plus de variations de cheveux ou de lunettes, **la différenciation passe uniquement par** :
+- L'**initiale** (P, C, M, T)
+- La **couleur du cercle** (par rôle)
+- L'**annotation** (nom + âge + rôle)
 
-**Catherine (60 ans, conjointe)**
-- Cheveux gris, mi-longs
-- Sans lunettes
-- Cercle doré `#D4AF37`
-- Annotation : "Catherine, 60 ans" puis "Conjoint — exonéré TEPA"
+C'est suffisant et plus lisible que des visages stylisés qui auraient demandé un travail de design important.
 
-**Marie (34 ans, enfant)**
-- Cheveux longs, châtains
-- Sans lunettes
-- Cercle beige clair `#F5F0E8`
-- Annotation : "Marie, 34 ans" puis "Héritière"
-
-**Thomas (31 ans, enfant)**
-- Cheveux courts, châtains
-- Sans lunettes
-- Cercle beige clair `#F5F0E8`
-- Annotation : "Thomas, 31 ans" puis "Héritier"
+**Cas particulier — deux héritiers de même initiale** : si on a un futur épisode avec "Marc" et "Mathieu" qui ont tous les deux la même couleur de cercle, la prop optionnelle `initiale` permet de forcer une distinction (ex : "Mc" / "Ma" — déconseillé) ou on différencie par positionnement et annotation seulement.
 
 ---
 
 ## Animations standard
 
 **Entrée d'un persona** :
-- Fade-in (opacity 0 → 1, durée 400 ms)
-- Léger scale-up (0.85 → 1, spring) pour l'aspect "arrivée"
-- Décalage vertical de quelques pixels (translateY 8px → 0)
+- Fade-in (opacity 0 → 1) couplé à scale-up (0.85 → 1) via `spring()`
+- Drop-shadow discret par défaut
 
 **Highlight (quand la voix parle du persona)** :
-- Scale up subtil (1 → 1.05, spring)
-- Glow discret de 8-12 px dans la couleur du rôle (box-shadow ou drop-shadow)
-- Retour à l'état neutre en sortie
+- Scale up subtil (1 → 1.05)
+- Drop-shadow renforcé (`drop-shadow(0 0 18px ${couleurFond})`) qui crée un glow dans la couleur du rôle
 
-**Disparition / décès** :
-- Pour Pierre dans l'acte 1 (le décès) : transition douce vers un état grisé (fade vers 40 % d'opacity, sans le faire disparaître complètement — il reste présent narrativement comme défunt)
-- Ne pas faire disparaître complètement, pour qu'on puisse continuer à le pointer dans les scènes suivantes
+**Décès** (Pierre dans l'acte 1) :
+- Opacity passe à 0.45
+- Filter `grayscale(70%)` pour désaturer
+- Persona reste à l'écran (les flux de capital partent encore de lui)
 
 **Transition entre personas (flux de capital)** :
-- Quand le capital passe de Pierre aux héritiers : Pierre reste à l'écran, les héritiers entrent par fade-in, et un flux animé (lignes courbes, particules) part de Pierre vers chaque héritier
+- Géré par le composant `<FluxCapital>` séparé (lignes courbes + particules)
 
 ---
 
-## Implémentation Remotion
-
-**Approche recommandée** : composant `<Persona>` paramétré qui prend en props :
+## API du composant
 
 ```typescript
-type PersonaRole = 'defunt' | 'conjoint' | 'heritier' | 'beneficiaire-av' | 'notaire' | 'assureur'
-type PersonaGenre = 'homme' | 'femme'
-type PersonaAge = 'jeune-adulte' | 'adulte' | 'senior'
-
 interface PersonaProps {
   nom: string
   age: number
-  role: PersonaRole
-  genre: PersonaGenre
-  tranche: PersonaAge
-  bordureAccent?: boolean  // pour signaler "bénéficiaire AV"
-  highlight?: boolean       // animation de mise en avant
-  decede?: boolean          // état grisé pour Pierre après l'acte 1
-  showAnnotation?: boolean  // afficher l'annotation mono Lora
+  role: 'defunt' | 'conjoint' | 'heritier' | 'beneficiaire-av' | 'notaire' | 'assureur'
+  /** Position absolue (pixels). Si omis, le persona est centré. */
+  x?: number
+  y?: number
+  /** Diamètre du cercle (par défaut 200 px). */
+  taille?: number
+  /** Frame de début d'apparition. */
+  frameApparition?: number
+  /** Mise en avant : scale 1.05 + glow doré. */
+  highlight?: boolean
+  /** État grisé (utilisé pour Pierre après son décès). */
+  decede?: boolean
+  /** Bordure dorée signalant "bénéficiaire AV". */
+  bordureAv?: boolean
+  /** Affiche l'annotation (nom + role) sous le persona. */
+  showAnnotation?: boolean
+  /** Initiale forcée (par défaut : première lettre du nom). */
+  initiale?: string
 }
 ```
 
-**Construction du SVG** : composer le visage à partir de sous-composants réutilisables :
-- `<Tete>` (forme du visage)
-- `<Cheveux>` (4-5 variantes : courts gris, longs gris, courts châtains, longs châtains, chauve)
-- `<Yeux>` (1-2 variantes)
-- `<Bouche>` (3 variantes : neutre, léger sourire, ligne)
-- `<Lunettes>` (optionnel)
-
-Chaque sous-composant en SVG codé en dur dans Remotion (pas d'asset externe nécessaire).
-
-**Alternative à évaluer** : `react-nice-avatar` ou `boring-avatars` (génération paramétrique d'avatars stylisés). À tester avant de coder soi-même les SVG, peut faire gagner du temps de production.
+Code dans `video/src/components/Persona.tsx`. ~150 lignes (vs ~280 lignes pour la version flat-design abandonnée). Plus simple, plus rapide à itérer.
 
 ---
 
 ## Cohérence avec les autres composants Remotion
 
-- Les personas doivent harmoniser avec `<MontantAnime>`, `<ArbreSuccession>`, `<FluxCapital>` — même palette, mêmes règles d'animation (durations, springs).
-- Le doré du cercle Catherine doit être identique au doré utilisé dans les chiffres-clés (les montants importants en doré).
-- Les transitions entre scènes ne doivent jamais montrer un mélange "ancien style + nouveau style" — toute mise à jour des personas s'applique à toute la chaîne.
+- Polices identiques à `<MontantAnime>`, `<TitreActe>`, `<BarresComparatives>` (Playfair pour la serif, Lora pour la mono).
+- Le doré du cercle Catherine est identique au doré utilisé dans les chiffres-clés.
+- Les animations spring partagent les mêmes `damping` / `stiffness` que les autres composants pour un rythme cohérent.
 
 ---
 
-## Réutilisation entre épisodes
+## Historique des décisions
 
-Pour les épisodes futurs, créer une bibliothèque de "types" pré-configurés :
+- **2026-06-04 (matin)** : choix initial flat-design détaillé avec visages stylisés (cf. AskUserQuestion). Spec écrite et code SVG produit (~280 lignes).
+- **2026-06-04 (soir)** : rendu jugé "horriblement laid" par Nicolas (validation visuelle). Rebascule sur l'option 1 initialement écartée (monogrammes typographiques) qui colle mieux à la charte "vieille banque privée moderne". Le code SVG flat-design est supprimé du repo.
 
-```typescript
-// video/src/data/personas-types.ts
-export const PERSONA_TYPES = {
-  homme_senior: { tranche: 'senior', genre: 'homme', cheveux: 'courts-gris' },
-  femme_senior: { tranche: 'senior', genre: 'femme', cheveux: 'mi-longs-gris' },
-  homme_adulte: { tranche: 'adulte', genre: 'homme', cheveux: 'courts-chatain' },
-  femme_adulte: { tranche: 'adulte', genre: 'femme', cheveux: 'longs-chatain' },
-  // ...
-}
-```
-
-Pour chaque épisode, on instancie depuis cette bibliothèque en passant juste `nom`, `age`, `role`.
+**Leçon** : pour les composants visuels d'une chaîne YouTube destinée à un public 45-65 ans dans la finance, la sobriété typographique l'emporte sur la chaleur de l'incarnation. Le ton "banque privée" prime sur le ton "edutainment chaleureux".
