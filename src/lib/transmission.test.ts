@@ -4,7 +4,9 @@ import {
   supprimerBeneficiaire,
   equilibrerParts,
   modifierPartBeneficiaire,
+  calculerPartsTaxables757B,
 } from './transmission'
+import { calculerSuccession } from './succession'
 import type { Beneficiaire } from '@/types/transmission'
 
 // Helpers de test - IDs stables pour les assertions
@@ -154,5 +156,151 @@ describe('modifierPartBeneficiaire', () => {
     const liste = [benef('a', 50), benef('b', 50)]
     modifierPartBeneficiaire(liste, 'a', 70)
     expect(liste[0].partPourcentage).toBe(50)
+  })
+})
+
+// ---------------------------------------------------------------------------
+// calculerPartsTaxables757B + intégration avec calculerSuccession
+// ---------------------------------------------------------------------------
+describe('calculerPartsTaxables757B', () => {
+  it('2 enfants bénéficiaires : abattement 30 500 € réparti au prorata', () => {
+    const parts = calculerPartsTaxables757B({
+      versementsApres70: 300000,
+      beneficiaires: [
+        benef('m', 50),
+        benef('t', 50),
+      ],
+    })
+    // 30 500 / 2 = 15 250 € par bénéficiaire
+    // Part taxable = (300 000 × 50 %) - 15 250 = 134 750 €
+    expect(parts).toEqual([
+      { id: 'm', partTaxable: 134750 },
+      { id: 't', partTaxable: 134750 },
+    ])
+  })
+
+  it('conjoint exonéré : part taxable = 0, n\'absorbe pas l\'abattement', () => {
+    const parts = calculerPartsTaxables757B({
+      versementsApres70: 300000,
+      beneficiaires: [
+        benef('c', 50, 'conjoint'),
+        benef('m', 50, 'enfant'),
+      ],
+    })
+    // Conjoint : 0 (exonéré TEPA)
+    // Enfant : 100 % de la quote-part d'abattement = 30 500 € (seul non-exonéré)
+    //          part capital = 300 000 × 50 % = 150 000 €
+    //          part taxable = 150 000 - 30 500 = 119 500 €
+    expect(parts[0]).toEqual({ id: 'c', partTaxable: 0 })
+    expect(parts[1]).toEqual({ id: 'm', partTaxable: 119500 })
+  })
+
+  it('3 enfants 33/33/34 : répartition proportionnelle de l\'abattement', () => {
+    const parts = calculerPartsTaxables757B({
+      versementsApres70: 100000,
+      beneficiaires: [
+        benef('a', 33),
+        benef('b', 33),
+        benef('c', 34),
+      ],
+    })
+    // Total parts = 100 %
+    // a : 33 % × 100 000 = 33 000 €, abattement 33 % × 30 500 = 10 065 €, taxable = 22 935 €
+    // b : idem
+    // c : 34 % × 100 000 = 34 000 €, abattement 34 % × 30 500 = 10 370 €, taxable = 23 630 €
+    expect(parts[0].partTaxable).toBeCloseTo(22935, 0)
+    expect(parts[1].partTaxable).toBeCloseTo(22935, 0)
+    expect(parts[2].partTaxable).toBeCloseTo(23630, 0)
+  })
+
+  it('versements après 70 = 0 : toutes parts taxables = 0', () => {
+    const parts = calculerPartsTaxables757B({
+      versementsApres70: 0,
+      beneficiaires: [benef('a', 50), benef('b', 50)],
+    })
+    expect(parts).toEqual([
+      { id: 'a', partTaxable: 0 },
+      { id: 'b', partTaxable: 0 },
+    ])
+  })
+})
+
+// ---------------------------------------------------------------------------
+// Intégration : scénario Pierre complet (transmission + succession)
+// Ces tests reproduisent les 3 scénarios du script vidéo épisode 01,
+// en passant par l'orchestration correcte (cf. BOFiP § 230).
+// ---------------------------------------------------------------------------
+describe('intégration scénario Pierre (transmission + succession agrégées)', () => {
+  // Pierre : 800k € — RP 477 050 + Livret A 22 950 (= 500k succession ordinaire) + AV 300k
+  // Marié en communauté → Catherine reçoit 250k (exonérée TEPA), Marie + Thomas se partagent 250k
+  // Bénéficiaires AV : Marie 50 % + Thomas 50 %
+
+  it('scénario 1 : rien fait, AV après 70 ans → 60 288 € de droits', () => {
+    // 1. Quote-part 757 B par bénéficiaire AV
+    const parts757B = calculerPartsTaxables757B({
+      versementsApres70: 300000,
+      beneficiaires: [
+        { id: 'm', lien: 'enfant', partPourcentage: 50 },
+        { id: 't', lien: 'enfant', partPourcentage: 50 },
+      ],
+    })
+
+    // 2. Calcul succession agrégée (succession ordinaire + 757 B)
+    const r = calculerSuccession({
+      actifNetSuccessoral: 500000,
+      heritiers: [
+        { id: 'c', nom: 'Catherine', lien: 'epoux_pacs', partRecue: 250000, donationsAnterieures: 0 },
+        {
+          id: 'm', nom: 'Marie', lien: 'enfant', partRecue: 125000, donationsAnterieures: 0,
+          primes757B: parts757B.find(p => p.id === 'm')!.partTaxable,
+        },
+        {
+          id: 't', nom: 'Thomas', lien: 'enfant', partRecue: 125000, donationsAnterieures: 0,
+          primes757B: parts757B.find(p => p.id === 't')!.partTaxable,
+        },
+      ],
+    })
+    expect(r.totalDroits).toBe(60288)
+  })
+
+  it('scénario 2 : donations échelonnées + AV après 70 → 20 288 € de droits', () => {
+    // Patrimoine résiduel 100k (Pierre a donné 400k il y a >15 ans)
+    const parts757B = calculerPartsTaxables757B({
+      versementsApres70: 300000,
+      beneficiaires: [
+        { id: 'm', lien: 'enfant', partPourcentage: 50 },
+        { id: 't', lien: 'enfant', partPourcentage: 50 },
+      ],
+    })
+
+    const r = calculerSuccession({
+      actifNetSuccessoral: 100000,
+      heritiers: [
+        { id: 'c', nom: 'Catherine', lien: 'epoux_pacs', partRecue: 50000, donationsAnterieures: 0 },
+        {
+          id: 'm', nom: 'Marie', lien: 'enfant', partRecue: 25000, donationsAnterieures: 0,
+          primes757B: parts757B.find(p => p.id === 'm')!.partTaxable,
+        },
+        {
+          id: 't', nom: 'Thomas', lien: 'enfant', partRecue: 25000, donationsAnterieures: 0,
+          primes757B: parts757B.find(p => p.id === 't')!.partTaxable,
+        },
+      ],
+    })
+    expect(r.totalDroits).toBe(20288)
+  })
+
+  it('scénario 3 : donations + AV avant 70 → 0 € de droits sur la succession', () => {
+    // Pas de 757 B (AV alimentée avant 70). Le 990 I se calcule séparément.
+    // Marie + Thomas reçoivent 150k chacun via 990 I, sous l'abattement 152 500 → 0 € de prélèvement
+    const r = calculerSuccession({
+      actifNetSuccessoral: 100000,
+      heritiers: [
+        { id: 'c', nom: 'Catherine', lien: 'epoux_pacs', partRecue: 50000, donationsAnterieures: 0 },
+        { id: 'm', nom: 'Marie', lien: 'enfant', partRecue: 25000, donationsAnterieures: 0 },
+        { id: 't', nom: 'Thomas', lien: 'enfant', partRecue: 25000, donationsAnterieures: 0 },
+      ],
+    })
+    expect(r.totalDroits).toBe(0)
   })
 })

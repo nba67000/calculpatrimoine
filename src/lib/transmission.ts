@@ -82,7 +82,70 @@ function calculerDroits990I(baseTaxable: number): number {
 }
 
 /**
- * Fonction principale : calcul transmission
+ * Calcule la quote-part taxable 757 B pour chaque bénéficiaire AV, APRÈS répartition
+ * de l'abattement global de 30 500 €. Ce montant est destiné à être passé en input
+ * de `calculerSuccession` (champ `primes757B` sur l'héritier correspondant) pour
+ * que l'agrégation avec la part successorale ordinaire et l'application du barème
+ * Art. 777 + abattement Art. 779 se fassent correctement.
+ *
+ * Le conjoint exonéré TEPA reçoit 0 (il ne consomme pas l'abattement 30 500 €).
+ *
+ * Cf. BOFiP BOI-ENR-DMTG-10-10-20-20 § 230 : les sommes 757 B "donnent ouverture
+ * aux droits de mutation par décès dans les conditions de droit commun suivant le
+ * lien de parenté", abattements et barème communs avec la succession ordinaire.
+ *
+ * @example
+ *   // AV 300 000 € versée après 70 ans, 2 enfants bénéficiaires à parts égales
+ *   const parts = calculerPartsTaxables757B({
+ *     versementsApres70: 300000,
+ *     beneficiaires: [
+ *       { id: 'm', lien: 'enfant', partPourcentage: 50 },
+ *       { id: 't', lien: 'enfant', partPourcentage: 50 },
+ *     ],
+ *   })
+ *   // → [{ id: 'm', partTaxable: 134750 }, { id: 't', partTaxable: 134750 }]
+ *   // (300000 - 30500 abattement global) / 2 = 134750
+ */
+export function calculerPartsTaxables757B(inputs: {
+ versementsApres70: number
+ beneficiaires: Pick<Beneficiaire, 'id' | 'lien' | 'partPourcentage'>[]
+}): Array<{ id: string; partTaxable: number }> {
+ const { versementsApres70, beneficiaires } = inputs
+
+ // L'abattement 30 500 € est réparti entre les bénéficiaires NON exonérés TEPA,
+ // au prorata de leur part. Le conjoint exonéré ne consomme pas l'abattement.
+ const beneficiairesNonExoneres = beneficiaires.filter(b => b.lien !== 'conjoint')
+ const totalPartsNonExoneres = beneficiairesNonExoneres.reduce((s, b) => s + b.partPourcentage, 0)
+
+ return beneficiaires.map(b => {
+   if (b.lien === 'conjoint') {
+     // Conjoint exonéré TEPA : part 757 B nulle (exonération s'applique aux sommes AV aussi)
+     return { id: b.id, partTaxable: 0 }
+   }
+
+   const partCapital = (b.partPourcentage / 100) * versementsApres70
+
+   // Quote-part de l'abattement 30 500 € (au prorata des parts non-exonérées)
+   const quotePartAbattement = totalPartsNonExoneres > 0
+     ? (b.partPourcentage / totalPartsNonExoneres) * ABATTEMENT_757B_GLOBAL
+     : 0
+
+   const partTaxable = Math.max(0, partCapital - quotePartAbattement)
+   return { id: b.id, partTaxable }
+ })
+}
+
+/**
+ * Fonction principale : calcul transmission AV.
+ *
+ * ⚠️ ATTENTION — Cette fonction calcule les droits AV en silo et NE GÈRE PAS
+ * l'agrégation avec la succession ordinaire pour les versements après 70 ans.
+ * Pour un calcul exact des droits 757 B, utiliser :
+ *   1. `calculerPartsTaxables757B` pour obtenir la quote-part taxable par bénéficiaire
+ *   2. Passer ces montants en input de `calculerSuccession` (champ `primes757B`)
+ *
+ * Le calcul direct ci-dessous reste utilisable pour les cas où l'AV est le seul
+ * patrimoine à transmettre (pas de succession ordinaire en parallèle).
  */
 export function calculerTransmission(inputs: TransmissionInputs): TransmissionResults {
  const {
@@ -234,6 +297,13 @@ export function calculerTransmission(inputs: TransmissionInputs): TransmissionRe
  // Infos contextuelles
  if (versementsApres70> 0 && capital757BTotal - abattement757BGlobal> 0) {
  infos.push({ type: 'info', message: `Les versements après 70 ans (${versementsApres70.toLocaleString('fr-FR')} €) sont soumis à l'Article 757 B avec un abattement global de 30 500 € partagé.` })
+
+ // Avertissement : ce calcul ne gère pas l'agrégation avec la succession ordinaire (Art. 779 + barème 777 unique).
+ // Pour un calcul exact, l'utilisateur doit aussi passer par le calculateur succession.
+ warnings.push({
+   type: 'warning',
+   message: "Calcul partiel : les versements après 70 ans (Art. 757 B) doivent normalement être agrégés avec la part successorale ordinaire de chaque bénéficiaire pour l'application du barème Art. 777 et de l'abattement Art. 779 (BOFiP BOI-ENR-DMTG-10-10-20-20 § 230). Les droits affichés ici sont calculés en silo et peuvent surévaluer le montant réel. Pour un calcul exact, utilisez aussi le calculateur succession en y intégrant les parts AV après 70 ans (champ primes757B).",
+ })
  }
 
  if (plusValueTotale> 0) {

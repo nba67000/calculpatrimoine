@@ -99,21 +99,28 @@ export function calculerSuccession(inputs: SuccessionInputs): SuccessionResults 
 
   // 2. Calcul par héritier
   for (const h of inputs.heritiers) {
+    // Primes 757 B (après quote-part de l'abattement global 30 500 €) agrégées
+    // à la part successorale ordinaire. Cf. BOFiP BOI-ENR-DMTG-10-10-20-20 § 230 :
+    // les sommes 757 B "donnent ouverture aux droits de mutation par décès dans les
+    // conditions de droit commun", barème et abattements Art. 779 communs.
+    const primes757B = h.primes757B ?? 0
+    const partAgregee = h.partRecue + primes757B
+
     // 2a. Cas conjoint / PACS : exonération totale Loi TEPA
     if (h.lien === 'epoux_pacs') {
       detailHeritiers.push({
         id: h.id,
         nom: h.nom,
         lien: h.lien,
-        partRecue: h.partRecue,
-        abattementApplique: h.partRecue, // l'intégralité est "abattue"
+        partRecue: partAgregee, // on expose l'agrégat pour cohérence d'affichage
+        abattementApplique: partAgregee, // l'intégralité est "abattue"
         baseTaxable: 0,
         droits: 0,
-        netRecu: h.partRecue,
+        netRecu: partAgregee,
         exonereLoiTEPA: true,
         detailTranches: [],
       })
-      totalNetRecu += h.partRecue
+      totalNetRecu += partAgregee
       continue
     }
 
@@ -122,13 +129,13 @@ export function calculerSuccession(inputs: SuccessionInputs): SuccessionResults 
     const abattementConsomme = Math.min(h.donationsAnterieures, abattementMax)
     const abattementApplique = Math.max(0, abattementMax - abattementConsomme)
 
-    // 2c. Base taxable
-    const baseTaxable = Math.max(0, h.partRecue - abattementApplique)
+    // 2c. Base taxable : agrégation succession + 757 B, puis abattement personnel UNIQUE
+    const baseTaxable = Math.max(0, partAgregee - abattementApplique)
 
     // 2d. Tranches consommées par les donations antérieures (au-delà de l'abattement)
     const tranchesConsomees = Math.max(0, h.donationsAnterieures - abattementMax)
 
-    // 2e. Application du barème (utilise le module fiscal partagé)
+    // 2e. Application du barème (utilise le module fiscal partagé) — UNE PASSE sur l'agrégat
     const bareme = getBareme(h.lien)
     const { droits, detail } = appliquerBareme(baseTaxable, tranchesConsomees, bareme)
 
@@ -140,17 +147,17 @@ export function calculerSuccession(inputs: SuccessionInputs): SuccessionResults 
       id: h.id,
       nom: h.nom,
       lien: h.lien,
-      partRecue: h.partRecue,
+      partRecue: partAgregee, // on expose l'agrégat (succession + 757 B)
       abattementApplique,
       baseTaxable,
       droits: droitsArrondis,
-      netRecu: h.partRecue - droitsArrondis,
+      netRecu: partAgregee - droitsArrondis,
       exonereLoiTEPA: false,
       detailTranches: detailSuccession,
     })
 
     totalDroits += droitsArrondis
-    totalNetRecu += h.partRecue - droitsArrondis
+    totalNetRecu += partAgregee - droitsArrondis
 
     // 2f. Warnings/optimisations par héritier
     if (h.donationsAnterieures > 0 && abattementConsomme > 0) {
