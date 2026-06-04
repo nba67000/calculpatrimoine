@@ -1,6 +1,15 @@
 // Charte CalcPatrimoine pour les vidéos Remotion.
 // Synchronisée avec tailwind.config.ts du site (palette "vieille banque privée moderne").
 
+import { loadFont as loadPlayfair } from '@remotion/google-fonts/PlayfairDisplay'
+import { loadFont as loadLora } from '@remotion/google-fonts/Lora'
+import { loadFont as loadInter } from '@remotion/google-fonts/Inter'
+
+// Chargement des polices Google Fonts (idempotent — appels multiples OK)
+export const { fontFamily: serifFamily } = loadPlayfair()
+export const { fontFamily: monoFamily } = loadLora()
+export const { fontFamily: sansFamily } = loadInter()
+
 export const colors = {
   // Fond principal des vidéos : beige chaud
   background: '#F7F3EC',
@@ -56,11 +65,11 @@ export const colors = {
 
 export const fonts = {
   // Titres et chiffres-clés : serif élégant
-  serif: 'Playfair Display, Georgia, serif',
+  serif: `${serifFamily}, Georgia, serif`,
   // Texte courant : sans-serif lisible
-  sans: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-  // Chiffres, labels techniques, captions : monospace serif
-  mono: 'Lora, Georgia, serif',
+  sans: `${sansFamily}, -apple-system, BlinkMacSystemFont, sans-serif`,
+  // Chiffres, labels techniques, captions : serif lisible (jouait le rôle "mono" éditorialement)
+  mono: `${monoFamily}, Georgia, serif`,
 }
 
 // Format vidéo standard YouTube long-format
