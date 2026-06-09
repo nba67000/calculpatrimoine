@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const cat = CATEGORIES_CALC.find(c => c.slug === slug)
   if (!cat) return {}
   return {
-    title: `${cat.label} - Calculateurs | CalculPatrimoine`,
+    title: `${cat.label} - Calculateurs`,
     description: `${cat.description}. Calculateurs gratuits basés sur les textes officiels. Aucune donnée conservée.`,
     alternates: { canonical: `https://calculpatrimoine.fr/calculateurs/${slug}` },
   }
