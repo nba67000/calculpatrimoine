@@ -1,6 +1,6 @@
 # Sources - Transmission Assurance-Vie (Art. 990 I / 757 B)
 
-**Dernière vérification** : 2026-06-03 (Art 990 I CGI LEGIARTI000047288653 re-testé OK le 2026-06-03, taux 20 % / 31,25 %, abattement 152 500 €, seuil 700 000 € confirmés)
+**Dernière vérification** : 2026-06-09 (audit léger : Art 990 I CGI LEGIARTI000047288653 re-confirmé OK, taux 20 % / 31,25 %, abattement 152 500 €, seuil 700 000 € toujours présents textuellement ; précédente : 2026-06-03)
 **Millésime fiscal** : Revenus 2025 / Barème 2026
 
 > ⚠ **Crawl 2026-05-31** : 2 URLs sont cassées : Art 777 (LEGIARTI000044981950 → 404)

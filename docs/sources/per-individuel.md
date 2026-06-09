@@ -1,6 +1,6 @@
 # Sources - PER individuel : économie d'impôt sur versement
 
-**Dernière vérification** : 2026-06-03 (URLs Légifrance toujours mortes au 2026-06-03, chiffres re-cross-checkés sur service-public.gouv.fr le 2026-06-03 - cohérents)
+**Dernière vérification** : 2026-06-09 (audit léger : F34982 service-public.gouv.fr "Plan d'épargne retraite (PER)" et F3173 "Déclarer les rentes viagères" re-confirmés OK ; URLs Légifrance toujours mortes ; cross-check des chiffres maintenu ; précédente : 2026-06-03)
 **Millésime fiscal** : Revenus 2025 / Barème 2026
 
 > ⚠ **Crawl 2026-05-31** : 3 URLs Légifrance + 1 BOFiP de ce document sont

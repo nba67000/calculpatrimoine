@@ -1,6 +1,6 @@
 # Sources - Plus-value immobilière LMNP (réintégration amortissements LF 2025)
 
-**Dernière vérification** : 2026-06-03 (Art 150 VB CGI re-testé OK, F10864 service-public.gouv.fr confirme la règle)
+**Dernière vérification** : 2026-06-09 (audit léger : Art 150 VB CGI mutualisé re-confirmé OK via Art 150 U ; règle LMNP textuelle inchangée ; précédente : 2026-06-03)
 **Millésime fiscal** : Cessions à compter du 15/02/2025 / Barème applicable au 03/06/2026
 **Calculateur concerné** : `src/app/plus-value-immobiliere/lmnp/page.tsx`
 

@@ -1,6 +1,6 @@
 # Sources - Plus-value immobilière
 
-**Dernière vérification** : 2026-06-03 (URLs Légifrance OK confirmées, F10864 confirmé sur service-public.gouv.fr)
+**Dernière vérification** : 2026-06-09 (audit léger : Art 150 U CGI LEGIARTI000053544910 re-confirmé OK, exonération RP (II 1°) et seuil 15 000 € (II 6°) toujours présents textuellement ; précédente : 2026-06-03)
 **Millésime fiscal** : Cessions en 2026 / Barème applicable au 03/05/2026
 
 > ⚠ **Crawl 2026-05-31** : les URLs Légifrance de ce document sont OK (testées

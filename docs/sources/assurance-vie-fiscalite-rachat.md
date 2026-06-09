@@ -1,6 +1,6 @@
 # Sources - Fiscalité Rachat Assurance-Vie
 
-**Dernière vérification** : 2026-06-03 (Art 125-0 A CGI LEGIARTI000044989424 re-testé OK le 2026-06-03, contenu confirmé ; F22414 service-public.gouv.fr confirme tous les chiffres)
+**Dernière vérification** : 2026-06-09 (audit léger : Art 125-0 A CGI LEGIARTI000044989424 et F22414 service-public.gouv.fr re-confirmés OK, abattements 4 600/9 200 € + seuil 150 000 € + taux 7,5 %/12,8 % toujours présents textuellement ; précédente : 2026-06-03)
 **Millésime fiscal** : Revenus 2025 / Barème 2026
 
 > ⚠ **Crawl 2026-05-31** : 1 URL Légifrance de ce document est morte

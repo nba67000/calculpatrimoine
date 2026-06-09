@@ -1,6 +1,6 @@
 # Sources - IFI : Impôt sur la fortune immobilière
 
-**Dernière vérification** : 2026-06-03 (cross-check service-public.gouv.fr F563 le 2026-06-03 : seuil 1 300 000 € et abattement RP 30 % confirmés. URLs Légifrance LEGIARTI toujours mortes - à reconstruire)
+**Dernière vérification** : 2026-06-09 (audit léger : aucune URL Légifrance valide à ce jour pour Art 964/973/974/977/979 CGI ; cross-check F563 service-public.gouv.fr maintenu (seuil 1 300 000 € + abattement RP 30 %) ; à re-sourcer dès qu'une URL Légifrance valide est trouvée ; précédente : 2026-06-03)
 **Millésime fiscal** : IFI 2026 (patrimoine au 1er janvier 2026)
 
 > ⚠ **Crawl 2026-05-31** : **toutes** les URLs Légifrance et BOFiP de ce document

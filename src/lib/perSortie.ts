@@ -10,11 +10,15 @@ import type { FAQSchemaItem } from '@/components/SchemaFAQ'
 import { formatEurRounded as eur, formatLigne as ligne } from '@/lib/formatters'
 
 export const SOURCES_PER_SORTIE = [
-  // Cf. docs/broken-links-to-fix.md
-  { label: 'Article 158, 5° bis du CGI', desc: 'Sortie en rente du PER assimilée à une pension de retraite (abattement 10 %)' },
-  { label: 'Article 200 A du CGI', desc: 'PFU 30 % sur la fraction "plus-values" du capital sorti' },
-  { label: 'Article 163 quatervicies du CGI', desc: 'Régime de déductibilité à l\'entrée : détermine l\'imposition à la sortie' },
-  { label: 'Article L. 136-1-2 CSS', desc: 'CSG sur pensions de retraite (taux 8,3 % normal, 6,6 % médian, 3,8 % réduit, exonéré)' },
+  // Cf. docs/broken-links-to-fix.md et docs/sources/per-sortie.md
+  // Référence corrigée 2026-06-09 (validation Nicolas) : la rente PER versements
+  // déductibles relève du § 5 b bis (qui rattache au régime pensions § 5 a),
+  // pas d'un "5° bis" inexistant.
+  { label: 'Article 158 § 5 b bis CGI', desc: 'Rente PER (versements déductibles) imposée au régime pensions de retraite avec abattement 10 % (renvoi au § 5 a)' },
+  { label: 'Article 200 A B 1° CGI', desc: 'PFU 30 % (12,8 % IR + 17,2 % PS) sur la fraction "plus-values" du capital sorti' },
+  { label: 'Article 158 § 5 b quinquies 1° CGI', desc: 'Capital PER versements déductibles imposé à l\'IR au barème SANS abattement 10 %' },
+  { label: 'Article 163 quatervicies CGI', desc: 'Régime de déductibilité à l\'entrée : détermine l\'imposition à la sortie' },
+  { label: 'Article L. 136-1-2 II 11° CSS', desc: 'Rente PER versements déductibles exclue de l\'assiette CSG L. 136-1-2 ; bascule sur le régime pensions L. 136-8 (4 paliers selon RFR, taux normal 9,1 %)' },
 ]
 
 // Taux PS sur pensions de retraite (taux normal , simplification : on n'évalue

@@ -54,6 +54,16 @@ complète :
 - **`plus-value-immobiliere/lmnp`** : ajouter le calcul d'amortissement
   automatique à partir des données du bien (composants, mobilier) au lieu d'une
   saisie manuelle du total.
+- **`succession`** : implémenter l'exonération Art. 796-0 ter CGI (Loi TEPA
+  art. 10). Cas d'un héritier frère/sœur (i) célibataire/veuf/divorcé/séparé,
+  (ii) âgé de +50 ans **ou** invalide, **et** (iii) ayant cohabité avec le
+  défunt pendant les 5 années précédant le décès → exonération totale de droits
+  de succession. Aujourd'hui le calculateur taxe ce frère/sœur au barème
+  Art. 777 Tableau III (35/45 %) après abattement 15 932 € — incorrect dans
+  cette configuration. Implémenter : 3 champs UI optionnels (statut civil,
+  âge ≥ 50 ou invalide, cohabitation 5 ans) qui basculent la part en exonéré
+  TEPA dans `src/lib/succession.ts`. Lacune identifiée par `/verif-sources`
+  2026-06-09. Statut : `todo` · Priorité : `P2`.
 
 ---
 
@@ -88,4 +98,4 @@ complète :
   une description minimale. Ne jamais faire un calculateur `proposed` sans
   validation humaine - seuls les `todo` sont autorisés à l'implémentation.
 
-Last updated: 2026-06-01 (deficit-foncier et vente-vs-donation livrés ; backlog vide).
+Last updated: 2026-06-09 (ajout suivi `succession` - exonération Art. 796-0 ter CGI manquante, identifiée par `/verif-sources`).

@@ -1,6 +1,6 @@
 # Sources - Donation : droits de mutation à titre gratuit
 
-**Dernière vérification** : 2026-06-03 (Art 779 CGI LEGIARTI000026292566 re-testé OK le 2026-06-03 ; service-public.gouv.fr F14203 confirme tous les abattements)
+**Dernière vérification** : 2026-06-09 (audit léger : Art 779 CGI LEGIARTI000026292566 toujours OK par sondage ; F14203 service-public.gouv.fr maintenu ; précédente : 2026-06-03)
 **Millésime fiscal** : Barème 2026 (abattements et tarifs indexés par la LF 2026)
 **Calculateur concerné** : `src/app/donation/droits/page.tsx`
 
