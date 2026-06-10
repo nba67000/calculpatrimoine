@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import CalculateurPageLayout from '@/components/CalculateurPageLayout'
+import { getPillarBreadcrumb } from '@/lib/calculators/breadcrumb'
 import dynamic from 'next/dynamic'
 import CalculatorSkeleton from '@/components/Calculator/CalculatorSkeleton'
 const PeaCalculator = dynamic(
@@ -27,7 +28,7 @@ export default function PeaPage() {
   return (
     <CalculateurPageLayout
       breadcrumb={[
-        { href: '/', label: 'Accueil' },
+        ...getPillarBreadcrumb('/pea'),
         { label: 'PEA' },
       ]}
       titre={<>Calculateur PEA<br />Fiscalité retrait + bilan latent</>}

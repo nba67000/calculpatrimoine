@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import CalculateurPageLayout from '@/components/CalculateurPageLayout'
+import { getPillarBreadcrumb } from '@/lib/calculators/breadcrumb'
 import dynamic from 'next/dynamic'
 import CalculatorSkeleton from '@/components/Calculator/CalculatorSkeleton'
 const DeficitFoncierCalculator = dynamic(
@@ -28,7 +29,7 @@ export default function DeficitFoncierPage() {
   return (
     <CalculateurPageLayout
       breadcrumb={[
-        { href: '/', label: 'Accueil' },
+        ...getPillarBreadcrumb('/deficit-foncier'),
         { label: 'Déficit foncier' },
       ]}
       titre={<>Calculateur<br />déficit foncier</>}

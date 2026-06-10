@@ -9,6 +9,7 @@ const DonationCalculator = dynamic(
   { loading: () => <CalculatorSkeleton /> }
 )
 import SourcesSection from '@/components/SourcesSection'
+import { getPillarBreadcrumb } from '@/lib/calculators/breadcrumb'
 
 
 export const metadata: Metadata = {
@@ -47,7 +48,7 @@ export default function DonationDroitsPage() {
     <>
       <CalculateurPageLayout
         breadcrumb={[
-          { href: '/', label: 'Accueil' },
+          ...getPillarBreadcrumb('/donation/droits'),
           { label: 'Donation' },
           { label: 'Droits de mutation' },
         ]}

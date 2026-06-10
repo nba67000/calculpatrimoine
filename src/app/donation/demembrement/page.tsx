@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import CalculateurPageLayout from '@/components/CalculateurPageLayout'
+import { getPillarBreadcrumb } from '@/lib/calculators/breadcrumb'
 import dynamic from 'next/dynamic'
 import CalculatorSkeleton from '@/components/Calculator/CalculatorSkeleton'
 const DonationDemembrementCalculator = dynamic(
@@ -26,7 +27,7 @@ export default function DonationDemembrementPage() {
   return (
     <CalculateurPageLayout
       breadcrumb={[
-        { href: '/', label: 'Accueil' },
+        ...getPillarBreadcrumb('/donation/demembrement'),
         { label: 'Donation' },
         { label: 'Démembrement' },
       ]}

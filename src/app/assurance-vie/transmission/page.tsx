@@ -9,6 +9,7 @@ const TransmissionCalculator = dynamic(
   { loading: () => <CalculatorSkeleton /> }
 )
 import SourcesSection from '@/components/SourcesSection'
+import { getPillarBreadcrumb } from '@/lib/calculators/breadcrumb'
 
 
 export const metadata: Metadata = {
@@ -29,7 +30,7 @@ export default function TransmissionPage() {
     <>
       <CalculateurPageLayout
       breadcrumb={[
-        { href: '/', label: 'Accueil' },
+        ...getPillarBreadcrumb('/assurance-vie/transmission'),
         { href: '/assurance-vie', label: 'Assurance-Vie' },
         { label: 'Transmission' },
       ]}

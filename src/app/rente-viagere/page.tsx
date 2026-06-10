@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import CalculateurPageLayout from '@/components/CalculateurPageLayout'
 import SourcesSection from '@/components/SourcesSection'
+import { getPillarBreadcrumb } from '@/lib/calculators/breadcrumb'
 // PERF: lazy-load → RenteModeContent sort du bundle initial (logique métier + recharts)
 import dynamic from 'next/dynamic'
 import CalculatorSkeleton from '@/components/Calculator/CalculatorSkeleton'
@@ -39,7 +40,7 @@ export default function RenteViagerePage() {
   return (
     <>
       <CalculateurPageLayout
-      breadcrumb={[{ href: '/', label: 'Accueil' }, { label: 'Rente Viagère' }]}
+      breadcrumb={[...getPillarBreadcrumb('/rente-viagere'), { label: 'Rente Viagère' }]}
       titre={<>Calculateur<br />Rente Viagère</>}
       description="Convertissez votre épargne (PER, assurance-vie, capital) en revenus versés à vie.
         Estimations basées sur les tables de mortalité officielles INSEE,

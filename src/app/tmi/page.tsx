@@ -9,6 +9,7 @@ const TMICalculator = dynamic(
   { loading: () => <CalculatorSkeleton /> }
 )
 import SourcesSection from '@/components/SourcesSection'
+import { getPillarBreadcrumb } from '@/lib/calculators/breadcrumb'
 
 
 export const metadata: Metadata = {
@@ -45,7 +46,7 @@ export default function TMIPage() {
   return (
     <>
       <CalculateurPageLayout
-      breadcrumb={[{ href: '/', label: 'Accueil' }, { label: 'Tranche Marginale d\'Imposition' }]}
+      breadcrumb={[...getPillarBreadcrumb('/tmi'), { label: 'Tranche Marginale d\'Imposition' }]}
       titre={<>Calculateur TMI<br />Barème IR 2026</>}
       description="Calculez votre tranche marginale d'imposition et votre impôt net à partir de votre
         revenu net imposable, de votre situation familiale et du nombre d'enfants à charge.

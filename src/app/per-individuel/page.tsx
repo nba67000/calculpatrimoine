@@ -9,6 +9,7 @@ const PERCalculator = dynamic(
   { loading: () => <CalculatorSkeleton /> }
 )
 import SourcesSection from '@/components/SourcesSection'
+import { getPillarBreadcrumb } from '@/lib/calculators/breadcrumb'
 
 
 export const metadata: Metadata = {
@@ -59,7 +60,7 @@ export default function PERIndividuelPage() {
   return (
     <>
       <CalculateurPageLayout
-      breadcrumb={[{ href: '/', label: 'Accueil' }, { label: 'PER individuel - économie d\'impôt' }]}
+      breadcrumb={[...getPillarBreadcrumb('/per-individuel'), { label: 'PER individuel - économie d\'impôt' }]}
       titre={<>Simulateur PER individuel<br />Économie d&apos;impôt sur versement</>}
       description="Versez sur votre PER, voyez l'impôt économisé cette année. Plafond 2026 calculé,
         années non consommées reportables sur les 5 années suivantes (LF 2026), coût net du versement

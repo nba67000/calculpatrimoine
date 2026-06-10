@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import CalculateurPageLayout from '@/components/CalculateurPageLayout'
+import { getPillarBreadcrumb } from '@/lib/calculators/breadcrumb'
 import dynamic from 'next/dynamic'
 import CalculatorSkeleton from '@/components/Calculator/CalculatorSkeleton'
 const SciRegimeCalculator = dynamic(
@@ -28,7 +29,7 @@ export default function SciRegimePage() {
   return (
     <CalculateurPageLayout
       breadcrumb={[
-        { href: '/', label: 'Accueil' },
+        ...getPillarBreadcrumb('/sci-is-vs-ir'),
         { label: 'SCI IS vs IR' },
       ]}
       titre={<>SCI<br />à l&apos;IS vs à l&apos;IR</>}

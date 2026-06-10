@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import CalculateurPageLayout from '@/components/CalculateurPageLayout'
+import { getPillarBreadcrumb } from '@/lib/calculators/breadcrumb'
 import dynamic from 'next/dynamic'
 import CalculatorSkeleton from '@/components/Calculator/CalculatorSkeleton'
 const VenteVsDonationCalculator = dynamic(
@@ -29,7 +30,7 @@ export default function VenteVsDonationPage() {
   return (
     <CalculateurPageLayout
       breadcrumb={[
-        { href: '/', label: 'Accueil' },
+        ...getPillarBreadcrumb('/vente-vs-donation'),
         { label: 'Vendre ou donner' },
       ]}
       titre={<>Vendre ou donner<br />un bien à un proche</>}

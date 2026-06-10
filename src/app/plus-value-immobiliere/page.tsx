@@ -8,6 +8,7 @@ const PlusValueImmobiliereCalculator = dynamic(
   { loading: () => <CalculatorSkeleton /> }
 )
 import SourcesSection from '@/components/SourcesSection'
+import { getPillarBreadcrumb } from '@/lib/calculators/breadcrumb'
 
 
 export const metadata: Metadata = {
@@ -48,7 +49,7 @@ export default function PlusValueImmobilierePage() {
   return (
     <>
       <CalculateurPageLayout
-      breadcrumb={[{ href: '/', label: 'Accueil' }, { label: 'Plus-value immobilière' }]}
+      breadcrumb={[...getPillarBreadcrumb('/plus-value-immobiliere'), { label: 'Plus-value immobilière' }]}
       titre={<>Plus-value immobilière :<br />calculateur 2026</>}
       description="Calculez l'impôt sur votre cession immobilière : IR 19 %, prélèvements sociaux
         17,2 %, abattements pour durée de détention, surtaxe. Résidence secondaire, bien locatif."

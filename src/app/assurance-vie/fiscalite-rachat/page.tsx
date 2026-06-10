@@ -9,6 +9,7 @@ const AssuranceVieCalculator = dynamic(
   { loading: () => <CalculatorSkeleton /> }
 )
 import SourcesSection from '@/components/SourcesSection'
+import { getPillarBreadcrumb } from '@/lib/calculators/breadcrumb'
 
 
 export const metadata: Metadata = {
@@ -35,7 +36,7 @@ export default function AssuranceViePage() {
     <>
       <CalculateurPageLayout
       breadcrumb={[
-        { href: '/', label: 'Accueil' },
+        ...getPillarBreadcrumb('/assurance-vie/fiscalite-rachat'),
         { href: '/assurance-vie', label: 'Assurance-Vie' },
         { label: 'Fiscalité Rachat' },
       ]}

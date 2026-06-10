@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import CalculateurPageLayout from '@/components/CalculateurPageLayout'
+import { getPillarBreadcrumb } from '@/lib/calculators/breadcrumb'
 import dynamic from 'next/dynamic'
 import CalculatorSkeleton from '@/components/Calculator/CalculatorSkeleton'
 const ComparateurLocatifCalculator = dynamic(
@@ -29,7 +30,7 @@ export default function ComparateurLocatifPage() {
   return (
     <CalculateurPageLayout
       breadcrumb={[
-        { href: '/', label: 'Accueil' },
+        ...getPillarBreadcrumb('/comparateur-locatif-placement'),
         { label: 'Locatif vs Placement' },
       ]}
       titre={<>Locatif vs<br />placement financier</>}

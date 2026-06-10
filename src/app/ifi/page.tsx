@@ -10,6 +10,7 @@ const IFICalculator = dynamic(
 )
 import SourcesSection from '@/components/SourcesSection'
 import { safeJsonLd } from '@/lib/safeJsonLd'
+import { getPillarBreadcrumb } from '@/lib/calculators/breadcrumb'
 
 
 export const metadata: Metadata = {
@@ -43,7 +44,8 @@ const breadcrumbSchema = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://calculpatrimoine.fr' },
-    { '@type': 'ListItem', position: 2, name: 'IFI', item: 'https://calculpatrimoine.fr/ifi' },
+    { '@type': 'ListItem', position: 2, name: 'Immobilier', item: 'https://calculpatrimoine.fr/calculateurs/immobilier' },
+    { '@type': 'ListItem', position: 3, name: 'IFI', item: 'https://calculpatrimoine.fr/ifi' },
   ],
 }
 
@@ -68,7 +70,7 @@ export default function IFIPage() {
         dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbSchema) }}
       />
       <CalculateurPageLayout
-        breadcrumb={[{ href: '/', label: 'Accueil' }, { label: 'IFI' }]}
+        breadcrumb={[...getPillarBreadcrumb('/ifi'), { label: 'IFI' }]}
         titre={<>Calculateur IFI 2026 :<br />impôt sur la fortune immobilière</>}
         description="Calculez votre IFI à partir de la valeur de marché de vos biens immobiliers :
           abattement résidence principale (30 %), barème progressif en 6 tranches,

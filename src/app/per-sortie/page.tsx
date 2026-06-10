@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import CalculateurPageLayout from '@/components/CalculateurPageLayout'
+import { getPillarBreadcrumb } from '@/lib/calculators/breadcrumb'
 import dynamic from 'next/dynamic'
 import CalculatorSkeleton from '@/components/Calculator/CalculatorSkeleton'
 const PerSortieCalculator = dynamic(
@@ -26,7 +27,7 @@ export default function PerSortiePage() {
   return (
     <CalculateurPageLayout
       breadcrumb={[
-        { href: '/', label: 'Accueil' },
+        ...getPillarBreadcrumb('/per-sortie'),
         { label: 'PER Sortie' },
       ]}
       titre={<>PER Sortie<br />Capital vs rente</>}
