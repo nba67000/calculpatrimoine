@@ -121,6 +121,78 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.6,
     },
+    {
+      url: `${baseUrl}/faq/succession`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/faq/deficit-foncier`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/faq/csg-csds-retraite`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/faq/sci-is-vs-ir`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/faq/lmnp-reel-vs-micro`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/faq/plus-value-immobiliere-lmnp`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/faq/per-sortie`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/faq/vente-vs-donation`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/faq/pret-intrafamilial`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/faq/donation-demembrement`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/faq/comparateur-locatif-placement`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/faq/assurance-vie-fiscalite-rachat`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
 
     // Static pages
     {

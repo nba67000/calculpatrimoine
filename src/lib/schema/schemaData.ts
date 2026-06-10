@@ -638,6 +638,525 @@ export const FAQ_PEA: FAQSchemaItem[] = [
 ]
 
 // ─────────────────────────────────────────────────────────────
+// SUCCESSION
+// ─────────────────────────────────────────────────────────────
+
+export const FAQ_SUCCESSION: FAQSchemaItem[] = [
+  {
+    question: "Qui paie les droits de succession et quand ?",
+    answer:
+      "Les droits de succession sont dus par chaque héritier individuellement, au prorata de sa part nette. La déclaration doit être déposée dans les 6 mois suivant le décès (12 mois si le défunt résidait hors de France métropolitaine). Le paiement intervient à la date du dépôt, avec possibilité de fractionnement ou de différé sous conditions (Art. 1717 CGI).",
+  },
+  {
+    question: "Quels sont les abattements par lien de parenté en 2026 ?",
+    answer:
+      "Abattements applicables avant calcul des droits (Art. 779 CGI) : enfant ou parent en ligne directe 100 000 €, petit-enfant 1 594 €, frère ou sœur 15 932 €, neveu ou nièce 7 967 €, autres héritiers ou tiers 1 594 €. Une majoration de 159 325 € est ajoutée si l'héritier est handicapé (Art. 779-II CGI). L'abattement est consommé par toutes les transmissions au même héritier sur 15 ans (rappel fiscal).",
+  },
+  {
+    question: "Comment est calculé le barème progressif ?",
+    answer:
+      "Après application de l'abattement, le solde taxable est soumis au barème progressif Art. 777 CGI. En ligne directe : 5 % jusqu'à 8 072 €, 10 % de 8 073 à 12 109 €, 15 % de 12 110 à 15 932 €, 20 % de 15 933 à 552 324 €, 30 % jusqu'à 902 838 €, 40 % jusqu'à 1 805 677 €, 45 % au-delà. Les frères et sœurs subissent un barème simplifié à 35 % / 45 %. Les autres héritiers sont à 55 % ou 60 % selon le lien.",
+  },
+  {
+    question: "Le conjoint paie-t-il des droits de succession ?",
+    answer:
+      "Non. Le conjoint survivant marié ou pacsé est totalement exonéré de droits de succession depuis la loi TEPA de 2007 (Art. 796-0 bis CGI). Cette exonération couvre l'ensemble de la part recueillie par le conjoint, sans plafond. Le concubin notoire n'en bénéficie pas et subit le barème de 60 % applicable aux tiers.",
+  },
+  {
+    question: "Comment fonctionne le rappel fiscal de 15 ans ?",
+    answer:
+      "L'abattement Art. 779 CGI se reconstitue tous les 15 ans. Si un parent a déjà donné 100 000 € à son enfant il y a 10 ans, et qu'il décède aujourd'hui, l'enfant n'a plus d'abattement disponible : tout est taxé dès le premier euro (Art. 784 CGI). En revanche, si la donation a plus de 15 ans, l'abattement est intégralement disponible pour la succession.",
+  },
+  {
+    question: "L'assurance-vie entre-t-elle dans la succession ?",
+    answer:
+      "Non, l'assurance-vie est hors succession civile. Elle suit un régime fiscal propre : Art. 990 I CGI pour les versements avant 70 ans (abattement de 152 500 € par bénéficiaire, puis 20 % puis 31,25 %) et Art. 757 B pour les versements après 70 ans (abattement global de 30 500 € puis barème de succession sur la fraction des primes). Un calculateur dédié existe sur /assurance-vie/transmission.",
+  },
+  {
+    question: "Les frais de notaire sont-ils inclus dans les droits ?",
+    answer:
+      "Non. Les droits de succession sont l'impôt dû à l'État. Les émoluments du notaire (rédaction de l'acte, déclaration, partage) sont des honoraires distincts, calculés selon un barème dégressif réglementé (décret 2016-230) sur la valeur des biens. Sur une succession de 600 000 € en ligne directe, comptez environ 1 % du brut en frais de notaire, en plus des droits.",
+  },
+  {
+    question: "Mes données sont-elles stockées quelque part ?",
+    answer:
+      "Non. Tous les calculs sont effectués localement dans votre navigateur. Aucune donnée n'est transmise à un serveur ni conservée après fermeture de la page. Le code source est ouvert et vérifiable sur GitHub.",
+  },
+]
+
+// ─────────────────────────────────────────────────────────────
+// DEFICIT FONCIER
+// ─────────────────────────────────────────────────────────────
+
+export const FAQ_DEFICIT_FONCIER: FAQSchemaItem[] = [
+  {
+    question: "Qu'est-ce que le déficit foncier ?",
+    answer:
+      "Le déficit foncier apparaît quand les charges déductibles (intérêts d'emprunt, travaux, assurances, frais de gestion) dépassent les loyers bruts d'un bien loué nu en régime réel. Ce déficit s'impute en partie sur le revenu global de l'année, et le surplus se reporte sur les revenus fonciers des 10 années suivantes (Art. 156 I-3° CGI).",
+  },
+  {
+    question: "Quel est le plafond annuel imputable sur le revenu global ?",
+    answer:
+      "10 700 € par an et par foyer fiscal pour la fraction du déficit hors intérêts d'emprunt. Le surplus au-dessus de ce plafond se reporte sur les revenus fonciers des 10 années suivantes. Pour des travaux de rénovation énergétique des passoires thermiques (DPE E/F/G vers A/B/C/D), le plafond est porté à 21 400 € pour les dépenses payées entre 2023 et 2025 (LF 2023 art. 12).",
+  },
+  {
+    question: "Que devient l'excédent au-dessus de 10 700 € ?",
+    answer:
+      "L'excédent (la part du déficit hors intérêts qui dépasse 10 700 €) ne se perd pas. Il est reportable sur les revenus fonciers des 10 années suivantes. Si pendant ces 10 années vous avez des loyers nets positifs, ce report viendra réduire la base imposable IR + prélèvements sociaux.",
+  },
+  {
+    question: "Les intérêts d'emprunt sont-ils imputables sur le revenu global ?",
+    answer:
+      "Non. La fraction du déficit liée aux intérêts d'emprunt ne peut PAS être imputée sur le revenu global. Elle est uniquement reportable sur les revenus fonciers des 10 années suivantes. C'est pour cela que le calculateur sépare la part déductible du revenu global (charges hors intérêts) de la part reportable (intérêts).",
+  },
+  {
+    question: "Qu'est-ce que le plafond majoré 21 400 € ?",
+    answer:
+      "Plafond doublé pour les travaux qui permettent à un logement de passer d'un DPE E, F ou G vers A, B, C ou D (LF 2023 art. 12). Applicable aux dépenses payées entre le 01/01/2023 et le 31/12/2025. Vérifier la prorogation pour les dépenses postérieures, qui dépend des lois de finances successives.",
+  },
+  {
+    question: "Combien de temps suis-je engagé à louer après imputation ?",
+    answer:
+      "L'imputation du déficit foncier sur le revenu global engage à conserver la location du logement jusqu'au 31 décembre de la 3e année qui suit l'imputation. Si vous vendez ou cessez la location avant ce délai, l'administration reprend les déficits imputés (Art. 156 I-3° dernier alinéa CGI) : l'impôt évité est rétroactivement réclamé.",
+  },
+  {
+    question: "Quelle différence entre déficit foncier et LMNP ?",
+    answer:
+      "Le déficit foncier concerne la location nue en régime réel (catégorie revenus fonciers). Le LMNP concerne la location meublée non professionnelle, taxée en BIC. En LMNP, l'amortissement du bien est déductible ; en location nue, non. En LMNP, le déficit n'est jamais imputable sur le revenu global ; en location nue, il l'est (dans la limite de 10 700 €).",
+  },
+  {
+    question: "Mes données sont-elles stockées quelque part ?",
+    answer:
+      "Non. Tous les calculs sont effectués localement dans votre navigateur. Aucune donnée n'est transmise à un serveur ni conservée après fermeture de la page. Le code source est ouvert et vérifiable sur GitHub.",
+  },
+]
+
+// ─────────────────────────────────────────────────────────────
+// CSG / CRDS RETRAITE
+// ─────────────────────────────────────────────────────────────
+
+export const FAQ_CSG_RETRAITE: FAQSchemaItem[] = [
+  {
+    question: "Pourquoi paie-t-on de la CSG sur sa retraite ?",
+    answer:
+      "La CSG (Contribution Sociale Généralisée) finance la protection sociale et s'applique à tous les revenus, y compris les pensions de retraite (Art. L. 136-8 CSS). À cela s'ajoutent la CRDS (Contribution au Remboursement de la Dette Sociale) et la CASA (Contribution Additionnelle de Solidarité pour l'Autonomie) selon les paliers.",
+  },
+  {
+    question: "Quels sont les paliers de CSG en 2026 ?",
+    answer:
+      "Quatre paliers selon le RFR et le nombre de parts. Exonération totale (0 %) si RFR très bas. Taux réduit (3,8 % CSG + 0,5 % CRDS = 4,3 %). Taux médian (6,6 % + 0,5 % + 0,3 % CASA = 7,4 %). Taux normal (8,3 % + 0,5 % + 0,3 % = 9,1 %). Les seuils sont indexés chaque année selon l'inflation.",
+  },
+  {
+    question: "Sur quel revenu sont calculés les paliers ?",
+    answer:
+      "Sur le Revenu Fiscal de Référence (RFR), qui inclut l'ensemble des revenus du foyer (pensions, salaires éventuels, revenus de capitaux, plus-values, revenus fonciers). Les seuils dépendent aussi du nombre de parts fiscales. Un retraité célibataire a 1 part, un couple 2 parts, etc.",
+  },
+  {
+    question: "Pourquoi le RFR à utiliser est-il celui de N-2 ?",
+    answer:
+      "L'administration applique le RFR de l'année N-2 pour la CSG de l'année N. Pour la CSG 2026, c'est le RFR 2024 qui est utilisé. Cette règle légale crée un décalage temporel : un retraité qui prend sa retraite en 2026 verra son RFR de salarié appliqué les premières années.",
+  },
+  {
+    question: "Que se passe-t-il si je bascule de palier ?",
+    answer:
+      "Le basculement de palier (vers le haut ou le bas) suit la règle des deux années consécutives. Si votre RFR dépasse un seuil pendant deux années consécutives, vous basculez au palier supérieur. Cette règle anti-effet de seuil protège des variations ponctuelles (vente d'un bien, prime exceptionnelle).",
+  },
+  {
+    question: "La CSG s'applique-t-elle aussi aux rentes PER ?",
+    answer:
+      "Oui. Une rente PER en sortie est imposée comme une pension : abattement 10 % puis intégration au barème IR, et CSG retraite au taux applicable selon votre RFR (4,3 / 7,4 / 9,1 %). Sortie en capital : seuls les gains sont taxés au PFU 12,8 % + PS 17,2 %, sans CSG retraite.",
+  },
+  {
+    question: "Comment réduire mon RFR ?",
+    answer:
+      "Plusieurs leviers : verser sur un PER déductible (réduit le revenu imposable), choisir le PFU sur les revenus de capitaux plutôt que le barème (sortent du RFR), arbitrer entre une assurance-vie en gestion pilotée et un PEA, étaler une plus-value sur deux exercices fiscaux. Chaque levier produit un effet décalé de 2 ans sur la CSG.",
+  },
+  {
+    question: "Mes données sont-elles stockées quelque part ?",
+    answer:
+      "Non. Tous les calculs sont effectués localement dans votre navigateur. Aucune donnée n'est transmise à un serveur ni conservée après fermeture de la page. Le code source est ouvert et vérifiable sur GitHub.",
+  },
+]
+
+// ─────────────────────────────────────────────────────────────
+// SCI IS vs IR
+// ─────────────────────────────────────────────────────────────
+
+export const FAQ_SCI_IS_IR: FAQSchemaItem[] = [
+  {
+    question: "Quelle différence entre une SCI à l'IR et à l'IS ?",
+    answer:
+      "La SCI à l'IR est translucide fiscalement : les loyers nets remontent aux associés selon leur quote-part, et sont imposés dans la catégorie revenus fonciers à leur taux marginal d'imposition + 17,2 % de prélèvements sociaux. La SCI à l'IS est une société soumise à l'impôt sur les sociétés : 15 % jusqu'à 42 500 € de bénéfice, 25 % au-delà. Les amortissements sont déductibles.",
+  },
+  {
+    question: "Pourquoi l'IS donne-t-il souvent un impôt annuel plus bas ?",
+    answer:
+      "À l'IS, le bien est amortissable (typiquement 20 à 30 ans pour le bâti), ce qui crée une charge déductible annuelle sans flux de trésorerie. Cette charge réduit le bénéfice imposable, donc l'IS dû. À l'IR, l'amortissement n'est pas admis : seules les charges réelles (intérêts d'emprunt, travaux, assurance, frais de gestion) sont déductibles des loyers.",
+  },
+  {
+    question: "Que se passe-t-il à la sortie (vente du bien) ?",
+    answer:
+      "Le piège classique du calcul SCI à l'IS : à la vente, la SCI subit le régime des plus-values professionnelles. Les amortissements pratiqués pendant la détention sont réintégrés au calcul, donc la plus-value imposable est très supérieure à la plus-value économique. L'IS est dû sur cette plus-value, sans abattement pour durée de détention. À l'IR, la SCI suit le régime des particuliers : abattements progressifs, exonération à 22 ans (IR) et 30 ans (PS).",
+  },
+  {
+    question: "L'option IS est-elle réversible ?",
+    answer:
+      "Non. Depuis la loi de finances 2019, l'option pour l'IS est définitive. Une SCI qui opte pour l'IS ne peut plus revenir à l'IR. Avant 2019, un retour à l'IR était possible dans les 5 ans suivant l'option, mais cette possibilité a disparu. La décision engage la SCI pour toute sa durée d'existence.",
+  },
+  {
+    question: "Un déficit foncier est-il possible en SCI ?",
+    answer:
+      "Oui en SCI à l'IR. Le déficit foncier généré au niveau de la SCI remonte aux associés selon leur quote-part, et chacun l'impute sur son revenu global selon les règles communes (10 700 €/an hors intérêts, Art. 156 I-3° CGI). En SCI à l'IS, le déficit reste au niveau de la société et se reporte sur ses bénéfices futurs : aucune imputation possible chez les associés.",
+  },
+  {
+    question: "La SCI peut-elle faire du meublé ?",
+    answer:
+      "Risqué : la SCI qui exerce une activité de location meublée est en principe automatiquement assujettie à l'IS (Art. 206-2 CGI), même si elle a opté pour l'IR. La doctrine admet une tolérance si l'activité meublée reste accessoire (moins de 10 % des recettes). En pratique, pour faire du meublé, mieux vaut une SARL de famille ou détenir le bien en direct (LMNP).",
+  },
+  {
+    question: "Qui doit tenir une compta SCI ?",
+    answer:
+      "À l'IR, une comptabilité simplifiée suffit (cahier de recettes-dépenses). À l'IS, la SCI doit tenir une comptabilité commerciale complète, déposer ses comptes annuels au greffe, et payer un expert-comptable (compter 1 500 à 2 500 € par an). Ce coût annuel doit être intégré dans la comparaison fiscale entre les deux régimes.",
+  },
+  {
+    question: "Mes données sont-elles stockées quelque part ?",
+    answer:
+      "Non. Tous les calculs sont effectués localement dans votre navigateur. Aucune donnée n'est transmise à un serveur ni conservée après fermeture de la page. Le code source est ouvert et vérifiable sur GitHub.",
+  },
+]
+
+// ─────────────────────────────────────────────────────────────
+// LMNP REEL vs MICRO
+// ─────────────────────────────────────────────────────────────
+
+export const FAQ_LMNP_REGIME: FAQSchemaItem[] = [
+  {
+    question: "C'est quoi le LMNP et comment y accéder ?",
+    answer:
+      "Le LMNP (Loueur en Meublé Non Professionnel) est le statut fiscal par défaut d'un particulier qui loue un logement meublé. Aucune démarche d'inscription : déclarer les loyers en BIC suffit. Pour basculer en LMP (professionnel), il faut dépasser 23 000 € de recettes annuelles ET que ces recettes représentent plus de 50 % des revenus du foyer (Art. 155 IV CGI).",
+  },
+  {
+    question: "Quelle différence entre micro-BIC et régime réel en LMNP ?",
+    answer:
+      "Le micro-BIC applique un abattement forfaitaire sur les loyers : 50 % pour le meublé classique, 71 % pour le meublé touristique classé, 30 % pour le meublé touristique non classé (LF 2025). Le régime réel permet de déduire les charges réelles (intérêts, taxe foncière, assurance, frais de gestion) ET d'amortir le bien et le mobilier. Comptablement plus lourd mais souvent plus avantageux.",
+  },
+  {
+    question: "Quel est le seuil pour rester en micro-BIC ?",
+    answer:
+      "Depuis la LF 2025 : 77 700 € de recettes pour le meublé classique, 188 700 € pour le meublé touristique classé, 15 000 € pour le meublé touristique non classé. Au-delà, passage automatique au régime réel. À noter : le seuil 15 000 € est très bas et concerne notamment les Airbnb non classés.",
+  },
+  {
+    question: "Quelles charges sont déductibles en régime réel ?",
+    answer:
+      "Toutes les charges nécessaires à l'exploitation du bien : intérêts d'emprunt, taxe foncière, assurance, frais de gestion, frais de copropriété, petit entretien, frais comptables, CFE. Les amortissements du bien immobilier (hors terrain, 20-30 ans) et du mobilier (5-10 ans) sont également déductibles, mais ne peuvent pas créer un déficit imputable.",
+  },
+  {
+    question: "Le déficit LMNP est-il imputable sur le revenu global ?",
+    answer:
+      "Non. Contrairement au déficit foncier (location nue), le déficit LMNP n'est jamais imputable sur le revenu global. Il est seulement reportable sur les bénéfices LMNP des 10 années suivantes. C'est une différence fiscale majeure entre les deux régimes locatifs.",
+  },
+  {
+    question: "Que se passe-t-il à la sortie (vente du bien) ?",
+    answer:
+      "Depuis la LF 2025, les amortissements pratiqués pendant la détention sont réintégrés au prix d'acquisition pour le calcul de la plus-value (Art. 150 VB III CGI). La plus-value imposable augmente donc, ce qui réduit l'avantage du régime réel sur le long terme. Cette règle s'applique aux cessions à partir du 15/02/2025.",
+  },
+  {
+    question: "Mes données sont-elles stockées quelque part ?",
+    answer:
+      "Non. Tous les calculs sont effectués localement dans votre navigateur. Aucune donnée n'est transmise à un serveur ni conservée après fermeture de la page. Le code source est ouvert et vérifiable sur GitHub.",
+  },
+]
+
+// ─────────────────────────────────────────────────────────────
+// PLUS-VALUE LMNP
+// ─────────────────────────────────────────────────────────────
+
+export const FAQ_PLUS_VALUE_LMNP: FAQSchemaItem[] = [
+  {
+    question: "Qu'est-ce qui change avec la LF 2025 sur la plus-value LMNP ?",
+    answer:
+      "Depuis le 15/02/2025, les amortissements pratiqués pendant la détention en LMNP réel sont réintégrés au prix d'acquisition pour le calcul de la plus-value (Art. 150 VB III CGI). Cela augmente mécaniquement la plus-value imposable et donc l'impôt à la cession. Avant cette date, les amortissements LMNP n'étaient pas réintégrés.",
+  },
+  {
+    question: "Comment calcule-t-on la plus-value LMNP ?",
+    answer:
+      "Plus-value = Prix de vente − (Prix d'acquisition − amortissements pratiqués). Les amortissements sont donc déduits du prix d'acquisition pour aboutir au prix de revient ajusté. Le résultat suit ensuite le régime des plus-values des particuliers : IR 19 % + PS 17,2 %, abattements par durée de détention, surtaxe au-delà de 50 000 €.",
+  },
+  {
+    question: "Les abattements par durée s'appliquent-ils ?",
+    answer:
+      "Oui. Le régime applicable reste celui des plus-values des particuliers (Art. 150 U CGI). Abattements IR : 0 % de 0 à 5 ans, 6 % par an de 6 à 21 ans, 4 % la 22e année (exonération totale IR à 22 ans). Abattements PS différents : 0 % à 5 ans, 1,65 %/an de 6 à 21 ans, 1,60 % la 22e, 9 %/an de 23 à 30 ans (exonération totale PS à 30 ans).",
+  },
+  {
+    question: "Comment compter les amortissements pratiqués ?",
+    answer:
+      "Cumul de toutes les dotations aux amortissements déduites du résultat LMNP année après année, tant pour l'immobilier (hors terrain) que le mobilier. Le tableau d'amortissement remis par votre comptable contient cette information. En micro-BIC, l'abattement forfaitaire absorbe déjà les amortissements théoriques, donc pas de réintégration.",
+  },
+  {
+    question: "Est-ce que ça change la rentabilité du LMNP ?",
+    answer:
+      "Oui pour les détentions courtes (moins de 10 ans) et pour les biens fortement amortis. L'avantage fiscal du régime réel sur les loyers (déduction des amortissements) est en partie repris à la sortie. Sur le long terme (plus de 22 ans), l'exonération IR rejoint le régime sans réintégration, mais les PS continuent de courir jusqu'à 30 ans.",
+  },
+  {
+    question: "La règle s'applique-t-elle aux résidences services LMNP ?",
+    answer:
+      "Oui. Aucune exception pour les résidences services (étudiantes, seniors, EHPAD, tourisme). La réintégration s'applique à tout LMNP réel, quel que soit le type de bien ou la formule d'exploitation.",
+  },
+  {
+    question: "Mes données sont-elles stockées quelque part ?",
+    answer:
+      "Non. Tous les calculs sont effectués localement dans votre navigateur. Aucune donnée n'est transmise à un serveur ni conservée après fermeture de la page. Le code source est ouvert et vérifiable sur GitHub.",
+  },
+]
+
+// ─────────────────────────────────────────────────────────────
+// PER SORTIE
+// ─────────────────────────────────────────────────────────────
+
+export const FAQ_PER_SORTIE: FAQSchemaItem[] = [
+  {
+    question: "Quelles sont les options de sortie du PER ?",
+    answer:
+      "Trois options à partir de l'âge légal de la retraite : sortie en capital (en une fois ou fractionnée), sortie en rente viagère, ou panachage capital + rente. Le choix est libre depuis la loi PACTE de 2019. La sortie anticipée est possible dans certains cas : acquisition de la résidence principale, accident de la vie (chômage, invalidité, décès du conjoint, surendettement).",
+  },
+  {
+    question: "Comment est imposée une sortie en capital ?",
+    answer:
+      "Imposition séparée des versements et des gains. Les versements déductibles sont taxés à l'IR (au barème, après quotient familial). Les gains correspondants sont taxés au PFU de 30 % (12,8 % IR + 17,2 % PS). Si les versements n'étaient pas déductibles (option de ne pas déduire à l'entrée), seuls les gains sont imposés au PFU.",
+  },
+  {
+    question: "Comment est imposée une sortie en rente ?",
+    answer:
+      "Régime des pensions (Art. 158-5° bis CGI) : abattement de 10 % puis intégration au barème IR au taux marginal. Les prélèvements sociaux retraités s'appliquent (9,1 % normal, 7,4 % médian, 4,3 % réduit, 0 % exonération) selon le RFR du foyer.",
+  },
+  {
+    question: "Capital ou rente : que choisir ?",
+    answer:
+      "Comparatif factuel sans recommandation. Le capital donne un montant immédiat utilisable mais subit une imposition lourde sur les versements (en une fois). La rente lisse l'imposition dans le temps mais la mortalité tronque l'espérance de vie : un décès précoce après quelques années de rente perd le capital. Le calculateur affiche le net total cumulé selon l'espérance de vie saisie pour comparer les deux options.",
+  },
+  {
+    question: "Le panachage capital + rente est-il fiscalement avantageux ?",
+    answer:
+      "Pas particulièrement. Chaque fraction (capital ou rente) suit son propre régime d'imposition. Le panachage permet surtout de combiner liquidité immédiate et revenus réguliers, sans optimisation fiscale spécifique. À comparer au cas par cas sur le total net.",
+  },
+  {
+    question: "La sortie anticipée est-elle plus avantageuse fiscalement ?",
+    answer:
+      "Pour l'acquisition de la résidence principale, oui : les versements sont taxés à l'IR mais les gains restent au PFU. Pour les accidents de la vie (chômage de fin de droits, invalidité, décès du conjoint, surendettement, cessation d'activité non salariée), les versements ET les gains sont exonérés d'IR ; seuls les PS 17,2 % s'appliquent sur les gains.",
+  },
+  {
+    question: "Mes données sont-elles stockées quelque part ?",
+    answer:
+      "Non. Tous les calculs sont effectués localement dans votre navigateur. Aucune donnée n'est transmise à un serveur ni conservée après fermeture de la page. Le code source est ouvert et vérifiable sur GitHub.",
+  },
+]
+
+// ─────────────────────────────────────────────────────────────
+// VENTE vs DONATION
+// ─────────────────────────────────────────────────────────────
+
+export const FAQ_VENTE_DONATION: FAQSchemaItem[] = [
+  {
+    question: "Vendre ou donner un bien à un proche : quelle différence fiscale ?",
+    answer:
+      "La vente déclenche l'impôt sur la plus-value immobilière (IR 19 % + PS 17,2 %, abattements par durée) et des droits d'enregistrement payés par l'acheteur (DMTO environ 5,80 %). La donation déclenche les droits de mutation à titre gratuit (barème Art. 777 CGI) payés par le donataire, après application des abattements (Art. 779 CGI). Les deux régimes sont structurellement différents et le calculateur les compare en cumulé.",
+  },
+  {
+    question: "Pourquoi vendre peut être plus coûteux que donner ?",
+    answer:
+      "Parce que la vente engendre deux impositions cumulées (PV immo côté vendeur + droits d'enregistrement côté acheteur), alors que la donation n'engendre qu'une imposition (droits Art. 777) après abattement Art. 779. Si l'abattement couvre la valeur du bien (100 000 € en ligne directe), la donation est gratuite fiscalement. La vente, en revanche, déclenche au minimum les DMTO d'environ 5,80 %.",
+  },
+  {
+    question: "L'abattement 31 865 € du don familial s'applique-t-il ?",
+    answer:
+      "Non. L'abattement supplémentaire de 31 865 € (Art. 790 G CGI) ne s'applique qu'aux dons de sommes d'argent (chèque, virement, espèces), pas aux biens immobiliers. Pour un bien immobilier, seul l'abattement standard Art. 779 joue (100 000 € pour un enfant, 7 967 € pour un neveu, etc.).",
+  },
+  {
+    question: "La résidence principale est-elle exonérée de PV à la vente ?",
+    answer:
+      "Oui. La cession de la résidence principale est totalement exonérée de PV immobilière (Art. 150 U II 1° CGI), quelle que soit la durée de détention. La donation d'une RP suit les règles communes de droits de donation. Pour comparer vente RP vs donation RP, seuls les DMTO côté acheteur sont opposés aux droits de donation côté donataire.",
+  },
+  {
+    question: "Peut-on combiner vente et prêt familial ?",
+    answer:
+      "Oui. Le vendeur peut consentir un prêt intrafamilial à l'acheteur pour neutraliser le besoin de financement bancaire. Le prêt évite la plus-value (qui resterait due au moment de la vente) mais permet à l'acheteur de payer le prix sans crédit. Le risque de requalification en don indirect est limité si le prêt est formalisé et remboursé.",
+  },
+  {
+    question: "Quel est le risque de requalification en donation déguisée ?",
+    answer:
+      "Si le prix de vente est manifestement sous-évalué (par rapport au marché), ou si le paiement n'est pas effectif (faux remboursement, prêt non honoré), l'administration peut requalifier en donation déguisée et réclamer les droits de mutation à titre gratuit + pénalités. Le calculateur ne modélise pas ce risque ; il suppose que la vente est faite à juste prix.",
+  },
+  {
+    question: "Mes données sont-elles stockées quelque part ?",
+    answer:
+      "Non. Tous les calculs sont effectués localement dans votre navigateur. Aucune donnée n'est transmise à un serveur ni conservée après fermeture de la page. Le code source est ouvert et vérifiable sur GitHub.",
+  },
+]
+
+// ─────────────────────────────────────────────────────────────
+// PRET INTRAFAMILIAL
+// ─────────────────────────────────────────────────────────────
+
+export const FAQ_PRET_INTRAFAMILIAL: FAQSchemaItem[] = [
+  {
+    question: "Comment formaliser un prêt intrafamilial ?",
+    answer:
+      "Un acte sous seing privé suffit jusqu'à 5 000 €. Au-delà, la déclaration via le formulaire 2062 est obligatoire, à joindre à la déclaration de revenus de l'année du prêt (Art. 242 ter CGI). Au-delà de 1 000 € d'intérêts annuels, déclaration via le formulaire 2778 par le prêteur. La formalisation devant notaire (acte authentique) est conseillée pour les montants importants ou les délais longs.",
+  },
+  {
+    question: "Quel taux d'intérêt appliquer ?",
+    answer:
+      "Pas de taux légal imposé, mais un taux trop bas (ou nul) peut entraîner une requalification en donation indirecte. Référence usuelle : le TMM (taux moyen mensuel) publié par la Banque de France, ou un taux de marché équivalent à un prêt bancaire. Le prêt à 0 % est risqué fiscalement : l'administration peut considérer que la fraction d'intérêts non réclamée constitue un don taxable.",
+  },
+  {
+    question: "Le prêt est-il imposable pour le prêteur ?",
+    answer:
+      "Les intérêts perçus sont imposables comme des revenus de capitaux mobiliers : option entre PFU 30 % ou barème IR + PS 17,2 %. Le capital remboursé n'est pas imposable. À ne pas confondre avec une donation : le prêt n'utilise pas l'abattement Art. 779 et la créance reste dans le patrimoine du prêteur.",
+  },
+  {
+    question: "Que devient le prêt en cas de décès du prêteur ?",
+    answer:
+      "La créance non remboursée entre dans l'actif successoral du prêteur, et donc dans la succession. Si l'emprunteur est aussi héritier, sa quote-part successorale s'impute sur la dette résiduelle (mécanisme de la confusion). Le risque : si l'héritier-emprunteur reçoit une part inférieure à la dette, il devra rembourser le surplus aux autres héritiers.",
+  },
+  {
+    question: "Prêt ou donation : que choisir ?",
+    answer:
+      "Comparatif factuel. La donation utilise l'abattement Art. 779 (renouvelable tous les 15 ans) et coûte les droits Art. 777 au-delà ; elle est définitive. Le prêt n'engage pas l'abattement, génère des intérêts imposables, mais reste réversible et lié à la créance. Le calculateur affiche le coût net cumulé des deux options sur la durée saisie.",
+  },
+  {
+    question: "Qu'est-ce qu'un prêt in fine ?",
+    answer:
+      "Le prêt in fine est remboursé en une seule fois au terme : pendant la durée du prêt, seuls les intérêts sont versés annuellement, et le capital est remboursé intégralement à la dernière échéance. C'est le format calculé ici car il facilite la comparaison avec une donation directe d'un montant équivalent au capital.",
+  },
+  {
+    question: "Mes données sont-elles stockées quelque part ?",
+    answer:
+      "Non. Tous les calculs sont effectués localement dans votre navigateur. Aucune donnée n'est transmise à un serveur ni conservée après fermeture de la page. Le code source est ouvert et vérifiable sur GitHub.",
+  },
+]
+
+// ─────────────────────────────────────────────────────────────
+// DONATION DEMEMBREMENT
+// ─────────────────────────────────────────────────────────────
+
+export const FAQ_DONATION_DEMEMBREMENT: FAQSchemaItem[] = [
+  {
+    question: "C'est quoi le démembrement de propriété ?",
+    answer:
+      "Le démembrement sépare la propriété d'un bien en deux droits distincts : l'usufruit (utiliser le bien et en percevoir les revenus) et la nue-propriété (en disposer mais sans usage immédiat). Le donateur peut donner la nue-propriété tout en conservant l'usufruit, ce qui réduit l'assiette taxable de la donation.",
+  },
+  {
+    question: "Comment fonctionne le barème Art. 669 CGI ?",
+    answer:
+      "La valeur de l'usufruit dépend de l'âge de l'usufruitier au jour de la donation (Art. 669 CGI). Moins de 21 ans : usufruit 90 %, nue-propriété 10 %. 21-30 ans : 80/20. 31-40 ans : 70/30. 41-50 ans : 60/40. 51-60 ans : 50/50. 61-70 ans : 40/60. 71-80 ans : 30/70. 81-90 ans : 20/80. 91 ans et plus : 10/90. Seule la nue-propriété est taxée à la donation.",
+  },
+  {
+    question: "Quel est l'avantage fiscal du démembrement ?",
+    answer:
+      "L'assiette taxable se limite à la valeur de la nue-propriété. Exemple : pour un donateur de 65 ans (usufruit 40 %, NP 60 %), un bien de 500 000 € est transmis fiscalement à 300 000 €. Après abattement Art. 779 (100 000 € en ligne directe), la base taxable est de 200 000 € au lieu de 400 000 € en pleine propriété. Économie significative de droits.",
+  },
+  {
+    question: "Que devient l'usufruit au décès du donateur ?",
+    answer:
+      "L'usufruit s'éteint au décès du donateur. La pleine propriété est reconstituée chez le nu-propriétaire sans nouvelle taxation (Art. 1133 CGI). C'est l'avantage majeur du démembrement : la transmission de l'usufruit au décès est gratuite fiscalement, alors qu'une transmission de pleine propriété aurait subi les droits de succession.",
+  },
+  {
+    question: "Le donateur peut-il vendre le bien après donation ?",
+    answer:
+      "Non, pas seul. La nue-propriété appartient désormais au donataire. La vente nécessite l'accord du donateur (usufruitier) ET du donataire (nu-propriétaire). C'est une contrainte importante : le démembrement engage la liquidité du bien.",
+  },
+  {
+    question: "Y a-t-il un risque de requalification ?",
+    answer:
+      "Le démembrement classique (donation de nue-propriété avec conservation d'usufruit par le donateur) est validé par la doctrine fiscale. Le risque concerne les montages plus complexes : démembrement temporaire, démembrement croisé, donation NP suivie de donation d'usufruit dans un délai court. Ces cas peuvent être requalifiés en abus de droit.",
+  },
+  {
+    question: "Mes données sont-elles stockées quelque part ?",
+    answer:
+      "Non. Tous les calculs sont effectués localement dans votre navigateur. Aucune donnée n'est transmise à un serveur ni conservée après fermeture de la page. Le code source est ouvert et vérifiable sur GitHub.",
+  },
+]
+
+// ─────────────────────────────────────────────────────────────
+// COMPARATEUR LOCATIF vs PLACEMENT
+// ─────────────────────────────────────────────────────────────
+
+export const FAQ_COMPARATEUR_LOCATIF: FAQSchemaItem[] = [
+  {
+    question: "Qu'est-ce que ce comparateur calcule exactement ?",
+    answer:
+      "À capital initial et durée égaux, le comparateur calcule le net cumulé final de deux stratégies : (1) investissement locatif (loyers nets de charges et d'impôts + plus-value à la revente, abattements par durée) vs (2) placement financier (PEA, assurance-vie ou CTO). Le résultat permet de quantifier l'écart entre les deux options sur des hypothèses simplifiées.",
+  },
+  {
+    question: "Le crédit immobilier est-il modélisé ?",
+    answer:
+      "Non. Le calculateur compare un achat comptant à un placement comptant. L'effet de levier du crédit (intérêts déduits des loyers en régime réel, capital amorti par la banque, valeur du bien acquise sans apport intégral) change radicalement le résultat en faveur du locatif. Cette simplification est volontaire pour rester pédagogique ; un calcul avec crédit nécessite des hypothèses supplémentaires.",
+  },
+  {
+    question: "Les frais d'acquisition sont-ils inclus ?",
+    answer:
+      "Non. Le calculateur n'intègre pas les frais de notaire (environ 7-8 % du prix d'achat pour l'ancien, 2-3 % pour le neuf). Sur courte durée, ces frais peuvent rendre le locatif structurellement perdant : il faut d'abord que la valorisation du bien rattrape ces 7-8 % avant tout gain réel. Pour un investissement immobilier réaliste, viser au minimum 10-15 ans.",
+  },
+  {
+    question: "Quels véhicules de placement compare-t-on ?",
+    answer:
+      "Trois enveloppes : PEA (exonération IR après 5 ans, PS 17,2 % au retrait), assurance-vie (PFU ou IR après abattement annuel, PS 17,2 %), CTO (PFU 30 % à chaque revenu, sans avantage d'enveloppe). Chaque enveloppe a sa propre fiscalité de sortie, intégrée au calcul du net final.",
+  },
+  {
+    question: "Que faire de la liquidité et de la diversification ?",
+    answer:
+      "Ces dimensions ne sont pas modélisées par le calculateur. L'immobilier offre une exposition réelle mais peu liquide ; le placement financier offre liquidité et diversification mais pas d'effet de levier sans risque équivalent. Le calcul reste un point de départ : il faut intégrer ces dimensions qualitatives à votre décision.",
+  },
+  {
+    question: "Mes données sont-elles stockées quelque part ?",
+    answer:
+      "Non. Tous les calculs sont effectués localement dans votre navigateur. Aucune donnée n'est transmise à un serveur ni conservée après fermeture de la page. Le code source est ouvert et vérifiable sur GitHub.",
+  },
+]
+
+// ─────────────────────────────────────────────────────────────
+// AV FISCALITE RACHAT
+// ─────────────────────────────────────────────────────────────
+
+export const FAQ_AV_FISCALITE_RACHAT: FAQSchemaItem[] = [
+  {
+    question: "Comment est imposé un rachat d'assurance-vie ?",
+    answer:
+      "Seule la fraction de plus-value du rachat est imposée (règle proportionnelle : le rachat partiel se compose d'une part de capital et d'une part de gain au prorata). Cette plus-value est soumise au PFU 30 % (12,8 % IR + 17,2 % PS), ou au barème IR + PS sur option globale du foyer pour l'année. L'abattement annuel après 8 ans (4 600 € célibataire, 9 200 € couple) joue uniquement sur la fraction IR, pas sur les PS.",
+  },
+  {
+    question: "Quand est-il avantageux d'opter pour le barème IR plutôt que le PFU ?",
+    answer:
+      "Si votre TMI est de 0 % ou 11 %, le barème IR est plus avantageux que le PFU 12,8 %. Au-delà (30 %, 41 %, 45 %), le PFU 12,8 % devient préférable. À noter : l'option pour le barème est globale et concerne tous les revenus de capitaux du foyer pour l'année (intérêts, dividendes, PV, etc.). À comparer en consolidé avant de cocher la case.",
+  },
+  {
+    question: "Quelle différence entre les versements avant et après le 27/09/2017 ?",
+    answer:
+      "Les versements antérieurs au 27/09/2017 (date de mise en place du PFU) bénéficient d'un régime historique avantageux : prélèvement libératoire à 7,5 % après 8 ans (au lieu de 12,8 %), avec abattement annuel inchangé. Le calculateur ventile automatiquement les versements selon leur date et applique le taux correct sur chaque fraction.",
+  },
+  {
+    question: "L'abattement annuel s'applique-t-il aussi aux PS ?",
+    answer:
+      "Non. L'abattement de 4 600 € (célibataire) ou 9 200 € (couple) après 8 ans s'applique uniquement à la fraction IR de la plus-value. Les prélèvements sociaux de 17,2 % sont dus dès le premier euro de plus-value, sans abattement. Cette règle réduit fortement le gain réel de l'abattement quand la TMI est basse.",
+  },
+  {
+    question: "Le rachat fractionné est-il fiscalement intéressant ?",
+    answer:
+      "Oui après 8 ans. En fractionnant un retrait sur deux années civiles, vous utilisez deux fois l'abattement annuel (4 600 € + 4 600 € = 9 200 € exonérés d'IR au lieu de 4 600 €). Le calculateur affiche l'économie estimée si le fractionnement réduit l'impôt total de plus de 300 €.",
+  },
+  {
+    question: "La plus-value latente est-elle taxée à la succession ?",
+    answer:
+      "Non, l'assurance-vie est hors succession civile. Au décès, c'est le régime Art. 990 I (versements avant 70 ans) ou Art. 757 B (versements après 70 ans) qui s'applique, avec abattement de 152 500 € par bénéficiaire (Art. 990 I) ou 30 500 € global (Art. 757 B). Voir le calculateur dédié /assurance-vie/transmission.",
+  },
+  {
+    question: "Mes données sont-elles stockées quelque part ?",
+    answer:
+      "Non. Tous les calculs sont effectués localement dans votre navigateur. Aucune donnée n'est transmise à un serveur ni conservée après fermeture de la page. Le code source est ouvert et vérifiable sur GitHub.",
+  },
+]
+
+// ─────────────────────────────────────────────────────────────
 
 export const HOWTO_PLUS_VALUE: { name: string; description: string; totalTime: string; steps: HowToStep[] } = {
   name: "Comment calculer la plus-value immobilière sur une résidence secondaire",
