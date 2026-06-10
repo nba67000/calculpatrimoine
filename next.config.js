@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 
 // Content-Security-Policy
+// Note: script-src 'unsafe-inline' reste necessaire tant que les JSON-LD
+// inline (SchemaMarkup, SchemaFAQ, SchemaHowTo) ne sont pas migres vers
+// une CSP a nonce. Migration prevue apres l'upgrade Next.js (cf. audit
+// 2026-06-10, finding 3).
 const CSP = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline'",
