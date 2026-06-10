@@ -6,6 +6,10 @@ import React from 'react'
 
 type InlineNode = string | React.ReactElement
 
+// Whitelist des protocoles autorisés dans les liens markdown. Bloque
+// javascript:, data:, vbscript:, et autres schemas exotiques.
+const SAFE_URL = /^(?:https?:|mailto:|\/|#)/i
+
 export function parseInline(text: string): InlineNode[] {
   const regex = /\*\*([^*]+)\*\*|\[([^\]]+)\]\(([^)]+)\)|\n/g
   const nodes: InlineNode[] = []
@@ -19,12 +23,18 @@ export function parseInline(text: string): InlineNode[] {
     } else if (m[0].startsWith('**')) {
       nodes.push(<strong key={key++}>{m[1]}</strong>)
     } else {
-      nodes.push(
-        <a key={key++} href={m[3]} target="_blank" rel="noopener noreferrer"
-           className="text-primary-600 underline hover:text-primary-800">
-          {m[2]}
-        </a>
-      )
+      const url = m[3].trim()
+      if (SAFE_URL.test(url)) {
+        nodes.push(
+          <a key={key++} href={url} target="_blank" rel="noopener noreferrer"
+             className="text-primary-600 underline hover:text-primary-800">
+            {m[2]}
+          </a>
+        )
+      } else {
+        // Protocole non autorisé , rendu en texte avec le label visible
+        nodes.push(`${m[2]} (${url})`)
+      }
     }
     last = m.index + m[0].length
   }
