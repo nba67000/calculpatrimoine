@@ -171,8 +171,8 @@ const sections: FAQSection[] = [
               quel que soit le montant et l&apos;âge des versements.
             </p>
             <p className="mb-3">
-              Cette exonération s&apos;applique aussi bien dans le cadre de l&apos;Article 990 I (avant 70 ans)
-              que de l&apos;Article 757 B (après 70 ans).
+              Cette exonération joue dans tous les cas, que les versements aient été faits avant
+              70 ans (Art. 990 I CGI) ou après (Art. 757 B CGI).
             </p>
             <p className="text-sm text-neutral-600">
               Base légale : article 796-0 bis du CGI pour le conjoint marié,
@@ -186,8 +186,8 @@ const sections: FAQSection[] = [
         answer: (
           <>
             <p className="mb-3">
-              <strong>Plusieurs bénéficiaires multiplient les abattements</strong> (dans le cadre de
-              l&apos;Article 990 I - versements avant 70 ans).
+              <strong>Plusieurs bénéficiaires multiplient les abattements</strong> (pour les versements
+              avant 70 ans, Art. 990 I CGI).
             </p>
             <div className="bg-primary-100 p-4 border border-neutral-200 mb-3">
               <p className="mb-2 text-sm font-bold">Exemple :</p>

@@ -221,11 +221,12 @@ const sections: FAQSection[] = [
         question: 'Les parts de SCPI entrent-elles dans l\'IFI ?',
         answer: (
           <p>
-            Oui. Les parts de SCPI (sociétés civiles de placement immobilier) entrent dans le calcul de l&apos;IFI
-            à hauteur de la fraction représentant des actifs immobiliers. En pratique, la SCPI communique
-            chaque année le coefficient de déductibilité ou d&apos;imposition à ses associés. Ce calculateur
-            part du principe que vous intégrez directement la valeur IFI de vos parts dans le montant
-            total renseigné.
+            Oui, mais pas pour la totalité de leur valeur. Une SCPI (société civile de placement
+            immobilier) peut contenir une part de trésorerie ou d&apos;autres actifs non immobiliers :
+            seule la part immobilière entre dans l&apos;IFI. Chaque année, la SCPI vous communique le
+            pourcentage à retenir (appelé « coefficient IFI »). Ce calculateur part du principe
+            que vous intégrez directement la valeur IFI de vos parts dans le montant total
+            renseigné.
           </p>
         ),
       },
@@ -251,9 +252,9 @@ const sections: FAQSection[] = [
         answer: (
           <p>
             Oui, les biens nécessaires à l&apos;exercice d&apos;une activité professionnelle principale sont exonérés
-            d&apos;IFI (Art. 975 CGI). Cette exonération s&apos;applique aux biens utilisés dans le cadre d&apos;une
-            activité industrielle, commerciale, artisanale, agricole ou libérale, exercée par le propriétaire
-            ou un membre du foyer. Ce calculateur ne modélise pas cette exonération : déduisez directement
+            d&apos;IFI (Art. 975 CGI). Cette exonération s&apos;applique aux biens utilisés pour votre activité
+            professionnelle (industrielle, commerciale, artisanale, agricole ou libérale) ou celle d&apos;un
+            membre de votre foyer. Ce calculateur ne modélise pas cette exonération : déduisez directement
             la valeur des biens professionnels avant de saisir le total.
           </p>
         ),

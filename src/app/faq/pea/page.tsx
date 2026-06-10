@@ -143,8 +143,8 @@ const sections: FAQSection[] = [
             <p className="mb-3">
               Le passif latent est l&apos;impôt qui serait dû si le PEA était soldé
               aujourd&apos;hui. Même exonéré d&apos;impôt sur le revenu après 5 ans, le PEA
-              reste assujetti aux prélèvements sociaux de 17,2 % sur la fraction de
-              plus-value.
+              reste soumis aux prélèvements sociaux de 17,2 % sur la fraction de
+              plus-value du retrait.
             </p>
             <p className="mb-3">
               Sur un PEA à 100 000 € dont 40 000 € de plus-value latente, le passif est

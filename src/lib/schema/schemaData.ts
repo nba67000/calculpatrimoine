@@ -410,12 +410,12 @@ export const FAQ_TRANSMISSION: FAQSchemaItem[] = [
   {
     question: "Mon conjoint est-il exonéré de droits sur l'assurance-vie ?",
     answer:
-      "Oui, totalement. Le conjoint survivant (marié) et le partenaire de PACS sont exonérés de tout droit de succession sur les capitaux décès d'assurance-vie, quel que soit le montant et l'âge des versements, aussi bien dans le cadre de l'Article 990 I que de l'Article 757 B.",
+      "Oui, totalement. Le conjoint survivant (marié) et le partenaire de PACS sont exonérés de tout droit de succession sur les capitaux décès d'assurance-vie, quel que soit le montant et l'âge des versements. Cette exonération joue dans tous les cas, que les versements aient été faits avant 70 ans (Art. 990 I CGI) ou après (Art. 757 B CGI).",
   },
   {
     question: "Vaut-il mieux désigner 1 ou plusieurs bénéficiaires ?",
     answer:
-      "Plusieurs bénéficiaires multiplient les abattements dans le cadre de l'Article 990 I. Exemple : capital 500 000 €, 1 bénéficiaire, taxable 347 500 €. Avec 3 bénéficiaires à parts égales (166 666 € chacun), taxable total environ 42 500 €. Le calculateur gère jusqu'à 6 bénéficiaires.",
+      "Plusieurs bénéficiaires multiplient les abattements pour les versements avant 70 ans (Art. 990 I CGI). Exemple : capital 500 000 €, 1 bénéficiaire, taxable 347 500 €. Avec 3 bénéficiaires à parts égales (166 666 € chacun), taxable total environ 42 500 €. Le calculateur gère jusqu'à 6 bénéficiaires.",
   },
   {
     question: "C'est quoi la clause bénéficiaire ? Pourquoi est-elle cruciale ?",
@@ -623,7 +623,7 @@ export const FAQ_PEA: FAQSchemaItem[] = [
   {
     question: "Qu'est-ce que le passif fiscal latent d'un PEA ?",
     answer:
-      "Le passif latent est l'impôt qui serait dû si le PEA était soldé aujourd'hui. Même exonéré d'impôt sur le revenu après 5 ans, le PEA reste assujetti aux prélèvements sociaux de 17,2 % sur la fraction de plus-value. Sur un PEA à 100 000 € dont 40 000 € de plus-value latente, le passif est de 40 000 × 17,2 % = 6 880 €. Cette information complète la valeur brute affichée par le courtier.",
+      "Le passif latent est l'impôt qui serait dû si le PEA était soldé aujourd'hui. Même exonéré d'impôt sur le revenu après 5 ans, le PEA reste soumis aux prélèvements sociaux de 17,2 % sur la fraction de plus-value du retrait. Sur un PEA à 100 000 € dont 40 000 € de plus-value latente, le passif est de 40 000 × 17,2 % = 6 880 €. Cette information complète la valeur brute affichée par le courtier.",
   },
   {
     question: "Le PEA est-il imposé à la succession ?",

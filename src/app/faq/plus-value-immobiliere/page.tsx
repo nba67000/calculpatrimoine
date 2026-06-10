@@ -406,8 +406,8 @@ const sections: FAQSection[] = [
             </p>
             <ul className="list-disc pl-6 mb-3 space-y-2">
               <li>
-                <strong>Expropriation :</strong> cession forcée à un organisme public dans le cadre
-                d&apos;une procédure d&apos;utilité publique.
+                <strong>Expropriation :</strong> vente forcée à l&apos;État ou à une collectivité
+                pour un projet d&apos;intérêt public (route, ligne ferroviaire, équipement).
               </li>
               <li>
                 <strong>Vente à un organisme HLM :</strong> sous conditions.
