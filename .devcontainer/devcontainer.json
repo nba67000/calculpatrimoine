@@ -1,0 +1,45 @@
+{
+  "name": "calcpatrimoine",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Next.js dev",
+      "onAutoForward": "openBrowser"
+    }
+  },
+
+  "postCreateCommand": "npm install && npm install -g @anthropic-ai/claude-code",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "bradlc.vscode-tailwindcss",
+        "vitest.explorer",
+        "anthropic.claude-code"
+      ],
+      "settings": {
+        "typescript.tsdk": "node_modules/typescript/lib",
+        "files.eol": "\n"
+      }
+    }
+  },
+
+  "remoteUser": "node",
+  "containerEnv": {
+    "NEXT_TELEMETRY_DISABLED": "1"
+  },
+
+  "secrets": {
+    "ANTHROPIC_API_KEY": {
+      "description": "Cle API Anthropic pour la route /api/chat (src/app/api/chat/route.ts).",
+      "documentationUrl": "https://console.anthropic.com/settings/keys"
+    }
+  }
+}
