@@ -1,6 +1,7 @@
 // src/components/SchemaMarkup.tsx
 import Script from 'next/script'
 import { CATEGORIES_CALC } from '@/config/navigation'
+import { safeJsonLd } from '@/lib/safeJsonLd'
 
 export default function SchemaMarkup() {
   const baseUrl = 'https://calculpatrimoine.fr'
@@ -94,7 +95,7 @@ export default function SchemaMarkup() {
     <Script
       id="schema-markup"
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(schemaData) }}
     />
   )
 }

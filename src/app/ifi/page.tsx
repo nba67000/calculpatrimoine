@@ -9,6 +9,7 @@ const IFICalculator = dynamic(
   { loading: () => <CalculatorSkeleton /> }
 )
 import SourcesSection from '@/components/SourcesSection'
+import { safeJsonLd } from '@/lib/safeJsonLd'
 
 
 export const metadata: Metadata = {
@@ -60,11 +61,11 @@ export default function IFIPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(toolSchema) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(toolSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbSchema) }}
       />
       <CalculateurPageLayout
         breadcrumb={[{ href: '/', label: 'Accueil' }, { label: 'IFI' }]}

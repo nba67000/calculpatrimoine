@@ -14,6 +14,8 @@
 //   • Max ~10 000 caractères par réponse recommandé
 //   • Pas besoin de couvrir toutes les questions de la page, mais cohérence requise
 
+import { safeJsonLd } from '@/lib/safeJsonLd'
+
 export interface FAQSchemaItem {
   question: string
   answer: string // TEXTE BRUT uniquement , pas de JSX, pas de HTML
@@ -40,7 +42,7 @@ export default function SchemaFAQ({ items }: Props) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(schema) }}
     />
   )
 }

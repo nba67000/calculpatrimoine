@@ -10,6 +10,8 @@
 //   • `url`  : ancre vers la section correspondante (recommandé)
 //   • `totalTime` : format ISO 8601 durée (PT5M = 5 minutes)
 
+import { safeJsonLd } from '@/lib/safeJsonLd'
+
 export interface HowToStep {
   name: string
   text: string
@@ -49,7 +51,7 @@ export default function SchemaHowTo({ name, description, totalTime, steps, tool 
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: safeJsonLd(schema) }}
     />
   )
 }
