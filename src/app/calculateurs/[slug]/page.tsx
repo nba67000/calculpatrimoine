@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { CATEGORIES_CALC } from '@/config/navigation'
+import { FAQS_BY_CATEGORY } from '@/config/faqs'
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -31,6 +32,7 @@ export default async function CategorieCalcPage({ params }: Props) {
   const actifs  = cat.calculateurs.filter(c => c.disponible)
   const bientot = cat.calculateurs.filter(c => !c.disponible)
   const autres  = CATEGORIES_CALC.filter(c => c.slug !== slug)
+  const faqs    = FAQS_BY_CATEGORY[slug] ?? []
 
   return (
     <>
@@ -118,6 +120,37 @@ export default async function CategorieCalcPage({ params }: Props) {
                           <p className="font-mono text-xs text-neutral-400 leading-relaxed">{calc.desc}</p>
                         </div>
                       </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {faqs.length > 0 && (
+                <div className="mt-10">
+                  <div className="flex items-center gap-5 mb-6">
+                    <h2 className="font-serif text-xl text-neutral-900 shrink-0">Questions fréquentes</h2>
+                    <div className="flex-1 h-[1px] bg-neutral-300" />
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {faqs.map(faq => (
+                      <Link
+                        key={faq.href}
+                        href={faq.href}
+                        className="group bg-surface-card border border-neutral-200 hover:border-primary-300 transition-all"
+                        style={{ boxShadow: '3px 3px 0 #E8E0D0' }}
+                      >
+                        <div className="px-5 pt-5 pb-4 border-b border-neutral-100 border-l-4 border-l-accent-400">
+                          <div className="flex items-start justify-between gap-3">
+                            <p className="font-serif font-bold text-neutral-900 group-hover:text-primary-700 transition-colors leading-snug">
+                              {faq.title}
+                            </p>
+                            <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform shrink-0 mt-0.5">→</span>
+                          </div>
+                        </div>
+                        <div className="px-5 py-4">
+                          <p className="font-mono text-xs text-neutral-400 leading-relaxed">{faq.description}</p>
+                        </div>
+                      </Link>
                     ))}
                   </div>
                 </div>
