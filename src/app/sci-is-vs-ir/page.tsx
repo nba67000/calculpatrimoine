@@ -7,6 +7,7 @@ const SciRegimeCalculator = dynamic(
   { loading: () => <CalculatorSkeleton /> }
 )
 import SourcesSection from '@/components/SourcesSection'
+import { parseInline } from '@/lib/markdownParser'
 
 export const metadata: Metadata = {
   title: 'SCI à l\'IS vs à l\'IR : comparateur fiscal 2026',
@@ -52,7 +53,7 @@ export default function SciRegimePage() {
               {LIMITES.map((l, i) => (
                 <li key={i} className="flex items-start gap-2">
                   <span className="text-neutral-400 mt-0.5 shrink-0">-</span>
-                  <span dangerouslySetInnerHTML={{ __html: l.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>') }} />
+                  <span>{parseInline(l)}</span>
                 </li>
               ))}
             </ul>

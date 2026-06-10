@@ -14,6 +14,7 @@
 
 import type { ReactNode } from 'react'
 import SourcesSection from '@/components/SourcesSection'
+import { parseInline } from '@/lib/markdownParser'
 
 interface Props {
   /** Slug du calculateur , utilisé pour résoudre les sources via le registry. */
@@ -57,11 +58,7 @@ export default function MethodologieSection({
             {limites!.map((l, i) => (
               <li key={i} className="flex items-start gap-2">
                 <span className="text-neutral-400 mt-0.5 shrink-0">-</span>
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html: l.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>'),
-                  }}
-                />
+                <span>{parseInline(l)}</span>
               </li>
             ))}
           </ul>
