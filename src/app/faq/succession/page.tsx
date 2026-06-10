@@ -27,11 +27,12 @@ const sections: FAQSection[] = [
         question: 'Qui paie les droits de succession et quand ?',
         answer: (
           <p>
-            Les droits de succession sont dus par chaque héritier individuellement, au
-            prorata de sa part nette. La déclaration doit être déposée dans les 6 mois
-            suivant le décès (12 mois si le défunt résidait hors de France métropolitaine).
-            Le paiement intervient à la date du dépôt, avec possibilité de fractionnement ou
-            de différé sous conditions (Art. 1717 CGI).
+            Chaque héritier paie individuellement, sur ce qu&apos;il reçoit (après
+            abattements et déduction de sa part de dettes du défunt). Plus vous héritez,
+            plus vous payez ; un héritier qui reçoit peu paie peu. La déclaration doit être
+            déposée dans les 6 mois suivant le décès (12 mois si le défunt résidait hors
+            de France métropolitaine). Le paiement intervient à la date du dépôt, avec
+            possibilité de fractionnement ou de différé sous conditions (Art. 1717 CGI).
           </p>
         ),
       },

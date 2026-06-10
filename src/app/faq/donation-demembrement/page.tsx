@@ -26,13 +26,22 @@ const sections: FAQSection[] = [
       {
         question: "C'est quoi le démembrement de propriété ?",
         answer: (
-          <p>
-            Le démembrement sépare la propriété d&apos;un bien en deux droits distincts :
-            l&apos;usufruit (utiliser le bien et en percevoir les revenus) et la nue-propriété
-            (en disposer mais sans usage immédiat). Le donateur peut donner la
-            nue-propriété tout en conservant l&apos;usufruit, ce qui réduit l&apos;assiette
-            taxable de la donation.
-          </p>
+          <>
+            <p className="mb-3">
+              Le démembrement sépare la propriété d&apos;un bien en deux droits distincts :
+              l&apos;usufruit (le droit d&apos;utiliser le bien et d&apos;en encaisser les
+              loyers) et la nue-propriété (le droit de devenir propriétaire plein du bien
+              plus tard).
+            </p>
+            <p className="mb-3">
+              Exemple concret : un parent donne la nue-propriété de sa maison à son enfant
+              mais garde le droit d&apos;y vivre (l&apos;usufruit) jusqu&apos;à son décès.
+            </p>
+            <p>
+              Le donateur peut donner la nue-propriété tout en conservant l&apos;usufruit,
+              ce qui réduit l&apos;assiette taxable de la donation.
+            </p>
+          </>
         ),
       },
       {

@@ -39,13 +39,20 @@ const sections: FAQSection[] = [
         question: 'Quels sont les paliers de CSG en 2026 ?',
         answer: (
           <>
-            <p className="mb-3">Quatre paliers selon le RFR et le nombre de parts :</p>
+            <p className="mb-3">
+              Quatre paliers selon votre RFR (Revenu Fiscal de Référence, indiqué sur
+              votre avis d&apos;imposition) et votre nombre de parts. Du moins au plus taxé :
+            </p>
             <ul className="list-disc pl-6 mb-3 space-y-1">
-              <li>Exonération totale : 0 % (RFR très bas)</li>
-              <li>Taux réduit : 3,8 % CSG + 0,5 % CRDS = 4,3 %</li>
-              <li>Taux médian : 6,6 % + 0,5 % + 0,3 % CASA = 7,4 %</li>
-              <li>Taux normal : 8,3 % + 0,5 % + 0,3 % = 9,1 %</li>
+              <li>Exonéré : 0 % (RFR très bas)</li>
+              <li>Réduit : 4,3 % au total</li>
+              <li>Médian : 7,4 %</li>
+              <li>Normal : 9,1 %</li>
             </ul>
+            <p className="mb-3">
+              Détail du calcul des 9,1 % : 8,3 % de CSG + 0,5 % de CRDS + 0,3 % de CASA
+              (contribution pour l&apos;autonomie).
+            </p>
             <p>Les seuils sont indexés chaque année selon l&apos;inflation.</p>
           </>
         ),

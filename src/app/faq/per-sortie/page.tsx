@@ -71,12 +71,14 @@ const sections: FAQSection[] = [
         question: 'Capital ou rente : que choisir ?',
         answer: (
           <p>
-            Comparatif factuel sans recommandation. Le capital donne un montant immédiat
-            utilisable mais subit une imposition lourde sur les versements (en une fois).
-            La rente lisse l&apos;imposition dans le temps mais la mortalité tronque
-            l&apos;espérance de vie : un décès précoce après quelques années de rente perd le
-            capital. Le calculateur affiche le net total cumulé selon l&apos;espérance de vie
-            saisie pour comparer les deux options.
+            Comparatif factuel sans recommandation. Le capital est versé en une fois :
+            vous disposez de l&apos;argent immédiatement, mais l&apos;impôt sur les versements
+            tombe en bloc l&apos;année du déblocage, ce qui peut faire grimper votre tranche.
+            La rente est versée chaque mois jusqu&apos;à votre décès : l&apos;impôt est
+            lissé, mais si vous décédez tôt, vous aurez touché beaucoup moins que le
+            capital initial (et il n&apos;y a plus de réversion possible une fois la rente
+            versée seule). Le calculateur affiche le net total cumulé selon
+            l&apos;espérance de vie saisie pour comparer les deux options.
           </p>
         ),
       },

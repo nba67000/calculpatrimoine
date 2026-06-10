@@ -29,9 +29,12 @@ const sections: FAQSection[] = [
           <p>
             Le LMNP (Loueur en Meublé Non Professionnel) est le statut fiscal par défaut
             d&apos;un particulier qui loue un logement meublé. Aucune démarche
-            d&apos;inscription : déclarer les loyers en BIC suffit. Pour basculer en LMP
-            (professionnel), il faut dépasser 23 000 € de recettes annuelles ET que ces
-            recettes représentent plus de 50 % des revenus du foyer (Art. 155 IV CGI).
+            d&apos;inscription : il suffit de déclarer les loyers dans la catégorie BIC
+            (Bénéfices Industriels et Commerciaux, le régime fiscal de la location
+            meublée, par opposition aux revenus fonciers de la location nue). Pour
+            basculer en LMP (professionnel), il faut dépasser 23 000 € de recettes
+            annuelles ET que ces recettes représentent plus de 50 % des revenus du foyer
+            (Art. 155 IV CGI).
           </p>
         ),
       },

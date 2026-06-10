@@ -27,11 +27,12 @@ const sections: FAQSection[] = [
         question: "Qu'est-ce que le déficit foncier ?",
         answer: (
           <p>
-            Le déficit foncier apparaît quand les charges déductibles (intérêts d&apos;emprunt,
-            travaux, assurances, frais de gestion) dépassent les loyers bruts d&apos;un bien
-            loué nu en régime réel. Ce déficit s&apos;impute en partie sur le revenu global de
-            l&apos;année, et le surplus se reporte sur les revenus fonciers des 10 années
-            suivantes (Art. 156 I-3° CGI).
+            Quand vos charges (intérêts d&apos;emprunt, travaux, assurance, gestion)
+            dépassent les loyers que vous encaissez sur un bien loué vide, vous êtes en
+            déficit foncier. Une partie de ce déficit vient réduire votre revenu imposable
+            global (salaire + autres revenus) et donc votre impôt cette année. Le reste est
+            gardé en réserve pour absorber vos loyers imposables des 10 années suivantes
+            (Art. 156 I-3° CGI).
           </p>
         ),
       },

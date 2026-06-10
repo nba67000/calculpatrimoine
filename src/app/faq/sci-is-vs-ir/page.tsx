@@ -28,9 +28,12 @@ const sections: FAQSection[] = [
         answer: (
           <>
             <p className="mb-3">
-              <strong>SCI à l&apos;IR (translucide)</strong> : les loyers nets remontent aux
-              associés selon leur quote-part, et sont imposés dans la catégorie revenus
-              fonciers à leur taux marginal d&apos;imposition + 17,2 % de prélèvements sociaux.
+              <strong>SCI à l&apos;IR</strong> : la SCI elle-même ne paie pas d&apos;impôt.
+              Les loyers (après charges) sont partagés entre les associés selon leur part
+              dans la SCI, et chacun les déclare dans sa propre déclaration d&apos;impôts
+              comme revenus fonciers, taxés à sa tranche IR + 17,2 % de prélèvements
+              sociaux. On parle de SCI « translucide » : l&apos;impôt passe à travers la SCI
+              pour atterrir chez les associés.
             </p>
             <p>
               <strong>SCI à l&apos;IS</strong> : la SCI est une société soumise à l&apos;impôt sur
@@ -56,13 +59,15 @@ const sections: FAQSection[] = [
         question: 'Que se passe-t-il à la sortie (vente du bien) ?',
         answer: (
           <p>
-            Le piège classique du calcul SCI à l&apos;IS : à la vente, la SCI subit le régime
-            des plus-values professionnelles. Les amortissements pratiqués pendant la
-            détention sont réintégrés au calcul, donc la plus-value imposable est très
-            supérieure à la plus-value économique. L&apos;IS est dû sur cette plus-value, sans
-            abattement pour durée de détention. À l&apos;IR, la SCI suit le régime des
-            particuliers : abattements progressifs, exonération à 22 ans (IR) et 30 ans
-            (PS).
+            Le piège classique de la SCI à l&apos;IS : à la vente, le fisc additionne tous
+            les amortissements que vous avez déduits pendant les années de détention pour
+            les ajouter au gain imposable. Concrètement : vous avez profité d&apos;un impôt
+            annuel faible grâce aux amortissements, mais le jour de la vente, ces
+            amortissements vous reviennent en pleine figure. La plus-value taxée est donc
+            bien plus grosse que le gain réel sur le prix de marché, et l&apos;IS est dû
+            dessus sans abattement pour durée de détention. À l&apos;IR au contraire, la
+            SCI suit le régime des particuliers : abattements progressifs, exonération
+            d&apos;IR à 22 ans et exonération des prélèvements sociaux à 30 ans.
           </p>
         ),
       },

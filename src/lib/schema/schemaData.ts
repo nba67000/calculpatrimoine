@@ -645,7 +645,7 @@ export const FAQ_SUCCESSION: FAQSchemaItem[] = [
   {
     question: "Qui paie les droits de succession et quand ?",
     answer:
-      "Les droits de succession sont dus par chaque héritier individuellement, au prorata de sa part nette. La déclaration doit être déposée dans les 6 mois suivant le décès (12 mois si le défunt résidait hors de France métropolitaine). Le paiement intervient à la date du dépôt, avec possibilité de fractionnement ou de différé sous conditions (Art. 1717 CGI).",
+      "Chaque héritier paie individuellement, sur ce qu'il reçoit (après abattements et déduction de sa part de dettes du défunt). Plus vous héritez, plus vous payez ; un héritier qui reçoit peu paie peu. La déclaration doit être déposée dans les 6 mois suivant le décès (12 mois si le défunt résidait hors de France métropolitaine). Le paiement intervient à la date du dépôt, avec possibilité de fractionnement ou de différé sous conditions (Art. 1717 CGI).",
   },
   {
     question: "Quels sont les abattements par lien de parenté en 2026 ?",
@@ -692,7 +692,7 @@ export const FAQ_DEFICIT_FONCIER: FAQSchemaItem[] = [
   {
     question: "Qu'est-ce que le déficit foncier ?",
     answer:
-      "Le déficit foncier apparaît quand les charges déductibles (intérêts d'emprunt, travaux, assurances, frais de gestion) dépassent les loyers bruts d'un bien loué nu en régime réel. Ce déficit s'impute en partie sur le revenu global de l'année, et le surplus se reporte sur les revenus fonciers des 10 années suivantes (Art. 156 I-3° CGI).",
+      "Quand vos charges (intérêts d'emprunt, travaux, assurance, gestion) dépassent les loyers que vous encaissez sur un bien loué vide, vous êtes en déficit foncier. Une partie de ce déficit vient réduire votre revenu imposable global (salaire + autres revenus) et donc votre impôt cette année. Le reste est gardé en réserve pour absorber vos loyers imposables des 10 années suivantes (Art. 156 I-3° CGI).",
   },
   {
     question: "Quel est le plafond annuel imputable sur le revenu global ?",
@@ -744,7 +744,7 @@ export const FAQ_CSG_RETRAITE: FAQSchemaItem[] = [
   {
     question: "Quels sont les paliers de CSG en 2026 ?",
     answer:
-      "Quatre paliers selon le RFR et le nombre de parts. Exonération totale (0 %) si RFR très bas. Taux réduit (3,8 % CSG + 0,5 % CRDS = 4,3 %). Taux médian (6,6 % + 0,5 % + 0,3 % CASA = 7,4 %). Taux normal (8,3 % + 0,5 % + 0,3 % = 9,1 %). Les seuils sont indexés chaque année selon l'inflation.",
+      "Quatre paliers selon votre RFR (Revenu Fiscal de Référence, indiqué sur votre avis d'imposition) et votre nombre de parts. Du moins au plus taxé : Exonéré 0 % (RFR très bas), Réduit 4,3 %, Médian 7,4 %, Normal 9,1 %. Détail du calcul des 9,1 % : 8,3 % de CSG + 0,5 % de CRDS + 0,3 % de CASA (contribution pour l'autonomie). Les seuils sont indexés chaque année selon l'inflation.",
   },
   {
     question: "Sur quel revenu sont calculés les paliers ?",
@@ -786,7 +786,7 @@ export const FAQ_SCI_IS_IR: FAQSchemaItem[] = [
   {
     question: "Quelle différence entre une SCI à l'IR et à l'IS ?",
     answer:
-      "La SCI à l'IR est translucide fiscalement : les loyers nets remontent aux associés selon leur quote-part, et sont imposés dans la catégorie revenus fonciers à leur taux marginal d'imposition + 17,2 % de prélèvements sociaux. La SCI à l'IS est une société soumise à l'impôt sur les sociétés : 15 % jusqu'à 42 500 € de bénéfice, 25 % au-delà. Les amortissements sont déductibles.",
+      "SCI à l'IR : la SCI elle-même ne paie pas d'impôt. Les loyers (après charges) sont partagés entre les associés selon leur part dans la SCI, et chacun les déclare dans sa propre déclaration d'impôts comme revenus fonciers, taxés à sa tranche IR + 17,2 % de prélèvements sociaux. On parle de SCI « translucide » : l'impôt passe à travers la SCI pour atterrir chez les associés. SCI à l'IS : la SCI est une société soumise à l'impôt sur les sociétés : 15 % jusqu'à 42 500 € de bénéfice, 25 % au-delà. Les amortissements du bien sont déductibles.",
   },
   {
     question: "Pourquoi l'IS donne-t-il souvent un impôt annuel plus bas ?",
@@ -796,7 +796,7 @@ export const FAQ_SCI_IS_IR: FAQSchemaItem[] = [
   {
     question: "Que se passe-t-il à la sortie (vente du bien) ?",
     answer:
-      "Le piège classique du calcul SCI à l'IS : à la vente, la SCI subit le régime des plus-values professionnelles. Les amortissements pratiqués pendant la détention sont réintégrés au calcul, donc la plus-value imposable est très supérieure à la plus-value économique. L'IS est dû sur cette plus-value, sans abattement pour durée de détention. À l'IR, la SCI suit le régime des particuliers : abattements progressifs, exonération à 22 ans (IR) et 30 ans (PS).",
+      "Le piège classique de la SCI à l'IS : à la vente, le fisc additionne tous les amortissements que vous avez déduits pendant les années de détention pour les ajouter au gain imposable. Concrètement : vous avez profité d'un impôt annuel faible grâce aux amortissements, mais le jour de la vente, ces amortissements vous reviennent en pleine figure. La plus-value taxée est donc bien plus grosse que le gain réel sur le prix de marché, et l'IS est dû dessus sans abattement pour durée de détention. À l'IR au contraire, la SCI suit le régime des particuliers : abattements progressifs, exonération d'IR à 22 ans et exonération des prélèvements sociaux à 30 ans.",
   },
   {
     question: "L'option IS est-elle réversible ?",
@@ -833,7 +833,7 @@ export const FAQ_LMNP_REGIME: FAQSchemaItem[] = [
   {
     question: "C'est quoi le LMNP et comment y accéder ?",
     answer:
-      "Le LMNP (Loueur en Meublé Non Professionnel) est le statut fiscal par défaut d'un particulier qui loue un logement meublé. Aucune démarche d'inscription : déclarer les loyers en BIC suffit. Pour basculer en LMP (professionnel), il faut dépasser 23 000 € de recettes annuelles ET que ces recettes représentent plus de 50 % des revenus du foyer (Art. 155 IV CGI).",
+      "Le LMNP (Loueur en Meublé Non Professionnel) est le statut fiscal par défaut d'un particulier qui loue un logement meublé. Aucune démarche d'inscription : il suffit de déclarer les loyers dans la catégorie BIC (Bénéfices Industriels et Commerciaux, le régime fiscal de la location meublée, par opposition aux revenus fonciers de la location nue). Pour basculer en LMP (professionnel), il faut dépasser 23 000 € de recettes annuelles ET que ces recettes représentent plus de 50 % des revenus du foyer (Art. 155 IV CGI).",
   },
   {
     question: "Quelle différence entre micro-BIC et régime réel en LMNP ?",
@@ -932,7 +932,7 @@ export const FAQ_PER_SORTIE: FAQSchemaItem[] = [
   {
     question: "Capital ou rente : que choisir ?",
     answer:
-      "Comparatif factuel sans recommandation. Le capital donne un montant immédiat utilisable mais subit une imposition lourde sur les versements (en une fois). La rente lisse l'imposition dans le temps mais la mortalité tronque l'espérance de vie : un décès précoce après quelques années de rente perd le capital. Le calculateur affiche le net total cumulé selon l'espérance de vie saisie pour comparer les deux options.",
+      "Comparatif factuel sans recommandation. Le capital est versé en une fois : vous disposez de l'argent immédiatement, mais l'impôt sur les versements tombe en bloc l'année du déblocage, ce qui peut faire grimper votre tranche. La rente est versée chaque mois jusqu'à votre décès : l'impôt est lissé, mais si vous décédez tôt, vous aurez touché beaucoup moins que le capital initial (et il n'y a plus de réversion possible une fois la rente versée seule). Le calculateur affiche le net total cumulé selon l'espérance de vie saisie pour comparer les deux options.",
   },
   {
     question: "Le panachage capital + rente est-il fiscalement avantageux ?",
@@ -959,7 +959,7 @@ export const FAQ_VENTE_DONATION: FAQSchemaItem[] = [
   {
     question: "Vendre ou donner un bien à un proche : quelle différence fiscale ?",
     answer:
-      "La vente déclenche l'impôt sur la plus-value immobilière (IR 19 % + PS 17,2 %, abattements par durée) et des droits d'enregistrement payés par l'acheteur (DMTO environ 5,80 %). La donation déclenche les droits de mutation à titre gratuit (barème Art. 777 CGI) payés par le donataire, après application des abattements (Art. 779 CGI). Les deux régimes sont structurellement différents et le calculateur les compare en cumulé.",
+      "La vente déclenche deux impôts. Côté vendeur : impôt sur la plus-value immobilière (19 % d'IR + 17,2 % de prélèvements sociaux, avec abattements selon la durée de détention). Côté acheteur : les « frais de notaire » usuels, dont la plus grosse part est un impôt sur la mutation appelé DMTO (Droits de Mutation à Titre Onéreux, environ 5,80 % du prix). La donation déclenche un seul impôt, payé par celui qui reçoit : les droits de donation, calculés selon le lien de parenté (barème Art. 777 CGI) après abattement (Art. 779 CGI - par exemple 100 000 € pour un enfant). Le calculateur compare les deux régimes en cumulé.",
   },
   {
     question: "Pourquoi vendre peut être plus coûteux que donner ?",
@@ -1001,7 +1001,7 @@ export const FAQ_PRET_INTRAFAMILIAL: FAQSchemaItem[] = [
   {
     question: "Comment formaliser un prêt intrafamilial ?",
     answer:
-      "Un acte sous seing privé suffit jusqu'à 5 000 €. Au-delà, la déclaration via le formulaire 2062 est obligatoire, à joindre à la déclaration de revenus de l'année du prêt (Art. 242 ter CGI). Au-delà de 1 000 € d'intérêts annuels, déclaration via le formulaire 2778 par le prêteur. La formalisation devant notaire (acte authentique) est conseillée pour les montants importants ou les délais longs.",
+      "Pour un petit prêt familial (jusqu'à 5 000 €), un simple écrit signé entre les deux personnes suffit, sans notaire. Au-delà, il faut déclarer le prêt au fisc via le formulaire 2062, joint à la déclaration de revenus de l'année du prêt (Art. 242 ter CGI). Et si vous percevez plus de 1 000 € d'intérêts par an sur ce prêt, vous (le prêteur) devez aussi remplir le formulaire 2778. Passer devant un notaire (acte authentique) reste conseillé pour les montants importants ou les longs délais.",
   },
   {
     question: "Quel taux d'intérêt appliquer ?",
@@ -1043,7 +1043,7 @@ export const FAQ_DONATION_DEMEMBREMENT: FAQSchemaItem[] = [
   {
     question: "C'est quoi le démembrement de propriété ?",
     answer:
-      "Le démembrement sépare la propriété d'un bien en deux droits distincts : l'usufruit (utiliser le bien et en percevoir les revenus) et la nue-propriété (en disposer mais sans usage immédiat). Le donateur peut donner la nue-propriété tout en conservant l'usufruit, ce qui réduit l'assiette taxable de la donation.",
+      "Le démembrement sépare la propriété d'un bien en deux droits distincts : l'usufruit (le droit d'utiliser le bien et d'en encaisser les loyers) et la nue-propriété (le droit de devenir propriétaire plein du bien plus tard). Exemple concret : un parent donne la nue-propriété de sa maison à son enfant mais garde le droit d'y vivre (l'usufruit) jusqu'à son décès. Le donateur peut donner la nue-propriété tout en conservant l'usufruit, ce qui réduit l'assiette taxable de la donation.",
   },
   {
     question: "Comment fonctionne le barème Art. 669 CGI ?",

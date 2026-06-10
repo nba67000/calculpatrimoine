@@ -27,12 +27,13 @@ const sections: FAQSection[] = [
         question: 'Comment formaliser un prêt intrafamilial ?',
         answer: (
           <p>
-            Un acte sous seing privé suffit jusqu&apos;à 5 000 €. Au-delà, la déclaration via
-            le formulaire 2062 est obligatoire, à joindre à la déclaration de revenus de
-            l&apos;année du prêt (Art. 242 ter CGI). Au-delà de 1 000 € d&apos;intérêts annuels,
-            déclaration via le formulaire 2778 par le prêteur. La formalisation devant
-            notaire (acte authentique) est conseillée pour les montants importants ou les
-            délais longs.
+            Pour un petit prêt familial (jusqu&apos;à 5 000 €), un simple écrit signé entre
+            les deux personnes suffit, sans notaire. Au-delà, il faut déclarer le prêt au
+            fisc via le formulaire 2062, joint à la déclaration de revenus de l&apos;année
+            du prêt (Art. 242 ter CGI). Et si vous percevez plus de 1 000 € d&apos;intérêts
+            par an sur ce prêt, vous (le prêteur) devez aussi remplir le formulaire 2778.
+            Passer devant un notaire (acte authentique) reste conseillé pour les montants
+            importants ou les longs délais.
           </p>
         ),
       },

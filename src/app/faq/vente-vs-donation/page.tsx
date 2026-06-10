@@ -26,14 +26,21 @@ const sections: FAQSection[] = [
       {
         question: 'Vendre ou donner un bien à un proche : quelle différence fiscale ?',
         answer: (
-          <p>
-            La vente déclenche l&apos;impôt sur la plus-value immobilière (IR 19 % + PS
-            17,2 %, abattements par durée) et des droits d&apos;enregistrement payés par
-            l&apos;acheteur (DMTO environ 5,80 %). La donation déclenche les droits de
-            mutation à titre gratuit (barème Art. 777 CGI) payés par le donataire, après
-            application des abattements (Art. 779 CGI). Les deux régimes sont
-            structurellement différents et le calculateur les compare en cumulé.
-          </p>
+          <>
+            <p className="mb-3">
+              La vente déclenche deux impôts. Côté vendeur : impôt sur la plus-value
+              immobilière (19 % d&apos;IR + 17,2 % de prélèvements sociaux, avec abattements
+              selon la durée de détention). Côté acheteur : les « frais de notaire »
+              usuels, dont la plus grosse part est un impôt sur la mutation appelé DMTO
+              (Droits de Mutation à Titre Onéreux, environ 5,80 % du prix).
+            </p>
+            <p>
+              La donation déclenche un seul impôt, payé par celui qui reçoit : les droits
+              de donation, calculés selon le lien de parenté (barème Art. 777 CGI) après
+              abattement (Art. 779 CGI - par exemple 100 000 € pour un enfant). Le
+              calculateur compare les deux régimes en cumulé.
+            </p>
+          </>
         ),
       },
       {
