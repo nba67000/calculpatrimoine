@@ -5,6 +5,7 @@ import type { LmnpRegimeInputs, TypeMeuble } from '@/types/lmnpRegime'
 import { useCalculator } from '@/hooks/useCalculator'
 import AlertList from '@/components/AlertList'
 import ChatWidget from '@/components/ChatWidget'
+import CrossLink from '@/components/CrossLink'
 import SimResumeBanner from '@/components/Calculator/SimResumeBanner'
 import { formatEur } from '@/lib/formatters'
 
@@ -158,6 +159,27 @@ export default function LmnpRegimeCalculator() {
           <AlertList items={results.warnings} />
           <AlertList items={results.optimisations} />
         </div>
+      </div>
+
+      <div className="mt-4 border-t border-neutral-200">
+        <p className="font-mono text-xs uppercase tracking-widest text-neutral-400 px-1 pt-4 pb-2">
+          Questions naturelles après ce résultat
+        </p>
+        <CrossLink
+          href="/plus-value-immobiliere/lmnp"
+          title="Plus-value LMNP à la sortie"
+          description="Depuis le 15/02/2025, les amortissements sont réintégrés au prix d'acquisition pour le calcul de la PV (Art. 150 VB III CGI)."
+        />
+        <CrossLink
+          href="/comparateur-locatif-placement"
+          title="Locatif vs placement financier"
+          description="Comparer le rendement locatif net à un placement financier (PEA, assurance-vie) à capital et durée égaux."
+        />
+        <CrossLink
+          href="/deficit-foncier"
+          title="Équivalent en location nue"
+          description="La location nue suit un régime foncier différent (déficit imputable sur revenu global jusqu'à 10 700 €)."
+        />
       </div>
 
       <ChatWidget contexte={{ calculateur: 'lmnp-reel-vs-micro', inputs, results }} />

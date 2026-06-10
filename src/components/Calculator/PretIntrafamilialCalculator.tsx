@@ -5,6 +5,7 @@ import type { PretIntrafamilialInputs, LienEmprunteur } from '@/types/pretIntraf
 import { useCalculator } from '@/hooks/useCalculator'
 import AlertList from '@/components/AlertList'
 import ChatWidget from '@/components/ChatWidget'
+import CrossLink from '@/components/CrossLink'
 import SimResumeBanner from '@/components/Calculator/SimResumeBanner'
 import { formatEur } from '@/lib/formatters'
 
@@ -153,6 +154,27 @@ export default function PretIntrafamilialCalculator() {
           <AlertList items={results.warnings} />
           <AlertList items={results.optimisations} />
         </div>
+      </div>
+
+      <div className="mt-4 border-t border-neutral-200">
+        <p className="font-mono text-xs uppercase tracking-widest text-neutral-400 px-1 pt-4 pb-2">
+          Questions naturelles après ce résultat
+        </p>
+        <CrossLink
+          href="/donation/droits"
+          title="Alternative donation directe"
+          description="Calcul équivalent en droits de donation pour un même montant transmis (Art. 779 abattements)."
+        />
+        <CrossLink
+          href="/donation/demembrement"
+          title="Donation de la nue-propriété"
+          description="Réduit l'assiette taxable en conservant l'usufruit côté donateur (barème Art. 669 CGI)."
+        />
+        <CrossLink
+          href="/vente-vs-donation"
+          title="Vendre ou donner le bien ?"
+          description="Si le prêt sert à acquérir un bien à un proche, comparer vente + prêt vs donation directe."
+        />
       </div>
 
       <ChatWidget contexte={{ calculateur: 'pret-intrafamilial', inputs, results }} />

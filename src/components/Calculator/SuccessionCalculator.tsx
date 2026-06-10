@@ -14,6 +14,7 @@ import type {
 import { useCalculator } from '@/hooks/useCalculator'
 import AlertList from '@/components/AlertList'
 import ChatWidget from '@/components/ChatWidget'
+import CrossLink from '@/components/CrossLink'
 import SimResumeBanner from '@/components/Calculator/SimResumeBanner'
 import { formatEur, formatNombre } from '@/lib/formatters'
 
@@ -246,6 +247,27 @@ export default function SuccessionCalculator() {
           <AlertList items={results.warnings} />
           <AlertList items={results.optimisations} />
         </div>
+      </div>
+
+      <div className="mt-4 border-t border-neutral-200">
+        <p className="font-mono text-xs uppercase tracking-widest text-neutral-400 px-1 pt-4 pb-2">
+          Questions naturelles après ce résultat
+        </p>
+        <CrossLink
+          href="/donation/droits"
+          title="Anticiper par donation de son vivant"
+          description="Les abattements (Art. 779 CGI) se renouvellent tous les 15 ans : donner permet de fractionner la transmission."
+        />
+        <CrossLink
+          href="/assurance-vie/transmission"
+          title="L'assurance-vie échappe à la succession"
+          description="Régime spécifique Art. 990 I / 757 B CGI avec abattement de 152 500 € par bénéficiaire."
+        />
+        <CrossLink
+          href="/donation/demembrement"
+          title="Donation avec démembrement"
+          description="Transmettre la nue-propriété pour réduire l'assiette taxable (barème Art. 669 CGI selon l'âge)."
+        />
       </div>
 
       <ChatWidget contexte={{ calculateur: 'succession', inputs, results }} />

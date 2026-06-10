@@ -5,6 +5,7 @@ import type { VenteVsDonationInputs, LienBeneficiaire } from '@/types/venteVsDon
 import { useCalculator } from '@/hooks/useCalculator'
 import AlertList from '@/components/AlertList'
 import ChatWidget from '@/components/ChatWidget'
+import CrossLink from '@/components/CrossLink'
 import SimResumeBanner from '@/components/Calculator/SimResumeBanner'
 import { formatEur } from '@/lib/formatters'
 
@@ -215,6 +216,27 @@ export default function VenteVsDonationCalculator() {
           <AlertList items={results.warnings} />
           <AlertList items={results.optimisations} />
         </div>
+      </div>
+
+      <div className="mt-4 border-t border-neutral-200">
+        <p className="font-mono text-xs uppercase tracking-widest text-neutral-400 px-1 pt-4 pb-2">
+          Questions naturelles après ce résultat
+        </p>
+        <CrossLink
+          href="/pret-intrafamilial"
+          title="Prêter plutôt que vendre"
+          description="Le prêt familial in fine évite la plus-value immobilière et les droits d'enregistrement."
+        />
+        <CrossLink
+          href="/donation/droits"
+          title="Donation en pleine propriété"
+          description="Droits standards Art. 777 CGI sans optimisation par démembrement."
+        />
+        <CrossLink
+          href="/donation/demembrement"
+          title="Donation avec démembrement"
+          description="Transmettre la nue-propriété pour réduire l'assiette taxable (barème Art. 669 CGI)."
+        />
       </div>
 
       <ChatWidget contexte={{ calculateur: 'vente-vs-donation', inputs, results }} />

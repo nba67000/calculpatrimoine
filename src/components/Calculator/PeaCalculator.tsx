@@ -5,6 +5,7 @@ import type { PeaInputs } from '@/types/pea'
 import { useCalculator } from '@/hooks/useCalculator'
 import AlertList from '@/components/AlertList'
 import ChatWidget from '@/components/ChatWidget'
+import CrossLink from '@/components/CrossLink'
 import SimResumeBanner from '@/components/Calculator/SimResumeBanner'
 import { formatEur, formatPct } from '@/lib/formatters'
 
@@ -140,6 +141,27 @@ export default function PeaCalculator() {
           <AlertList items={results.warnings} />
           <AlertList items={results.optimisations} />
         </div>
+      </div>
+
+      <div className="mt-4 border-t border-neutral-200">
+        <p className="font-mono text-xs uppercase tracking-widest text-neutral-400 px-1 pt-4 pb-2">
+          Questions naturelles après ce résultat
+        </p>
+        <CrossLink
+          href="/assurance-vie/fiscalite-rachat"
+          title="PEA vs assurance-vie après 5 ans"
+          description="Le PEA est exonéré d'IR ; l'AV cumule abattement annuel et taux historiques sur les versements pré-2017."
+        />
+        <CrossLink
+          href="/per-individuel"
+          title="Autre enveloppe défiscalisée"
+          description="Le PER produit une économie d'impôt à l'entrée plutôt qu'une exonération à la sortie."
+        />
+        <CrossLink
+          href="/tmi"
+          title="Connaître votre TMI"
+          description="Utile pour arbitrer entre PFU 30 % et barème IR sur les autres placements (le PEA reste exonéré dans tous les cas)."
+        />
       </div>
 
       <ChatWidget contexte={{ calculateur: 'pea', inputs, results }} />

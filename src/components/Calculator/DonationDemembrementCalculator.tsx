@@ -6,6 +6,7 @@ import type { LienParente } from '@/types/donation'
 import { useCalculator } from '@/hooks/useCalculator'
 import AlertList from '@/components/AlertList'
 import ChatWidget from '@/components/ChatWidget'
+import CrossLink from '@/components/CrossLink'
 import SimResumeBanner from '@/components/Calculator/SimResumeBanner'
 import { formatEur } from '@/lib/formatters'
 
@@ -134,6 +135,27 @@ export default function DonationDemembrementCalculator() {
           <AlertList items={results.warnings} />
           <AlertList items={results.optimisations} />
         </div>
+      </div>
+
+      <div className="mt-4 border-t border-neutral-200">
+        <p className="font-mono text-xs uppercase tracking-widest text-neutral-400 px-1 pt-4 pb-2">
+          Questions naturelles après ce résultat
+        </p>
+        <CrossLink
+          href="/donation/droits"
+          title="Comparer avec donation en pleine propriété"
+          description="Le démembrement réduit l'assiette taxable ; le calculateur droits chiffre l'écart en valeur absolue."
+        />
+        <CrossLink
+          href="/succession"
+          title="Au décès, réunion de l'usufruit non taxée"
+          description="L'Art. 1133 CGI exonère la reconstitution de pleine propriété au décès du donateur usufruitier."
+        />
+        <CrossLink
+          href="/vente-vs-donation"
+          title="Vendre plutôt que donner ?"
+          description="Comparaison du coût fiscal entre vente et donation d'un même bien immobilier."
+        />
       </div>
 
       <ChatWidget contexte={{ calculateur: 'donation/demembrement', inputs, results }} />

@@ -6,6 +6,7 @@ import type { PerSortieInputs, ModeSortie } from '@/types/perSortie'
 import { useCalculator } from '@/hooks/useCalculator'
 import AlertList from '@/components/AlertList'
 import ChatWidget from '@/components/ChatWidget'
+import CrossLink from '@/components/CrossLink'
 import SimResumeBanner from '@/components/Calculator/SimResumeBanner'
 import { formatEur } from '@/lib/formatters'
 
@@ -208,6 +209,27 @@ export default function PerSortieCalculator() {
           <AlertList items={results.warnings} />
           <AlertList items={results.optimisations} />
         </div>
+      </div>
+
+      <div className="mt-4 border-t border-neutral-200">
+        <p className="font-mono text-xs uppercase tracking-widest text-neutral-400 px-1 pt-4 pb-2">
+          Questions naturelles après ce résultat
+        </p>
+        <CrossLink
+          href="/per-individuel"
+          title="Côté entrée : économie d'impôt sur versement"
+          description="Calcul amont du PER : plafond de déduction, report N-1 à N-5, coût net du versement après économie."
+        />
+        <CrossLink
+          href="/rente-viagere"
+          title="Modélisation actuarielle d'une rente"
+          description="Estimer le taux de conversion réel à partir des tables INSEE 2021 plutôt qu'une hypothèse forfaitaire."
+        />
+        <CrossLink
+          href="/csg-csds-retraite"
+          title="CSG sur la rente PER"
+          description="La rente PER est soumise à la CSG retraite (taux 4,3 / 7,4 / 9,1 %) selon votre RFR."
+        />
       </div>
 
       <ChatWidget contexte={{ calculateur: 'per-sortie', inputs, results }} />

@@ -5,6 +5,7 @@ import type { SciRegimeInputs } from '@/types/sciRegime'
 import { useCalculator } from '@/hooks/useCalculator'
 import AlertList from '@/components/AlertList'
 import ChatWidget from '@/components/ChatWidget'
+import CrossLink from '@/components/CrossLink'
 import SimResumeBanner from '@/components/Calculator/SimResumeBanner'
 import { formatEur } from '@/lib/formatters'
 
@@ -139,6 +140,27 @@ export default function SciRegimeCalculator() {
           <AlertList items={results.warnings} />
           <AlertList items={results.optimisations} />
         </div>
+      </div>
+
+      <div className="mt-4 border-t border-neutral-200">
+        <p className="font-mono text-xs uppercase tracking-widest text-neutral-400 px-1 pt-4 pb-2">
+          Questions naturelles après ce résultat
+        </p>
+        <CrossLink
+          href="/deficit-foncier"
+          title="Régime IR : déficit foncier"
+          description="SCI translucide à l'IR, le déficit foncier remonte aux associés selon les règles communes (plafond 10 700 €)."
+        />
+        <CrossLink
+          href="/plus-value-immobiliere"
+          title="PV à la sortie (SCI IR)"
+          description="À l'IR, la PV suit le régime des particuliers : abattements par durée, exonération à 22 ans (IR) / 30 ans (PS)."
+        />
+        <CrossLink
+          href="/lmnp-reel-vs-micro"
+          title="Alternative location meublée"
+          description="La SCI ne peut pas faire de meublé sans risque d'IS automatique ; le LMNP en direct contourne ce sujet."
+        />
       </div>
 
       <ChatWidget contexte={{ calculateur: 'sci-is-vs-ir', inputs, results }} />

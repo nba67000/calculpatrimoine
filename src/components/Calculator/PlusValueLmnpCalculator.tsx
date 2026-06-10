@@ -5,6 +5,7 @@ import type { PlusValueLmnpInputs } from '@/types/plusValueLmnp'
 import { useCalculator } from '@/hooks/useCalculator'
 import AlertList from '@/components/AlertList'
 import ChatWidget from '@/components/ChatWidget'
+import CrossLink from '@/components/CrossLink'
 import SimResumeBanner from '@/components/Calculator/SimResumeBanner'
 import { formatEur } from '@/lib/formatters'
 
@@ -125,6 +126,27 @@ export default function PlusValueLmnpCalculator() {
           <AlertList items={results.warnings} />
           <AlertList items={results.optimisations} />
         </div>
+      </div>
+
+      <div className="mt-4 border-t border-neutral-200">
+        <p className="font-mono text-xs uppercase tracking-widest text-neutral-400 px-1 pt-4 pb-2">
+          Questions naturelles après ce résultat
+        </p>
+        <CrossLink
+          href="/plus-value-immobiliere"
+          title="Plus-value immobilière hors LMNP"
+          description="Régime standard, sans réintégration des amortissements : IR 19 % + PS 17,2 %, abattements par durée."
+        />
+        <CrossLink
+          href="/lmnp-reel-vs-micro"
+          title="Régime fiscal durant la détention"
+          description="Réel ou micro-BIC : choix qui détermine les amortissements pratiqués et donc la PV future."
+        />
+        <CrossLink
+          href="/sci-is-vs-ir"
+          title="Alternative SCI à l'IS"
+          description="La SCI à l'IS suit aussi un régime PV pro avec réintégration des amortissements (logique analogue au LMNP depuis 2025)."
+        />
       </div>
 
       <ChatWidget contexte={{ calculateur: 'plus-value-immobiliere/lmnp', inputs, results }} />

@@ -5,6 +5,7 @@ import type { CsgRetraiteInputs } from '@/types/csgRetraite'
 import { useCalculator } from '@/hooks/useCalculator'
 import AlertList from '@/components/AlertList'
 import ChatWidget from '@/components/ChatWidget'
+import CrossLink from '@/components/CrossLink'
 import SimResumeBanner from '@/components/Calculator/SimResumeBanner'
 import { formatEur, formatPct } from '@/lib/formatters'
 
@@ -129,6 +130,27 @@ export default function CsgRetraiteCalculator() {
           <AlertList items={results.warnings} />
           <AlertList items={results.optimisations} />
         </div>
+      </div>
+
+      <div className="mt-4 border-t border-neutral-200">
+        <p className="font-mono text-xs uppercase tracking-widest text-neutral-400 px-1 pt-4 pb-2">
+          Questions naturelles après ce résultat
+        </p>
+        <CrossLink
+          href="/tmi"
+          title="Votre RFR détermine aussi votre TMI"
+          description="Le RFR sert au calcul CSG mais aussi à votre tranche marginale d'imposition sur le revenu."
+        />
+        <CrossLink
+          href="/per-individuel"
+          title="Réduire votre RFR via un PER"
+          description="Verser sur un PER déductible réduit le revenu imposable et peut faire baisser le palier CSG."
+        />
+        <CrossLink
+          href="/per-sortie"
+          title="Sortie PER : CSG sur la rente"
+          description="Une sortie PER en rente subit la CSG retraite calculée ici (palier selon RFR)."
+        />
       </div>
 
       <ChatWidget contexte={{ calculateur: 'csg-csds-retraite', inputs, results }} />

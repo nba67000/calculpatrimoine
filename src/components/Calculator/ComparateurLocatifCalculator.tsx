@@ -5,6 +5,7 @@ import type { ComparateurLocatifInputs, RegimeLocatif, VehiculePlacement } from 
 import { useCalculator } from '@/hooks/useCalculator'
 import AlertList from '@/components/AlertList'
 import ChatWidget from '@/components/ChatWidget'
+import CrossLink from '@/components/CrossLink'
 import SimResumeBanner from '@/components/Calculator/SimResumeBanner'
 import { formatEur } from '@/lib/formatters'
 
@@ -165,6 +166,27 @@ export default function ComparateurLocatifCalculator() {
           <AlertList items={results.warnings} />
           <AlertList items={results.optimisations} />
         </div>
+      </div>
+
+      <div className="mt-4 border-t border-neutral-200">
+        <p className="font-mono text-xs uppercase tracking-widest text-neutral-400 px-1 pt-4 pb-2">
+          Questions naturelles après ce résultat
+        </p>
+        <CrossLink
+          href="/plus-value-immobiliere"
+          title="Impôt à la sortie du locatif"
+          description="Le calculateur ignore la fiscalité à la revente : IR 19 % + PS 17,2 %, abattements par durée de détention."
+        />
+        <CrossLink
+          href="/lmnp-reel-vs-micro"
+          title="Si vous penchez locatif : choisir le régime"
+          description="Régime micro-BIC ou réel selon le rendement et la possibilité d'amortir le bien."
+        />
+        <CrossLink
+          href="/pea"
+          title="Si vous penchez placement : enveloppe PEA"
+          description="Après 5 ans, le PEA est exonéré d'IR sur les plus-values, seuls les PS 17,2 % restent."
+        />
       </div>
 
       <ChatWidget contexte={{ calculateur: 'comparateur-locatif-placement', inputs, results }} />

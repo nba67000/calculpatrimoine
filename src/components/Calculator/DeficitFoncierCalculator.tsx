@@ -5,6 +5,7 @@ import type { DeficitFoncierInputs } from '@/types/deficitFoncier'
 import { useCalculator } from '@/hooks/useCalculator'
 import AlertList from '@/components/AlertList'
 import ChatWidget from '@/components/ChatWidget'
+import CrossLink from '@/components/CrossLink'
 import SimResumeBanner from '@/components/Calculator/SimResumeBanner'
 import { formatEur } from '@/lib/formatters'
 
@@ -165,6 +166,27 @@ export default function DeficitFoncierCalculator() {
           <AlertList items={results.warnings} />
           <AlertList items={results.optimisations} />
         </div>
+      </div>
+
+      <div className="mt-4 border-t border-neutral-200">
+        <p className="font-mono text-xs uppercase tracking-widest text-neutral-400 px-1 pt-4 pb-2">
+          Questions naturelles après ce résultat
+        </p>
+        <CrossLink
+          href="/lmnp-reel-vs-micro"
+          title="Alternative en location meublée"
+          description="La location meublée suit le régime BIC : amortissements possibles, déficit non imputable sur le revenu global."
+        />
+        <CrossLink
+          href="/plus-value-immobiliere"
+          title="Impôt à la cession du bien locatif"
+          description="L'imputation du déficit sur le revenu global engage une location 3 ans (Art. 156 I-3° CGI)."
+        />
+        <CrossLink
+          href="/ifi"
+          title="Bien locatif et IFI"
+          description="Le bien locatif compte dans l'IFI dès 1 300 000 € de patrimoine immobilier net."
+        />
       </div>
 
       <ChatWidget contexte={{ calculateur: 'deficit-foncier', inputs, results }} />
