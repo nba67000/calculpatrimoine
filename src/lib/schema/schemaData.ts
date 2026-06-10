@@ -580,6 +580,65 @@ export const FAQ_PLUS_VALUE: FAQSchemaItem[] = [
   },
 ]
 
+// ─────────────────────────────────────────────────────────────
+// PEA
+// ─────────────────────────────────────────────────────────────
+
+export const FAQ_PEA: FAQSchemaItem[] = [
+  {
+    question: "Qu'est-ce que le PEA et qui peut en ouvrir un ?",
+    answer:
+      "Le PEA (Plan d'Épargne en Actions) est une enveloppe fiscale créée en 1992 (Art. 163 quinquies D CGI) qui permet d'investir en actions européennes en bénéficiant d'une exonération d'impôt sur le revenu sur les plus-values après 5 ans. Seuls les prélèvements sociaux (17,2 %) restent dus. Un seul PEA par personne, réservé aux résidents fiscaux français majeurs. Un couple peut détenir deux PEA distincts.",
+  },
+  {
+    question: "Quel plafond de versement sur un PEA ?",
+    answer:
+      "Trois plafonds selon le type : PEA classique 150 000 €, PEA-PME 225 000 € (titres de PME et ETI européennes), PEA Jeunes 20 000 € (pour les 18-25 ans rattachés au foyer fiscal de leurs parents). Les plafonds se cumulent : un même titulaire peut avoir un PEA classique et un PEA-PME simultanément, jusqu'à 225 000 € au total entre les deux.",
+  },
+  {
+    question: "Quels supports puis-je détenir dans un PEA ?",
+    answer:
+      "Actions de sociétés ayant leur siège dans l'Union européenne ou l'Espace économique européen, et OPCVM (fonds, ETF) éligibles dès lors qu'ils investissent au moins 75 % en titres européens. Les actions américaines ou asiatiques en direct ne sont pas éligibles, mais des ETF synthétiques permettent une exposition indirecte au S&P 500 ou aux marchés émergents tout en restant dans le PEA.",
+  },
+  {
+    question: "Comment est imposé un retrait avant 5 ans ?",
+    answer:
+      "Un retrait avant 5 ans entraîne la clôture automatique du PEA et l'imposition des gains au prélèvement forfaitaire unique de 30 % (12,8 % d'impôt sur le revenu + 17,2 % de prélèvements sociaux), sauf cas particuliers : licenciement, invalidité, retraite anticipée, qui n'entraînent que les prélèvements sociaux.",
+  },
+  {
+    question: "Et après 5 ans ?",
+    answer:
+      "Après 5 ans de détention, les plus-values sont totalement exonérées d'impôt sur le revenu (Art. 157-5° bis CGI). Seuls les prélèvements sociaux de 17,2 % restent dus, calculés sur la fraction de plus-value du retrait. Le PEA reste ouvert et permet de continuer à verser et retirer librement.",
+  },
+  {
+    question: "Les dividendes sont-ils taxés à l'intérieur du PEA ?",
+    answer:
+      "Non. Tant que les dividendes restent investis dans le PEA, ils ne subissent aucune imposition. Le PEA fonctionne en capitalisation : dividendes et plus-values s'accumulent sans frottement fiscal. L'imposition n'intervient qu'au moment du retrait.",
+  },
+  {
+    question: "Si je fais un retrait après 5 ans, dois-je clôturer le PEA ?",
+    answer:
+      "Non. Depuis la loi PACTE de 2019, un retrait après 5 ans n'entraîne plus la clôture du PEA. Vous pouvez continuer à verser et retirer librement. Avant la réforme, tout retrait entre 5 et 8 ans interdisait les versements futurs : cette règle a disparu.",
+  },
+  {
+    question: "Qu'est-ce que le passif fiscal latent d'un PEA ?",
+    answer:
+      "Le passif latent est l'impôt qui serait dû si le PEA était soldé aujourd'hui. Même exonéré d'impôt sur le revenu après 5 ans, le PEA reste assujetti aux prélèvements sociaux de 17,2 % sur la fraction de plus-value. Sur un PEA à 100 000 € dont 40 000 € de plus-value latente, le passif est de 40 000 × 17,2 % = 6 880 €. Cette information complète la valeur brute affichée par le courtier.",
+  },
+  {
+    question: "Le PEA est-il imposé à la succession ?",
+    answer:
+      "Le PEA est clôturé au décès du titulaire. Les prélèvements sociaux dus à la date du décès sont calculés sur les plus-values latentes (sans IR car régime applicable au-delà de 5 ans considéré acquis). Les titres ou liquidités sont ensuite transmis aux héritiers, qui subissent les droits de succession classiques (Art. 779 CGI) sur la valeur nette des prélèvements sociaux.",
+  },
+  {
+    question: "Mes données sont-elles stockées quelque part ?",
+    answer:
+      "Non. Tous les calculs sont effectués localement dans votre navigateur. Aucune donnée n'est transmise à un serveur ni conservée après fermeture de la page. Le code source est ouvert et vérifiable sur GitHub.",
+  },
+]
+
+// ─────────────────────────────────────────────────────────────
+
 export const HOWTO_PLUS_VALUE: { name: string; description: string; totalTime: string; steps: HowToStep[] } = {
   name: "Comment calculer la plus-value immobilière sur une résidence secondaire",
   description:

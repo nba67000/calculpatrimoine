@@ -115,6 +115,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.6,
     },
+    {
+      url: `${baseUrl}/faq/pea`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
 
     // Static pages
     {
