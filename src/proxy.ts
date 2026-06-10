@@ -25,11 +25,18 @@ function cleanupStore(): void {
 }
 
 function getClientIp(req: NextRequest): string {
-  return (
-    req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
-    req.headers.get('x-real-ip') ??
-    'unknown'
-  )
+  // Vercel pose `x-real-ip` avec l'IP cliente reelle , c'est la source de confiance.
+  // Le premier hop de `x-forwarded-for` est controle par le client (usurpable
+  // via un simple header HTTP), on prend donc le dernier hop en fallback , c'est
+  // celui depose par le proxy le plus proche du serveur.
+  const realIp = req.headers.get('x-real-ip')?.trim()
+  if (realIp) return realIp
+  const xff = req.headers.get('x-forwarded-for')
+  if (xff) {
+    const hops = xff.split(',').map(s => s.trim()).filter(Boolean)
+    if (hops.length > 0) return hops[hops.length - 1]
+  }
+  return 'unknown'
 }
 
 function isRateLimited(ip: string): boolean {
