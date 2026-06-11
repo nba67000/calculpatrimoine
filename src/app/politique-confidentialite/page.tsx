@@ -1,6 +1,7 @@
 ﻿// src/app/politique-confidentialite/page.tsx
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 
 export const metadata = {
  title: 'Politique de Confidentialité - CalculPatrimoine',
@@ -12,9 +13,16 @@ export default function PolitiqueConfidentialitePage() {
  return (
  <>
  <Header />
- <div className="min-h-screen bg-neutral-50 py-12">
+ <PageHero
+   breadcrumb={[
+     { href: '/', label: 'Accueil' },
+     { label: 'Confidentialité' },
+   ]}
+   titre="Politique de confidentialité"
+   description="Aucune donnée personnelle identifiable n'est collectée. Les calculs s'exécutent dans votre navigateur."
+ />
+ <div className="bg-neutral-50 py-12">
  <div className="max-w-4xl mx-auto px-4">
- <h1 className="text-4xl font-bold mb-8">Politique de Confidentialité</h1>
 
  <div className="bg-white rounded-lg border border-neutral-200 p-8 space-y-8">
  
