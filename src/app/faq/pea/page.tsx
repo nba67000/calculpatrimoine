@@ -12,7 +12,7 @@ import { FAQ_PEA } from '@/lib/schema/schemaData'
 
 
 export const metadata: Metadata = {
-  title: 'FAQ PEA 2026 : fiscalite, plafond, passif latent | CalculPatrimoine',
+  title: 'FAQ PEA 2026 : fiscalite, plafond, passif latent',
   description: "Questions frequentes sur le PEA : plafond 150 000 EUR, exoneration apres 5 ans, prelevements sociaux 17,2 %, passif fiscal latent.",
   alternates: { canonical: 'https://calculpatrimoine.fr/faq/pea' },
 }

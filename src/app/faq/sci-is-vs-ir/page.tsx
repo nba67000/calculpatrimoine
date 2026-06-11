@@ -12,7 +12,7 @@ import { FAQ_SCI_IS_IR } from '@/lib/schema/schemaData'
 
 
 export const metadata: Metadata = {
-  title: 'FAQ SCI IS vs IR 2026 : comparatif fiscal et sortie | CalculPatrimoine',
+  title: 'FAQ SCI IS vs IR 2026 : comparatif fiscal et sortie',
   description: "Questions frequentes sur la SCI a l'IS vs a l'IR : impot annuel, amortissements, plus-value pro a la sortie, option irreversible, deficit foncier.",
   alternates: { canonical: 'https://calculpatrimoine.fr/faq/sci-is-vs-ir' },
 }

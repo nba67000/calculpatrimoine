@@ -12,7 +12,7 @@ import { FAQ_DEFICIT_FONCIER } from '@/lib/schema/schemaData'
 
 
 export const metadata: Metadata = {
-  title: 'FAQ Deficit foncier 2026 : plafond, report, engagement | CalculPatrimoine',
+  title: 'FAQ Deficit foncier 2026 : plafond, report, engagement',
   description: "Questions frequentes sur le deficit foncier : plafond 10 700 EUR, plafond majore 21 400 EUR, report 10 ans, engagement de location 3 ans (Art. 156 I-3 CGI).",
   alternates: { canonical: 'https://calculpatrimoine.fr/faq/deficit-foncier' },
 }

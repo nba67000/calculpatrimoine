@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
-  title: 'FAQ - Questions fréquentes | CalculPatrimoine',
+  title: 'FAQ - Questions fréquentes',
   description: 'Toutes les réponses sur nos calculateurs patrimoniaux : rente viagère, assurance-vie, PER, TMI, transmission. Retrouvez la FAQ dédiée à chaque outil.',
   keywords: 'faq calculpatrimoine, questions fréquentes, aide calculateur, rente viagère, assurance vie, PER, TMI',
   alternates: { canonical: 'https://calculpatrimoine.fr/faq' },

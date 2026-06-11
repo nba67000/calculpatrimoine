@@ -14,8 +14,8 @@ import { FAQ_PLUS_VALUE_LMNP } from '@/lib/schema/schemaData'
 
 
 export const metadata: Metadata = {
-  title: 'FAQ Plus-value LMNP 2026 : reintegration amortissements | CalculPatrimoine',
-  description: "Questions frequentes sur la plus-value LMNP : reintegration des amortissements depuis le 15/02/2025 (Art. 150 VB III CGI), abattements par duree, residences services.",
+  title: 'FAQ Plus-value LMNP 2026 : reintegration amortissements',
+  description: "Questions frequentes sur la plus-value LMNP : reintegration des amortissements depuis le 15/02/2025 (Art. 150 VB III CGI), abattements par duree.",
   alternates: { canonical: 'https://calculpatrimoine.fr/faq/plus-value-immobiliere-lmnp' },
 }
 

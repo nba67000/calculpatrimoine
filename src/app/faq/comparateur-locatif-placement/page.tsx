@@ -12,7 +12,7 @@ import { FAQ_COMPARATEUR_LOCATIF } from '@/lib/schema/schemaData'
 
 
 export const metadata: Metadata = {
-  title: 'FAQ Locatif vs Placement 2026 : comparaison fiscale | CalculPatrimoine',
+  title: 'FAQ Locatif vs Placement 2026 : comparaison fiscale',
   description: "Questions frequentes sur la comparaison locatif vs placement : capital comptant, frais d'acquisition, enveloppes financieres, liquidite.",
   alternates: { canonical: 'https://calculpatrimoine.fr/faq/comparateur-locatif-placement' },
 }

@@ -5,8 +5,8 @@ import Footer from '@/components/Footer'
 import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
-  title: 'Calculateurs Assurance-Vie : Fiscalité Rachat & Transmission | CalculPatrimoine',
-  description: 'Deux calculateurs gratuits pour l\'assurance-vie : fiscalité des rachats (PFU vs IR) et transmission aux bénéficiaires (succession). Calculs officiels, zéro donnée conservée.',
+  title: 'Calculateurs Assurance-Vie : Fiscalité Rachat & Transmission',
+  description: 'Deux calculateurs gratuits pour l\'assurance-vie : fiscalité des rachats (PFU vs IR) et transmission aux bénéficiaires. Calculs conformes au CGI.',
   keywords: 'assurance vie, calculateur, fiscalité rachat, transmission succession, PFU, IR, bénéficiaires, abattement',
   openGraph: {
     title: 'Calculateurs Assurance-Vie - Fiscalité & Transmission',

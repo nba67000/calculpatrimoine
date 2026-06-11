@@ -12,7 +12,7 @@ import { FAQ_PRET_INTRAFAMILIAL } from '@/lib/schema/schemaData'
 
 
 export const metadata: Metadata = {
-  title: 'FAQ Pret intrafamilial 2026 : formalites, fiscalite | CalculPatrimoine',
+  title: 'FAQ Pret intrafamilial 2026 : formalites, fiscalite',
   description: "Questions frequentes sur le pret entre proches : formulaires 2062/2778, taux, fiscalite intérêts, succession, comparaison avec donation.",
   alternates: { canonical: 'https://calculpatrimoine.fr/faq/pret-intrafamilial' },
 }

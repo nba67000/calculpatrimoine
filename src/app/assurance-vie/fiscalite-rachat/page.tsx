@@ -13,7 +13,7 @@ import { getPillarBreadcrumb } from '@/lib/calculators/breadcrumb'
 
 
 export const metadata: Metadata = {
-  title: 'Calculateur Assurance-Vie : Fiscalité Rachat PFU vs IR | CalculPatrimoine',
+  title: 'Calculateur Assurance-Vie : Fiscalité Rachat PFU vs IR',
   description: 'Calculez la fiscalité exacte de votre rachat d\'assurance-vie. Comparez PFU et IR selon votre TMI. Simulateur gratuit conforme au CGI, zéro donnée conservée.',
   keywords: 'assurance vie, fiscalité rachat, PFU, flat tax, IR, impôts, simulation, calculateur gratuit, abattement 8 ans',
   openGraph: {

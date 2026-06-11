@@ -12,7 +12,7 @@ import { FAQ_DONATION_DEMEMBREMENT } from '@/lib/schema/schemaData'
 
 
 export const metadata: Metadata = {
-  title: 'FAQ Donation demembrement 2026 : Art. 669 CGI | CalculPatrimoine',
+  title: 'FAQ Donation demembrement 2026 : Art. 669 CGI',
   description: "Questions frequentes sur la donation avec demembrement : bareme Art. 669, avantage fiscal, extinction usufruit au deces, risque de requalification.",
   alternates: { canonical: 'https://calculpatrimoine.fr/faq/donation-demembrement' },
 }

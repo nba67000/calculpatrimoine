@@ -12,7 +12,7 @@ import { FAQ_SUCCESSION } from '@/lib/schema/schemaData'
 
 
 export const metadata: Metadata = {
-  title: 'FAQ Succession 2026 : droits, abattements, baremes | CalculPatrimoine',
+  title: 'FAQ Succession 2026 : droits, abattements, baremes',
   description: "Questions frequentes sur les droits de succession : abattements Art. 779, bareme Art. 777, exoneration conjoint, rappel 15 ans, assurance-vie.",
   alternates: { canonical: 'https://calculpatrimoine.fr/faq/succession' },
 }

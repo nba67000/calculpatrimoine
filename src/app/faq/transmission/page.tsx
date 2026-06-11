@@ -12,7 +12,7 @@ import { FAQ_TRANSMISSION } from '@/lib/schema/schemaData'
 
 
 export const metadata: Metadata = {
-  title: 'FAQ Transmission Assurance-Vie - Art. 990I et 757B | CalculPatrimoine',
+  title: 'FAQ Transmission Assurance-Vie - Art. 990I et 757B',
   description: "Abattements avant et après 70 ans, clause bénéficiaire, droits de succession, optimisations transmission assurance-vie.",
 
   alternates: { canonical: 'https://calculpatrimoine.fr/faq/transmission' },

@@ -13,7 +13,7 @@ import { FAQ_AV_FISCALITE_RACHAT } from '@/lib/schema/schemaData'
 
 
 export const metadata: Metadata = {
-  title: 'FAQ Fiscalite rachat assurance-vie 2026 : PFU vs IR | CalculPatrimoine',
+  title: 'FAQ Fiscalite rachat assurance-vie 2026 : PFU vs IR',
   description: "Questions frequentes sur la fiscalite des rachats d'assurance-vie : PFU 12,8 %, IR au bareme, abattement 8 ans, versements avant 2017, fractionnement.",
   alternates: { canonical: 'https://calculpatrimoine.fr/faq/assurance-vie-fiscalite-rachat' },
 }

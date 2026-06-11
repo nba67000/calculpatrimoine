@@ -21,7 +21,7 @@ export default function Methodologie() {
      { href: '/', label: 'Accueil' },
      { label: 'Méthodologie' },
    ]}
-   titre="Comment nous calculons votre rente viagère"
+   titre="Méthodologie de calcul"
    description="Tables de mortalité utilisées, formule actuarielle, taux technique, hypothèses de calcul : tout est ici."
  />
  <main className="bg-gradient-to-b from-neutral-50 to-white">
@@ -87,7 +87,7 @@ export default function Methodologie() {
  <li>• <strong>Source principale</strong> : Institut National d&apos;Études Démographiques (INED)</li>
  <li>• <strong>Période observée</strong> : 2021 (publication INSEE juin 2023)</li>
  <li>• <strong>Mise à jour</strong> : Automatique chaque année le 1er octobre via GitHub Actions</li>
- <li>• <strong>Disponibilité</strong> : <a href="https://www.ined.fr/fr/tout-savoir-population/chiffres/france/mortalite-cause-deces/table-mortalite/" className="underline hover:text-primary-900" target="_blank" rel="noopener">www.ined.fr</a></li>
+ <li>• <strong>Disponibilité</strong> : <a href="https://www.ined.fr/fr/tout-savoir-population/chiffres/france/mortalite-cause-deces/table-mortalite/" className="underline hover:text-primary-900" target="_blank" rel="noopener noreferrer">www.ined.fr</a></li>
  </ul>
  </div>
 

@@ -12,7 +12,7 @@ import { FAQ_VENTE_DONATION } from '@/lib/schema/schemaData'
 
 
 export const metadata: Metadata = {
-  title: 'FAQ Vente vs Donation 2026 : choix fiscal | CalculPatrimoine',
+  title: 'FAQ Vente vs Donation 2026 : choix fiscal',
   description: "Questions frequentes sur l'arbitrage vente vs donation : plus-value immobiliere, droits d'enregistrement, abattements Art. 779, donation deguisee.",
   alternates: { canonical: 'https://calculpatrimoine.fr/faq/vente-vs-donation' },
 }

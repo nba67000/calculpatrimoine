@@ -12,7 +12,7 @@ import { FAQ_CSG_RETRAITE } from '@/lib/schema/schemaData'
 
 
 export const metadata: Metadata = {
-  title: 'FAQ CSG retraite 2026 : paliers, RFR, taux applicables | CalculPatrimoine',
+  title: 'FAQ CSG retraite 2026 : paliers, RFR, taux applicables',
   description: "Questions frequentes sur la CSG retraite : 4 paliers (0, 4.3, 7.4, 9.1 %), RFR N-2, regle des 2 annees consecutives, application aux rentes PER.",
   alternates: { canonical: 'https://calculpatrimoine.fr/faq/csg-csds-retraite' },
 }

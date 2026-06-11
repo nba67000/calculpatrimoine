@@ -12,7 +12,7 @@ import { FAQ_PER_SORTIE } from '@/lib/schema/schemaData'
 
 
 export const metadata: Metadata = {
-  title: 'FAQ PER sortie 2026 : capital vs rente, fiscalite | CalculPatrimoine',
+  title: 'FAQ PER sortie 2026 : capital vs rente, fiscalite',
   description: "Questions frequentes sur la sortie du PER : options capital/rente/panache, fiscalite (Art. 158-5 bis CGI), sortie anticipee.",
   alternates: { canonical: 'https://calculpatrimoine.fr/faq/per-sortie' },
 }

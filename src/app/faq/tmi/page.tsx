@@ -12,7 +12,7 @@ import { FAQ_TMI } from '@/lib/schema/schemaData'
 
 
 export const metadata: Metadata = {
-  title: "FAQ Tranche Marginale d'Imposition 2026 | CalculPatrimoine",
+  title: "FAQ Tranche Marginale d'Imposition 2026",
   description: "Questions fréquentes sur la TMI : barème IR 2026, quotient familial, décote, différence TMI et taux moyen.",
 
   alternates: { canonical: 'https://calculpatrimoine.fr/faq/tmi' },

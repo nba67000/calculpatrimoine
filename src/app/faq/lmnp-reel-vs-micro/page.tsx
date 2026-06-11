@@ -12,7 +12,7 @@ import { FAQ_LMNP_REGIME } from '@/lib/schema/schemaData'
 
 
 export const metadata: Metadata = {
-  title: 'FAQ LMNP reel vs micro-BIC 2026 | CalculPatrimoine',
+  title: 'FAQ LMNP reel vs micro-BIC 2026',
   description: "Questions frequentes sur le LMNP : seuils micro-BIC (LF 2025), charges deductibles en reel, amortissements, deficit, sortie.",
   alternates: { canonical: 'https://calculpatrimoine.fr/faq/lmnp-reel-vs-micro' },
 }

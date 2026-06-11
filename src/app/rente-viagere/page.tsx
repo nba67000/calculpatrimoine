@@ -13,7 +13,7 @@ const RenteModeContent = dynamic(
 )
 
 export const metadata: Metadata = {
-  title: 'Calculateur Rente Viagère - Tables INSEE 2021 | CalculPatrimoine',
+  title: 'Calculateur Rente Viagère - Tables INSEE 2021',
   description: 'Calculez votre rente viagère à partir d\'un capital. Tables de mortalité INSEE 2021 unisexes. Gestion de la réversion au conjoint, 3 modes de calcul.',
   alternates: { canonical: 'https://calculpatrimoine.fr/rente-viagere' },
 }
