@@ -75,8 +75,8 @@ export default function DonationDroitsPage() {
               </ul>
             </div>
 
-            <div className="border-l-4 border-primary-200 bg-primary-50 px-4 py-3">
-              <p className="text-sm text-primary-800">
+            <div className="border-l-4 border-accent-400 bg-neutral-50 px-4 py-3">
+              <p className="text-sm text-neutral-700">
                 Barème 2026 de l&apos;article 777 CGI. Calculs croisés contre cinq cas de référence
                 (ligne directe, époux, don familial 790 G, frères et sœurs, neveu).
                 Dernière vérification des sources : 30 mai 2026.
@@ -222,10 +222,10 @@ export default function DonationDroitsPage() {
               style={{ borderLeft: '3px solid #D4AF37', paddingLeft: '1.25rem' }}
             >
               <div>
-                <p className="font-bold text-neutral-900 group-hover:text-primary-700 transition-colors mb-0.5">Questions fréquentes sur les donations</p>
+                <p className="font-bold text-neutral-900 group-hover:text-neutral-900 transition-colors mb-0.5">Questions fréquentes sur les donations</p>
                 <p className="text-sm text-neutral-500">Abattements par lien de parenté, rappel 15 ans, don familial 790 G, démembrement.</p>
               </div>
-              <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
+              <span className="font-mono text-neutral-500 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
             </Link>
             <Link
               href="/assurance-vie/transmission"
@@ -233,10 +233,10 @@ export default function DonationDroitsPage() {
               style={{ borderLeft: '3px solid #D4AF37', paddingLeft: '1.25rem' }}
             >
               <div>
-                <p className="font-bold text-neutral-900 group-hover:text-primary-700 transition-colors mb-0.5">Comparer avec la transmission par assurance-vie</p>
+                <p className="font-bold text-neutral-900 group-hover:text-neutral-900 transition-colors mb-0.5">Comparer avec la transmission par assurance-vie</p>
                 <p className="text-sm text-neutral-500">L&apos;Art. 990 I CGI offre un abattement de 152 500 € par bénéficiaire (versements avant 70 ans).</p>
               </div>
-              <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
+              <span className="font-mono text-neutral-500 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
             </Link>
           </div>
         </section>

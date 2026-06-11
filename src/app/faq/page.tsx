@@ -82,24 +82,24 @@ export default function FAQIndexPage() {
               >
                 <div>
                   <div className="flex items-center gap-3 mb-0.5">
-                    <p className="font-bold text-neutral-900 group-hover:text-primary-700 transition-colors">
+                    <p className="font-bold text-neutral-900 group-hover:text-neutral-900 transition-colors">
                       {section.label}
                     </p>
                     <span className="font-mono text-xs text-neutral-400">{section.count}</span>
                   </div>
                   <p className="text-sm text-neutral-500">{section.desc}</p>
                 </div>
-                <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
+                <span className="font-mono text-neutral-500 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
               </Link>
             ))}
           </div>
 
-          <div className="bg-primary-700 p-8 text-center text-white mt-16">
+          <div className="bg-neutral-900 p-8 text-center text-white mt-16">
             <h3 className="font-serif text-2xl font-bold mb-3">Vous ne trouvez pas votre réponse ?</h3>
-            <p className="text-primary-200 mb-6 font-mono text-sm">Réponse par email sous 48h.</p>
+            <p className="text-neutral-400 mb-6 font-mono text-sm">Réponse par email sous 48h.</p>
             <a
               href="mailto:contact@calculpatrimoine.fr"
-              className="inline-block bg-white text-primary-700 px-8 py-3 font-medium hover:bg-neutral-100 transition-colors"
+              className="inline-block bg-white text-neutral-900 px-8 py-3 font-medium hover:bg-neutral-100 transition-colors"
             >
               Nous contacter →
             </a>

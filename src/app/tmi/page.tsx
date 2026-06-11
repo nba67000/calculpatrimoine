@@ -70,8 +70,8 @@ export default function TMIPage() {
             </ul>
           </div>
 
-          <div className="border-l-4 border-primary-200 bg-primary-50 px-4 py-3">
-            <p className="text-sm text-primary-800">
+          <div className="border-l-4 border-accent-400 bg-neutral-50 px-4 py-3">
+            <p className="text-sm text-neutral-700">
               Barème LF 2026 applicable aux revenus 2025. Dernière vérification des sources : 19 avril 2026.
             </p>
           </div>
@@ -141,10 +141,10 @@ export default function TMIPage() {
             style={{ borderLeft: '3px solid #D4AF37', paddingLeft: '1.25rem' }}
           >
             <div>
-              <p className="font-bold text-neutral-900 group-hover:text-primary-700 transition-colors mb-0.5">Calculez votre économie d&apos;impôt PER</p>
+              <p className="font-bold text-neutral-900 group-hover:text-neutral-900 transition-colors mb-0.5">Calculez votre économie d&apos;impôt PER</p>
               <p className="text-sm text-neutral-500">Connaissant votre TMI, simulez l&apos;économie d&apos;impôt en versant sur un PER individuel (Art. 163 quatervicies CGI).</p>
             </div>
-            <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
+            <span className="font-mono text-neutral-500 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
           </Link>
         </div>
       </section>
@@ -158,10 +158,10 @@ export default function TMIPage() {
             style={{ borderLeft: '3px solid #D4AF37', paddingLeft: '1.25rem' }}
           >
             <div>
-              <p className="font-bold text-neutral-900 group-hover:text-primary-700 transition-colors mb-0.5">FAQ TMI</p>
+              <p className="font-bold text-neutral-900 group-hover:text-neutral-900 transition-colors mb-0.5">FAQ TMI</p>
               <p className="text-sm text-neutral-500">TMI vs taux moyen, quotient familial, décote, utilité pour le PER et l&apos;assurance-vie.</p>
             </div>
-            <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
+            <span className="font-mono text-neutral-500 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
           </Link>
         </div>
       </section>

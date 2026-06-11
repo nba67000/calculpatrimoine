@@ -48,8 +48,8 @@ const sections: FAQSection[] = [
               <li><strong>Avant 70 ans</strong> : Article 990 I du CGI. Abattement de 152 500 € par bénéficiaire, puis 20 % jusqu&apos;à 700 000 € et 31,25 % au-delà</li>
               <li><strong>Après 70 ans</strong> : Article 757 B du CGI. Abattement global de 30 500 € partagé entre tous les bénéficiaires, gains exonérés, droits de succession ordinaires au-delà</li>
             </ul>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4">
+              <p className="text-sm text-neutral-900">
                 <strong>À retenir</strong> : c&apos;est la date du versement qui compte, pas la date du décès.
                 Les versements réalisés avant 70 ans relèvent du régime 990 I, celui dont les abattements sont les plus élevés.
               </p>
@@ -88,7 +88,7 @@ const sections: FAQSection[] = [
                 </tr>
               </tbody>
             </table>
-            <div className="bg-primary-100 p-4 border border-neutral-200">
+            <div className="bg-neutral-100 p-4 border border-neutral-200">
               <p className="mb-2 text-sm font-bold">Exemple :</p>
               <ul className="text-sm space-y-1">
                 <li>Capital transmis : 400 000€ → 2 bénéficiaires → 200 000€ chacun</li>
@@ -121,8 +121,8 @@ const sections: FAQSection[] = [
                 restent exonérées (seuls les versements bruts sont réintégrés)
               </li>
             </ul>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4">
+              <p className="text-sm text-neutral-900">
                 <strong>À retenir</strong> : les versements avant 70 ans relèvent du régime 990 I - abattement de 152 500 € par bénéficiaire.
                 Les versements après 70 ans relèvent du 757 B - abattement global de 30 500 €.
                 L&apos;écart peut représenter plusieurs dizaines de milliers d&apos;euros selon le capital transmis.
@@ -190,7 +190,7 @@ const sections: FAQSection[] = [
               <strong>Plusieurs bénéficiaires multiplient les abattements</strong> (pour les versements
               avant 70 ans, Art. 990 I CGI).
             </p>
-            <div className="bg-primary-100 p-4 border border-neutral-200 mb-3">
+            <div className="bg-neutral-100 p-4 border border-neutral-200 mb-3">
               <p className="mb-2 text-sm font-bold">Exemple :</p>
               <ul className="text-sm space-y-1">
                 <li>Capital : 500 000€ - 1 bénéficiaire → taxable : 347 500€</li>
@@ -237,8 +237,8 @@ const sections: FAQSection[] = [
                 ))}
               </tbody>
             </table>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4">
+              <p className="text-sm text-neutral-900">
                 <strong>Attention à la réserve héréditaire</strong> : l&apos;assurance-vie est hors masse
                 successorale, mais si les versements représentent la quasi-totalité du patrimoine
                 au détriment des héritiers réservataires, un tribunal peut les réintégrer.
@@ -285,7 +285,7 @@ const sections: FAQSection[] = [
             </p>
             <p>
               Le code source est open-source et vérifiable sur{' '}
-              <a href="https://github.com/nba67000/calculpatrimoine" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">
+              <a href="https://github.com/nba67000/calculpatrimoine" target="_blank" rel="noopener noreferrer" className="text-neutral-900 hover:underline">
                 GitHub
               </a>.
             </p>
@@ -316,11 +316,11 @@ export default function FAQTransmissionPage() {
           <header className="mb-12">
             <Link
               href="/assurance-vie/transmission"
-              className="block bg-primary-600 text-white rounded-xl p-6 hover:bg-primary-700 transition-colors group"
+              className="block bg-neutral-900 text-white rounded-xl p-6 hover:bg-neutral-800 transition-colors group"
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="text-sm font-medium mb-1 text-primary-100">Calculateur Transmission</div>
+                  <div className="text-sm font-medium mb-1 text-neutral-400">Calculateur Transmission</div>
                   <div className="text-lg font-bold">Calculez les droits de succession</div>
                 </div>
                 <div className="text-2xl group-hover:translate-x-1 transition-transform">→</div>
@@ -351,18 +351,18 @@ export default function FAQTransmissionPage() {
                 style={{ borderLeft: '3px solid #D4AF37', paddingLeft: '1.25rem' }}
               >
                 <div>
-                  <p className="font-bold text-neutral-900 group-hover:text-primary-700 transition-colors mb-0.5">{link.label}</p>
+                  <p className="font-bold text-neutral-900 group-hover:text-neutral-900 transition-colors mb-0.5">{link.label}</p>
                   <p className="text-sm text-neutral-500">{link.desc}</p>
                 </div>
-                <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
+                <span className="font-mono text-neutral-500 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
               </Link>
             ))}
           </div>
 
-          <div className="bg-primary-700 p-8 text-center text-white mt-12">
+          <div className="bg-neutral-900 p-8 text-center text-white mt-12">
             <h3 className="font-serif text-2xl font-bold mb-3">Vous avez d&apos;autres questions ?</h3>
-            <p className="text-primary-200 mb-6 font-mono text-sm">Réponse par email sous 48h.</p>
-            <a href="mailto:contact@calculpatrimoine.fr" className="inline-block bg-white text-primary-700 px-8 py-3 font-medium hover:bg-neutral-100 transition-colors">
+            <p className="text-neutral-400 mb-6 font-mono text-sm">Réponse par email sous 48h.</p>
+            <a href="mailto:contact@calculpatrimoine.fr" className="inline-block bg-white text-neutral-900 px-8 py-3 font-medium hover:bg-neutral-100 transition-colors">
               Nous contacter →
             </a>
           </div>

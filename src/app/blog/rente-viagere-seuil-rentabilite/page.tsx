@@ -105,13 +105,13 @@ export default function ArticleRenteViagere() {
           </div>
 
           {/* CTA */}
-          <div className="bg-primary-700 px-8 py-6 mb-12">
-            <p className="font-mono text-xs text-primary-300 uppercase tracking-wider mb-2">Outil associé</p>
+          <div className="bg-neutral-900 px-8 py-6 mb-12">
+            <p className="font-mono text-xs text-neutral-400 uppercase tracking-wider mb-2">Outil associé</p>
             <p className="text-white font-bold text-lg mb-1">Calculez votre seuil de rentabilité</p>
-            <p className="text-primary-200 text-sm mb-4">
+            <p className="text-neutral-400 text-sm mb-4">
               Le calculateur sort votre seuil précis et le compare à votre espérance de vie selon les tables INSEE 2021.
             </p>
-            <Link href="/rente-viagere" className="inline-block bg-surface-card text-primary-700 px-6 py-2.5 font-medium text-sm hover:bg-neutral-100 transition-colors font-mono">
+            <Link href="/rente-viagere" className="inline-block bg-surface-card text-neutral-900 px-6 py-2.5 font-medium text-sm hover:bg-neutral-100 transition-colors font-mono">
               Accéder au calculateur →
             </Link>
           </div>
@@ -120,11 +120,11 @@ export default function ArticleRenteViagere() {
           <nav className="bg-surface-card border border-neutral-200 p-6 mb-12">
             <p className="font-mono text-xs uppercase tracking-wider text-neutral-500 mb-4">Sommaire</p>
             <ol className="space-y-2 text-sm font-mono">
-              <li><a href="#fonctionnement" className="text-primary-600 hover:underline">1. Comment fonctionne la rente viagère</a></li>
-              <li><a href="#seuil" className="text-primary-600 hover:underline">2. Pourquoi le seuil de rentabilité est après l&apos;espérance de vie</a></li>
-              <li><a href="#avantages" className="text-primary-600 hover:underline">3. Trois situations où la rente présente un intérêt réel</a></li>
-              <li><a href="#limites" className="text-primary-600 hover:underline">4. Cinq situations où d&apos;autres solutions sont préférables</a></li>
-              <li><a href="#synthese" className="text-primary-600 hover:underline">5. Synthèse : 10 points à retenir</a></li>
+              <li><a href="#fonctionnement" className="text-neutral-900 hover:underline">1. Comment fonctionne la rente viagère</a></li>
+              <li><a href="#seuil" className="text-neutral-900 hover:underline">2. Pourquoi le seuil de rentabilité est après l&apos;espérance de vie</a></li>
+              <li><a href="#avantages" className="text-neutral-900 hover:underline">3. Trois situations où la rente présente un intérêt réel</a></li>
+              <li><a href="#limites" className="text-neutral-900 hover:underline">4. Cinq situations où d&apos;autres solutions sont préférables</a></li>
+              <li><a href="#synthese" className="text-neutral-900 hover:underline">5. Synthèse : 10 points à retenir</a></li>
             </ol>
           </nav>
 
@@ -143,7 +143,7 @@ export default function ArticleRenteViagere() {
                   Vous gardez le capital. Vous retirez chaque mois ce dont vous avez besoin. Vous restez propriétaire et vous pouvez transmettre à vos héritiers. Risque : si vous vivez très longtemps, vous pouvez vider la cagnotte avant votre décès.
                 </p>
               </div>
-              <div className="bg-surface-card border border-neutral-200 p-5 border-l-4 border-l-primary-700">
+              <div className="bg-surface-card border border-neutral-200 p-5 border-l-4 border-l-accent-400">
                 <p className="font-bold text-sm text-neutral-900 mb-3">Option B - Rente viagère</p>
                 <p className="text-sm text-neutral-600 leading-relaxed">
                   Vous donnez vos 200 000 euros à un assureur. Il s&apos;engage à vous verser, par exemple, 1 100 euros par mois jusqu&apos;à votre décès. Que vous viviez jusqu&apos;à 75 ans ou jusqu&apos;à 105 ans, il continue. Contrepartie : si vous partez tôt, vos héritiers ne touchent rien.
@@ -186,8 +186,8 @@ export default function ArticleRenteViagere() {
                 ))}
               </div>
               <div className="border-t border-neutral-100 pt-4 space-y-2 font-mono text-sm text-neutral-800">
-                <p>Seuil de rentabilité : 255 000 ÷ (1 340 × 12) = <strong className="text-primary-700">15,8 ans</strong></p>
-                <p>Capital récupéré à partir de : <strong className="text-primary-700">87,8 ans</strong></p>
+                <p>Seuil de rentabilité : 255 000 ÷ (1 340 × 12) = <strong className="text-neutral-900">15,8 ans</strong></p>
+                <p>Capital récupéré à partir de : <strong className="text-neutral-900">87,8 ans</strong></p>
               </div>
               <div className="border-t border-neutral-100 mt-4 pt-4 grid grid-cols-2 gap-4">
                 <div>
@@ -229,9 +229,9 @@ export default function ArticleRenteViagere() {
               </div>
             </div>
 
-            <div className="border-l-4 border-primary-300 bg-primary-50 px-5 py-4 my-8">
-              <p className="font-mono text-xs text-primary-600 uppercase tracking-wider mb-2">En pratique</p>
-              <p className="text-sm text-primary-800 leading-relaxed">
+            <div className="border-l-4 border-accent-400 bg-neutral-50 px-5 py-4 my-8">
+              <p className="font-mono text-xs text-neutral-500 uppercase tracking-wider mb-2">En pratique</p>
+              <p className="text-sm text-neutral-700 leading-relaxed">
                 La rente vous est financièrement favorable si vous vivez longtemps. Plus vous dépassez l&apos;espérance de vie de votre tranche d&apos;âge, plus vous y gagnez. C&apos;est exactement le risque qu&apos;elle couvre.
               </p>
             </div>
@@ -242,7 +242,7 @@ export default function ArticleRenteViagere() {
             <h2 className="font-serif text-3xl font-bold text-neutral-900 mb-6">Trois situations où la rente a du sens</h2>
 
             <div className="space-y-6">
-              <div className="bg-surface-card border border-neutral-200 p-6 border-l-4 border-l-primary-700">
+              <div className="bg-surface-card border border-neutral-200 p-6 border-l-4 border-l-accent-400">
                 <p className="font-bold text-neutral-900 mb-3">1. Vous tablez sur une longévité supérieure à la moyenne</p>
                 <p className="text-sm text-neutral-600 leading-relaxed mb-3">
                   Bonne santé, parents et grands-parents qui ont passé les 90 ans, mode de vie sain. Si vous vivez 5 à 10 ans de plus que l&apos;espérance de vie statistique, vous touchez 30 à 50 % de plus que le capital versé au départ.
@@ -252,14 +252,14 @@ export default function ArticleRenteViagere() {
                 </p>
               </div>
 
-              <div className="bg-surface-card border border-neutral-200 p-6 border-l-4 border-l-primary-700">
+              <div className="bg-surface-card border border-neutral-200 p-6 border-l-4 border-l-accent-400">
                 <p className="font-bold text-neutral-900 mb-3">2. Vous n&apos;avez personne à qui transmettre</p>
                 <p className="text-sm text-neutral-600 leading-relaxed">
                   Pas d&apos;héritiers ? La question de la transmission ne se pose pas. Du coup, autant optimiser vos revenus de votre vivant plutôt que de garder un capital qui n&apos;ira à personne. La rente est faite pour ça.
                 </p>
               </div>
 
-              <div className="bg-surface-card border border-neutral-200 p-6 border-l-4 border-l-primary-700">
+              <div className="bg-surface-card border border-neutral-200 p-6 border-l-4 border-l-accent-400">
                 <p className="font-bold text-neutral-900 mb-3">3. Vous ne voulez plus gérer votre capital</p>
                 <p className="text-sm text-neutral-600 leading-relaxed">
                   Certains n&apos;ont pas envie de gérer un portefeuille à la retraite. Peur des mauvais arbitrages, peur des marchés, ou simple envie de paix. La rente délègue tout. Zéro gestion. Les versements tombent automatiquement jusqu&apos;au décès, même en cas de perte d&apos;autonomie.
@@ -298,7 +298,7 @@ export default function ArticleRenteViagere() {
                 <div className="bg-neutral-50 border border-neutral-200 p-4 font-mono text-xs text-neutral-700">
                   <p>Capital versé : 255 000 euros</p>
                   <p>Rente perçue sur 8 ans : 1 340 × 12 × 8 = 128 640 euros</p>
-                  <p className="font-bold text-primary-700 pt-1">Récupéré : 50 % du capital</p>
+                  <p className="font-bold text-neutral-900 pt-1">Récupéré : 50 % du capital</p>
                 </div>
               </div>
 
@@ -344,7 +344,7 @@ export default function ArticleRenteViagere() {
                 "Capital transféré, capital irrécupérable. Comparez avec les alternatives (retraits programmés en assurance-vie, conservation du capital) avant de signer.",
               ].map((point, i) => (
                 <div key={i} className="flex items-start gap-5 bg-surface-card border border-neutral-200 px-5 py-4">
-                  <span className="font-mono font-bold text-primary-300 text-lg shrink-0 w-6">{i + 1}</span>
+                  <span className="font-mono font-bold text-neutral-400 text-lg shrink-0 w-6">{i + 1}</span>
                   <p className="text-sm text-neutral-700 leading-relaxed">{point}</p>
                 </div>
               ))}
@@ -352,12 +352,12 @@ export default function ArticleRenteViagere() {
           </section>
 
           {/* CTA final */}
-          <div className="bg-primary-700 px-8 py-6 mb-12">
+          <div className="bg-neutral-900 px-8 py-6 mb-12">
             <p className="text-white font-bold text-lg mb-1">Simulez votre rente viagère en deux minutes</p>
-            <p className="text-primary-200 text-sm mb-4">
+            <p className="text-neutral-400 text-sm mb-4">
               Projection sur 30 ans, seuil de rentabilité précis, comparaison avec l&apos;espérance de vie INSEE, stratégies couple. Gratuit, sans inscription, zéro donnée conservée.
             </p>
-            <Link href="/rente-viagere" className="inline-block bg-surface-card text-primary-700 px-6 py-2.5 font-medium text-sm hover:bg-neutral-100 transition-colors font-mono">
+            <Link href="/rente-viagere" className="inline-block bg-surface-card text-neutral-900 px-6 py-2.5 font-medium text-sm hover:bg-neutral-100 transition-colors font-mono">
               Accéder au calculateur →
             </Link>
           </div>
@@ -377,7 +377,7 @@ export default function ArticleRenteViagere() {
                   <span className="text-accent-400 mt-0.5 shrink-0">-</span>
                   <div>
                     {s.href
-                      ? <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline font-medium">{s.label}</a>
+                      ? <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-neutral-900 hover:underline font-medium">{s.label}</a>
                       : <p className="font-medium text-neutral-800">{s.label}</p>
                     }
                     {s.desc && <p className="text-neutral-500 text-xs mt-0.5">{s.desc}</p>}
@@ -390,7 +390,7 @@ export default function ArticleRenteViagere() {
           <div className="border-t border-neutral-200 mt-8 pt-6 text-center">
             <p className="font-mono text-xs text-neutral-400 leading-relaxed">
               Outil indicatif uniquement. Ne constitue pas un conseil patrimonial personnalisé.{' '}
-              <a href="https://github.com/nba67000/calculpatrimoine" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Code source ouvert</a>
+              <a href="https://github.com/nba67000/calculpatrimoine" target="_blank" rel="noopener noreferrer" className="text-neutral-900 hover:underline">Code source ouvert</a>
             </p>
           </div>
 

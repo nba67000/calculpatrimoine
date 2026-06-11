@@ -72,7 +72,7 @@ const faqItems: FAQItem[] = [
  href="https://github.com/nba67000/calculpatrimoine"
  target="_blank"
  rel="noopener noreferrer"
- className="text-primary-600 hover:underline"
+ className="text-neutral-900 hover:underline"
 >
  GitHub
  </a>.
@@ -108,7 +108,7 @@ const faqItems: FAQItem[] = [
  <li>TMI à 30% : IR + PS = 47,2% | PFU = 30%</li>
  <li>TMI à 41% : IR + PS = 58,2% | PFU = 30%</li>
  </ul>
- <p className="bg-primary-50 border-l-4 border-primary-600 p-3 rounded text-sm">
+ <p className="bg-neutral-50 border-l-4 border-accent-400 p-3 rounded text-sm">
  Le calculateur affiche les deux montants côte à côte et met en évidence l&apos;option la moins taxée. À TMI ≤ 11 %, l&apos;IR + PS est systématiquement moins coûteux que le PFU.
  </p>
  <div className="mt-4">
@@ -133,7 +133,7 @@ const faqItems: FAQItem[] = [
  <p className="mb-3">
  Cet abattement s&apos;applique <strong>chaque année civile</strong>.
  </p>
- <p className="bg-primary-50 border-l-4 border-primary-500 p-4 rounded">
+ <p className="bg-neutral-50 border-l-4 border-accent-400 p-4 rounded">
  <strong>Exemple :</strong>Vous retirez 20 000€ avec 10 000€ de plus-value. 
  Après abattement : seuls 5 400€ seront taxés (10 000 - 4 600).
  </p>
@@ -148,7 +148,7 @@ const faqItems: FAQItem[] = [
  <p className="mb-3">
  <strong>Seule la plus-value est taxée</strong>, pas le capital que vous avez versé.
  </p>
- <p className="bg-primary-50 border-l-4 border-primary-500 p-4 rounded">
+ <p className="bg-neutral-50 border-l-4 border-accent-400 p-4 rounded">
  <strong>Exemple :</strong>Vous avez versé 70 000€, votre contrat vaut 100 000€, 
  vous retirez 30 000€.<br /><br />
  Plus-value totale = 30 000€ (100 000 - 70 000)<br />
@@ -170,7 +170,7 @@ const faqItems: FAQItem[] = [
  <div className="bg-neutral-100 p-4 rounded font-mono text-sm mb-3">
  Plus-value dans rachat = Montant rachat × (Plus-value totale ÷ Capital total)
  </div>
- <p className="bg-primary-50 border-l-4 border-primary-500 p-4 rounded">
+ <p className="bg-neutral-50 border-l-4 border-accent-400 p-4 rounded">
  <strong>Exemple :</strong><br />
  Capital total : 100 000€<br />
  Versements totaux : 70 000€<br />
@@ -200,7 +200,7 @@ const faqItems: FAQItem[] = [
  <p className="mb-3">
  Cette mesure a été instaurée par la loi de finances 2018.
  </p>
- <p className="bg-primary-50 border-l-4 border-primary-500 p-4 rounded">
+ <p className="bg-neutral-50 border-l-4 border-accent-400 p-4 rounded">
  <strong>À noter :</strong> Si vous avez versé avant cette date, indiquez-le
  dans le calculateur, c&apos;est la variable qui fait passer le taux de 30 % à 24,7 %.
  </p>
@@ -239,7 +239,7 @@ const faqItems: FAQItem[] = [
  La différence fiscale peut atteindre plusieurs milliers d&apos;euros selon le montant 
  de votre plus-value.
  </p>
- <p className="bg-primary-50 border-l-4 border-primary-600 p-4 rounded">
+ <p className="bg-neutral-50 border-l-4 border-accent-400 p-4 rounded">
  <strong>Information :</strong>Le calculateur affiche cette différence si votre
  contrat a moins de 8 ans et compare les deux scénarios (rachat immédiat vs
  attendre 8 ans). La décision finale vous appartient selon vos besoins de liquidité.
@@ -258,7 +258,7 @@ const faqItems: FAQItem[] = [
  <p className="mb-3">
  <strong>Option possible :</strong>Fractionner le rachat sur 2 ans.
  </p>
- <p className="bg-primary-50 border-l-4 border-primary-500 p-4 rounded mb-3">
+ <p className="bg-neutral-50 border-l-4 border-accent-400 p-4 rounded mb-3">
  <strong>Exemple :</strong><br />
  Au lieu de retirer 50 000€ cette année :<br />
  • 25 000€ cette année<br />
@@ -266,7 +266,7 @@ const faqItems: FAQItem[] = [
  Abattement utilisé deux fois :<br />
  2 × 4 600€ = <strong>9 200€ au total</strong>
  </p>
- <p className="bg-primary-50 border-l-4 border-primary-600 p-4 rounded text-sm">
+ <p className="bg-neutral-50 border-l-4 border-accent-400 p-4 rounded text-sm">
  <strong>Information :</strong>Le calculateur affiche cette option de
  fractionnement et calcule la différence fiscale. Le choix vous appartient
  selon vos besoins de liquidité et votre situation personnelle.
@@ -287,7 +287,7 @@ const faqItems: FAQItem[] = [
  préférentiel de 7,5 % ne s&apos;applique plus à l&apos;excédent : c&apos;est le taux standard
  de 12,8 % qui prend le relais (Art. 125-0 A CGI).
  </p>
- <p className="bg-primary-50 border-l-4 border-primary-500 p-4 rounded">
+ <p className="bg-neutral-50 border-l-4 border-accent-400 p-4 rounded">
  <strong>À noter :</strong> Le calculateur ne gère pas encore ce cas, consultez
  un notaire pour un calcul précis.
  </p>
@@ -313,7 +313,7 @@ const faqItems: FAQItem[] = [
  <li>Fractionnement de la fiscalité sur plusieurs années</li>
  <li>Utilisation de l&apos;abattement annuel sur plusieurs rachats</li>
  </ul>
- <p className="bg-primary-50 border-l-4 border-primary-600 p-4 rounded text-sm">
+ <p className="bg-neutral-50 border-l-4 border-accent-400 p-4 rounded text-sm">
  <strong>À noter :</strong> Même pour un besoin total de capital, conserver
  une somme minimale (ex : 1 000 €) sur le contrat préserve son ancienneté.
  </p>
@@ -353,7 +353,7 @@ const faqItems: FAQItem[] = [
  TMI variable selon les années (revenus fluctuants)
  </div>
  </div>
- <p className="bg-primary-50 border-l-4 border-primary-600 p-4 rounded mt-3 text-sm">
+ <p className="bg-neutral-50 border-l-4 border-accent-400 p-4 rounded mt-3 text-sm">
  Chaque paramètre est modifiable en temps réel, les résultats se recalculent instantanément.
  </p>
  <div className="mt-4">
@@ -385,7 +385,7 @@ const faqItems: FAQItem[] = [
  <li>Avertissement si vous dépassez l&apos;abattement annuel ou approchez du seuil des 8 ans</li>
  <li>Calcul de l&apos;économie fiscale si vous fractionnez le rachat sur 2 ans</li>
  </ul>
- <p className="bg-primary-50 border-l-4 border-primary-600 p-4 rounded text-sm">
+ <p className="bg-neutral-50 border-l-4 border-accent-400 p-4 rounded text-sm">
  Chaque paramètre est modifiable en temps réel, les résultats se recalculent instantanément.
  </p>
  <div className="mt-4">
@@ -408,7 +408,7 @@ const faqItems: FAQItem[] = [
  <li>Anticiper la fiscalité si vous attendez X mois/années</li>
  <li>Comparer plusieurs scénarios côte à côte</li>
  </ul>
- <p className="bg-primary-50 border-l-4 border-primary-600 p-4 rounded text-sm">
+ <p className="bg-neutral-50 border-l-4 border-accent-400 p-4 rounded text-sm">
  <strong>Information pratique :</strong>Vous pouvez ouvrir plusieurs onglets
  du calculateur pour comparer différents scénarios simultanément.
  </p>
@@ -428,13 +428,13 @@ const faqItems: FAQItem[] = [
  </p>
  <ul className="list-disc list-inside mb-3">
  <li>
- <Link href="/blog/assurance-vie-fiscalite-rachat" className="text-primary-600 hover:underline">
+ <Link href="/blog/assurance-vie-fiscalite-rachat" className="text-neutral-900 hover:underline">
  Article complet : Combien vous allez VRAIMENT payer
  </Link>
  {' '}(2 500 mots, exemples détaillés)
  </li>
  <li>
- <Link href="/assurance-vie" className="text-primary-600 hover:underline">
+ <Link href="/assurance-vie" className="text-neutral-900 hover:underline">
  Calculateur assurance-vie
  </Link>
  {' '}(section méthodologie avec sources)
@@ -457,7 +457,7 @@ const faqItems: FAQItem[] = [
  href="https://www.service-public.gouv.fr/particuliers/vosdroits/F22414"
  target="_blank"
  rel="noopener noreferrer"
- className="text-primary-600 hover:underline"
+ className="text-neutral-900 hover:underline"
 >
  Service-Public.fr
  </a>
@@ -497,11 +497,11 @@ export default function FAQAssuranceViePage() {
  <div className="max-w-4xl mx-auto px-4 py-8">
  <Link
  href="/assurance-vie"
- className="block bg-primary-600 text-white rounded-xl p-6 hover:bg-primary-700 transition-colors group"
+ className="block bg-neutral-900 text-white rounded-xl p-6 hover:bg-neutral-800 transition-colors group"
 >
  <div className="flex items-center justify-between">
  <div>
- <div className="text-sm font-medium mb-1 text-primary-100">
+ <div className="text-sm font-medium mb-1 text-neutral-400">
  Calculateur Assurance-Vie
  </div>
  <div className="text-lg font-bold">
@@ -530,11 +530,11 @@ export default function FAQAssuranceViePage() {
  {items.map((item, index) => (
  <details
  key={index}
- className="bg-white rounded-xl border border-neutral-200 p-6 hover:border-primary-300 transition-colors group"
+ className="bg-white rounded-xl border border-neutral-200 p-6 hover:border-neutral-400 transition-colors group"
 >
- <summary className="cursor-pointer font-bold text-lg text-neutral-900 group-hover:text-primary-600 transition-colors list-none">
+ <summary className="cursor-pointer font-bold text-lg text-neutral-900 group-hover:text-neutral-900 transition-colors list-none">
  <div className="flex items-start gap-3">
- <span className="text-primary-600 mt-1 flex-shrink-0"></span>
+ <span className="text-neutral-500 mt-1 flex-shrink-0"></span>
  <span className="flex-1">{item.question}</span>
  <span className="text-neutral-400 group-open:rotate-180 transition-transform flex-shrink-0">
  ▼
@@ -557,19 +557,19 @@ export default function FAQAssuranceViePage() {
  <div className="max-w-4xl mx-auto px-4 py-12">
  <Link
  href="/blog/assurance-vie-fiscalite-rachat"
- className="block bg-primary-50 border-2 border-primary-200 rounded-xl p-8 hover:border-primary-400 hover:shadow-lg transition-all group"
+ className="block bg-neutral-50 border-2 border-neutral-200 rounded-xl p-8 hover:border-neutral-400 hover:shadow-lg transition-all group"
 >
  <div className="flex items-start gap-4">
  <div className="text-4xl"></div>
  <div className="flex-1">
- <h3 className="text-2xl font-bold text-neutral-900 mb-3 group-hover:text-primary-600 transition-colors">
+ <h3 className="text-2xl font-bold text-neutral-900 mb-3 group-hover:text-neutral-900 transition-colors">
  Article complet : Assurance-vie, combien vous allez VRAIMENT payer ?
  </h3>
  <p className="text-neutral-700 mb-4 leading-relaxed">
  Règle proportionnelle, PFU vs IR, fractionnement des rachats.
  Exemples chiffrés avec formules.
  </p>
- <div className="flex items-center gap-2 text-primary-600 font-medium group-hover:gap-3 transition-all">
+ <div className="flex items-center gap-2 text-neutral-900 font-medium group-hover:gap-3 transition-all">
  <span>Lire l&apos;article complet</span>
  <span>→</span>
  </div>
@@ -587,21 +587,21 @@ export default function FAQAssuranceViePage() {
  <div className="flex flex-wrap justify-center gap-4">
  <Link
  href="/faq"
- className="text-primary-600 hover:underline"
+ className="text-neutral-900 hover:underline"
 >
  FAQ générale
  </Link>
  <span className="text-neutral-300">•</span>
  <Link
  href="/faq/rente-viagere"
- className="text-primary-600 hover:underline"
+ className="text-neutral-900 hover:underline"
 >
  FAQ Rente Viagère
  </Link>
  <span className="text-neutral-300">•</span>
  <Link
  href="/blog"
- className="text-primary-600 hover:underline"
+ className="text-neutral-900 hover:underline"
 >
  Tous les articles
  </Link>

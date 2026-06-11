@@ -101,8 +101,8 @@ const sections: FAQSection[] = [
                 <tr><td className="border border-neutral-300 px-4 py-2">Au-delà de 1 805 677 €</td><td className="border border-neutral-300 px-4 py-2">45 %</td></tr>
               </tbody>
             </table>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4">
+              <p className="text-sm text-neutral-900">
                 <strong>Exemple :</strong> donation parent → enfant de 200 000 €. Abattement 100 000 €,
                 base taxable 100 000 €. Droits : 5 % × 8 072 + 10 % × 4 037 + 15 % × 3 823 + 20 % × 84 068
                 = 18 194 €.
@@ -256,8 +256,8 @@ const sections: FAQSection[] = [
               <li>Le lien est <strong>descendant</strong> (enfant, petit-enfant, arrière-petit-enfant)
                 ou, à défaut de descendant, <strong>neveu ou nièce</strong>.</li>
             </ul>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4">
+              <p className="text-sm text-neutral-900">
                 <strong>Exemple :</strong> parent de 65 ans donne 150 000 € en numéraire à son enfant
                 majeur. Abattement personnel 100 000 € + abattement 790 G 31 865 € = 131 865 €.
                 Base taxable 18 135 €, droits 1 821 € au lieu de 18 194 € sans l&apos;option 790 G.
@@ -382,7 +382,7 @@ const sections: FAQSection[] = [
             </p>
             <p>
               Le code source est open-source et vérifiable sur{' '}
-              <a href="https://github.com/nba67000/calculpatrimoine" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">
+              <a href="https://github.com/nba67000/calculpatrimoine" target="_blank" rel="noopener noreferrer" className="text-neutral-900 hover:underline">
                 GitHub
               </a>.
             </p>
@@ -415,11 +415,11 @@ export default function FAQDonationPage() {
 
             <Link
               href="/donation/droits"
-              className="block bg-primary-600 text-white rounded-xl p-6 hover:bg-primary-700 transition-colors group"
+              className="block bg-neutral-900 text-white rounded-xl p-6 hover:bg-neutral-800 transition-colors group"
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="text-sm font-medium mb-1 text-primary-100">Calculateur donation</div>
+                  <div className="text-sm font-medium mb-1 text-neutral-400">Calculateur donation</div>
                   <div className="text-lg font-bold">Calculer les droits de ma donation</div>
                 </div>
                 <div className="text-2xl group-hover:translate-x-1 transition-transform">→</div>
@@ -450,18 +450,18 @@ export default function FAQDonationPage() {
                 style={{ borderLeft: '3px solid #D4AF37', paddingLeft: '1.25rem' }}
               >
                 <div>
-                  <p className="font-bold text-neutral-900 group-hover:text-primary-700 transition-colors mb-0.5">{link.label}</p>
+                  <p className="font-bold text-neutral-900 group-hover:text-neutral-900 transition-colors mb-0.5">{link.label}</p>
                   <p className="text-sm text-neutral-500">{link.desc}</p>
                 </div>
-                <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
+                <span className="font-mono text-neutral-500 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
               </Link>
             ))}
           </div>
 
-          <div className="bg-primary-700 p-8 text-center text-white mt-12">
+          <div className="bg-neutral-900 p-8 text-center text-white mt-12">
             <h3 className="font-serif text-2xl font-bold mb-3">Une question non couverte ?</h3>
-            <p className="text-primary-200 mb-6 font-mono text-sm">Réponse par email sous 48h.</p>
-            <a href="mailto:contact@calculpatrimoine.fr" className="inline-block bg-white text-primary-700 px-8 py-3 font-medium hover:bg-neutral-100 transition-colors">
+            <p className="text-neutral-400 mb-6 font-mono text-sm">Réponse par email sous 48h.</p>
+            <a href="mailto:contact@calculpatrimoine.fr" className="inline-block bg-white text-neutral-900 px-8 py-3 font-medium hover:bg-neutral-100 transition-colors">
               Nous contacter →
             </a>
           </div>

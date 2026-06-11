@@ -95,8 +95,8 @@ export default function DonationDemembrementPage() {
             </ul>
           </div>
 
-          <div className="border-l-4 border-primary-200 bg-primary-50 px-4 py-3">
-            <p className="text-sm text-primary-800">
+          <div className="border-l-4 border-accent-400 bg-neutral-50 px-4 py-3">
+            <p className="text-sm text-neutral-700">
               Régime applicable 2026. Sources : Art. 669 CGI (barème démembrement), Art. 777 CGI (barème
               droits), Art. 779 CGI (abattements), Art. 1133 CGI (réunion usufruit/nue-propriété non taxable au décès).
             </p>

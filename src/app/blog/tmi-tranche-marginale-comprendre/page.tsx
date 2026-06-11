@@ -59,14 +59,14 @@ export default function ArticleTMIPage() {
           </div>
 
           {/* CTA */}
-          <div className="bg-primary-700 px-8 py-6 mb-12">
-            <p className="font-mono text-xs text-primary-300 uppercase tracking-wider mb-2">Outil associé</p>
+          <div className="bg-neutral-900 px-8 py-6 mb-12">
+            <p className="font-mono text-xs text-neutral-400 uppercase tracking-wider mb-2">Outil associé</p>
             <p className="text-white font-bold text-lg mb-1">Calculez votre TMI et votre impôt</p>
-            <p className="text-primary-200 text-sm mb-4">
+            <p className="text-neutral-400 text-sm mb-4">
               Le calculateur TMI sort le détail tranche par tranche, le quotient familial et la
               décote sur votre situation réelle. Barème 2026, gratuit, sans inscription.
             </p>
-            <Link href="/tmi" className="inline-block bg-surface-card text-primary-700 px-6 py-2.5 font-medium text-sm hover:bg-neutral-100 transition-colors font-mono">
+            <Link href="/tmi" className="inline-block bg-surface-card text-neutral-900 px-6 py-2.5 font-medium text-sm hover:bg-neutral-100 transition-colors font-mono">
               Accéder au calculateur →
             </Link>
           </div>
@@ -105,12 +105,12 @@ export default function ArticleTMIPage() {
           <nav className="bg-surface-card border border-neutral-200 p-6 mb-12">
             <p className="font-mono text-xs uppercase tracking-wider text-neutral-500 mb-4">Sommaire</p>
             <ol className="space-y-2 text-sm font-mono">
-              <li><a href="#dernier-euro" className="text-primary-600 hover:underline">1. La TMI : votre dernier euro, pas votre tout premier</a></li>
-              <li><a href="#bareme-2026" className="text-primary-600 hover:underline">2. Lire le barème 2026 sans se tromper</a></li>
-              <li><a href="#a-quoi-sert" className="text-primary-600 hover:underline">3. À quoi sert vraiment la TMI</a></li>
-              <li><a href="#quotient-familial" className="text-primary-600 hover:underline">4. Le quotient familial : ce que les enfants changent</a></li>
-              <li><a href="#decote" className="text-primary-600 hover:underline">5. La décote : ce qui se passe en bas du barème</a></li>
-              <li><a href="#limites" className="text-primary-600 hover:underline">6. Ce que la simulation ne dit pas</a></li>
+              <li><a href="#dernier-euro" className="text-neutral-900 hover:underline">1. La TMI : votre dernier euro, pas votre tout premier</a></li>
+              <li><a href="#bareme-2026" className="text-neutral-900 hover:underline">2. Lire le barème 2026 sans se tromper</a></li>
+              <li><a href="#a-quoi-sert" className="text-neutral-900 hover:underline">3. À quoi sert vraiment la TMI</a></li>
+              <li><a href="#quotient-familial" className="text-neutral-900 hover:underline">4. Le quotient familial : ce que les enfants changent</a></li>
+              <li><a href="#decote" className="text-neutral-900 hover:underline">5. La décote : ce qui se passe en bas du barème</a></li>
+              <li><a href="#limites" className="text-neutral-900 hover:underline">6. Ce que la simulation ne dit pas</a></li>
             </ol>
           </nav>
 
@@ -207,11 +207,11 @@ export default function ArticleTMIPage() {
                 <p>Tranche 11 % (11 600 à 29 579 €) : 17 979 × 11 % = <strong>1 977,69 €</strong></p>
                 <p>Tranche 30 % (29 579 à 45 000 €) : 15 421 × 30 % = <strong>4 626,30 €</strong></p>
                 <p className="pt-2 border-t border-neutral-200 mt-2">
-                  Impôt brut total : <strong className="text-primary-700">6 604 €</strong>
+                  Impôt brut total : <strong className="text-neutral-900">6 604 €</strong>
                 </p>
                 <p className="text-neutral-500 text-xs mt-1">Décote nulle ici (impôt brut &gt; seuil 1 982 €).</p>
                 <p>
-                  Impôt net : <strong className="text-primary-700">6 604 €</strong>
+                  Impôt net : <strong className="text-neutral-900">6 604 €</strong>
                 </p>
                 <p className="text-neutral-500 text-xs mt-1">Taux moyen : 6 604 / 45 000 = 14,7 %.</p>
               </div>
@@ -332,7 +332,7 @@ export default function ArticleTMIPage() {
                     <p>Parts : 2</p>
                     <p>Revenu par part : 60 000 / 2 = 30 000 €</p>
                     <p>TMI : 30 % (30 000 dépasse 29 579)</p>
-                    <p className="pt-2 border-t border-neutral-200 mt-2 font-bold text-primary-700">
+                    <p className="pt-2 border-t border-neutral-200 mt-2 font-bold text-neutral-900">
                       Impôt net : ~5 718 €
                     </p>
                   </div>
@@ -343,7 +343,7 @@ export default function ArticleTMIPage() {
                     <p>Parts : 2 + 0,5 + 0,5 = 3</p>
                     <p>Revenu par part : 60 000 / 3 = 20 000 €</p>
                     <p>TMI : 11 % (20 000 dépasse 11 600)</p>
-                    <p className="pt-2 border-t border-neutral-200 mt-2 font-bold text-primary-700">
+                    <p className="pt-2 border-t border-neutral-200 mt-2 font-bold text-neutral-900">
                       Impôt net : ~2 543 €
                     </p>
                   </div>
@@ -438,7 +438,7 @@ export default function ArticleTMIPage() {
               </p>
               <div className="font-mono text-sm space-y-1 text-neutral-800">
                 <p>Décote = 897 − 0,4525 × 1 000 = 444,50 €</p>
-                <p>Impôt net = 1 000 − 445 = <strong className="text-primary-700">555 €</strong></p>
+                <p>Impôt net = 1 000 − 445 = <strong className="text-neutral-900">555 €</strong></p>
               </div>
               <p className="text-xs text-neutral-500 mt-3">
                 Plus l&apos;impôt brut est petit, plus la décote rogne dessus. À 700 euros d&apos;impôt
@@ -487,13 +487,13 @@ export default function ArticleTMIPage() {
           </section>
 
           {/* CTA final */}
-          <div className="bg-primary-700 px-8 py-6 mb-12">
+          <div className="bg-neutral-900 px-8 py-6 mb-12">
             <p className="text-white font-bold text-lg mb-1">Calculez votre TMI avec vos chiffres</p>
-            <p className="text-primary-200 text-sm mb-4">
+            <p className="text-neutral-400 text-sm mb-4">
               Le calculateur TMI sort le détail tranche par tranche, l&apos;effet du quotient familial,
               le plafonnement et la décote. Barème 2026 officiel, gratuit, zéro donnée conservée.
             </p>
-            <Link href="/tmi" className="inline-block bg-surface-card text-primary-700 px-6 py-2.5 font-medium text-sm hover:bg-neutral-100 transition-colors font-mono">
+            <Link href="/tmi" className="inline-block bg-surface-card text-neutral-900 px-6 py-2.5 font-medium text-sm hover:bg-neutral-100 transition-colors font-mono">
               Accéder au calculateur TMI →
             </Link>
           </div>
@@ -503,22 +503,22 @@ export default function ArticleTMIPage() {
             <p className="font-mono text-xs text-neutral-400 uppercase tracking-widest mb-4">Pour aller plus loin</p>
             <ul className="space-y-3">
               <li>
-                <Link href="/tmi" className="text-primary-700 hover:underline">
+                <Link href="/tmi" className="text-neutral-900 hover:underline">
                   → Calculateur TMI 2026 (votre TMI exacte avec quotient familial et décote)
                 </Link>
               </li>
               <li>
-                <Link href="/per-individuel" className="text-primary-700 hover:underline">
+                <Link href="/per-individuel" className="text-neutral-900 hover:underline">
                   → Calculateur PER (économie d&apos;impôt sur versement, qui dépend de votre TMI)
                 </Link>
               </li>
               <li>
-                <Link href="/blog/per-individuel-deduction-fiscalite" className="text-primary-700 hover:underline">
+                <Link href="/blog/per-individuel-deduction-fiscalite" className="text-neutral-900 hover:underline">
                   → Article : PER individuel, ce que vous gagnez à l&apos;entrée et payez à la sortie
                 </Link>
               </li>
               <li>
-                <Link href="/assurance-vie/fiscalite-rachat" className="text-primary-700 hover:underline">
+                <Link href="/assurance-vie/fiscalite-rachat" className="text-neutral-900 hover:underline">
                   → Calculateur assurance-vie : choix PFU contre barème selon votre TMI
                 </Link>
               </li>
@@ -543,7 +543,7 @@ export default function ArticleTMIPage() {
                       <span className="text-accent-400 mt-0.5 shrink-0">-</span>
                       <div>
                         {s.href ? (
-                          <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline font-medium">{s.label}</a>
+                          <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-neutral-900 hover:underline font-medium">{s.label}</a>
                         ) : (
                           <span className="font-medium text-neutral-700">{s.label}</span>
                         )}
@@ -580,7 +580,7 @@ export default function ArticleTMIPage() {
           <div className="border-t border-neutral-200 mt-8 pt-6 text-center">
             <p className="font-mono text-xs text-neutral-400 leading-relaxed">
               Outil indicatif uniquement. Ne constitue pas un conseil fiscal personnalisé.{' '}
-              <a href="https://github.com/nba67000/calculpatrimoine" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Code source ouvert</a>
+              <a href="https://github.com/nba67000/calculpatrimoine" target="_blank" rel="noopener noreferrer" className="text-neutral-900 hover:underline">Code source ouvert</a>
             </p>
           </div>
 

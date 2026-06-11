@@ -58,13 +58,13 @@ export default function ArticlePERPage() {
           </div>
 
           {/* CTA */}
-          <div className="bg-primary-700 px-8 py-6 mb-12">
-            <p className="font-mono text-xs text-primary-300 uppercase tracking-wider mb-2">Outil associé</p>
+          <div className="bg-neutral-900 px-8 py-6 mb-12">
+            <p className="font-mono text-xs text-neutral-400 uppercase tracking-wider mb-2">Outil associé</p>
             <p className="text-white font-bold text-lg mb-1">Calculez votre économie d&apos;impôt</p>
-            <p className="text-primary-200 text-sm mb-4">
+            <p className="text-neutral-400 text-sm mb-4">
               Le calculateur simule votre économie à l&apos;entrée et la fiscalité à la sortie selon votre TMI actuel et celui prévu à la retraite.
             </p>
-            <Link href="/per-individuel" className="inline-block bg-surface-card text-primary-700 px-6 py-2.5 font-medium text-sm hover:bg-neutral-100 transition-colors font-mono">
+            <Link href="/per-individuel" className="inline-block bg-surface-card text-neutral-900 px-6 py-2.5 font-medium text-sm hover:bg-neutral-100 transition-colors font-mono">
               Accéder au calculateur →
             </Link>
           </div>
@@ -107,13 +107,13 @@ export default function ArticlePERPage() {
           <nav className="bg-surface-card border border-neutral-200 p-6 mb-12">
             <p className="font-mono text-xs uppercase tracking-wider text-neutral-500 mb-4">Sommaire</p>
             <ol className="space-y-2 text-sm font-mono">
-              <li><a href="#fonctionnement" className="text-primary-600 hover:underline">1. Ce que le PER fait exactement</a></li>
-              <li><a href="#deduction" className="text-primary-600 hover:underline">2. La déduction à l&apos;entrée : calcul et exemples</a></li>
-              <li><a href="#plafond" className="text-primary-600 hover:underline">3. Le plafond : combien puis-je déduire ?</a></li>
-              <li><a href="#sortie" className="text-primary-600 hover:underline">4. La fiscalité à la sortie : rente ou capital</a></li>
-              <li><a href="#idees-recues" className="text-primary-600 hover:underline">5. Les idées reçues qui coûtent cher</a></li>
-              <li><a href="#per-vs-av" className="text-primary-600 hover:underline">6. PER vs assurance-vie : 3 profils comparés</a></li>
-              <li><a href="#cas-concrets" className="text-primary-600 hover:underline">7. Calculs complets chiffrés</a></li>
+              <li><a href="#fonctionnement" className="text-neutral-900 hover:underline">1. Ce que le PER fait exactement</a></li>
+              <li><a href="#deduction" className="text-neutral-900 hover:underline">2. La déduction à l&apos;entrée : calcul et exemples</a></li>
+              <li><a href="#plafond" className="text-neutral-900 hover:underline">3. Le plafond : combien puis-je déduire ?</a></li>
+              <li><a href="#sortie" className="text-neutral-900 hover:underline">4. La fiscalité à la sortie : rente ou capital</a></li>
+              <li><a href="#idees-recues" className="text-neutral-900 hover:underline">5. Les idées reçues qui coûtent cher</a></li>
+              <li><a href="#per-vs-av" className="text-neutral-900 hover:underline">6. PER vs assurance-vie : 3 profils comparés</a></li>
+              <li><a href="#cas-concrets" className="text-neutral-900 hover:underline">7. Calculs complets chiffrés</a></li>
             </ol>
           </nav>
 
@@ -154,7 +154,7 @@ export default function ArticlePERPage() {
                   },
                 ].map(({ num, phase, desc }) => (
                   <div key={num} className="flex items-start gap-5 border-b border-neutral-100 pb-5 last:border-0 last:pb-0">
-                    <span className="font-mono text-2xl font-bold text-primary-200 shrink-0 w-7 mt-0.5">{num}</span>
+                    <span className="font-mono text-2xl font-bold text-neutral-400 shrink-0 w-7 mt-0.5">{num}</span>
                     <div>
                       <p className="font-bold text-sm text-neutral-900 mb-1.5">{phase}</p>
                       <p className="text-sm text-neutral-600 leading-relaxed">{desc}</p>
@@ -217,7 +217,7 @@ export default function ArticlePERPage() {
                       <td className="py-2 font-bold text-neutral-900">{r.tmi}</td>
                       <td className="py-2 text-neutral-500">{r.profil}</td>
                       <td className="py-2">{r.v}</td>
-                      <td className="py-2 text-primary-600">{r.eco}</td>
+                      <td className="py-2 text-neutral-900">{r.eco}</td>
                       <td className="py-2 font-bold text-neutral-900">{r.cout}</td>
                     </tr>
                   ))}
@@ -233,9 +233,9 @@ export default function ArticlePERPage() {
               <p className="font-mono text-xs text-warning-700 uppercase tracking-wider mb-1">Ce qu&apos;on entend souvent</p>
               <p className="text-warning-800 text-sm font-medium">&laquo;&nbsp;Avec un PER, l&apos;État me donne de l&apos;argent.&nbsp;&raquo;</p>
             </div>
-            <div className="border-l-4 border-primary-400 bg-primary-50 px-5 py-4 mb-6">
-              <p className="font-mono text-xs text-primary-600 uppercase tracking-wider mb-1">Ce qui se passe réellement</p>
-              <p className="text-primary-800 text-sm leading-relaxed">
+            <div className="border-l-4 border-accent-400 bg-neutral-50 px-5 py-4 mb-6">
+              <p className="font-mono text-xs text-neutral-500 uppercase tracking-wider mb-1">Ce qui se passe réellement</p>
+              <p className="text-neutral-700 text-sm leading-relaxed">
                 L&apos;État ne vous donne rien. Il vous fait une avance : vous ne payez pas cet impôt maintenant, mais vous le paierez à la retraite quand vous retirerez. C&apos;est un décalage dans le temps, pas un cadeau.
               </p>
             </div>
@@ -292,7 +292,7 @@ export default function ArticlePERPage() {
               ].map(ex => (
                 <div key={ex.revenu} className="bg-surface-card border border-neutral-200 p-4">
                   <p className="font-mono text-xs text-neutral-400 uppercase mb-2">{ex.revenu}</p>
-                  <p className="font-bold text-sm text-primary-700 mb-2">{ex.plafond}</p>
+                  <p className="font-bold text-sm text-neutral-900 mb-2">{ex.plafond}</p>
                   <p className="text-xs text-neutral-500 leading-relaxed">{ex.note}</p>
                 </div>
               ))}
@@ -311,7 +311,7 @@ export default function ArticlePERPage() {
                 <p>Plafond 2025 : 10 % × 60 000 euros = 6 000 euros</p>
                 <p>Plafond 2024 non utilisé : 5 500 euros</p>
                 <p>Plafond 2023 non utilisé : 5 200 euros</p>
-                <p className="font-bold text-primary-700 pt-2 border-t border-neutral-200 mt-2">
+                <p className="font-bold text-neutral-900 pt-2 border-t border-neutral-200 mt-2">
                   Plafond disponible total cette année : 16 700 euros
                 </p>
               </div>
@@ -369,7 +369,7 @@ export default function ArticlePERPage() {
               <div className="font-mono text-sm space-y-1.5 text-neutral-800">
                 <p>Rente annuelle perçue : 12 000 euros</p>
                 <p>Abattement de 10 % : 1 200 euros déduits automatiquement</p>
-                <p className="font-bold text-primary-700 pt-2 border-t border-neutral-200 mt-2">Rente imposable : 10 800 euros</p>
+                <p className="font-bold text-neutral-900 pt-2 border-t border-neutral-200 mt-2">Rente imposable : 10 800 euros</p>
                 <p className="text-neutral-500 text-xs mt-1">Ces 10 800 euros s&apos;ajoutent à vos autres pensions pour calculer votre impôt de l&apos;année.</p>
               </div>
             </div>
@@ -417,9 +417,9 @@ export default function ArticlePERPage() {
                   <p className="font-mono text-xs text-warning-700 uppercase tracking-wider mb-1">Ce qu&apos;on entend souvent</p>
                   <p className="text-warning-800 text-sm font-medium">&laquo;&nbsp;{faux}&nbsp;&raquo;</p>
                 </div>
-                <div className="border-l-4 border-primary-400 bg-primary-50 px-5 py-4">
-                  <p className="font-mono text-xs text-primary-600 uppercase tracking-wider mb-1">Ce qui se passe réellement</p>
-                  <p className="text-primary-800 text-sm leading-relaxed">{vrai}</p>
+                <div className="border-l-4 border-accent-400 bg-neutral-50 px-5 py-4">
+                  <p className="font-mono text-xs text-neutral-500 uppercase tracking-wider mb-1">Ce qui se passe réellement</p>
+                  <p className="text-neutral-700 text-sm leading-relaxed">{vrai}</p>
                 </div>
               </div>
             ))}
@@ -434,7 +434,7 @@ export default function ArticlePERPage() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-              <div className="bg-surface-card border-l-4 border-l-primary-700 border border-neutral-200 p-5">
+              <div className="bg-surface-card border-l-4 border-l-accent-400 border border-neutral-200 p-5">
                 <p className="font-bold text-sm text-neutral-900 mb-3">Le PER</p>
                 <p className="text-sm text-neutral-600 leading-relaxed">Réduit votre impôt dès cette année. L&apos;argent est bloqué jusqu&apos;à la retraite, sauf exceptions. Versements et gains sont imposés à la sortie.</p>
               </div>
@@ -503,16 +503,16 @@ export default function ArticlePERPage() {
               },
             ].map(cas => (
               <div key={cas.num} className="mb-10">
-                <div className="bg-primary-700 px-5 py-4">
-                  <p className="font-mono text-xs text-primary-300 mb-1">{cas.num}</p>
+                <div className="bg-neutral-900 px-5 py-4">
+                  <p className="font-mono text-xs text-neutral-400 mb-1">{cas.num}</p>
                   <p className="text-white font-bold text-lg">{cas.titre}</p>
-                  <p className="text-primary-300 text-sm mt-1">{cas.detail}</p>
+                  <p className="text-neutral-400 text-sm mt-1">{cas.detail}</p>
                 </div>
                 <div className="bg-surface-card border border-neutral-200 border-t-0 p-6">
                   <p className="font-mono text-xs text-neutral-400 uppercase tracking-wider mb-4">{cas.versement}</p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
-                    <div className="bg-neutral-50 border-l-4 border-l-primary-700 border border-neutral-200 p-4">
-                      <p className="font-mono text-xs text-primary-600 uppercase tracking-wider mb-3">PER individuel</p>
+                    <div className="bg-neutral-50 border-l-4 border-l-accent-400 border border-neutral-200 p-4">
+                      <p className="font-mono text-xs text-neutral-500 uppercase tracking-wider mb-3">PER individuel</p>
                       <ul className="space-y-2">
                         {cas.per.map(l => <li key={l} className="text-xs text-neutral-700 leading-relaxed">{l}</li>)}
                       </ul>
@@ -610,7 +610,7 @@ export default function ArticlePERPage() {
                       </div>
                     ))}
                   </div>
-                  <p className={`font-mono text-xs font-bold pt-2 border-t border-neutral-200 ${col.favorable ? 'text-accent-600' : 'text-primary-700'}`}>
+                  <p className={`font-mono text-xs font-bold pt-2 border-t border-neutral-200 ${col.favorable ? 'text-accent-600' : 'text-neutral-900'}`}>
                     {col.net}
                   </p>
                   <p className="text-xs text-neutral-600 leading-relaxed">{col.explication}</p>
@@ -618,21 +618,21 @@ export default function ArticlePERPage() {
               ))}
             </div>
 
-            <div className="border-l-4 border-primary-300 bg-primary-50 px-5 py-4">
-              <p className="font-mono text-xs text-primary-600 uppercase tracking-wider mb-2">Ce que ces chiffres disent</p>
-              <p className="text-sm text-primary-800 leading-relaxed">
+            <div className="border-l-4 border-accent-400 bg-neutral-50 px-5 py-4">
+              <p className="font-mono text-xs text-neutral-500 uppercase tracking-wider mb-2">Ce que ces chiffres disent</p>
+              <p className="text-sm text-neutral-700 leading-relaxed">
                 Plus l&apos;écart entre votre TMI actuelle et votre TMI à la retraite est grand, plus le PER est gagnant. Quand les taux s&apos;inversent, la mécanique se retourne contre vous. Ces calculs ne prennent pas en compte le fait que l&apos;économie d&apos;impôt annuelle peut être réinvestie, ce qui améliore mécaniquement le résultat du PER dans les scénarios A et B.
               </p>
             </div>
           </section>
 
           {/* CTA final */}
-          <div className="bg-primary-700 px-8 py-6 mb-12">
+          <div className="bg-neutral-900 px-8 py-6 mb-12">
             <p className="text-white font-bold text-lg mb-1">Calculez votre cas avec vos chiffres</p>
-            <p className="text-primary-200 text-sm mb-4">
+            <p className="text-neutral-400 text-sm mb-4">
               Le calculateur PER simule votre économie à l&apos;entrée et la fiscalité à la sortie selon votre TMI actuelle et celle prévue à la retraite. Gratuit, sans inscription, zéro donnée conservée.
             </p>
-            <Link href="/per-individuel" className="inline-block bg-surface-card text-primary-700 px-6 py-2.5 font-medium text-sm hover:bg-neutral-100 transition-colors font-mono">
+            <Link href="/per-individuel" className="inline-block bg-surface-card text-neutral-900 px-6 py-2.5 font-medium text-sm hover:bg-neutral-100 transition-colors font-mono">
               Accéder au calculateur PER →
             </Link>
           </div>
@@ -656,7 +656,7 @@ export default function ArticlePERPage() {
                       <span className="text-accent-400 mt-0.5 shrink-0">-</span>
                       <div>
                         {s.href ? (
-                          <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline font-medium">{s.label}</a>
+                          <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-neutral-900 hover:underline font-medium">{s.label}</a>
                         ) : (
                           <span className="font-medium text-neutral-700">{s.label}</span>
                         )}
@@ -693,7 +693,7 @@ export default function ArticlePERPage() {
           <div className="border-t border-neutral-200 mt-8 pt-6 text-center">
             <p className="font-mono text-xs text-neutral-400 leading-relaxed">
               Outil indicatif uniquement. Ne constitue pas un conseil fiscal ou en investissement personnalisé.{' '}
-              <a href="https://github.com/nba67000/calculpatrimoine" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Code source ouvert</a>
+              <a href="https://github.com/nba67000/calculpatrimoine" target="_blank" rel="noopener noreferrer" className="text-neutral-900 hover:underline">Code source ouvert</a>
             </p>
           </div>
 

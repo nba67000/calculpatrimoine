@@ -51,13 +51,13 @@ export default function BlogIndex() {
                   <span className="font-mono text-xs text-neutral-300">·</span>
                   <span className="font-mono text-xs text-neutral-400">{formatDate(article.date)}</span>
                 </div>
-                <h3 className="text-xl font-bold text-neutral-900 group-hover:text-primary-700 transition-colors leading-snug">
+                <h3 className="text-xl font-bold text-neutral-900 group-hover:text-neutral-900 transition-colors leading-snug">
                   {article.titre}
                 </h3>
                 <p className="text-sm text-neutral-500 leading-relaxed max-w-2xl">
                   {article.extrait}
                 </p>
-                <span className="font-mono text-xs text-primary-600 group-hover:translate-x-1 transition-transform mt-1">
+                <span className="font-mono text-xs text-neutral-500 group-hover:translate-x-1 transition-transform mt-1">
                   Lire l&apos;article →
                 </span>
               </Link>

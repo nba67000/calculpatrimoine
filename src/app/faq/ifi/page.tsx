@@ -304,7 +304,7 @@ export default function FAQIFIPage() {
             </p>
             <Link
               href="/ifi"
-              className="inline-block bg-primary-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-700 transition-colors"
+              className="inline-block bg-neutral-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-neutral-800 transition-colors"
             >
               Simuler mon IFI 2026
             </Link>

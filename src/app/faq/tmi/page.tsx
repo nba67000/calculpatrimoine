@@ -66,8 +66,8 @@ const sections: FAQSection[] = [
                 ))}
               </tbody>
             </table>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4">
+              <p className="text-sm text-neutral-900">
                 <strong>Important</strong> : ces tranches s&apos;appliquent au revenu <em>par part fiscale</em>
                 (revenu net imposable ÷ nombre de parts). Un couple sans enfant a 2 parts.
               </p>
@@ -92,7 +92,7 @@ const sections: FAQSection[] = [
                 taux global de votre imposition.
               </li>
             </ul>
-            <div className="bg-primary-100 p-4 border border-neutral-200">
+            <div className="bg-neutral-100 p-4 border border-neutral-200">
               <p className="mb-2 text-sm font-bold">Exemple (célibataire, 50 000€ net imposable) :</p>
               <ul className="text-sm space-y-1">
                 <li>Tranches à 0 % : 11 600€ → 0€</li>
@@ -152,7 +152,7 @@ const sections: FAQSection[] = [
               <li>+ 0,5 part par enfant à charge (1re et 2e enfant)</li>
               <li>+ 1 part à partir du 3e enfant</li>
             </ul>
-            <div className="bg-primary-100 p-4 border border-neutral-200">
+            <div className="bg-neutral-100 p-4 border border-neutral-200">
               <p className="mb-2 text-sm font-bold">Exemple : couple avec 2 enfants</p>
               <ul className="text-sm space-y-1">
                 <li>Revenu net imposable : 80 000€</li>
@@ -243,7 +243,7 @@ const sections: FAQSection[] = [
             </p>
             <p>
               Le code source est open-source et vérifiable sur{' '}
-              <a href="https://github.com/nba67000/calculpatrimoine" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">
+              <a href="https://github.com/nba67000/calculpatrimoine" target="_blank" rel="noopener noreferrer" className="text-neutral-900 hover:underline">
                 GitHub
               </a>.
             </p>
@@ -274,11 +274,11 @@ export default function FAQTMIPage() {
           <header className="mb-12">
             <Link
               href="/tmi"
-              className="block bg-primary-600 text-white rounded-xl p-6 hover:bg-primary-700 transition-colors group"
+              className="block bg-neutral-900 text-white rounded-xl p-6 hover:bg-neutral-800 transition-colors group"
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="text-sm font-medium mb-1 text-primary-100">Calculateur TMI</div>
+                  <div className="text-sm font-medium mb-1 text-neutral-400">Calculateur TMI</div>
                   <div className="text-lg font-bold">Calculez votre TMI et votre IR 2026</div>
                 </div>
                 <div className="text-2xl group-hover:translate-x-1 transition-transform">→</div>
@@ -310,18 +310,18 @@ export default function FAQTMIPage() {
                 style={{ borderLeft: '3px solid #D4AF37', paddingLeft: '1.25rem' }}
               >
                 <div>
-                  <p className="font-bold text-neutral-900 group-hover:text-primary-700 transition-colors mb-0.5">{link.label}</p>
+                  <p className="font-bold text-neutral-900 group-hover:text-neutral-900 transition-colors mb-0.5">{link.label}</p>
                   <p className="text-sm text-neutral-500">{link.desc}</p>
                 </div>
-                <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
+                <span className="font-mono text-neutral-500 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
               </Link>
             ))}
           </div>
 
-          <div className="bg-primary-700 p-8 text-center text-white mt-12">
+          <div className="bg-neutral-900 p-8 text-center text-white mt-12">
             <h3 className="font-serif text-2xl font-bold mb-3">Vous avez d&apos;autres questions ?</h3>
-            <p className="text-primary-200 mb-6 font-mono text-sm">Réponse par email sous 48h.</p>
-            <a href="mailto:contact@calculpatrimoine.fr" className="inline-block bg-white text-primary-700 px-8 py-3 font-medium hover:bg-neutral-100 transition-colors">
+            <p className="text-neutral-400 mb-6 font-mono text-sm">Réponse par email sous 48h.</p>
+            <a href="mailto:contact@calculpatrimoine.fr" className="inline-block bg-white text-neutral-900 px-8 py-3 font-medium hover:bg-neutral-100 transition-colors">
               Nous contacter →
             </a>
           </div>

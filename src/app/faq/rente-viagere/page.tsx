@@ -48,8 +48,8 @@ const sections: FAQSection[] = [
               <strong>Pourquoi faire ça ?</strong> Pour avoir un revenu régulier et sécurisé,
               comme un complément de retraite que vous créez vous-même.
             </p>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4 mt-4">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4 mt-4">
+              <p className="text-sm text-neutral-900">
                 <strong>À retenir</strong> : Plus vous êtes âgé au moment de souscrire,
                 plus la rente mensuelle est élevée (car l&apos;assureur estime vous verser moins longtemps).
               </p>
@@ -78,8 +78,8 @@ const sections: FAQSection[] = [
             <p className="mb-3">
               <strong>Étape 3</strong> : Vous recevez votre rente chaque mois, à vie, peu importe combien de temps vous vivez.
             </p>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4 mt-4">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4 mt-4">
+              <p className="text-sm text-neutral-900">
                 <strong>Exemple chiffré</strong> : Marc, 70 ans, verse 200 000€.
                 Il reçoit 778€/mois à vie. S&apos;il vit jusqu&apos;à 92 ans (22 ans),
                 il aura touché au total 205 392€.
@@ -150,8 +150,8 @@ const sections: FAQSection[] = [
               <li>Si vous décédez tôt, vous perdez votre capital (sauf option réversion)</li>
               <li>L&apos;inflation réduit le pouvoir d&apos;achat de votre rente (614€ en 2026 ≠ 614€ en 2046)</li>
             </ul>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4 mt-4">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4 mt-4">
+              <p className="text-sm text-neutral-900">
                 <strong>À noter</strong> : une réserve accessible (Livret A, assurance-vie) en dehors de la rente
                 permet de faire face aux dépenses imprévues (santé, travaux).
                 La rente viagère immobilise définitivement le capital converti.
@@ -179,8 +179,8 @@ const sections: FAQSection[] = [
               <li>Vous avez besoin de <strong>liquidités</strong> (impossible de récupérer le capital)</li>
               <li>Vous êtes en <strong>mauvaise santé</strong> (risque de décès rapide)</li>
             </ul>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4 mt-4">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4 mt-4">
+              <p className="text-sm text-neutral-900">
                 <strong>Exemple</strong> : Jeanne, 68 ans, célibataire, 120 000€ d&apos;épargne,
                 retraite 1 200€/mois. Elle transforme 80 000€ en rente (287€/mois) et garde 40 000€
                 en réserve. Total : 1 487€/mois garanti à vie.
@@ -209,8 +209,8 @@ const sections: FAQSection[] = [
               <li>75 ans → <strong>487€/mois</strong></li>
               <li>80 ans → <strong>641€/mois</strong></li>
             </ul>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4 mt-4">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4 mt-4">
+              <p className="text-sm text-neutral-900">
                 <strong>À noter</strong> : Plus vous attendez (70 ans vs 65 ans),
                 plus la rente est élevée. L&apos;écart est d&apos;environ +20 % tous les 5 ans.
               </p>
@@ -244,8 +244,8 @@ const sections: FAQSection[] = [
               <strong>Pourquoi ?</strong> C&apos;est un système de <strong>mutualisation</strong> :
               ceux qui décèdent tôt &quot;financent&quot; ceux qui vivent longtemps.
             </p>
-            <div className="bg-primary-50 border-l-4 border-primary-500 p-4 mt-4">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4 mt-4">
+              <p className="text-sm text-neutral-900">
                 <strong>ATTENTION</strong> : Réfléchissez bien avant de souscrire.
                 Une fois signé, c&apos;est irréversible. Vous ne pouvez ni annuler, ni récupérer votre capital.
               </p>
@@ -278,8 +278,8 @@ const sections: FAQSection[] = [
             <ul className="list-disc pl-6 mb-3">
               <li>65 ans → Point mort à <strong>91-92 ans</strong> (~27 ans de rente)</li>
             </ul>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4 mt-4">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4 mt-4">
+              <p className="text-sm text-neutral-900">
                 <strong>C&apos;est un pari</strong> : Si vous vivez longtemps, vous gagnez.
                 Si vous décédez tôt, vous perdez. C&apos;est le principe de l&apos;assurance.
               </p>
@@ -298,7 +298,7 @@ const sections: FAQSection[] = [
               <strong>C&apos;est tout l&apos;intérêt de la rente viagère</strong> :
               vous êtes protégé contre le risque de &quot;vivre trop longtemps&quot; et de manquer d&apos;argent.
             </p>
-            <div className="bg-primary-100 p-4 border border-neutral-200 mb-3">
+            <div className="bg-neutral-100 p-4 border border-neutral-200 mb-3">
               <p className="mb-2">Marie, 65 ans, verse 100 000€. Elle reçoit 321€/mois.</p>
               <p className="mb-2"><strong>Elle vit jusqu&apos;à 102 ans</strong> (37 ans de rente) :</p>
               <ul className="list-none pl-4">
@@ -311,8 +311,8 @@ const sections: FAQSection[] = [
               certains clients décèdent à 70 ans (il garde leur argent),
               d&apos;autres vivent jusqu&apos;à 100 ans (il paie plus). En moyenne, ça s&apos;équilibre.
             </p>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4 mt-4">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4 mt-4">
+              <p className="text-sm text-neutral-900">
                 <strong>Garantie</strong> : Même si vous vivez 50 ans de plus,
                 l&apos;assureur est <strong>légalement obligé</strong> de vous verser la rente.
               </p>
@@ -345,8 +345,8 @@ const sections: FAQSection[] = [
                 à prix cassé (vous perdez 30-50% de la valeur). À éviter sauf urgence absolue.
               </li>
             </ol>
-            <div className="bg-primary-50 border-l-4 border-primary-500 p-4 mt-4">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4 mt-4">
+              <p className="text-sm text-neutral-900">
                 <strong>Point d&apos;attention :</strong> une fois le contrat signé, le capital est définitivement cédé. Prévoir une épargne accessible en parallèle évite de dépendre uniquement de la rente en cas de besoin imprévu.
               </p>
             </div>
@@ -375,7 +375,7 @@ const sections: FAQSection[] = [
               <li>Vous décédez → Votre conjoint continue à recevoir 60%, 80% ou 100% de la rente</li>
               <li>Jusqu&apos;à son propre décès</li>
             </ul>
-            <div className="bg-primary-100 p-4 border border-neutral-200 mb-3">
+            <div className="bg-neutral-100 p-4 border border-neutral-200 mb-3">
               <p className="mb-2">Pierre, 65 ans, conjoint 63 ans, verse 100 000€.</p>
               <p className="mb-2"><strong>Sans réversion</strong> : 321€/mois</p>
               <p className="mb-2"><strong>Avec réversion 60%</strong> : 151€/mois</p>
@@ -384,8 +384,8 @@ const sections: FAQSection[] = [
                 → Si Marie décède avant Pierre, Pierre garde ses <strong>151€/mois</strong>
               </p>
             </div>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4 mb-3">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4 mb-3">
+              <p className="text-sm text-neutral-900">
                 <strong>Important</strong> : La réversion ne fonctionne que <strong>dans un sens</strong>
                 (du titulaire vers le bénéficiaire). Si c&apos;est votre conjoint qui décède en premier,
                 vous gardez 100% de votre rente.
@@ -408,9 +408,9 @@ const sections: FAQSection[] = [
               <strong>Le calculateur &quot;Mode Couple&quot;</strong> compare plusieurs stratégies de rente pour un couple
               et montre leur impact sur le survivant.
             </p>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4 mb-4">
-              <p className="text-sm text-primary-900 mb-2"><strong>Principe clé</strong> : deux options principales :</p>
-              <ul className="list-disc pl-6 text-sm text-primary-900 space-y-1">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4 mb-4">
+              <p className="text-sm text-neutral-900 mb-2"><strong>Principe clé</strong> : deux options principales :</p>
+              <ul className="list-disc pl-6 text-sm text-neutral-900 space-y-1">
                 <li><strong>Rentes séparées</strong> : revenus max pour le couple, mais chute importante au premier décès</li>
                 <li><strong>Capital regroupé</strong> : revenus couple plus bas, mais survivant mieux protégé</li>
               </ul>
@@ -466,7 +466,7 @@ const sections: FAQSection[] = [
                 ))}
               </tbody>
             </table>
-            <div className="bg-primary-100 p-4 border border-neutral-200">
+            <div className="bg-neutral-100 p-4 border border-neutral-200">
               <p className="mb-2">Paul, 65 ans, reçoit 614€/mois de rente.</p>
               <ul className="list-none pl-0 space-y-1">
                 <li>→ Part imposable : 40% (car souscrit à 65 ans)</li>
@@ -532,11 +532,11 @@ const sections: FAQSection[] = [
                 </ul>
               </li>
             </ol>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4 mt-4">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4 mt-4">
+              <p className="text-sm text-neutral-900">
                 <strong>Attention aux arnaques</strong> : Vérifiez toujours que le courtier est enregistré
                 sur{' '}
-                <a href="https://www.orias.fr" target="_blank" rel="noopener noreferrer" className="text-primary-600 underline">
+                <a href="https://www.orias.fr" target="_blank" rel="noopener noreferrer" className="text-neutral-900 underline">
                   orias.fr
                 </a>{' '}
                 (registre officiel des intermédiaires en assurance).
@@ -609,21 +609,21 @@ export default function FAQRenteViagerePage() {
                 style={{ borderLeft: '3px solid #D4AF37', paddingLeft: '1.25rem' }}
               >
                 <div>
-                  <p className="font-bold text-neutral-900 group-hover:text-primary-700 transition-colors mb-0.5">{link.label}</p>
+                  <p className="font-bold text-neutral-900 group-hover:text-neutral-900 transition-colors mb-0.5">{link.label}</p>
                   <p className="text-sm text-neutral-500">{link.desc}</p>
                 </div>
-                <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
+                <span className="font-mono text-neutral-500 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
               </Link>
             ))}
           </div>
 
           {/* CTA final */}
-          <div className="bg-primary-700 p-8 text-center text-white mt-8">
+          <div className="bg-neutral-900 p-8 text-center text-white mt-8">
             <h3 className="font-serif text-2xl font-bold mb-3">Vous avez d&apos;autres questions ?</h3>
-            <p className="text-primary-200 mb-6 font-mono text-sm">Réponse par email sous 48h.</p>
+            <p className="text-neutral-400 mb-6 font-mono text-sm">Réponse par email sous 48h.</p>
             <a
               href="mailto:contact@calculpatrimoine.fr"
-              className="inline-block bg-white text-primary-700 px-8 py-3 font-medium hover:bg-neutral-100 transition-colors"
+              className="inline-block bg-white text-neutral-900 px-8 py-3 font-medium hover:bg-neutral-100 transition-colors"
             >
               Nous contacter →
             </a>

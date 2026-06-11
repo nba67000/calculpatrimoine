@@ -64,7 +64,7 @@ export default function MentionsLegalesPage() {
  <div className="text-neutral-700 space-y-2">
  <p><strong>Hébergeur :</strong>Vercel Inc.</p>
  <p><strong>Adresse :</strong> 440 N Barranca Ave #4133, Covina, CA 91723, USA</p>
- <p><strong>Site :</strong> <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">https://vercel.com</a></p>
+ <p><strong>Site :</strong> <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-neutral-900 hover:underline">https://vercel.com</a></p>
  </div>
  </section>
 
@@ -101,7 +101,7 @@ export default function MentionsLegalesPage() {
  </p>
  <p>
  Pour plus d&apos;informations, consultez notre{' '}
- <a href="/politique-confidentialite" className="text-primary-600 hover:underline">
+ <a href="/politique-confidentialite" className="text-neutral-900 hover:underline">
  Politique de Confidentialité
  </a>.
  </p>
@@ -124,7 +124,7 @@ export default function MentionsLegalesPage() {
  <div className="text-neutral-700">
  <p>
  Pour toute question concernant le site : <br />
- <a href="mailto:contact@calculpatrimoine.fr" className="text-primary-600 hover:underline font-medium">
+ <a href="mailto:contact@calculpatrimoine.fr" className="text-neutral-900 hover:underline font-medium">
  contact@calculpatrimoine.fr
  </a>
  </p>

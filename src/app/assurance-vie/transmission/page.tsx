@@ -68,8 +68,8 @@ export default function TransmissionPage() {
 
           <SourcesSection slug="assurance-vie/transmission" />
 
-          <div className="border-l-4 border-primary-200 bg-primary-50 px-4 py-3">
-            <p className="text-sm text-primary-800">
+          <div className="border-l-4 border-accent-400 bg-neutral-50 px-4 py-3">
+            <p className="text-sm text-neutral-700">
               Barèmes et abattements 2026 (Art. 990 I et 757 B CGI). Dernière vérification des sources : avril 2026.
             </p>
           </div>
@@ -117,10 +117,10 @@ export default function TransmissionPage() {
             style={{ borderLeft: '3px solid #D4AF37', paddingLeft: '1.25rem' }}
           >
             <div>
-              <p className="font-bold text-neutral-900 group-hover:text-primary-700 transition-colors mb-0.5">Vous voulez retirer de l&apos;argent de votre contrat ?</p>
+              <p className="font-bold text-neutral-900 group-hover:text-neutral-900 transition-colors mb-0.5">Vous voulez retirer de l&apos;argent de votre contrat ?</p>
               <p className="text-sm text-neutral-500">Calculateur de fiscalité des rachats - comparaison automatique PFU vs IR.</p>
             </div>
-            <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
+            <span className="font-mono text-neutral-500 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
           </Link>
           <Link
             href="/faq/transmission"
@@ -128,10 +128,10 @@ export default function TransmissionPage() {
             style={{ borderLeft: '3px solid #D4AF37', paddingLeft: '1.25rem' }}
           >
             <div>
-              <p className="font-bold text-neutral-900 group-hover:text-primary-700 transition-colors mb-0.5">FAQ Transmission Assurance-Vie</p>
+              <p className="font-bold text-neutral-900 group-hover:text-neutral-900 transition-colors mb-0.5">FAQ Transmission Assurance-Vie</p>
               <p className="text-sm text-neutral-500">Article 990 I, 757 B, clause bénéficiaire, abattements - toutes vos questions.</p>
             </div>
-            <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
+            <span className="font-mono text-neutral-500 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
           </Link>
         </div>
       </section>

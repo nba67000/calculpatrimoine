@@ -192,7 +192,7 @@ const sections: FAQSection[] = [
                 href="https://github.com/nba67000/calculpatrimoine"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary-600 hover:underline"
+                className="text-neutral-900 hover:underline"
               >
                 GitHub
               </a>
@@ -225,11 +225,11 @@ export default function FAQPeaPage() {
           <header className="mb-12">
             <Link
               href="/pea"
-              className="block bg-primary-600 text-white rounded-xl p-6 hover:bg-primary-700 transition-colors group"
+              className="block bg-neutral-900 text-white rounded-xl p-6 hover:bg-neutral-800 transition-colors group"
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="text-sm font-medium mb-1 text-primary-100">Calculateur PEA</div>
+                  <div className="text-sm font-medium mb-1 text-neutral-400">Calculateur PEA</div>
                   <div className="text-lg font-bold">Net après PS et passif fiscal latent</div>
                 </div>
                 <div className="text-2xl group-hover:translate-x-1 transition-transform">→</div>
@@ -261,18 +261,18 @@ export default function FAQPeaPage() {
                 style={{ borderLeft: '3px solid #D4AF37', paddingLeft: '1.25rem' }}
               >
                 <div>
-                  <p className="font-bold text-neutral-900 group-hover:text-primary-700 transition-colors mb-0.5">{link.label}</p>
+                  <p className="font-bold text-neutral-900 group-hover:text-neutral-900 transition-colors mb-0.5">{link.label}</p>
                   <p className="text-sm text-neutral-500">{link.desc}</p>
                 </div>
-                <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
+                <span className="font-mono text-neutral-500 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
               </Link>
             ))}
           </div>
 
-          <div className="bg-primary-700 p-8 text-center text-white mt-12">
+          <div className="bg-neutral-900 p-8 text-center text-white mt-12">
             <h3 className="font-serif text-2xl font-bold mb-3">Vous avez d&apos;autres questions ?</h3>
-            <p className="text-primary-200 mb-6 font-mono text-sm">Réponse par email sous 48h.</p>
-            <a href="mailto:contact@calculpatrimoine.fr" className="inline-block bg-white text-primary-700 px-8 py-3 font-medium hover:bg-neutral-100 transition-colors">
+            <p className="text-neutral-400 mb-6 font-mono text-sm">Réponse par email sous 48h.</p>
+            <a href="mailto:contact@calculpatrimoine.fr" className="inline-block bg-white text-neutral-900 px-8 py-3 font-medium hover:bg-neutral-100 transition-colors">
               Nous contacter →
             </a>
           </div>

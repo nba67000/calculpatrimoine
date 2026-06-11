@@ -56,7 +56,7 @@ export default function CGUPage() {
 
  <div className="space-y-4">
  <div>
- <h3 className="font-semibold text-lg mb-2 text-primary-700">CalculPatrimoine FOURNIT :</h3>
+ <h3 className="font-semibold text-lg mb-2 text-neutral-900">CalculPatrimoine FOURNIT :</h3>
  <ul className="list-disc list-inside space-y-1 text-neutral-700 ml-4">
  <li>Des calculs indicatifs basés sur des textes officiels et formules actuarielles reconnues</li>
  <li>Des informations pédagogiques sur la fiscalité et les produits patrimoniaux</li>
@@ -66,7 +66,7 @@ export default function CGUPage() {
  </div>
 
  <div>
- <h3 className="font-semibold text-lg mb-2 text-primary-700">CalculPatrimoine NE FOURNIT PAS :</h3>
+ <h3 className="font-semibold text-lg mb-2 text-neutral-900">CalculPatrimoine NE FOURNIT PAS :</h3>
  <ul className="list-disc list-inside space-y-1 text-neutral-700 ml-4">
  <li>De conseil personnalisé en investissement financier au sens de la directive MIF II</li>
  <li>De recommandation de souscription d&apos;un produit spécifique</li>
@@ -108,10 +108,10 @@ export default function CGUPage() {
  <li>Que les résultats correspondent exactement aux offres commerciales des assureurs</li>
  </ul>
 
- <div className="mt-4 p-4 bg-primary-50 border border-primary-200 rounded-lg">
+ <div className="mt-4 p-4 bg-neutral-50 border border-neutral-200 rounded-lg">
  <p className="text-sm">
  <strong>En cas d&apos;erreur constatée</strong>, nous vous encourageons vivement à nous 
- la signaler à l&apos;adresse : <a href="mailto:contact@calculpatrimoine.fr" className="text-primary-600 hover:underline">contact@calculpatrimoine.fr</a>
+ la signaler à l&apos;adresse : <a href="mailto:contact@calculpatrimoine.fr" className="text-neutral-900 hover:underline">contact@calculpatrimoine.fr</a>
  </p>
  </div>
 
@@ -149,7 +149,7 @@ export default function CGUPage() {
  CalculPatrimoine ne collecte <strong>aucune donnée personnelle identifiable</strong>. 
  Tous les calculs sont effectués localement dans votre navigateur. Pour plus de détails, 
  consultez notre{' '}
- <a href="/politique-confidentialite" className="text-primary-600 hover:underline">
+ <a href="/politique-confidentialite" className="text-neutral-900 hover:underline">
  Politique de Confidentialité
  </a>.
  </p>
@@ -185,7 +185,7 @@ export default function CGUPage() {
  <h2 className="text-2xl font-semibold mb-4">10. Contact</h2>
  <p className="text-neutral-700">
  Pour toute question concernant ces CGU :<br />
- <a href="mailto:contact@calculpatrimoine.fr" className="text-primary-600 hover:underline font-medium">
+ <a href="mailto:contact@calculpatrimoine.fr" className="text-neutral-900 hover:underline font-medium">
  contact@calculpatrimoine.fr
  </a>
  </p>

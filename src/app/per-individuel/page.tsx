@@ -109,8 +109,8 @@ export default function PERIndividuelPage() {
             </ul>
           </div>
 
-          <div className="border-l-4 border-primary-200 bg-primary-50 px-4 py-3">
-            <p className="text-sm text-primary-800">
+          <div className="border-l-4 border-accent-400 bg-neutral-50 px-4 py-3">
+            <p className="text-sm text-neutral-700">
               Plafonds et seuils 2026 (PASS 2025, Art. 163 quatervicies CGI). Dernière vérification des sources : 1er mai 2026.
             </p>
           </div>
@@ -126,7 +126,7 @@ export default function PERIndividuelPage() {
               <p className="font-medium text-neutral-800 mb-0.5">Vous ne connaissez pas votre TMI ?</p>
               <p className="text-sm text-neutral-500">Calculez votre tranche marginale d&apos;imposition à partir de votre revenu net imposable.</p>
             </div>
-            <Link href="/tmi" className="font-mono text-xs text-primary-600 border border-primary-300 px-3 py-2 hover:bg-primary-600 hover:text-white transition-colors shrink-0 ml-4">
+            <Link href="/tmi" className="font-mono text-xs text-neutral-900 border border-neutral-300 px-3 py-2 hover:bg-neutral-900 hover:text-white transition-colors shrink-0 ml-4">
               Calculateur TMI →
             </Link>
           </div>
@@ -203,10 +203,10 @@ export default function PERIndividuelPage() {
             style={{ borderLeft: '3px solid #D4AF37', paddingLeft: '1.25rem' }}
           >
             <div>
-              <p className="font-bold text-neutral-900 group-hover:text-primary-700 transition-colors mb-0.5">FAQ PER Individuel</p>
+              <p className="font-bold text-neutral-900 group-hover:text-neutral-900 transition-colors mb-0.5">FAQ PER Individuel</p>
               <p className="text-sm text-neutral-500">Plafonds 2026, report N-1 à N-5 (LF 2026), sortie en capital ou rente, stratégies.</p>
             </div>
-            <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
+            <span className="font-mono text-neutral-500 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
           </Link>
         </div>
       </section>
