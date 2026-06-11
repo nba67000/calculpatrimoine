@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'Calculateurs Assurance-Vie : Fiscalité Rachat & Transmission | CalculPatrimoine',
@@ -38,35 +39,20 @@ export default function AssuranceVieHubPage() {
   return (
     <>
       <Header />
-      <div className="h-[3px] bg-accent-400 w-full" />
+
+      <PageHero
+        breadcrumb={[
+          { href: '/', label: 'Accueil' },
+          { label: 'Assurance-Vie' },
+        ]}
+        eyebrow="Assurance-vie · 2026"
+        titre={<>Calculateurs<br />Assurance-Vie</>}
+        description="Deux outils gratuits pour anticiper votre fiscalité et votre transmission. Calculs conformes au Code Général des Impôts, aucune donnée conservée."
+        features={['Conforme CGI 2026', 'Code source ouvert', 'Zéro donnée conservée', '100 % gratuit']}
+      />
+
       <div style={{ backgroundColor: '#F7F3EC' }}>
 
-        {/* Hero */}
-        <section className="max-w-6xl mx-auto px-6 py-12">
-          <nav className="flex items-center gap-2 font-mono text-xs text-neutral-400 mb-8">
-            <Link href="/" className="hover:text-primary-600 transition-colors">Accueil</Link>
-            <span>/</span>
-            <span className="text-neutral-600">Assurance-Vie</span>
-          </nav>
-
-          <div className="h-[2px] w-10 bg-accent-400 mb-6" />
-
-          <h1 className="font-serif text-5xl font-bold text-neutral-900 mb-4 leading-tight">
-            Calculateurs<br />
-            Assurance-Vie
-          </h1>
-
-          <p className="text-lg text-neutral-600 max-w-3xl leading-relaxed mb-8">
-            Deux outils gratuits pour anticiper votre fiscalité et votre transmission.
-            Calculs conformes au Code Général des Impôts, aucune donnée conservée.
-          </p>
-
-          <div className="flex flex-wrap gap-x-8 gap-y-2">
-            {['Conforme CGI 2026', 'Code source ouvert', 'Zéro donnée conservée', '100 % gratuit'].map(t => (
-              <span key={t} className="font-mono text-xs text-neutral-500">{t}</span>
-            ))}
-          </div>
-        </section>
 
         {/* 2 Calculateurs - table-style */}
         <section className="max-w-6xl mx-auto px-6 py-8">
