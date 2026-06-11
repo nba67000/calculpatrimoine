@@ -198,7 +198,7 @@ function evaluerAlertes(p: {
   if (p.donFamilial790GRefuse) {
     warnings.push({
       type: 'danger',
-      message: `L'option don familial (Art. 790 G CGI) ne peut pas s'appliquer : ${p.motifRefus790G}. Vous perdez l'abattement supplémentaire de 31 865 € ; seul l'abattement personnel reste pris en compte.`,
+      message: `L'option don familial (Art. 790 G CGI) n'est pas applicable : ${p.motifRefus790G}. L'abattement supplémentaire de 31 865 € n'entre pas dans le calcul ; seul l'abattement personnel s'applique.`,
     })
   }
 

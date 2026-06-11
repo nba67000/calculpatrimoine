@@ -161,7 +161,7 @@ export function calculerVenteVsDonation(
   if (optionAvantageuse === 'vente' && ecart > 5000) {
     optimisations.push({
       type: 'success',
-      message: `La vente est ${eur(ecart)} moins coûteuse fiscalement. Attention : le bénéficiaire doit disposer du capital ${eur(inputs.valeurBien)} pour l'achat, et l'argent encaissé par le vendeur rentre dans son patrimoine (donc dans sa future succession). Pour neutraliser, le vendeur peut prêter le prix d'achat à l'acheteur (voir /pret-intrafamilial).`,
+      message: `La vente coûte ${eur(ecart)} de moins en fiscalité. Mais le bénéficiaire doit avoir ${eur(inputs.valeurBien)} pour acheter. Et le prix encaissé par le vendeur entre dans son patrimoine, donc dans sa succession future. Pour neutraliser cet effet : le vendeur peut prêter le prix d'achat à l'acheteur (voir /pret-intrafamilial).`,
     })
   }
 

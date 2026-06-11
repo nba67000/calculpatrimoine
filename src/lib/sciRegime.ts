@@ -73,7 +73,7 @@ export function calculerSciRegime(inputs: SciRegimeInputs): SciRegimeResults {
   // --- Warnings importants (rappel : V1 simplifiée) ---
   warnings.push({
     type: 'danger',
-    message: `IMPORTANT : ce calculateur ne couvre que l'impôt annuel sur les loyers. Au moment de revendre le bien, les deux régimes donnent des résultats très différents. À l'IR, vous payez l'impôt comme un particulier, avec exonération progressive selon la durée de détention (exonéré d'impôt sur le revenu à 22 ans, de prélèvements sociaux à 30 ans). À l'IS, vous payez l'impôt comme une société : tous les amortissements que vous aviez déduits sont réintégrés à votre prix d'achat fiscal, ce qui augmente fortement la plus-value taxable. Pour un projet long terme, refaire le calcul en incluant la sortie est indispensable.`,
+    message: `IMPORTANT : ce calculateur compare uniquement l'impôt annuel sur les loyers. À la revente, l'écart entre les deux régimes change fortement. À l'IR, le bien suit la plus-value des particuliers : exonération progressive selon la durée de détention (exonéré d'impôt sur le revenu à 22 ans, de prélèvements sociaux à 30 ans). À l'IS, c'est une plus-value de société : tous les amortissements déjà déduits viennent gonfler la plus-value taxable. Pour un projet long terme, refaire le calcul en incluant la sortie est indispensable.`,
   })
 
   if (inputs.amortissementsAnnuels === 0) {

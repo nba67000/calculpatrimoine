@@ -101,7 +101,7 @@ export function calculerPretIntrafamilial(
   if (inputs.tauxInteret === 0 && inputs.montantPret > 5000) {
     warnings.push({
       type: 'warning',
-      message: `Prêt sans intérêt de ${eur(inputs.montantPret)} : si l'administration fiscale considère que ce n'est pas un vrai prêt mais une donation déguisée, elle peut le requalifier en don, et vous devrez payer les droits de donation rétroactivement. Pour éviter ça : reconnaissance de dette écrite, calendrier de remboursement précis, et un taux d'intérêt minimal (référence : taux moyen mensuel pratiqué par les banques, publié par la Banque de France).`,
+      message: `Prêt sans intérêt de ${eur(inputs.montantPret)} : le fisc peut requalifier en donation déguisée et réclamer les droits de donation rétroactivement. Pour blinder le prêt : reconnaissance de dette écrite, calendrier de remboursement précis, et un taux d'intérêt minimal (référence : taux moyen mensuel des banques publié par la Banque de France).`,
     })
   }
   if (interetsAnnuels > 1000) {
@@ -113,7 +113,7 @@ export function calculerPretIntrafamilial(
   if (decesAvantTerme) {
     warnings.push({
       type: 'danger',
-      message: `Votre espérance de vie estimée (${dureeRestanteAvantDeces} ans) est plus courte que la durée du prêt (${inputs.dureeAnnees} ans). Si vous décédez avant que l'emprunteur n'ait remboursé, le capital restant (${eur(capitalNonRembourseDecesEstime)}) devient une créance qui entre dans votre succession. Si l'emprunteur est aussi l'héritier, sa part d'héritage est diminuée d'autant, et il paie des droits de succession dessus comme sur n'importe quel autre actif.`,
+      message: `Votre espérance de vie estimée (${dureeRestanteAvantDeces} ans) est plus courte que la durée du prêt (${inputs.dureeAnnees} ans). En cas de décès avant remboursement complet, le capital restant (${eur(capitalNonRembourseDecesEstime)}) entre dans votre succession comme une créance. Si l'emprunteur est aussi héritier, sa part d'héritage baisse d'autant et il paie des droits de succession dessus comme sur tout autre actif.`,
     })
   }
 

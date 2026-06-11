@@ -90,7 +90,7 @@ export function calculerCsgRetraite(inputs: CsgRetraiteInputs): CsgRetraiteResul
   if (tauxApplicable === 'normal' && inputs.revenuFiscalReference - s.median < 2000) {
     warnings.push({
       type: 'info',
-      message: `Votre revenu fiscal de référence (RFR) est juste au-dessus du seuil qui sépare le taux médian du taux normal : vous n'en êtes éloigné que de ${eur(inputs.revenuFiscalReference - s.median)}. Si votre RFR descendait sous ${eur(s.median)} pendant 2 années consécutives (c'est la règle anti-bascule de l'administration), vous repasseriez au taux médian, soit une économie de ${eur(inputs.pensionBruteAnnuelle * (TAUX_RATES.normal - TAUX_RATES.median))} par an sur votre pension.`,
+      message: `Votre revenu fiscal de référence (RFR) dépasse de ${eur(inputs.revenuFiscalReference - s.median)} le seuil du taux médian. Si le RFR repasse sous ${eur(s.median)} pendant 2 années de suite, le taux médian s'applique à nouveau, soit ${eur(inputs.pensionBruteAnnuelle * (TAUX_RATES.normal - TAUX_RATES.median))} d'écart par an sur la pension nette.`,
     })
   }
   if (tauxApplicable === 'exonere') {
@@ -110,7 +110,7 @@ export function calculerCsgRetraite(inputs: CsgRetraiteInputs): CsgRetraiteResul
   if (tauxApplicable === 'normal' || tauxApplicable === 'median') {
     optimisations.push({
       type: 'info',
-      message: `Pour réduire le RFR : optimiser les revenus de capitaux (PFU vs barème), considérer une contribution à un PER déductible (réduit le revenu imposable et donc le RFR).`,
+      message: `Le RFR baisse mécaniquement quand le revenu imposable baisse. Un versement déductible sur un PER, ou le passage des revenus de capitaux au PFU plutôt qu'au barème, sont les deux leviers qui agissent sur l'assiette du RFR.`
     })
   }
 

@@ -269,7 +269,7 @@ export function calculerPlusValueImmobiliere(
   if (inputs.fraisAcquisition === 'forfait' && inputs.prixAcquisition > 0) {
     optimisations.push({
       type: 'info',
-      message: `Les frais d'acquisition sont calculés au forfait de 7,5 % (${fraisDeductibles.toLocaleString('fr-FR')} €). Si vos frais réels (droits d'enregistrement + honoraires notaire) dépassent ce montant, déduisez-les en mode "réels" pour réduire la plus-value imposable.`,
+      message: `Les frais d'acquisition sont calculés au forfait de 7,5 % (${fraisDeductibles.toLocaleString('fr-FR')} €). Si les frais réels (droits d'enregistrement + honoraires notaire) dépassent ce montant, passer en mode "réels" baisse la plus-value imposable d'autant.`,
     })
   }
 
