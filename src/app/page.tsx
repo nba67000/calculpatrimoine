@@ -4,7 +4,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import SimHistoryWidget from '@/components/SimHistoryWidget'
 import TrustBadges from '@/components/home/TrustBadges'
-import BentoCalculateurs from '@/components/home/BentoCalculateurs'
+import GalerieCalculateurs from '@/components/home/galerie/GalerieCalculateurs'
 import HowItWorks from '@/components/home/HowItWorks'
 import { ARTICLES } from '@/lib/blog/articles'
 
@@ -81,20 +81,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ── BENTO CATEGORIES ─────────────────────────────────── */}
-        <section className="max-w-6xl mx-auto px-6 py-24 lg:py-32">
-          <div className="flex items-center gap-6 mb-12">
-            <h2
-              className="font-sans font-black text-white shrink-0"
-              style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', letterSpacing: '-0.02em' }}
-            >
-              Les outils
-            </h2>
-            <div className="flex-1 h-[1px] bg-white/10" />
-          </div>
-
-          <BentoCalculateurs />
-        </section>
+        {/* ── GALERIE 3D DES CALCULATEURS ──────────────────────── */}
+        <GalerieCalculateurs />
 
         {/* ── COMMENT CA MARCHE ────────────────────────────────── */}
         <HowItWorks />
