@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
@@ -13,22 +14,16 @@ export default function APropos() {
   return (
     <>
       <Header />
-      <div className="h-[3px] bg-accent-400 w-full" />
+      <PageHero
+        breadcrumb={[
+          { href: '/', label: 'Accueil' },
+          { label: 'À propos' },
+        ]}
+        titre="Pourquoi CalculPatrimoine existe"
+        description="Un développeur dans l'assurance-vie, des outils de calcul open-source, une ligne éditoriale anti-conseil. L'histoire du projet."
+      />
       <div style={{ backgroundColor: '#F7F3EC' }}>
         <article className="max-w-4xl mx-auto px-6 py-16">
-
-          {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 font-mono text-xs text-neutral-400 mb-8">
-            <Link href="/" className="hover:text-primary-600 transition-colors">Accueil</Link>
-            <span>/</span>
-            <span className="text-neutral-600">À propos</span>
-          </nav>
-
-          <div className="h-[2px] w-10 bg-accent-400 mb-6" />
-
-          <h1 className="font-serif text-4xl font-bold text-neutral-900 mb-8 leading-tight">
-            Pourquoi CalculPatrimoine existe
-          </h1>
 
           <p className="text-lg text-neutral-700 leading-relaxed mb-6">
             Vous vous souvenez de la scène des &quot;Trois Frères&quot; chez le notaire ? Les frères Latour

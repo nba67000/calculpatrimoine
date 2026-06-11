@@ -1,6 +1,7 @@
 ﻿// src/app/methodologie/page.tsx
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 import CrossLink from '@/components/CrossLink'
 import Link from 'next/link'
 import type { Metadata } from 'next'
@@ -13,25 +14,22 @@ export const metadata: Metadata = {
 
 export default function Methodologie() {
  return (
- <main className="min-h-screen bg-gradient-to-b from-neutral-50 to-white">
+ <>
  <Header />
+ <PageHero
+   breadcrumb={[
+     { href: '/', label: 'Accueil' },
+     { label: 'Méthodologie' },
+   ]}
+   titre="Comment nous calculons votre rente viagère"
+   description="Tables de mortalité utilisées, formule actuarielle, taux technique, hypothèses de calcul : tout est ici."
+ />
+ <main className="bg-gradient-to-b from-neutral-50 to-white">
 
  <article className="max-w-4xl mx-auto px-4 py-16">
- {/* Breadcrumb */}
- <nav className="text-sm text-neutral-600 mb-8">
- <Link href="/" className="hover:text-neutral-900">Accueil</Link>
- <span className="mx-2">→</span>
- <span>Méthodologie</span>
- </nav>
 
  {/* En-tête */}
  <header className="mb-8">
- <h1 className="text-4xl font-bold text-neutral-900 mb-4">
- Comment nous calculons votre rente viagère
- </h1>
- <p className="text-xl text-neutral-600 mb-6">
- Tables de mortalité utilisées, formule actuarielle, taux technique, hypothèses de calcul : tout est ici.
- </p>
  
  {/* Cross-link FAQ */}
  <div className="mb-6">
@@ -325,7 +323,8 @@ export default function Methodologie() {
  </div>
  </article>
 
- <Footer />
  </main>
+ <Footer />
+ </>
  )
 }
