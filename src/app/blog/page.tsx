@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 import { ARTICLES } from '@/lib/blog/articles'
 
 export const metadata: Metadata = {
@@ -18,29 +19,17 @@ export default function BlogIndex() {
   return (
     <>
       <Header />
-      <div className="h-[3px] bg-accent-400 w-full" />
+      <PageHero
+        breadcrumb={[
+          { href: '/', label: 'Accueil' },
+          { label: 'Blog' },
+        ]}
+        titre="Blog CalculPatrimoine"
+        description="Mécanismes fiscaux, exemples chiffrés, sources officielles. Pour comprendre avant de calculer."
+      />
       <div style={{ backgroundColor: '#F7F3EC' }}>
 
-        <section className="max-w-6xl mx-auto px-6 py-12">
-          <nav className="flex items-center gap-2 font-mono text-xs text-neutral-400 mb-8">
-            <Link href="/" className="hover:text-primary-600 transition-colors">Accueil</Link>
-            <span>/</span>
-            <span className="text-neutral-600">Blog</span>
-          </nav>
-
-          <div className="h-[2px] w-10 bg-accent-400 mb-6" />
-
-          <h1 className="font-serif text-5xl font-bold text-neutral-900 mb-4 leading-tight">
-            Blog CalculPatrimoine
-          </h1>
-
-          <p className="text-lg text-neutral-600 max-w-2xl leading-relaxed">
-            Mécanismes fiscaux, exemples chiffrés, sources officielles.
-            Pour comprendre avant de calculer.
-          </p>
-        </section>
-
-        <section className="max-w-6xl mx-auto px-6 pb-24">
+        <section className="max-w-6xl mx-auto px-6 pt-12 pb-24">
           <div className="flex items-center gap-6 mb-0">
             <h2 className="font-serif text-2xl text-neutral-900 shrink-0">Articles</h2>
             <div className="flex-1 h-[1px] bg-neutral-300" />

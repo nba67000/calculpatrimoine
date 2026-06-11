@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'Rente viagère : pourquoi le seuil de rentabilité est après votre espérance de vie',
@@ -20,31 +21,18 @@ export default function ArticleRenteViagere() {
   return (
     <>
       <Header />
-      <div className="h-[3px] bg-accent-400 w-full" />
+      <PageHero
+        breadcrumb={[
+          { href: '/', label: 'Accueil' },
+          { href: '/blog', label: 'Blog' },
+          { label: 'Rente viagère' },
+        ]}
+        titre="Rente viagère : pourquoi le seuil de rentabilité est après votre espérance de vie"
+        features={['Retraite', '15 min de lecture', '16 avril 2026']}
+      />
       <article style={{ backgroundColor: '#F7F3EC' }}>
 
-        <header>
-          <div className="max-w-4xl mx-auto px-6 py-12">
-            <nav className="flex items-center gap-2 font-mono text-xs text-neutral-400 mb-8">
-              <Link href="/blog" className="hover:text-primary-600 transition-colors">Blog</Link>
-              <span>/</span>
-              <span className="text-neutral-600">Rente viagère</span>
-            </nav>
-            <div className="h-[2px] w-10 bg-accent-400 mb-6" />
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-neutral-900 mb-6 leading-tight">
-              Rente viagère : pourquoi le seuil de rentabilité est après votre espérance de vie
-            </h1>
-            <div className="flex flex-wrap gap-4 font-mono text-xs text-neutral-500">
-              <span>Retraite</span>
-              <span>·</span>
-              <span>15 min de lecture</span>
-              <span>·</span>
-              <span>16 avril 2026</span>
-            </div>
-          </div>
-        </header>
-
-        <div className="max-w-4xl mx-auto px-6 pb-16">
+        <div className="max-w-4xl mx-auto px-6 pt-12 pb-16">
 
           {/* Intro */}
           <div className="mb-12">

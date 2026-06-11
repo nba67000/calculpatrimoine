@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'Assurance-vie : combien vous allez vraiment payer sur un rachat',
@@ -20,31 +21,18 @@ export default function ArticleAssuranceViePage() {
   return (
     <>
       <Header />
-      <div className="h-[3px] bg-accent-400 w-full" />
+      <PageHero
+        breadcrumb={[
+          { href: '/', label: 'Accueil' },
+          { href: '/blog', label: 'Blog' },
+          { label: 'Fiscalité assurance-vie' },
+        ]}
+        titre="Assurance-vie : combien vous allez vraiment payer sur un rachat"
+        features={['Fiscalité', '11 min de lecture', '18 avril 2026']}
+      />
       <article style={{ backgroundColor: '#F7F3EC' }}>
 
-        <header>
-          <div className="max-w-4xl mx-auto px-6 py-12">
-            <nav className="flex items-center gap-2 font-mono text-xs text-neutral-400 mb-8">
-              <Link href="/blog" className="hover:text-primary-600 transition-colors">Blog</Link>
-              <span>/</span>
-              <span className="text-neutral-600">Fiscalité assurance-vie</span>
-            </nav>
-            <div className="h-[2px] w-10 bg-accent-400 mb-6" />
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-neutral-900 mb-6 leading-tight">
-              Assurance-vie : combien vous allez vraiment payer sur un rachat
-            </h1>
-            <div className="flex flex-wrap gap-4 font-mono text-xs text-neutral-500">
-              <span>Fiscalité</span>
-              <span>·</span>
-              <span>11 min de lecture</span>
-              <span>·</span>
-              <span>18 avril 2026</span>
-            </div>
-          </div>
-        </header>
-
-        <div className="max-w-4xl mx-auto px-6 pb-16">
+        <div className="max-w-4xl mx-auto px-6 pt-12 pb-16">
 
           {/* Intro */}
           <div className="mb-12">
