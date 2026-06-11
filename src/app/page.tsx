@@ -1,10 +1,12 @@
-﻿import Link from 'next/link'
+import Link from 'next/link'
 import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import HomeHeroWidget from '@/components/HomeHeroWidget'
 import SimHistoryWidget from '@/components/SimHistoryWidget'
-import { CATEGORIES_CALC } from '@/config/navigation'
+import TrustBadges from '@/components/home/TrustBadges'
+import HeroDemoSection from '@/components/home/HeroDemoSection'
+import BentoCalculateurs from '@/components/home/BentoCalculateurs'
+import HowItWorks from '@/components/home/HowItWorks'
 import { ARTICLES } from '@/lib/blog/articles'
 
 export const metadata: Metadata = {
@@ -16,191 +18,144 @@ export const metadata: Metadata = {
     description: 'Plus de 14 calculateurs patrimoniaux basés sur les textes officiels. Aucun conseil, aucune donnée conservée.',
     type: 'website',
   },
-
   alternates: { canonical: 'https://calculpatrimoine.fr' },
 }
 
-// Flat list of active calculators for mobile quick-access
-const CALCULATEURS_ACTIFS = CATEGORIES_CALC.flatMap(cat =>
-  cat.calculateurs.filter(c => c.disponible).map(c => ({ ...c, tag: cat.label }))
-)
+// Palette signature home : noir charbon + blanc + or discret (Qonto-like).
+const HOME_BG = '#0A0A0A'
+const ACCENT_OR = '#D4AF37'
 
 export default function HomePage() {
-  const nbActifs = CATEGORIES_CALC.flatMap(c => c.calculateurs.filter(x => x.disponible)).length
-
   return (
     <>
       <Header />
       <div className="h-[3px] bg-accent-400 w-full" />
 
-      <div style={{ backgroundColor: '#F7F3EC' }}>
+      <div className="text-white" style={{ backgroundColor: HOME_BG }}>
 
         {/* ── HERO ─────────────────────────────────────────────── */}
-        <section className="max-w-7xl mx-auto px-6 pt-16 pb-12 lg:pt-24 lg:pb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.75fr_1fr] gap-10 lg:gap-16 items-start">
+        <section className="relative max-w-6xl mx-auto px-6 pt-20 pb-16 lg:pt-32 lg:pb-20">
+          <div className="relative max-w-4xl">
+            <p className="font-mono text-xs uppercase tracking-widest mb-6" style={{ color: ACCENT_OR }}>
+              Calcul patrimonial · France · 2026
+            </p>
 
-            {/* Colonne gauche - éditoriale */}
-            <div>
-              <p className="font-mono text-xs text-neutral-400 uppercase tracking-widest mb-6">
-                Calcul patrimonial - France
-              </p>
+            <div className="h-[2px] w-14 mb-8" style={{ backgroundColor: ACCENT_OR }} />
 
-              <div className="h-[2px] w-14 bg-accent-400 mb-8" />
+            <h1
+              className="font-sans font-black text-white leading-[0.95] tracking-tight mb-8"
+              style={{ fontSize: 'clamp(2.75rem, 7.5vw, 6rem)', letterSpacing: '-0.03em' }}
+            >
+              Prenez vos décisions<br />
+              avec les bons chiffres.
+            </h1>
 
-              <h1 className="font-serif text-5xl lg:text-[3.6rem] text-neutral-900 leading-tight tracking-tight mb-6">
-                Prenez vos décisions<br />
-                avec les bons chiffres.
-              </h1>
+            <p className="text-lg lg:text-xl text-neutral-400 leading-relaxed mb-12 max-w-2xl">
+              Des calculateurs gratuits pour vos questions de patrimoine&nbsp;: impôt sur le revenu,
+              donation, succession, plus-value immobilière, rente viagère, transmission.
+              Basés sur les textes officiels.
+              Les calculs se font dans votre navigateur, aucune donnée ne nous parvient.
+            </p>
 
-              <p className="text-lg text-neutral-600 leading-relaxed mb-10 max-w-xl">
-                Des calculateurs gratuits pour vos questions de patrimoine : impôt sur le revenu, donation, succession,
-                plus-value immobilière, rente viagère, transmission. Basés sur les textes officiels (CGI, BOFiP, INSEE).
-                Les calculs se font dans votre navigateur, aucune donnée ne nous parvient.
-              </p>
-
-              {/* Accès rapide mobile uniquement */}
-              <div className="lg:hidden mb-10">
-                <p className="font-mono text-xs text-neutral-400 uppercase tracking-widest mb-3">
-                  Accéder à un calculateur
-                </p>
-                <div className="grid grid-cols-2 gap-2">
-                  {CALCULATEURS_ACTIFS.map((calc) => (
-                    <Link
-                      key={calc.href}
-                      href={calc.href}
-                      className="flex flex-col gap-1 border border-primary-300 px-3 py-3 hover:bg-primary-700 hover:border-primary-700 transition-colors group"
-                      style={{ borderLeft: '3px solid #2E4A6F' }}
-                    >
-                      <span className="font-mono text-xs text-primary-500 group-hover:text-primary-200">
-                        {calc.tag}
-                      </span>
-                      <span className="font-bold text-sm text-neutral-900 group-hover:text-white leading-snug">
-                        {calc.nom} →
-                      </span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              {/* Trust markers */}
-              <div className="flex flex-wrap gap-x-8 gap-y-2.5">
-                {[
-                  '0 donnée collectée',
-                  `${nbActifs} calculateurs actifs`,
-                  'Sources : CGI · BOFiP · INSEE',
-                  'Code source ouvert',
-                ].map(label => (
-                  <span key={label} className="font-mono text-xs text-neutral-500">{label}</span>
-                ))}
-              </div>
-            </div>
-
-            {/* Widget desktop uniquement */}
-            <div className="hidden lg:block">
-              <HomeHeroWidget />
-            </div>
-          </div>
-        </section>
-
-        {/* ── CALCULATEURS PAR CATÉGORIE ───────────────────────── */}
-        <section className="max-w-7xl mx-auto px-6 py-12 lg:py-16">
-          <div className="flex items-center gap-6 mb-10">
-            <h2 className="font-serif text-3xl text-neutral-900 shrink-0">Les outils</h2>
-            <div className="flex-1 h-[1px] bg-neutral-300" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {CATEGORIES_CALC.map((cat) => (
-              <div
-                key={cat.id}
-                className="bg-surface-card border border-neutral-200"
-                style={{ boxShadow: '3px 3px 0 #E8E0D0' }}
+            <div className="flex flex-col sm:flex-row gap-3 mb-16">
+              <Link
+                href="/calculateurs/fiscalite"
+                className="group inline-flex items-center justify-center gap-2 px-7 py-4 rounded-lg font-bold transition-all hover:-translate-y-0.5"
+                style={{ backgroundColor: '#FFFFFF', color: HOME_BG }}
               >
-                {/* En-tête catégorie */}
-                <div className="px-5 py-4 border-b border-neutral-100 border-l-4 border-l-primary-700">
-                  <p className="font-serif text-base font-bold text-neutral-900">{cat.label}</p>
-                  <p className="font-mono text-xs text-neutral-400 mt-0.5">{cat.description}</p>
-                </div>
+                <span>Voir les calculateurs</span>
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
+              </Link>
+              <Link
+                href="/methodologie"
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-lg font-bold border-2 transition-colors text-white hover:bg-white/5"
+                style={{ borderColor: 'rgba(255,255,255,0.15)' }}
+              >
+                Notre méthode
+              </Link>
+            </div>
+          </div>
 
-                {/* Calculateurs */}
-                <div>
-                  {cat.calculateurs.map((calc, i) => (
-                    calc.disponible ? (
-                      <Link
-                        key={calc.href}
-                        href={calc.href}
-                        className={`group flex items-start gap-4 px-5 py-4 hover:bg-neutral-50 transition-colors ${i < cat.calculateurs.length - 1 ? 'border-b border-neutral-100' : ''}`}
-                      >
-                        <div className="flex-1 min-w-0">
-                          <p className="font-bold text-sm text-neutral-900 group-hover:text-primary-700 transition-colors mb-0.5">
-                            {calc.nom}
-                          </p>
-                          <p className="font-mono text-xs text-neutral-400 leading-relaxed">{calc.desc}</p>
-                        </div>
-                        <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform shrink-0 mt-0.5">→</span>
-                      </Link>
-                    ) : (
-                      <div
-                        key={calc.nom}
-                        className={`flex items-start gap-4 px-5 py-4 opacity-40 ${i < cat.calculateurs.length - 1 ? 'border-b border-neutral-100' : ''}`}
-                      >
-                        <div className="flex-1 min-w-0">
-                          <p className="font-bold text-sm text-neutral-500 mb-0.5">{calc.nom}</p>
-                          <p className="font-mono text-xs text-neutral-400 leading-relaxed">{calc.desc}</p>
-                        </div>
-                        <span className="font-mono text-xs text-neutral-400 shrink-0 mt-0.5">Bientôt</span>
-                      </div>
-                    )
-                  ))}
-                </div>
-              </div>
-            ))}
+          {/* Trust badges */}
+          <div className="relative">
+            <TrustBadges />
           </div>
         </section>
 
-        {/* ── HISTORIQUE LOCAL ─────────────────────────────────── */}
-        <SimHistoryWidget />
+        {/* ── DEMO TMI INTERACTIVE ─────────────────────────────── */}
+        <HeroDemoSection />
+
+        {/* ── BENTO CATEGORIES ─────────────────────────────────── */}
+        <section className="max-w-6xl mx-auto px-6 py-24 lg:py-32">
+          <div className="flex items-center gap-6 mb-12">
+            <h2
+              className="font-sans font-black text-white shrink-0"
+              style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', letterSpacing: '-0.02em' }}
+            >
+              Les outils
+            </h2>
+            <div className="flex-1 h-[1px] bg-white/10" />
+          </div>
+
+          <BentoCalculateurs />
+        </section>
+
+        {/* ── COMMENT CA MARCHE ────────────────────────────────── */}
+        <HowItWorks />
 
         {/* ── MANIFESTE ────────────────────────────────────────── */}
-        <section className="max-w-2xl mx-auto px-6 py-16 lg:py-20 text-center">
-          <div className="h-[1px] w-20 bg-accent-400 mx-auto mb-10" />
-          <h2 className="font-serif text-3xl lg:text-4xl font-bold text-neutral-900 leading-tight mb-6">
+        <section className="max-w-3xl mx-auto px-6 py-24 lg:py-32 text-center">
+          <div className="h-[1px] w-20 mx-auto mb-10" style={{ backgroundColor: ACCENT_OR }} />
+          <h2
+            className="font-sans font-black text-white leading-[1.1] tracking-tight mb-8"
+            style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', letterSpacing: '-0.02em' }}
+          >
             Des calculs rigoureux.<br />
-            Une décision qui vous appartient.
+            Une décision qui<br />vous appartient.
           </h2>
-          <p className="text-neutral-600 leading-relaxed">
-            Chaque résultat repose sur les textes officiels en vigueur :
+          <p className="text-lg text-neutral-400 leading-relaxed">
+            Chaque résultat repose sur les textes officiels en vigueur&nbsp;:
             Code général des impôts, BOFiP, tables de mortalité INSEE 2021.
             Le code source est public et auditable.
             Les données ne quittent pas votre navigateur.
           </p>
-          <div className="h-[1px] w-20 bg-accent-400 mx-auto mt-10" />
+          <div className="h-[1px] w-20 mx-auto mt-10" style={{ backgroundColor: ACCENT_OR }} />
         </section>
 
+        {/* ── HISTORIQUE LOCAL ─────────────────────────────────── */}
+        <div className="bg-white/[0.02]">
+          <SimHistoryWidget />
+        </div>
+
         {/* ── ARTICLES ─────────────────────────────────────────── */}
-        <section className="max-w-7xl mx-auto px-6 py-12 pb-24">
-          <div className="flex items-center gap-6 mb-0">
-            <h2 className="font-serif text-3xl text-neutral-900 shrink-0">À lire avant de calculer</h2>
-            <div className="flex-1 h-[1px] bg-neutral-300" />
+        <section className="max-w-6xl mx-auto px-6 py-20 pb-28">
+          <div className="flex items-center gap-6 mb-10">
+            <h2
+              className="font-sans font-black text-white shrink-0"
+              style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)', letterSpacing: '-0.02em' }}
+            >
+              À lire avant de calculer
+            </h2>
+            <div className="flex-1 h-[1px] bg-white/10" />
           </div>
 
-          <div className="border-t border-neutral-300">
+          <div className="border-t border-white/10">
             {ARTICLES.map((article) => (
               <Link
                 key={article.slug}
                 href={`/blog/${article.slug}`}
-                className="group flex flex-col gap-1.5 py-6 border-b border-neutral-200 hover:bg-surface-card transition-colors px-5"
-                style={{ borderLeft: '3px solid #D4AF37' }}
+                className="group flex flex-col gap-1.5 py-6 border-b border-white/10 hover:bg-white/[0.03] transition-colors px-5"
+                style={{ borderLeft: `3px solid ${ACCENT_OR}` }}
               >
                 <div className="flex items-center gap-3">
                   <span className="font-mono text-xs text-neutral-500">{article.tag}</span>
-                  <span className="font-mono text-xs text-neutral-300">·</span>
+                  <span className="font-mono text-xs text-neutral-700">·</span>
                   <span className="font-mono text-xs text-neutral-500">{article.duree} de lecture</span>
                 </div>
-                <h3 className="text-lg font-bold text-neutral-900 group-hover:text-primary-700 transition-colors leading-snug">
+                <h3 className="text-lg font-bold text-white group-hover:text-white/90 transition-colors leading-snug">
                   {article.titre}
                 </h3>
-                <p className="text-sm text-neutral-500 leading-snug">{article.accroche}</p>
+                <p className="text-sm text-neutral-400 leading-snug">{article.accroche}</p>
               </Link>
             ))}
           </div>

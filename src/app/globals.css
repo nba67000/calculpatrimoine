@@ -128,6 +128,148 @@ html {
 }
 
 /* ─────────────────────────────────────────────────────────────
+   Slider scopé à la home dark - noir charbon + or
+   Utilisé par HeroDemoSection. Pas de !important : on reste low-priority
+   pour ne pas conflicter avec le custom-range bleu marine des calcs.
+   ───────────────────────────────────────────────────────────── */
+
+.demo-range {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+  height: 0.5rem;
+}
+
+.demo-range::-webkit-slider-runnable-track {
+  background: rgba(255, 255, 255, 0.08);
+  height: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.demo-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #D4AF37;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  margin-top: -0.5rem;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.4), 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: grab;
+}
+
+.demo-range::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.15), 0 6px 16px rgba(0, 0, 0, 0.6);
+}
+
+.demo-range::-webkit-slider-thumb:active {
+  cursor: grabbing;
+}
+
+.demo-range::-moz-range-track {
+  background: rgba(255, 255, 255, 0.08);
+  height: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.demo-range::-moz-range-thumb {
+  background-color: #D4AF37;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.4), 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: grab;
+}
+
+.demo-range::-moz-range-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.15), 0 6px 16px rgba(0, 0, 0, 0.6);
+}
+
+.demo-range:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 4px;
+}
+
+/* Variante sur fond clair (section demo blanche) */
+
+.demo-range-light {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+  height: 0.5rem;
+}
+
+.demo-range-light::-webkit-slider-runnable-track {
+  background: #E5E5E5;
+  height: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #D4D4D4;
+}
+
+.demo-range-light::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #D4AF37;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  margin-top: -0.5rem;
+  border: 3px solid #0A0A0A;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: grab;
+}
+
+.demo-range-light::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.2), 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.demo-range-light::-webkit-slider-thumb:active {
+  cursor: grabbing;
+}
+
+.demo-range-light::-moz-range-track {
+  background: #E5E5E5;
+  height: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #D4D4D4;
+}
+
+.demo-range-light::-moz-range-thumb {
+  background-color: #D4AF37;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  border: 3px solid #0A0A0A;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: grab;
+}
+
+.demo-range-light::-moz-range-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.2), 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.demo-range-light:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 4px;
+}
+
+/* ─────────────────────────────────────────────────────────────
    PERF , Animations CSS natives (remplacent framer-motion)
    Importées par CoupleCalculator, RenteCalculator, InverseCalculator.
    Aucun JS au runtime → TBT non impacté.
