@@ -112,13 +112,13 @@ function evaluerAlertesPER(
 
   warnings.push({
     type: 'info',
-    message: `Cette économie est différée, pas annulée. À la retraite, quand vous récupérerez l'argent : la partie qui correspond à vos versements sera imposée à l'IR (au barème en vigueur cette année-là), les gains seront soumis aux prélèvements sociaux (17,2 %). L'avantage final dépend donc de l'écart entre votre TMI aujourd'hui (${tmi} %) et votre TMI à la retraite.`,
+    message: `Cette économie est reportée, pas annulée. À la retraite, au moment de récupérer l'argent : la part qui correspond à vos versements sera imposée à l'IR (au barème de l'année concernée), les gains seront soumis aux prélèvements sociaux (17,2 %). L'avantage final dépend donc de l'écart entre votre TMI aujourd'hui (${tmi} %) et votre TMI à la retraite.`,
   })
 
   if (detail.partNonDeductible > 0) {
     warnings.push({
       type: 'danger',
-      message: `Votre versement de ${versementEnvisage.toLocaleString('fr-FR')} € dépasse de ${detail.partNonDeductible.toLocaleString('fr-FR')} € le plafond déductible. Seuls ${detail.montantDeductible.toLocaleString('fr-FR')} € viennent réduire votre revenu imposable cette année. Le surplus (${detail.partNonDeductible.toLocaleString('fr-FR')} €) reste placé sur le PER et continue à générer des intérêts comme le reste, mais il ne fait pas baisser votre impôt cette année.`,
+      message: `Votre versement de ${versementEnvisage.toLocaleString('fr-FR')} € dépasse de ${detail.partNonDeductible.toLocaleString('fr-FR')} € le plafond déductible. Seuls ${detail.montantDeductible.toLocaleString('fr-FR')} € réduisent votre revenu imposable cette année. Le surplus (${detail.partNonDeductible.toLocaleString('fr-FR')} €) reste placé sur le PER et continue à produire des intérêts, mais sans effet sur l'impôt de cette année.`,
     })
   }
 

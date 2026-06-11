@@ -269,9 +269,9 @@ export default function AssuranceVieCalculator() {
               <span>0€</span><span>1 000 000€</span>
             </div>
             <p className="text-xs text-neutral-500 mt-2">
-              Total de tout ce que vous avez versé sur l&apos;ensemble de vos assurances-vie (tous assureurs confondus).
-              Si vous n&apos;avez qu&apos;un seul contrat : reportez le montant de « Versements totaux » ci-dessus.
-              Ce champ existe parce qu&apos;au-delà de 150 000 € de versements cumulés, le taux de la flat tax passe de 7,5 % à 12,8 % (Art. 125-0 A CGI).
+              Total versé sur toutes vos assurances-vie, tous assureurs confondus.
+              Si vous n&apos;avez qu&apos;un seul contrat, reportez le montant de « Versements totaux » ci-dessus.
+              Au-delà de 150 000 € versés au total, la flat tax passe de 7,5 % à 12,8 % (Art. 125-0 A CGI).
             </p>
             {inputs.encoursTotalContrats <= 150000 ? (
               <p className="text-xs text-primary-600 mt-1">Taux réduit : 7,5 % (total versé ≤ 150 000 €)</p>

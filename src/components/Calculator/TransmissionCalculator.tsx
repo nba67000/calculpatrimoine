@@ -363,7 +363,7 @@ export default function TransmissionCalculator() {
        Calcul partiel — versements après 70 ans
      </p>
      <p className="text-sm text-orange-900 leading-relaxed mb-3">
-       Les versements après 70 ans (Art. 757 B) doivent normalement être <strong>agrégés à la part successorale ordinaire</strong> de chaque bénéficiaire pour l&apos;application du barème Art. 777 et de l&apos;abattement Art. 779 (BOFiP BOI-ENR-DMTG-10-10-20-20 § 230). Les droits affichés ci-dessous sont calculés <strong>en silo</strong> et peuvent surévaluer le montant réel.
+       Les versements après 70 ans (Art. 757 B) doivent normalement <strong>s&apos;ajouter au reste de la part héritée</strong> avant application du barème Art. 777 et de l&apos;abattement Art. 779 (BOFiP BOI-ENR-DMTG-10-10-20-20 § 230). Le calculateur les traite <strong>séparément</strong>, ce qui peut surévaluer les droits réels.
      </p>
      <p className="text-sm text-orange-900 leading-relaxed">
        Pour un calcul exact, utilisez aussi le{' '}

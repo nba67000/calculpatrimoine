@@ -174,9 +174,9 @@ export default function Methodologie() {
  
  <div className="mt-4 p-3 bg-primary-50 border-l-4 border-primary-400">
  <p className="text-sm text-primary-700">
- <strong>Amélioration par rapport aux approximations</strong> : Notre calculateur 
- utilise la formule actuarielle rigoureuse, pas une simple pondération empirique. 
- Cela garantit des résultats conformes aux standards du marché français.
+ <strong>Précision du calcul</strong> : on utilise la formule actuarielle exacte,
+ pas une moyenne pondérée approximative. Les résultats correspondent à ceux
+ utilisés par les assureurs français.
  </p>
  </div>
  </div>

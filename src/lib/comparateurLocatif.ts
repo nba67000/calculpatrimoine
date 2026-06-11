@@ -146,13 +146,13 @@ export function calculerComparateurLocatif(
   // --- Warnings ---
   warnings.push({
     type: 'info',
-    message: `Hypothèse à connaître : le calcul suppose que vous achetez le bien comptant (sans emprunt). Si vous achetez à crédit, le rendement réel du locatif est très différent. L'emprunt vous permet d'investir plus que votre apport, et les intérêts d'emprunt se déduisent de vos loyers. Le calculateur ne modélise pas cet effet (un calcul séparé serait nécessaire).`,
+    message: `Hypothèse importante : le calcul suppose un achat comptant, sans emprunt. À crédit, le rendement réel change : l'emprunt permet d'investir plus que l'apport, et les intérêts se déduisent des loyers. Le calculateur ne modélise pas cet effet.`,
   })
 
   if (inputs.dureeAnnees < 10) {
     warnings.push({
       type: 'warning',
-      message: `Sur ${inputs.dureeAnnees} ans, attention : le calculateur ignore les frais d'acquisition (notaire ~7-8 % du prix d'achat). Sur courte durée, ces frais peuvent rendre le locatif perdant : il faut d'abord que la valorisation du bien rattrape ces 7-8 % avant de commencer à gagner quoi que ce soit. Pour l'immobilier, viser au minimum 10-15 ans.`,
+      message: `Sur ${inputs.dureeAnnees} ans, attention : le calculateur ignore les frais d'acquisition (notaire ~7-8 % du prix d'achat). Sur courte durée, ces frais peuvent rendre le locatif perdant : il faut d'abord que le bien prenne 7-8 % de valeur pour les compenser. L'immobilier s'envisage plutôt sur 10-15 ans minimum.`,
     })
   }
 

@@ -156,7 +156,8 @@
       "Bash(wmic process *)",
       "Bash(curl -s http://localhost:3000/)",
       "Bash(xargs grep -l \"MethodologieSection\\\\|SourcesSection\\\\|RelatedCalcSection\\\\|FAQAccordionClient\\\\|CrossLink\\\\|TrustMarkers\")",
-      "Bash(awk '{print $NF}')"
+      "Bash(awk '{print $NF}')",
+      "Bash(npm uninstall *)"
     ]
   }
 }

@@ -169,7 +169,7 @@ function evaluerAlertesAV(p: {
   if (p.tmi <= 11 && p.optionMoinsImposee !== 'IR') {
     warnings.push({
       type: 'info',
-      message: `Avec votre TMI à ${p.tmi} %, choisir l'imposition au barème de l'IR (plus les 17,2 % de prélèvements sociaux) plutôt que la flat tax à 30 % (PFU) change le résultat de ${Math.round(p.difference).toLocaleString('fr-FR')} €. Le graphique ci-dessus indique laquelle des deux options vous coûte le moins cher pour ce rachat.`,
+      message: `Avec votre TMI à ${p.tmi} %, l'écart entre l'imposition au barème de l'IR (+ 17,2 % de prélèvements sociaux) et la flat tax à 30 % (PFU) est de ${Math.round(p.difference).toLocaleString('fr-FR')} €. Le graphique ci-dessus montre laquelle des deux coûte le moins cher pour ce rachat.`,
     })
   }
 
