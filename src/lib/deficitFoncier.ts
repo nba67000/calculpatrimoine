@@ -114,7 +114,7 @@ export function calculerDeficitFoncier(
   if (deficitTotal > 0) {
     warnings.push({
       type: 'info',
-      message: `Engagement de location : pour conserver l'imputation sur le revenu global, le logement doit rester loué jusqu'au 31 décembre de la ${ENGAGEMENT_LOCATION_ANS}e année qui suit cette imputation. Si vous vendez ou cessez la location avant, l'administration recapture les déficits imputés (Art. 156 I-3° CGI).`,
+      message: `Engagement de location : le logement doit rester loué jusqu'au 31 décembre de la ${ENGAGEMENT_LOCATION_ANS}e année suivant l'imputation. Vendre ou arrêter la location avant ce délai oblige à reverser au fisc les déficits déjà déduits (Art. 156 I-3° CGI).`,
     })
   }
 
@@ -150,7 +150,7 @@ export function calculerDeficitFoncier(
   if (deficitTotal === 0 && revenuFoncierNet > 0) {
     optimisations.push({
       type: 'info',
-      message: `Revenu foncier net positif de ${eur(revenuFoncierNet)} : il s'ajoute à votre revenu imposable et coûte ${eur((revenuFoncierNet * inputs.tmi) / 100)} d'IR (TMI ${inputs.tmi} %) plus les prélèvements sociaux (17,2 %). Si vous prévoyez des travaux dans les prochaines années, les concentrer sur une seule année fiscale crée un déficit imputable sur le revenu global.`,
+      message: `Revenu foncier net positif de ${eur(revenuFoncierNet)} : il s'ajoute à votre revenu imposable et coûte ${eur((revenuFoncierNet * inputs.tmi) / 100)} d'IR (TMI ${inputs.tmi} %), plus 17,2 % de prélèvements sociaux. Regrouper des travaux à venir sur une seule année fiscale crée un déficit imputable sur le revenu global.`,
     })
   }
 

@@ -81,8 +81,8 @@ export default function CsgRetraitePage() {
             </ul>
           </div>
 
-          <div className="border-l-4 border-primary-200 bg-primary-50 px-4 py-3">
-            <p className="text-sm text-primary-800">
+          <div className="border-l-4 border-accent-400 bg-neutral-50 px-4 py-3">
+            <p className="text-sm text-neutral-700">
               Barème 2026, seuils RFR pour 1 part : exonération &lt; 12 230 €, réduit &lt; 15 988 €,
               médian &lt; 24 813 €. Sources : Art. L. 136-8 et L. 136-1-2 CSS, Art. 1417 CGI (RFR).
             </p>

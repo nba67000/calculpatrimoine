@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
@@ -13,22 +14,16 @@ export default function APropos() {
   return (
     <>
       <Header />
-      <div className="h-[3px] bg-accent-400 w-full" />
+      <PageHero
+        breadcrumb={[
+          { href: '/', label: 'Accueil' },
+          { label: 'À propos' },
+        ]}
+        titre="Pourquoi CalculPatrimoine existe"
+        description="Un développeur dans l'assurance-vie, des outils de calcul open-source, une ligne éditoriale anti-conseil. L'histoire du projet."
+      />
       <div style={{ backgroundColor: '#F7F3EC' }}>
         <article className="max-w-4xl mx-auto px-6 py-16">
-
-          {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 font-mono text-xs text-neutral-400 mb-8">
-            <Link href="/" className="hover:text-primary-600 transition-colors">Accueil</Link>
-            <span>/</span>
-            <span className="text-neutral-600">À propos</span>
-          </nav>
-
-          <div className="h-[2px] w-10 bg-accent-400 mb-6" />
-
-          <h1 className="font-serif text-4xl font-bold text-neutral-900 mb-8 leading-tight">
-            Pourquoi CalculPatrimoine existe
-          </h1>
 
           <p className="text-lg text-neutral-700 leading-relaxed mb-6">
             Vous vous souvenez de la scène des &quot;Trois Frères&quot; chez le notaire ? Les frères Latour
@@ -105,7 +100,7 @@ export default function APropos() {
 
             <div className="bg-white border border-neutral-200 p-6">
               <div className="flex flex-col md:flex-row gap-6 items-start">
-                <div className="w-16 h-16 bg-primary-700 flex items-center justify-center text-white text-2xl font-bold shrink-0">
+                <div className="w-16 h-16 bg-neutral-900 flex items-center justify-center text-white text-2xl font-bold shrink-0">
                   N
                 </div>
                 <div className="flex-1">
@@ -117,7 +112,7 @@ export default function APropos() {
                   <div className="space-y-1.5 text-sm text-neutral-600 font-mono">
                     <p><span className="text-neutral-400">Stack :</span> Next.js 16, TypeScript, Tailwind CSS</p>
                     <p><span className="text-neutral-400">Open source :</span>{' '}
-                      <a href="https://github.com/nba67000/calculpatrimoine" className="text-primary-600 hover:underline" target="_blank" rel="noopener noreferrer">
+                      <a href="https://github.com/nba67000/calculpatrimoine" className="text-neutral-900 hover:underline" target="_blank" rel="noopener noreferrer">
                         github.com/nba67000/calculpatrimoine
                       </a>
                     </p>
@@ -190,15 +185,15 @@ export default function APropos() {
                 <div>
                   <h3 className="font-mono text-xs uppercase tracking-wider text-neutral-500 mb-3">Développeurs</h3>
                   <ul className="space-y-2 text-sm">
-                    <li><a href="https://github.com/nba67000/calculpatrimoine" className="text-primary-600 hover:underline" target="_blank" rel="noopener noreferrer">Code source GitHub →</a></li>
-                    <li><a href="https://github.com/nba67000/calculpatrimoine/issues" className="text-primary-600 hover:underline" target="_blank" rel="noopener noreferrer">Reporter un bug →</a></li>
-                    <li><a href="https://github.com/nba67000/calculpatrimoine/pulls" className="text-primary-600 hover:underline" target="_blank" rel="noopener noreferrer">Contribuer (Pull Requests) →</a></li>
+                    <li><a href="https://github.com/nba67000/calculpatrimoine" className="text-neutral-900 hover:underline" target="_blank" rel="noopener noreferrer">Code source GitHub →</a></li>
+                    <li><a href="https://github.com/nba67000/calculpatrimoine/issues" className="text-neutral-900 hover:underline" target="_blank" rel="noopener noreferrer">Reporter un bug →</a></li>
+                    <li><a href="https://github.com/nba67000/calculpatrimoine/pulls" className="text-neutral-900 hover:underline" target="_blank" rel="noopener noreferrer">Contribuer (Pull Requests) →</a></li>
                   </ul>
                 </div>
                 <div>
                   <h3 className="font-mono text-xs uppercase tracking-wider text-neutral-500 mb-3">Contact</h3>
                   <ul className="space-y-2 text-sm">
-                    <li><a href="mailto:contact@calculpatrimoine.fr" className="text-primary-600 hover:underline">contact@calculpatrimoine.fr →</a></li>
+                    <li><a href="mailto:contact@calculpatrimoine.fr" className="text-neutral-900 hover:underline">contact@calculpatrimoine.fr →</a></li>
                   </ul>
                 </div>
               </div>
@@ -206,12 +201,12 @@ export default function APropos() {
           </section>
 
           {/* CTA */}
-          <div className="bg-primary-700 p-8 text-center text-white">
+          <div className="bg-neutral-900 p-8 text-center text-white">
             <h3 className="font-serif text-2xl font-bold mb-3">Essayez les calculateurs</h3>
-            <p className="text-primary-200 mb-6 font-mono text-sm">Transparent · Gratuit · Sans inscription</p>
+            <p className="text-neutral-400 mb-6 font-mono text-sm">Transparent · Gratuit · Sans inscription</p>
             <Link
               href="/"
-              className="inline-block bg-white text-primary-700 px-8 py-3 font-medium hover:bg-neutral-100 transition-colors"
+              className="inline-block bg-white text-neutral-900 px-8 py-3 font-medium hover:bg-neutral-100 transition-colors"
             >
               Accueil →
             </Link>

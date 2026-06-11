@@ -110,8 +110,8 @@ export default function IFIPage() {
 
             <SourcesSection slug="ifi" />
 
-            <div className="border-l-4 border-primary-200 bg-primary-50 px-4 py-3">
-              <p className="text-sm text-primary-800">
+            <div className="border-l-4 border-accent-400 bg-neutral-50 px-4 py-3">
+              <p className="text-sm text-neutral-700">
                 <strong>Millésime fiscal : 2026.</strong> Barème applicable au patrimoine au 1er janvier 2026.
                 Inchangé depuis la LF 2018. Dernière vérification des sources : 07/05/2026.
                 Ce calculateur est indicatif ; les exonérations partielles (biens professionnels, forêts,
@@ -221,7 +221,7 @@ export default function IFIPage() {
                 <div key={titre} className="border-l-2 border-accent-400 pl-4">
                   <p className="font-bold text-neutral-900 mb-1">{titre}</p>
                   <p className="text-sm text-neutral-600 font-mono whitespace-pre-line leading-relaxed">{calcul}</p>
-                  <p className="text-sm font-bold text-primary-700 mt-1">{resultat}</p>
+                  <p className="text-sm font-bold text-neutral-900 mt-1">{resultat}</p>
                 </div>
               ))}
             </div>
@@ -233,7 +233,7 @@ export default function IFIPage() {
           <div className="bg-white border border-neutral-200 p-8 space-y-6">
             <div className="flex justify-between items-baseline">
               <h2 className="font-serif text-2xl font-bold text-neutral-900">Questions fréquentes sur l&apos;IFI</h2>
-              <Link href="/faq/ifi" className="text-sm text-primary-600 hover:underline font-medium">
+              <Link href="/faq/ifi" className="text-sm text-neutral-900 hover:underline font-medium">
                 Toutes les questions sur l&apos;IFI
               </Link>
             </div>

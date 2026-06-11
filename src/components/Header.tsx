@@ -1,4 +1,9 @@
-﻿// src/components/Header.tsx
+// src/components/Header.tsx
+//
+// Header sobre, inspiré Qonto : fond blanc cassé, navigation minimale,
+// logo carré or avec lettre charbon, séparation bas par une fine ligne
+// neutre. Le dropdown garde le motif "carte décalée" mais s'aligne sur
+// la palette accent or de la home v3.
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
@@ -7,6 +12,8 @@ import { usePathname } from 'next/navigation'
 import { CATEGORIES_CALC, RESSOURCES } from '@/config/navigation'
 
 const RESSOURCES_HEADER = RESSOURCES.filter(r => r.showInHeader)
+const ACCENT_OR = '#D4AF37'
+const CHARBON = '#0A0A0A'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -39,21 +46,28 @@ export default function Header() {
   }
 
   return (
-    <header className="border-b border-neutral-200 bg-surface-header sticky top-0 z-50 shadow-sm">
-      <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+    <header className="border-b border-neutral-200 bg-white/95 backdrop-blur-sm sticky top-0 z-50">
+      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
 
-        {/* Logo */}
+        {/* Logo (cohérence avec Footer) */}
         <Link
           href="/"
           className="flex items-center gap-3 hover:opacity-90 transition-opacity group"
           onClick={() => setMobileMenuOpen(false)}
         >
-          <div className="w-11 h-11 bg-primary-700 flex items-center justify-center group-hover:bg-primary-800 transition-colors duration-200">
-            <span className="text-white font-bold text-2xl">C</span>
+          <div
+            className="w-10 h-10 flex items-center justify-center transition-colors duration-200"
+            style={{ backgroundColor: CHARBON }}
+          >
+            <span style={{ color: ACCENT_OR }} className="font-bold text-xl">C</span>
           </div>
           <div className="flex flex-col">
-            <span className="font-bold text-neutral-900 text-lg leading-tight">CalculPatrimoine</span>
-            <span className="text-xs text-neutral-500 leading-tight">Calculateurs open-source</span>
+            <span className="font-bold text-neutral-900 text-base leading-tight tracking-tight">
+              CalculPatrimoine
+            </span>
+            <span className="font-mono text-[10px] text-neutral-500 leading-tight uppercase tracking-widest">
+              Calculateurs open-source
+            </span>
           </div>
         </Link>
 
@@ -71,8 +85,8 @@ export default function Header() {
               onClick={() => setDropdownOpen(prev => !prev)}
               aria-expanded={dropdownOpen}
               aria-haspopup="true"
-              className={`flex items-center gap-1.5 px-3 py-2 font-medium transition-colors rounded-sm ${
-                isCalcActive ? 'text-primary-700' : 'text-neutral-600 hover:text-neutral-900'
+              className={`flex items-center gap-1.5 px-3 py-2 font-medium transition-colors ${
+                isCalcActive ? 'text-neutral-900' : 'text-neutral-600 hover:text-neutral-900'
               }`}
             >
               Calculateurs
@@ -87,11 +101,14 @@ export default function Header() {
             {/* Dropdown panel */}
             {dropdownOpen && (
               <div
-                className="absolute top-full left-1/2 -translate-x-1/2 mt-1 bg-surface-header border border-neutral-200 shadow-lg w-[560px]"
-                style={{ boxShadow: '4px 4px 0 #E8E0D0' }}
+                className="absolute top-full left-1/2 -translate-x-1/2 mt-2 bg-white border border-neutral-200 w-[560px] shadow-lg"
                 onMouseEnter={openDropdown}
                 onMouseLeave={closeDropdown}
               >
+                <div
+                  className="w-full"
+                  style={{ height: '2px', backgroundColor: ACCENT_OR }}
+                />
                 <div className="grid grid-cols-2 gap-0 p-2">
                   {CATEGORIES_CALC.map(cat => {
                     const actifs = cat.calculateurs.filter(c => c.disponible)
@@ -99,14 +116,21 @@ export default function Header() {
                       <Link
                         key={cat.slug}
                         href={`/calculateurs/${cat.slug}`}
-                        className="group flex flex-col gap-1 px-4 py-3 hover:bg-neutral-50 transition-colors border-l-[3px] border-transparent hover:border-primary-700"
+                        className="group flex flex-col gap-1 px-4 py-3 hover:bg-neutral-50 transition-colors border-l-[3px] border-transparent"
+                        style={{ transition: 'border-color 0.15s' }}
+                        onMouseEnter={e => {
+                          (e.currentTarget as HTMLAnchorElement).style.borderLeftColor = ACCENT_OR
+                        }}
+                        onMouseLeave={e => {
+                          (e.currentTarget as HTMLAnchorElement).style.borderLeftColor = 'transparent'
+                        }}
                         onClick={() => setDropdownOpen(false)}
                       >
                         <div className="flex items-center justify-between gap-2">
-                          <span className="font-bold text-sm text-neutral-900 group-hover:text-primary-700 transition-colors">
+                          <span className="font-bold text-sm text-neutral-900 transition-colors">
                             {cat.label}
                           </span>
-                          <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform text-xs shrink-0">
+                          <span className="font-mono text-neutral-400 group-hover:translate-x-1 transition-transform text-xs shrink-0">
                             →
                           </span>
                         </div>
@@ -120,7 +144,7 @@ export default function Header() {
                   })}
                 </div>
                 <div className="border-t border-neutral-100 px-6 py-3 bg-neutral-50">
-                  <p className="font-mono text-xs text-neutral-400">
+                  <p className="font-mono text-xs text-neutral-500">
                     {CATEGORIES_CALC.flatMap(c => c.calculateurs.filter(x => x.disponible)).length} calculateurs disponibles · Gratuits · Aucune donnée conservée
                   </p>
                 </div>
@@ -135,7 +159,7 @@ export default function Header() {
               href={link.href}
               className={`px-3 py-2 font-medium transition-colors ${
                 pathname === link.href
-                  ? 'text-primary-700'
+                  ? 'text-neutral-900'
                   : 'text-neutral-600 hover:text-neutral-900'
               }`}
             >
@@ -164,14 +188,14 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <nav className="lg:hidden border-t border-neutral-200 bg-surface-header">
+        <nav className="lg:hidden border-t border-neutral-200 bg-white">
           <div className="max-w-6xl mx-auto px-4 py-3 space-y-1">
 
             {/* Calculateurs accordion */}
             <div>
               <button
                 className={`w-full flex items-center justify-between px-4 py-3 transition-colors text-left ${
-                  isCalcActive ? 'bg-primary-50 text-primary-700 font-medium' : 'text-neutral-700 hover:bg-neutral-50'
+                  isCalcActive ? 'bg-neutral-50 text-neutral-900 font-medium' : 'text-neutral-700 hover:bg-neutral-50'
                 }`}
                 onClick={() => setMobileCalcOpen(!mobileCalcOpen)}
               >
@@ -185,14 +209,17 @@ export default function Header() {
               </button>
 
               {mobileCalcOpen && (
-                <div className="ml-4 border-l-2 border-neutral-100 pl-2 space-y-0.5 mb-1">
+                <div
+                  className="ml-4 pl-2 space-y-0.5 mb-1"
+                  style={{ borderLeft: `2px solid ${ACCENT_OR}` }}
+                >
                   {CATEGORIES_CALC.map(cat => (
                     <Link
                       key={cat.slug}
                       href={`/calculateurs/${cat.slug}`}
                       className={`block px-4 py-2.5 transition-colors ${
                         pathname === `/calculateurs/${cat.slug}`
-                          ? 'text-primary-700 font-medium'
+                          ? 'text-neutral-900 font-medium'
                           : 'text-neutral-600 hover:bg-neutral-50'
                       }`}
                       onClick={() => setMobileMenuOpen(false)}
@@ -212,7 +239,7 @@ export default function Header() {
                 href={link.href}
                 className={`block px-4 py-3 transition-colors ${
                   pathname === link.href
-                    ? 'bg-primary-50 text-primary-700 font-medium'
+                    ? 'bg-neutral-50 text-neutral-900 font-medium'
                     : 'text-neutral-700 hover:bg-neutral-50'
                 }`}
                 onClick={() => setMobileMenuOpen(false)}

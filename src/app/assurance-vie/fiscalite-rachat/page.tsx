@@ -13,7 +13,7 @@ import { getPillarBreadcrumb } from '@/lib/calculators/breadcrumb'
 
 
 export const metadata: Metadata = {
-  title: 'Calculateur Assurance-Vie : Fiscalité Rachat PFU vs IR | CalculPatrimoine',
+  title: 'Calculateur Assurance-Vie : Fiscalité Rachat PFU vs IR',
   description: 'Calculez la fiscalité exacte de votre rachat d\'assurance-vie. Comparez PFU et IR selon votre TMI. Simulateur gratuit conforme au CGI, zéro donnée conservée.',
   keywords: 'assurance vie, fiscalité rachat, PFU, flat tax, IR, impôts, simulation, calculateur gratuit, abattement 8 ans',
   openGraph: {
@@ -69,8 +69,8 @@ export default function AssuranceViePage() {
 
           <SourcesSection slug="assurance-vie/fiscalite-rachat" />
 
-          <div className="border-l-4 border-primary-200 bg-primary-50 px-4 py-3">
-            <p className="text-sm text-primary-800">
+          <div className="border-l-4 border-accent-400 bg-neutral-50 px-4 py-3">
+            <p className="text-sm text-neutral-700">
               Taux et abattements applicables aux rachats 2026 (Art. 125-0 A CGI). Dernière vérification des sources : avril 2026.
             </p>
           </div>
@@ -118,10 +118,10 @@ export default function AssuranceViePage() {
               style={{ borderLeft: '3px solid #D4AF37', paddingLeft: '1.25rem' }}
             >
               <div>
-                <p className="font-bold text-neutral-900 group-hover:text-primary-700 transition-colors mb-0.5">{link.label}</p>
+                <p className="font-bold text-neutral-900 group-hover:text-neutral-900 transition-colors mb-0.5">{link.label}</p>
                 <p className="text-sm text-neutral-500">{link.desc}</p>
               </div>
-              <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
+              <span className="font-mono text-neutral-500 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
             </Link>
           ))}
         </div>

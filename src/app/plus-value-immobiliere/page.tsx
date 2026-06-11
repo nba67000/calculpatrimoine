@@ -90,8 +90,8 @@ export default function PlusValueImmobilierePage() {
 
           <SourcesSection slug="plus-value-immobiliere" />
 
-          <div className="border-l-4 border-primary-200 bg-primary-50 px-4 py-3">
-            <p className="text-sm text-primary-800">
+          <div className="border-l-4 border-accent-400 bg-neutral-50 px-4 py-3">
+            <p className="text-sm text-neutral-700">
               <strong>Millésime fiscal : 2026.</strong> Barèmes applicables aux cessions réalisées en 2026.
               Dernière vérification des sources : 02/05/2026. Ce calculateur est indicatif ;
               le notaire calcule et prélève les impôts définitifs lors de la cession.

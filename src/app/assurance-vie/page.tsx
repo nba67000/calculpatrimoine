@@ -2,10 +2,11 @@
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
-  title: 'Calculateurs Assurance-Vie : Fiscalité Rachat & Transmission | CalculPatrimoine',
-  description: 'Deux calculateurs gratuits pour l\'assurance-vie : fiscalité des rachats (PFU vs IR) et transmission aux bénéficiaires (succession). Calculs officiels, zéro donnée conservée.',
+  title: 'Calculateurs Assurance-Vie : Fiscalité Rachat & Transmission',
+  description: 'Deux calculateurs gratuits pour l\'assurance-vie : fiscalité des rachats (PFU vs IR) et transmission aux bénéficiaires. Calculs conformes au CGI.',
   keywords: 'assurance vie, calculateur, fiscalité rachat, transmission succession, PFU, IR, bénéficiaires, abattement',
   openGraph: {
     title: 'Calculateurs Assurance-Vie - Fiscalité & Transmission',
@@ -38,35 +39,20 @@ export default function AssuranceVieHubPage() {
   return (
     <>
       <Header />
-      <div className="h-[3px] bg-accent-400 w-full" />
+
+      <PageHero
+        breadcrumb={[
+          { href: '/', label: 'Accueil' },
+          { label: 'Assurance-Vie' },
+        ]}
+        eyebrow="Assurance-vie · 2026"
+        titre={<>Calculateurs<br />Assurance-Vie</>}
+        description="Deux outils gratuits pour anticiper votre fiscalité et votre transmission. Calculs conformes au Code Général des Impôts, aucune donnée conservée."
+        features={['Conforme CGI 2026', 'Code source ouvert', 'Zéro donnée conservée', '100 % gratuit']}
+      />
+
       <div style={{ backgroundColor: '#F7F3EC' }}>
 
-        {/* Hero */}
-        <section className="max-w-6xl mx-auto px-6 py-12">
-          <nav className="flex items-center gap-2 font-mono text-xs text-neutral-400 mb-8">
-            <Link href="/" className="hover:text-primary-600 transition-colors">Accueil</Link>
-            <span>/</span>
-            <span className="text-neutral-600">Assurance-Vie</span>
-          </nav>
-
-          <div className="h-[2px] w-10 bg-accent-400 mb-6" />
-
-          <h1 className="font-serif text-5xl font-bold text-neutral-900 mb-4 leading-tight">
-            Calculateurs<br />
-            Assurance-Vie
-          </h1>
-
-          <p className="text-lg text-neutral-600 max-w-3xl leading-relaxed mb-8">
-            Deux outils gratuits pour anticiper votre fiscalité et votre transmission.
-            Calculs conformes au Code Général des Impôts, aucune donnée conservée.
-          </p>
-
-          <div className="flex flex-wrap gap-x-8 gap-y-2">
-            {['Conforme CGI 2026', 'Code source ouvert', 'Zéro donnée conservée', '100 % gratuit'].map(t => (
-              <span key={t} className="font-mono text-xs text-neutral-500">{t}</span>
-            ))}
-          </div>
-        </section>
 
         {/* 2 Calculateurs - table-style */}
         <section className="max-w-6xl mx-auto px-6 py-8">
@@ -86,10 +72,10 @@ export default function AssuranceVieHubPage() {
                 <div className="flex items-start gap-6">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="font-mono text-xs text-primary-600 border border-primary-300 px-2 py-0.5 bg-white">
+                      <span className="font-mono text-xs text-neutral-700 border border-neutral-300 px-2 py-0.5 bg-white">
                         {calc.tag}
                       </span>
-                      <h3 className="text-xl font-bold text-neutral-900 group-hover:text-primary-700 transition-colors">
+                      <h3 className="text-xl font-bold text-neutral-900 group-hover:text-neutral-900 transition-colors">
                         {calc.nom}
                       </h3>
                     </div>
@@ -101,7 +87,7 @@ export default function AssuranceVieHubPage() {
                       ))}
                     </ul>
                   </div>
-                  <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform mt-1 shrink-0 text-lg">→</span>
+                  <span className="font-mono text-neutral-500 group-hover:translate-x-1 transition-transform mt-1 shrink-0 text-lg">→</span>
                 </div>
               </Link>
             ))}
@@ -147,10 +133,10 @@ export default function AssuranceVieHubPage() {
                 style={{ borderLeft: '3px solid #D4AF37', paddingLeft: '1.25rem' }}
               >
                 <div>
-                  <p className="font-bold text-neutral-900 group-hover:text-primary-700 transition-colors mb-0.5">{link.label}</p>
+                  <p className="font-bold text-neutral-900 group-hover:text-neutral-900 transition-colors mb-0.5">{link.label}</p>
                   <p className="text-sm text-neutral-500">{link.desc}</p>
                 </div>
-                <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
+                <span className="font-mono text-neutral-500 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
               </Link>
             ))}
           </div>
@@ -158,7 +144,7 @@ export default function AssuranceVieHubPage() {
           <div className="border-t border-neutral-200 mt-8 pt-6 text-center">
             <p className="font-mono text-xs text-neutral-400 leading-relaxed">
               Outils indicatifs uniquement. Ne constituent pas un conseil fiscal ou patrimonial personnalisé.{' '}
-              <a href="https://github.com/nba67000/calculpatrimoine" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Code source ouvert</a>
+              <a href="https://github.com/nba67000/calculpatrimoine" target="_blank" rel="noopener noreferrer" className="text-neutral-900 hover:underline">Code source ouvert</a>
             </p>
           </div>
         </section>

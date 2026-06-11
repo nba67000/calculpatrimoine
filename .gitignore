@@ -37,7 +37,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Python
+# Python (inclut .claude/skills/**/__pycache__/ via le wildcard)
 __pycache__/
 *.py[cod]
 *$py.class

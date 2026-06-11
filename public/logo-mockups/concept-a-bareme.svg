@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80" role="img" aria-label="CalculPatrimoine">
+  <!-- Concept A v2 : marches d'escalier - tranches du bareme progressif. -->
+  <!-- Barres collees, largeurs ET hauteurs croissantes (chaque marche = une tranche). -->
+  <!-- Se distingue d'un bar chart classique (barres detachees, identiques en largeur) -->
+  <!-- et du pattern signal Wifi (4 barres egales en largeur, espacees). -->
+  <g transform="translate(8, 12)">
+    <!-- Base alignee, marches qui montent par adjacence -->
+    <rect x="0"  y="44" width="12" height="12" fill="currentColor"/>
+    <rect x="12" y="32" width="14" height="24" fill="currentColor"/>
+    <rect x="26" y="16" width="16" height="40" fill="currentColor"/>
+    <rect x="42" y="0"  width="18" height="56" fill="#D4AF37"/>
+  </g>
+  <text x="80" y="48" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="32" letter-spacing="-0.04em" fill="currentColor">
+    CalculPatrimoine
+  </text>
+</svg>

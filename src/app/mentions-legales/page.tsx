@@ -1,6 +1,7 @@
 ﻿// src/app/mentions-legales/page.tsx
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 
 export const metadata = {
  title: 'Mentions Légales - CalculPatrimoine',
@@ -12,9 +13,16 @@ export default function MentionsLegalesPage() {
  return (
  <>
  <Header />
- <div className="min-h-screen bg-neutral-50 py-12">
+ <PageHero
+   breadcrumb={[
+     { href: '/', label: 'Accueil' },
+     { label: 'Mentions légales' },
+   ]}
+   titre="Mentions légales"
+   description="Éditeur, hébergement, statut réglementaire, propriété intellectuelle."
+ />
+ <div className="bg-neutral-50 py-12">
  <div className="max-w-4xl mx-auto px-4">
- <h1 className="text-4xl font-bold mb-8">Mentions Légales</h1>
 
  <div className="bg-white rounded-lg border border-neutral-200 p-8 space-y-8">
  
@@ -56,7 +64,7 @@ export default function MentionsLegalesPage() {
  <div className="text-neutral-700 space-y-2">
  <p><strong>Hébergeur :</strong>Vercel Inc.</p>
  <p><strong>Adresse :</strong> 440 N Barranca Ave #4133, Covina, CA 91723, USA</p>
- <p><strong>Site :</strong> <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">https://vercel.com</a></p>
+ <p><strong>Site :</strong> <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="text-neutral-900 hover:underline">https://vercel.com</a></p>
  </div>
  </section>
 
@@ -93,7 +101,7 @@ export default function MentionsLegalesPage() {
  </p>
  <p>
  Pour plus d&apos;informations, consultez notre{' '}
- <a href="/politique-confidentialite" className="text-primary-600 hover:underline">
+ <a href="/politique-confidentialite" className="text-neutral-900 hover:underline">
  Politique de Confidentialité
  </a>.
  </p>
@@ -116,7 +124,7 @@ export default function MentionsLegalesPage() {
  <div className="text-neutral-700">
  <p>
  Pour toute question concernant le site : <br />
- <a href="mailto:contact@calculpatrimoine.fr" className="text-primary-600 hover:underline font-medium">
+ <a href="mailto:contact@calculpatrimoine.fr" className="text-neutral-900 hover:underline font-medium">
  contact@calculpatrimoine.fr
  </a>
  </p>

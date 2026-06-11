@@ -13,7 +13,7 @@ const RenteModeContent = dynamic(
 )
 
 export const metadata: Metadata = {
-  title: 'Calculateur Rente Viagère - Tables INSEE 2021 | CalculPatrimoine',
+  title: 'Calculateur Rente Viagère - Tables INSEE 2021',
   description: 'Calculez votre rente viagère à partir d\'un capital. Tables de mortalité INSEE 2021 unisexes. Gestion de la réversion au conjoint, 3 modes de calcul.',
   alternates: { canonical: 'https://calculpatrimoine.fr/rente-viagere' },
 }
@@ -72,8 +72,8 @@ export default function RenteViagerePage() {
 
           <SourcesSection slug="rente-viagere" title="Textes réglementaires" />
 
-          <div className="border-l-4 border-primary-200 bg-primary-50 px-4 py-3">
-            <p className="text-sm text-primary-800">
+          <div className="border-l-4 border-accent-400 bg-neutral-50 px-4 py-3">
+            <p className="text-sm text-neutral-700">
               Tables générationnelles TGH05 / TGF05 homologuées par arrêté du 1er août 2006 (art. A335-1 Code des assurances).
               Taux technique : 0,5 %. Table unisexe : pondération 48 % hommes / 52 % femmes.
               Dernière vérification des sources : mai 2026.
@@ -126,10 +126,10 @@ export default function RenteViagerePage() {
               style={{ borderLeft: '3px solid #D4AF37', paddingLeft: '1.25rem' }}
             >
               <div>
-                <p className="font-bold text-neutral-900 group-hover:text-primary-700 transition-colors mb-0.5">{link.label}</p>
+                <p className="font-bold text-neutral-900 group-hover:text-neutral-900 transition-colors mb-0.5">{link.label}</p>
                 <p className="text-sm text-neutral-500">{link.desc}</p>
               </div>
-              <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
+              <span className="font-mono text-neutral-500 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
             </Link>
           ))}
         </div>

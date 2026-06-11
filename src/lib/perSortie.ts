@@ -97,7 +97,7 @@ export function calculerPerSortie(inputs: PerSortieInputs): PerSortieResults {
   if (inputs.tmiRetraite >= 41 && inputs.fractionVersementsDeductibles > 50) {
     warnings.push({
       type: 'warning',
-      message: `Votre tranche d'imposition est élevée à la retraite (${inputs.tmiRetraite} %) et ${inputs.fractionVersementsDeductibles} % de votre capital vient de versements que vous aviez déduits à l'entrée. Sortir en capital fait payer ${eur(impotVersements)} d'impôt sur le revenu d'un coup sur cette part. La rente étale cet impôt sur ${dureeRente} ans, ce qui peut faire baisser le total selon votre durée de vie.`,
+      message: `Tranche d'imposition élevée à la retraite (${inputs.tmiRetraite} %), et ${inputs.fractionVersementsDeductibles} % du capital vient de versements déduits à l'entrée. Sortir en capital fait payer ${eur(impotVersements)} d'IR d'un coup sur cette part. La rente étale cet impôt sur ${dureeRente} ans : le total final dépend de la durée de vie réelle.`,
     })
   }
 

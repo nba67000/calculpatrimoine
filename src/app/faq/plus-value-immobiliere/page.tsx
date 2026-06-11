@@ -5,13 +5,14 @@ import Link from 'next/link'
 import CrossLink from '@/components/CrossLink'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 import FAQAccordionClient from '@/components/FAQAccordionClient'
 import SchemaFAQ from '@/components/SchemaFAQ'
 import { FAQ_PLUS_VALUE } from '@/lib/schema/schemaData'
 
 
 export const metadata: Metadata = {
-  title: 'FAQ Plus-Value Immobilière - Résidence secondaire | CalculPatrimoine',
+  title: 'FAQ Plus-Value Immobilière - Résidence secondaire',
   description: "Abattements pour durée de détention, IR 19 %, prélèvements sociaux 17,2 %, surtaxe. Questions fréquentes sur la plus-value immobilière.",
 
   alternates: { canonical: 'https://calculpatrimoine.fr/faq/plus-value-immobiliere' },
@@ -74,8 +75,8 @@ const sections: FAQSection[] = [
               Si vos frais réels dépassent 7,5 % du prix d&apos;achat, utilisez le mode &quot;montant réel&quot; pour déduire
               la somme exacte que vous avez payée (vous aurez besoin de l&apos;acte notarié).
             </p>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4">
+              <p className="text-sm text-neutral-900">
                 <strong>Exemple :</strong> achat à 200 000 €. Forfait = 15 000 €.
                 Si vos frais réels étaient 16 500 €, utilisez le montant réel, cela réduit la plus-value
                 imposable de 1 500 € supplémentaires.
@@ -169,7 +170,7 @@ const sections: FAQSection[] = [
               </thead>
               <tbody>
                 {ABATTEMENTS.map(({ annees, ir, ps }) => (
-                  <tr key={annees} className={ir === '100 %' && ps === '100 %' ? 'bg-green-50' : ir === '100 %' ? 'bg-primary-50' : ''}>
+                  <tr key={annees} className={ir === '100 %' && ps === '100 %' ? 'bg-green-50' : ir === '100 %' ? 'bg-neutral-50' : ''}>
                     <td className="border border-neutral-300 px-3 py-1.5">{annees} ans</td>
                     <td className={`border border-neutral-300 px-3 py-1.5 text-center font-medium ${ir === '100 %' ? 'text-green-700' : ''}`}>{ir}</td>
                     <td className={`border border-neutral-300 px-3 py-1.5 text-center font-medium ${ps === '100 %' ? 'text-green-700' : ''}`}>{ps}</td>
@@ -188,8 +189,8 @@ const sections: FAQSection[] = [
               La durée de détention est comptée en <strong>années complètes</strong> entre la date
               de l&apos;acte d&apos;acquisition et la date de l&apos;acte de cession (les deux actes notariés).
             </p>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4 mb-3">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4 mb-3">
+              <p className="text-sm text-neutral-900">
                 <strong>Exemple :</strong> achat le 15 mars 2020, vente le 10 mars 2026 = 5 ans complets
                 (l&apos;anniversaire du 15 mars 2026 n&apos;est pas encore atteint) → 0 % d&apos;abattement.
                 Si la vente est le 20 mars 2026 = 6 ans complets → 6 % d&apos;abattement IR.
@@ -476,8 +477,8 @@ const sections: FAQSection[] = [
               déclaration séparée à remplir pour les cessions soumises au régime d&apos;imposition
               des plus-values des particuliers.
             </p>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4">
+              <p className="text-sm text-neutral-900">
                 Ce calculateur est indicatif. Le notaire dispose des informations précises
                 (actes d&apos;acquisition, justificatifs de travaux, etc.) pour calculer le montant définitif.
               </p>
@@ -523,7 +524,7 @@ const sections: FAQSection[] = [
             </p>
             <p>
               Le code source est open-source et vérifiable sur{' '}
-              <a href="https://github.com/nba67000/calculpatrimoine" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">
+              <a href="https://github.com/nba67000/calculpatrimoine" target="_blank" rel="noopener noreferrer" className="text-neutral-900 hover:underline">
                 GitHub
               </a>.
             </p>
@@ -551,36 +552,26 @@ export default function FAQPlusValueImmobilierePage() {
     <>
       <SchemaFAQ items={FAQ_PLUS_VALUE} />
       <Header />
-      <div className="h-[3px] bg-accent-400 w-full" />
+      <PageHero
+        breadcrumb={[
+          { href: '/', label: 'Accueil' },
+          { href: '/faq', label: 'FAQ' },
+          { label: 'Plus-value immobilière' },
+        ]}
+        titre={<>Questions fréquentes<br />Plus-value immobilière</>}
+        description={<>Frais déductibles, abattements IR vs PS, surtaxe, exonérations - tout comprendre sur l&apos;imposition d&apos;une cession immobilière.</>}
+      />
       <main style={{ backgroundColor: '#F7F3EC' }}>
         <div className="max-w-4xl mx-auto px-6 py-16">
 
           <header className="mb-12">
-            <nav className="flex items-center gap-2 font-mono text-xs text-neutral-400 mb-8">
-              <Link href="/" className="hover:text-primary-600 transition-colors">Accueil</Link>
-              <span>/</span>
-              <Link href="/faq" className="hover:text-primary-600 transition-colors">FAQ</Link>
-              <span>/</span>
-              <span className="text-neutral-600">Plus-value immobilière</span>
-            </nav>
-
-            <div className="h-[2px] w-10 bg-accent-400 mb-6" />
-
-            <h1 className="font-serif text-4xl font-bold text-neutral-900 mb-4">
-              Questions fréquentes<br />Plus-value immobilière
-            </h1>
-            <p className="text-lg text-neutral-600 max-w-2xl mb-10">
-              Frais déductibles, abattements IR vs PS, surtaxe, exonérations -
-              tout comprendre sur l&apos;imposition d&apos;une cession immobilière.
-            </p>
-
             <Link
               href="/plus-value-immobiliere"
-              className="block bg-primary-600 text-white rounded-xl p-6 hover:bg-primary-700 transition-colors group"
+              className="block bg-neutral-900 text-white rounded-xl p-6 hover:bg-neutral-800 transition-colors group"
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="text-sm font-medium mb-1 text-primary-100">Calculateur</div>
+                  <div className="text-sm font-medium mb-1 text-neutral-400">Calculateur</div>
                   <div className="text-lg font-bold">Simulez votre plus-value immobilière 2026</div>
                 </div>
                 <div className="text-2xl group-hover:translate-x-1 transition-transform">→</div>
@@ -612,18 +603,18 @@ export default function FAQPlusValueImmobilierePage() {
                 style={{ borderLeft: '3px solid #D4AF37', paddingLeft: '1.25rem' }}
               >
                 <div>
-                  <p className="font-bold text-neutral-900 group-hover:text-primary-700 transition-colors mb-0.5">{link.label}</p>
+                  <p className="font-bold text-neutral-900 group-hover:text-neutral-900 transition-colors mb-0.5">{link.label}</p>
                   <p className="text-sm text-neutral-500">{link.desc}</p>
                 </div>
-                <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
+                <span className="font-mono text-neutral-500 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
               </Link>
             ))}
           </div>
 
-          <div className="bg-primary-700 p-8 text-center text-white mt-12">
+          <div className="bg-neutral-900 p-8 text-center text-white mt-12">
             <h3 className="font-serif text-2xl font-bold mb-3">Vous avez d&apos;autres questions ?</h3>
-            <p className="text-primary-200 mb-6 font-mono text-sm">Réponse par email sous 48h.</p>
-            <a href="mailto:contact@calculpatrimoine.fr" className="inline-block bg-white text-primary-700 px-8 py-3 font-medium hover:bg-neutral-100 transition-colors">
+            <p className="text-neutral-400 mb-6 font-mono text-sm">Réponse par email sous 48h.</p>
+            <a href="mailto:contact@calculpatrimoine.fr" className="inline-block bg-white text-neutral-900 px-8 py-3 font-medium hover:bg-neutral-100 transition-colors">
               Nous contacter →
             </a>
           </div>

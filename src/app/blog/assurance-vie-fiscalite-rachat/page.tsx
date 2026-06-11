@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'Assurance-vie : combien vous allez vraiment payer sur un rachat',
@@ -20,31 +21,18 @@ export default function ArticleAssuranceViePage() {
   return (
     <>
       <Header />
-      <div className="h-[3px] bg-accent-400 w-full" />
+      <PageHero
+        breadcrumb={[
+          { href: '/', label: 'Accueil' },
+          { href: '/blog', label: 'Blog' },
+          { label: 'Fiscalité assurance-vie' },
+        ]}
+        titre="Assurance-vie : combien vous allez vraiment payer sur un rachat"
+        features={['Fiscalité', '11 min de lecture', '18 avril 2026']}
+      />
       <article style={{ backgroundColor: '#F7F3EC' }}>
 
-        <header>
-          <div className="max-w-4xl mx-auto px-6 py-12">
-            <nav className="flex items-center gap-2 font-mono text-xs text-neutral-400 mb-8">
-              <Link href="/blog" className="hover:text-primary-600 transition-colors">Blog</Link>
-              <span>/</span>
-              <span className="text-neutral-600">Fiscalité assurance-vie</span>
-            </nav>
-            <div className="h-[2px] w-10 bg-accent-400 mb-6" />
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-neutral-900 mb-6 leading-tight">
-              Assurance-vie : combien vous allez vraiment payer sur un rachat
-            </h1>
-            <div className="flex flex-wrap gap-4 font-mono text-xs text-neutral-500">
-              <span>Fiscalité</span>
-              <span>·</span>
-              <span>11 min de lecture</span>
-              <span>·</span>
-              <span>18 avril 2026</span>
-            </div>
-          </div>
-        </header>
-
-        <div className="max-w-4xl mx-auto px-6 pb-16">
+        <div className="max-w-4xl mx-auto px-6 pt-12 pb-16">
 
           {/* Intro */}
           <div className="mb-12">
@@ -105,13 +93,13 @@ export default function ArticleAssuranceViePage() {
           </div>
 
           {/* CTA */}
-          <div className="bg-primary-700 px-8 py-6 mb-12">
-            <p className="font-mono text-xs text-primary-300 uppercase tracking-wider mb-2">Outil associé</p>
+          <div className="bg-neutral-900 px-8 py-6 mb-12">
+            <p className="font-mono text-xs text-neutral-400 uppercase tracking-wider mb-2">Outil associé</p>
             <p className="text-white font-bold text-lg mb-1">Calculez votre fiscalité en deux minutes</p>
-            <p className="text-primary-200 text-sm mb-4">
+            <p className="text-neutral-400 text-sm mb-4">
               Le calculateur applique automatiquement toutes les règles : règle proportionnelle, abattement 8 ans, taux réduit 2017, comparaison PFU vs IR.
             </p>
-            <Link href="/assurance-vie" className="inline-block bg-surface-card text-primary-700 px-6 py-2.5 font-medium text-sm hover:bg-neutral-100 transition-colors font-mono">
+            <Link href="/assurance-vie" className="inline-block bg-surface-card text-neutral-900 px-6 py-2.5 font-medium text-sm hover:bg-neutral-100 transition-colors font-mono">
               Accéder au calculateur →
             </Link>
           </div>
@@ -120,14 +108,14 @@ export default function ArticleAssuranceViePage() {
           <nav className="bg-surface-card border border-neutral-200 p-6 mb-12">
             <p className="font-mono text-xs uppercase tracking-wider text-neutral-500 mb-4">Sommaire</p>
             <ol className="space-y-2 text-sm font-mono">
-              <li><a href="#piege-1" className="text-primary-600 hover:underline">1. Le piège n°1 : croire qu&apos;on taxe tout le rachat</a></li>
-              <li><a href="#abattement" className="text-primary-600 hover:underline">2. L&apos;abattement des 8 ans</a></li>
-              <li><a href="#pfu-vs-ir" className="text-primary-600 hover:underline">3. PFU ou IR : lequel choisir ?</a></li>
-              <li><a href="#date-2017" className="text-primary-600 hover:underline">4. La date du 27 septembre 2017</a></li>
-              <li><a href="#150k" className="text-primary-600 hover:underline">5. Le cas des contrats de plus de 150 000 euros</a></li>
-              <li><a href="#erreurs" className="text-primary-600 hover:underline">6. Trois cas comparés : l&apos;écart selon le timing</a></li>
-              <li><a href="#cas-concrets" className="text-primary-600 hover:underline">7. Cas concrets : 3 profils, 3 calculs</a></li>
-              <li><a href="#optimisations" className="text-primary-600 hover:underline">8. Optimisations légales</a></li>
+              <li><a href="#piege-1" className="text-neutral-900 hover:underline">1. Le piège n°1 : croire qu&apos;on taxe tout le rachat</a></li>
+              <li><a href="#abattement" className="text-neutral-900 hover:underline">2. L&apos;abattement des 8 ans</a></li>
+              <li><a href="#pfu-vs-ir" className="text-neutral-900 hover:underline">3. PFU ou IR : lequel choisir ?</a></li>
+              <li><a href="#date-2017" className="text-neutral-900 hover:underline">4. La date du 27 septembre 2017</a></li>
+              <li><a href="#150k" className="text-neutral-900 hover:underline">5. Le cas des contrats de plus de 150 000 euros</a></li>
+              <li><a href="#erreurs" className="text-neutral-900 hover:underline">6. Trois cas comparés : l&apos;écart selon le timing</a></li>
+              <li><a href="#cas-concrets" className="text-neutral-900 hover:underline">7. Cas concrets : 3 profils, 3 calculs</a></li>
+              <li><a href="#optimisations" className="text-neutral-900 hover:underline">8. Optimisations légales</a></li>
             </ol>
           </nav>
 
@@ -139,9 +127,9 @@ export default function ArticleAssuranceViePage() {
               <p className="font-mono text-xs text-warning-700 uppercase tracking-wider mb-1">Ce qu&apos;on entend souvent</p>
               <p className="text-warning-800 text-sm font-medium">&laquo;&nbsp;Je retire 50 000 euros, je vais payer 30 % dessus, soit 15 000 euros d&apos;impôts.&nbsp;&raquo;</p>
             </div>
-            <div className="border-l-4 border-primary-400 bg-primary-50 px-5 py-4 mb-8">
-              <p className="font-mono text-xs text-primary-600 uppercase tracking-wider mb-1">Ce qui se passe réellement</p>
-              <p className="text-primary-800 text-sm leading-relaxed">On taxe uniquement la plus-value contenue dans votre rachat. Pas le capital que vous avez versé. Jamais.</p>
+            <div className="border-l-4 border-accent-400 bg-neutral-50 px-5 py-4 mb-8">
+              <p className="font-mono text-xs text-neutral-500 uppercase tracking-wider mb-1">Ce qui se passe réellement</p>
+              <p className="text-neutral-700 text-sm leading-relaxed">On taxe uniquement la plus-value contenue dans votre rachat. Pas le capital que vous avez versé. Jamais.</p>
             </div>
 
             <h3 className="font-serif text-2xl font-bold text-neutral-900 mb-4">La règle proportionnelle</h3>
@@ -163,9 +151,9 @@ export default function ArticleAssuranceViePage() {
               <div className="space-y-1.5 text-sm text-neutral-800 font-mono">
                 <p>Capital total du contrat : 100 000 euros</p>
                 <p>Versements : 70 000 euros · Plus-value : 30 000 euros</p>
-                <p className="font-bold text-primary-700 pt-2">Taux de plus-value dans le contrat : 30 %</p>
+                <p className="font-bold text-neutral-900 pt-2">Taux de plus-value dans le contrat : 30 %</p>
                 <p className="pt-2">Vous retirez 50 000 euros</p>
-                <p className="font-bold text-primary-700">Plus-value dans le rachat : 50 000 × 30 % = 15 000 euros</p>
+                <p className="font-bold text-neutral-900">Plus-value dans le rachat : 50 000 × 30 % = 15 000 euros</p>
                 <p>Capital remboursé (non taxé) : 50 000 − 15 000 = 35 000 euros</p>
               </div>
               <div className="mt-4 pt-4 border-t border-neutral-200">
@@ -196,7 +184,7 @@ export default function ArticleAssuranceViePage() {
                 <div className="font-mono text-sm space-y-1 text-neutral-700">
                   <p>Plus-value dans le rachat : 15 000 euros</p>
                   <p>Abattement : 0 euro</p>
-                  <p className="font-bold text-primary-700 pt-2">Plus-value taxable : 15 000 euros</p>
+                  <p className="font-bold text-neutral-900 pt-2">Plus-value taxable : 15 000 euros</p>
                 </div>
               </div>
               <div className="bg-surface-card border border-neutral-200 p-5">
@@ -204,7 +192,7 @@ export default function ArticleAssuranceViePage() {
                 <div className="font-mono text-sm space-y-1 text-neutral-700">
                   <p>Plus-value dans le rachat : 15 000 euros</p>
                   <p>Abattement : 4 600 euros</p>
-                  <p className="font-bold text-primary-700 pt-2">Plus-value taxable : 10 400 euros</p>
+                  <p className="font-bold text-neutral-900 pt-2">Plus-value taxable : 10 400 euros</p>
                 </div>
               </div>
             </div>
@@ -284,8 +272,8 @@ export default function ArticleAssuranceViePage() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-neutral-200 font-mono text-xs">
-                  <tr><td className="py-2 text-neutral-700">0 %</td><td className="py-2">17,2 %</td><td className="py-2">30 %</td><td className="py-2 text-primary-600">Le PFU coûte 74 % de plus</td></tr>
-                  <tr><td className="py-2 text-neutral-700">11 %</td><td className="py-2">28,2 %</td><td className="py-2">30 %</td><td className="py-2 text-primary-600">Le PFU coûte 6 % de plus</td></tr>
+                  <tr><td className="py-2 text-neutral-700">0 %</td><td className="py-2">17,2 %</td><td className="py-2">30 %</td><td className="py-2 text-neutral-900">Le PFU coûte 74 % de plus</td></tr>
+                  <tr><td className="py-2 text-neutral-700">11 %</td><td className="py-2">28,2 %</td><td className="py-2">30 %</td><td className="py-2 text-neutral-900">Le PFU coûte 6 % de plus</td></tr>
                   <tr><td className="py-2 text-neutral-700">30 %</td><td className="py-2">47,2 %</td><td className="py-2">30 %</td><td className="py-2 text-accent-600">L&apos;IR coûte 57 % de plus</td></tr>
                   <tr><td className="py-2 text-neutral-700">41 %</td><td className="py-2">58,2 %</td><td className="py-2">30 %</td><td className="py-2 text-accent-600">L&apos;IR coûte 94 % de plus</td></tr>
                   <tr><td className="py-2 text-neutral-700">45 %</td><td className="py-2">62,2 %</td><td className="py-2">30 %</td><td className="py-2 text-accent-600">L&apos;IR coûte 107 % de plus</td></tr>
@@ -293,9 +281,9 @@ export default function ArticleAssuranceViePage() {
               </table>
             </div>
 
-            <div className="border-l-4 border-primary-300 bg-primary-50 px-5 py-4 my-6">
-              <p className="font-mono text-xs text-primary-600 uppercase tracking-wider mb-2">La règle simple</p>
-              <p className="text-sm text-primary-800 leading-relaxed">
+            <div className="border-l-4 border-accent-400 bg-neutral-50 px-5 py-4 my-6">
+              <p className="font-mono text-xs text-neutral-500 uppercase tracking-wider mb-2">La règle simple</p>
+              <p className="text-sm text-neutral-700 leading-relaxed">
                 Le calculateur compare les deux options en temps réel. À TMI ≤ 11 %, l&apos;IR gagne toujours. À 30 % et au-dessus, c&apos;est le PFU presque tout le temps.
               </p>
             </div>
@@ -322,7 +310,7 @@ export default function ArticleAssuranceViePage() {
               <div className="font-mono text-sm space-y-1 text-neutral-800">
                 <p>Taux d&apos;imposition sur le revenu : 7,5 % (au lieu de 12,8 %)</p>
                 <p>Prélèvements sociaux : 17,2 % (inchangés)</p>
-                <p className="font-bold text-primary-700 pt-2 border-t border-neutral-200 mt-2">Total : 24,7 % au lieu de 30 %</p>
+                <p className="font-bold text-neutral-900 pt-2 border-t border-neutral-200 mt-2">Total : 24,7 % au lieu de 30 %</p>
               </div>
               <p className="mt-3 text-sm text-neutral-700">Sur 10 000 euros de plus-value, ça fait 530 euros d&apos;économie.</p>
             </div>
@@ -341,19 +329,19 @@ export default function ArticleAssuranceViePage() {
                 <p>Versements après 2017 : 20 000 euros soit 29 % du total</p>
                 <p className="pt-2">Plus-value liée aux versements pré-2017 : 30 000 × 71 % = 21 300 euros → taxée à 24,7 %</p>
                 <p>Plus-value liée aux versements post-2017 : 30 000 × 29 % = 8 700 euros → taxée à 30 %</p>
-                <p className="font-bold text-primary-700 pt-2 border-t border-neutral-200 mt-2">Taux moyen effectif : 26,2 %</p>
+                <p className="font-bold text-neutral-900 pt-2 border-t border-neutral-200 mt-2">Taux moyen effectif : 26,2 %</p>
               </div>
             </div>
 
-            <div className="border-l-4 border-primary-300 bg-primary-50 px-5 py-4 my-6">
-              <p className="text-sm text-primary-800 leading-relaxed">
+            <div className="border-l-4 border-accent-400 bg-neutral-50 px-5 py-4 my-6">
+              <p className="text-sm text-neutral-700 leading-relaxed">
                 Le calculateur gère ce cas automatiquement. Vous entrez le montant des versements avant 2017, il fait le reste.
               </p>
             </div>
 
             <p className="text-xs text-neutral-500 font-mono">
               Source :{' '}
-              <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000036339197" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Loi de finances 2018, article 28</a>
+              <a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000036339197" target="_blank" rel="noopener noreferrer" className="text-neutral-900 hover:underline">Loi de finances 2018, article 28</a>
             </p>
           </section>
 
@@ -370,9 +358,9 @@ export default function ArticleAssuranceViePage() {
               <p className="text-warning-800 text-sm font-medium">&laquo;&nbsp;J&apos;ai plus de 150 000 euros sur mon assurance-vie, donc je vais payer une taxe supplémentaire à chaque rachat.&nbsp;&raquo;</p>
             </div>
 
-            <div className="border-l-4 border-primary-400 bg-primary-50 px-5 py-4 mb-6">
-              <p className="font-mono text-xs text-primary-600 uppercase tracking-wider mb-1">Ce qui se passe réellement</p>
-              <p className="text-primary-800 text-sm leading-relaxed">
+            <div className="border-l-4 border-accent-400 bg-neutral-50 px-5 py-4 mb-6">
+              <p className="font-mono text-xs text-neutral-500 uppercase tracking-wider mb-1">Ce qui se passe réellement</p>
+              <p className="text-neutral-700 text-sm leading-relaxed">
                 Cette règle ne touche pas vos rachats de votre vivant. Elle vise uniquement les versements faits après vos 70 ans qui dépassent 152 500 euros. Et même là, elle ne s&apos;applique qu&apos;à votre décès, pour les bénéficiaires.
               </p>
             </div>
@@ -392,7 +380,7 @@ export default function ArticleAssuranceViePage() {
 
             <p className="text-xs text-neutral-500 font-mono">
               Source :{' '}
-              <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000047288653" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Article 990 I du CGI</a>
+              <a href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000047288653" target="_blank" rel="noopener noreferrer" className="text-neutral-900 hover:underline">Article 990 I du CGI</a>
             </p>
           </section>
 
@@ -468,7 +456,7 @@ export default function ArticleAssuranceViePage() {
                 <div className="border-t border-neutral-200 pt-2 mt-1 space-y-1">
                   <p>Règle proportionnelle : plus-value dans le rachat = 50 000 × 30 % = 15 000 euros</p>
                   <p>Abattement des 8 ans : 15 000 − 4 600 = 10 400 euros taxables</p>
-                  <p className="font-bold text-primary-700">Impôt réel : 10 400 × 30 % = 3 120 euros</p>
+                  <p className="font-bold text-neutral-900">Impôt réel : 10 400 × 30 % = 3 120 euros</p>
                 </div>
               </div>
             </div>
@@ -528,10 +516,10 @@ export default function ArticleAssuranceViePage() {
               },
             ].map(cas => (
               <div key={cas.num} className="mb-10">
-                <div className="bg-primary-700 px-5 py-4">
-                  <p className="font-mono text-xs text-primary-300 mb-1">{cas.num}</p>
+                <div className="bg-neutral-900 px-5 py-4">
+                  <p className="font-mono text-xs text-neutral-400 mb-1">{cas.num}</p>
                   <p className="text-white font-bold text-lg">{cas.titre}</p>
-                  <p className="text-primary-300 text-sm mt-1">{cas.profil}</p>
+                  <p className="text-neutral-400 text-sm mt-1">{cas.profil}</p>
                 </div>
                 <div className="bg-surface-card border border-neutral-200 border-t-0 p-6">
                   <p className="text-sm text-neutral-600 mb-5 italic">{cas.besoin}</p>
@@ -593,12 +581,12 @@ export default function ArticleAssuranceViePage() {
           </section>
 
           {/* CTA final */}
-          <div className="bg-primary-700 px-8 py-6 mb-12">
+          <div className="bg-neutral-900 px-8 py-6 mb-12">
             <p className="text-white font-bold text-lg mb-1">Calculez votre fiscalité réelle</p>
-            <p className="text-primary-200 text-sm mb-4">
+            <p className="text-neutral-400 text-sm mb-4">
               Le calculateur applique toutes les règles de cet article automatiquement. Gratuit, sans inscription, zéro donnée conservée.
             </p>
-            <Link href="/assurance-vie" className="inline-block bg-surface-card text-primary-700 px-6 py-2.5 font-medium text-sm hover:bg-neutral-100 transition-colors font-mono">
+            <Link href="/assurance-vie" className="inline-block bg-surface-card text-neutral-900 px-6 py-2.5 font-medium text-sm hover:bg-neutral-100 transition-colors font-mono">
               Accéder au calculateur →
             </Link>
           </div>
@@ -622,7 +610,7 @@ export default function ArticleAssuranceViePage() {
                       <span className="text-accent-400 mt-0.5 shrink-0">-</span>
                       <div>
                         {s.href ? (
-                          <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline font-medium">{s.label}</a>
+                          <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-neutral-900 hover:underline font-medium">{s.label}</a>
                         ) : (
                           <span className="font-medium text-neutral-700">{s.label}</span>
                         )}
@@ -644,7 +632,7 @@ export default function ArticleAssuranceViePage() {
                       <span className="text-accent-400 mt-0.5 shrink-0">-</span>
                       <div>
                         {s.href ? (
-                          <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline font-medium">{s.label}</a>
+                          <a href={s.href} target="_blank" rel="noopener noreferrer" className="text-neutral-900 hover:underline font-medium">{s.label}</a>
                         ) : (
                           <span className="font-medium text-neutral-700">{s.label}</span>
                         )}
@@ -669,7 +657,7 @@ export default function ArticleAssuranceViePage() {
           <div className="border-t border-neutral-200 mt-8 pt-6 text-center">
             <p className="font-mono text-xs text-neutral-400 leading-relaxed">
               Outil indicatif uniquement. Ne constitue pas un conseil fiscal personnalisé.{' '}
-              <a href="https://github.com/nba67000/calculpatrimoine" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">Code source ouvert</a>
+              <a href="https://github.com/nba67000/calculpatrimoine" target="_blank" rel="noopener noreferrer" className="text-neutral-900 hover:underline">Code source ouvert</a>
             </p>
           </div>
 

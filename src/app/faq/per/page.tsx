@@ -5,13 +5,14 @@ import Link from 'next/link'
 import CrossLink from '@/components/CrossLink'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 import FAQAccordionClient from '@/components/FAQAccordionClient'
 import SchemaFAQ from '@/components/SchemaFAQ'
 import { FAQ_PER } from '@/lib/schema/schemaData'
 
 
 export const metadata: Metadata = {
-  title: 'FAQ PER Individuel 2026 - Versements et déductibilité | CalculPatrimoine',
+  title: 'FAQ PER Individuel 2026 - Versements et déductibilité',
   description: "Questions fréquentes sur le PER individuel : plafonds 2026, déductibilité, report sur 5 ans (LF 2026), TMI, sortie en capital ou rente.",
 
   alternates: { canonical: 'https://calculpatrimoine.fr/faq/per' },
@@ -44,8 +45,8 @@ const sections: FAQSection[] = [
               votre revenu imposable, dans la limite d&apos;un plafond annuel. Concrètement, si vous êtes
               à la TMI 30 % et versez 3 000€, l&apos;État vous en rembourse 900€ via votre feuille d&apos;impôts.
             </p>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4 mt-4">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4 mt-4">
+              <p className="text-sm text-neutral-900">
                 <strong>À retenir</strong> : ce calculateur couvre uniquement le PER individuel souscrit à titre personnel (ex-PERP, dit PERIN).
                 Les PER d&apos;entreprise (PERCOL, PERO) et les contrats pour travailleurs indépendants (ex-Madelin) ne sont pas couverts, leurs règles de plafond diffèrent (Art. 154 bis CGI).
               </p>
@@ -101,8 +102,8 @@ const sections: FAQSection[] = [
                 </li>
               ))}
             </ul>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4 mt-4">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4 mt-4">
+              <p className="text-sm text-neutral-900">
                 <strong>Plus votre TMI est élevée, plus le PER est avantageux.</strong> En dessous
                 de la tranche à 11 %, l&apos;avantage fiscal est limité.
               </p>
@@ -147,8 +148,8 @@ const sections: FAQSection[] = [
               <strong>Pour un salarié</strong>, le plafond est calculé sur le revenu <em>net professionnel</em>
               (après abattement de 10 % pour frais professionnels) : <code>10 % × revenu net professionnel</code>.
             </p>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4">
+              <p className="text-sm text-neutral-900">
                 <strong>Exemple</strong> : Salarié, 60 000€ brut → revenu net professionnel
                 = 54 000€ → plafond = 5 400€.
               </p>
@@ -173,7 +174,7 @@ const sections: FAQSection[] = [
             <div className="bg-neutral-100 border border-neutral-200 p-4 mb-3 font-mono text-sm">
               Plafond total = Plafond N + Report N-1 + N-2 + N-3 + N-4 + N-5
             </div>
-            <div className="bg-primary-100 p-4 border border-neutral-200 mb-3">
+            <div className="bg-neutral-100 p-4 border border-neutral-200 mb-3">
               <p className="mb-2 font-bold text-sm">Exemple :</p>
               <ul className="list-none text-sm space-y-1">
                 <li>Plafond N : 5 000€, versé 2 000€ → solde 3 000€</li>
@@ -203,9 +204,9 @@ const sections: FAQSection[] = [
               <p>Plafond annuel = max(Revenu net professionnel × 10 %, 4 710€)</p>
               <p>Plafond annuel = min(Plafond calculé, 37 680€)</p>
             </div>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4">
-              <p className="text-sm text-primary-900 mb-1"><strong>Exemple complet :</strong></p>
-              <ul className="text-sm text-primary-900 space-y-1">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4">
+              <p className="text-sm text-neutral-900 mb-1"><strong>Exemple complet :</strong></p>
+              <ul className="text-sm text-neutral-900 space-y-1">
                 <li>Revenu brut : 50 000€</li>
                 <li>Abattement 10 % : 5 000€ (dans la fourchette)</li>
                 <li>Revenu net professionnel : 45 000€</li>
@@ -234,8 +235,8 @@ const sections: FAQSection[] = [
               <li>Surendettement</li>
               <li>Expiration des droits chômage</li>
             </ul>
-            <div className="bg-primary-50 border-l-4 border-primary-400 p-4 mt-4">
-              <p className="text-sm text-primary-900">
+            <div className="bg-neutral-50 border-l-4 border-accent-400 p-4 mt-4">
+              <p className="text-sm text-neutral-900">
                 <strong>Résidence principale</strong> : c&apos;est le cas le plus courant. Vous pouvez
                 débloquer tout ou partie du PER sans pénalité pour financer votre achat.
                 La fiscalité à la sortie s&apos;applique normalement.
@@ -289,12 +290,12 @@ const sections: FAQSection[] = [
               <strong>Oui, si votre TMI aujourd&apos;hui est supérieure à votre TMI à la retraite</strong>.
               C&apos;est le cas pour la majorité des salariés.
             </p>
-            <div className="bg-primary-100 p-4 border border-neutral-200 mb-3">
+            <div className="bg-neutral-100 p-4 border border-neutral-200 mb-3">
               <p className="mb-2 text-sm font-bold">Exemple :</p>
               <ul className="text-sm space-y-1">
                 <li>Aujourd&apos;hui TMI 30 % → versez 5 000€ → économie : <strong>1 500€</strong></li>
                 <li>À la retraite TMI 11 % → vous payez 11 % sur 5 000€ = <strong>550€</strong></li>
-                <li className="font-bold text-primary-700">Gain net : 1 500 - 550 = 950€ (+ la croissance du capital)</li>
+                <li className="font-bold text-neutral-900">Gain net : 1 500 - 550 = 950€ (+ la croissance du capital)</li>
               </ul>
             </div>
             <p className="mb-3">
@@ -322,7 +323,7 @@ const sections: FAQSection[] = [
                 href="https://github.com/nba67000/calculpatrimoine"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary-600 hover:underline"
+                className="text-neutral-900 hover:underline"
               >
                 GitHub
               </a>.
@@ -339,36 +340,26 @@ export default function FAQPERPage() {
     <>
       <SchemaFAQ items={FAQ_PER} />
       <Header />
-      <div className="h-[3px] bg-accent-400 w-full" />
+      <PageHero
+        breadcrumb={[
+          { href: '/', label: 'Accueil' },
+          { href: '/faq', label: 'FAQ' },
+          { label: 'PER Individuel' },
+        ]}
+        titre={<>Questions fréquentes<br />PER Individuel</>}
+        description={<>Plafonds 2026, déductibilité, report des années antérieures, stratégie de sortie - tout comprendre sur le Plan d&apos;Épargne Retraite individuel.</>}
+      />
       <main style={{ backgroundColor: '#F7F3EC' }}>
         <div className="max-w-4xl mx-auto px-6 py-16">
 
           <header className="mb-12">
-            <nav className="flex items-center gap-2 font-mono text-xs text-neutral-400 mb-8">
-              <Link href="/" className="hover:text-primary-600 transition-colors">Accueil</Link>
-              <span>/</span>
-              <Link href="/faq" className="hover:text-primary-600 transition-colors">FAQ</Link>
-              <span>/</span>
-              <span className="text-neutral-600">PER Individuel</span>
-            </nav>
-
-            <div className="h-[2px] w-10 bg-accent-400 mb-6" />
-
-            <h1 className="font-serif text-4xl font-bold text-neutral-900 mb-4">
-              Questions fréquentes<br />PER Individuel
-            </h1>
-            <p className="text-lg text-neutral-600 max-w-2xl mb-10">
-              Plafonds 2026, déductibilité, report des années antérieures, stratégie de sortie -
-              tout comprendre sur le Plan d&apos;Épargne Retraite individuel.
-            </p>
-
             <Link
               href="/per-individuel"
-              className="block bg-primary-600 text-white rounded-xl p-6 hover:bg-primary-700 transition-colors group"
+              className="block bg-neutral-900 text-white rounded-xl p-6 hover:bg-neutral-800 transition-colors group"
             >
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="text-sm font-medium mb-1 text-primary-100">Calculateur PER Individuel</div>
+                  <div className="text-sm font-medium mb-1 text-neutral-400">Calculateur PER Individuel</div>
                   <div className="text-lg font-bold">Calculez votre économie d&apos;impôt</div>
                 </div>
                 <div className="text-2xl group-hover:translate-x-1 transition-transform">→</div>
@@ -400,18 +391,18 @@ export default function FAQPERPage() {
                 style={{ borderLeft: '3px solid #D4AF37', paddingLeft: '1.25rem' }}
               >
                 <div>
-                  <p className="font-bold text-neutral-900 group-hover:text-primary-700 transition-colors mb-0.5">{link.label}</p>
+                  <p className="font-bold text-neutral-900 group-hover:text-neutral-900 transition-colors mb-0.5">{link.label}</p>
                   <p className="text-sm text-neutral-500">{link.desc}</p>
                 </div>
-                <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
+                <span className="font-mono text-neutral-500 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
               </Link>
             ))}
           </div>
 
-          <div className="bg-primary-700 p-8 text-center text-white mt-12">
+          <div className="bg-neutral-900 p-8 text-center text-white mt-12">
             <h3 className="font-serif text-2xl font-bold mb-3">Vous avez d&apos;autres questions ?</h3>
-            <p className="text-primary-200 mb-6 font-mono text-sm">Réponse par email sous 48h.</p>
-            <a href="mailto:contact@calculpatrimoine.fr" className="inline-block bg-white text-primary-700 px-8 py-3 font-medium hover:bg-neutral-100 transition-colors">
+            <p className="text-neutral-400 mb-6 font-mono text-sm">Réponse par email sous 48h.</p>
+            <a href="mailto:contact@calculpatrimoine.fr" className="inline-block bg-white text-neutral-900 px-8 py-3 font-medium hover:bg-neutral-100 transition-colors">
               Nous contacter →
             </a>
           </div>

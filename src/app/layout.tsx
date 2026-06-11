@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     default: 'CalculPatrimoine - Calculateurs patrimoniaux gratuits et open-source',
     template: '%s | CalculPatrimoine'
   },
-  description: 'Calculateurs patrimoniaux gratuits basés sur les textes officiels (CGI, BOFiP, INSEE) : TMI, PER, assurance-vie, donation, succession, IFI, PEA, plus-value immobilière, LMNP, SCI. Open-source, sans inscription, aucune donnée conservée.',
+  description: 'Calculateurs patrimoniaux gratuits basés sur les textes officiels (CGI, BOFiP, INSEE) : TMI, PER, assurance-vie, succession, IFI, PEA, LMNP, SCI.',
   keywords: [
     'calculateur patrimoine',
     'simulateur fiscal gratuit',
@@ -97,7 +97,7 @@ export const metadata: Metadata = {
     siteName: 'CalculPatrimoine',
     url: 'https://calculpatrimoine.fr',
     title: 'CalculPatrimoine - Calculateurs patrimoniaux gratuits et open-source',
-    description: 'Plus de 14 calculateurs patrimoniaux gratuits basés sur les textes officiels : TMI, PER, assurance-vie, donation, succession, IFI, PEA, plus-value, LMNP, SCI. Open-source, sans inscription.',
+    description: '14+ calculateurs patrimoniaux gratuits basés sur les textes officiels : TMI, PER, assurance-vie, succession, IFI, PEA, LMNP, SCI. Open-source.',
   },
 
   twitter: {
@@ -105,7 +105,7 @@ export const metadata: Metadata = {
     site: '@calculpatrimoine',
     creator: '@calculpatrimoine',
     title: 'CalculPatrimoine - Calculateurs patrimoniaux gratuits',
-    description: 'Calculateurs gratuits pour la fiscalité du patrimoine : TMI, PER, assurance-vie, donation, succession, IFI, PEA, plus-value. Open-source, sans inscription.',
+    description: 'Calculateurs gratuits pour la fiscalité du patrimoine : TMI, PER, assurance-vie, succession, IFI, PEA. Open-source.',
   },
 
   verification: {

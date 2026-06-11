@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 import { CATEGORIES_CALC } from '@/config/navigation'
 import { FAQS_BY_CATEGORY } from '@/config/faqs'
 
@@ -34,38 +35,34 @@ export default async function CategorieCalcPage({ params }: Props) {
   const autres  = CATEGORIES_CALC.filter(c => c.slug !== slug)
   const faqs    = FAQS_BY_CATEGORY[slug] ?? []
 
+  const breadcrumb = [
+    { href: '/', label: 'Accueil' },
+    { label: cat.label },
+  ]
+
   return (
     <>
       <Header />
-      <div className="h-[3px] bg-accent-400 w-full" />
+
+      <PageHero
+        breadcrumb={breadcrumb}
+        eyebrow={`Calculateurs · ${cat.label}`}
+        titre={cat.label}
+        description={`${cat.description}.`}
+        features={[
+          `${actifs.length} calculateurs disponibles`,
+          'Sources officielles (CGI · BOFiP · INSEE)',
+          'Aucune donnée conservée',
+        ]}
+      />
 
       <div style={{ backgroundColor: '#F7F3EC' }} className="min-h-screen">
         <div className="max-w-7xl mx-auto px-6 pt-14 pb-24">
-
-          {/* Fil d'Ariane */}
-          <nav className="font-mono text-xs text-neutral-400 mb-10 flex items-center gap-2">
-            <Link href="/" className="hover:text-neutral-700 transition-colors">Accueil</Link>
-            <span>·</span>
-            <span className="text-neutral-600">{cat.label}</span>
-          </nav>
 
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 lg:gap-16 items-start">
 
             {/* Contenu principal */}
             <div>
-              <div className="mb-10">
-                <p className="font-mono text-xs text-neutral-400 uppercase tracking-widest mb-4">
-                  Calculateurs - {cat.label}
-                </p>
-                <div className="h-[2px] w-14 bg-accent-400 mb-6" />
-                <h1 className="font-serif text-4xl lg:text-5xl text-neutral-900 leading-tight tracking-tight mb-4">
-                  {cat.label}
-                </h1>
-                <p className="text-lg text-neutral-600 leading-relaxed max-w-xl">
-                  {cat.description}.
-                </p>
-              </div>
-
               {actifs.length > 0 && (
                 <div className="mb-10">
                   <div className="flex items-center gap-5 mb-6">
@@ -77,19 +74,19 @@ export default async function CategorieCalcPage({ params }: Props) {
                       <Link
                         key={calc.href}
                         href={calc.href}
-                        className="group bg-surface-card border border-neutral-200 hover:border-primary-300 transition-all"
+                        className="group bg-surface-card border border-neutral-200 hover:border-neutral-400 transition-all"
                         style={{ boxShadow: '3px 3px 0 #E8E0D0' }}
                       >
-                        <div className="px-5 pt-5 pb-4 border-b border-neutral-100 border-l-4 border-l-primary-700">
+                        <div className="px-5 pt-5 pb-4 border-b border-neutral-100 border-l-4 border-l-neutral-900">
                           <div className="flex items-start justify-between gap-3">
-                            <p className="font-serif font-bold text-neutral-900 group-hover:text-primary-700 transition-colors leading-snug">
+                            <p className="font-serif font-bold text-neutral-900 group-hover:text-neutral-700 transition-colors leading-snug">
                               {calc.nom}
                             </p>
-                            <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform shrink-0 mt-0.5">→</span>
+                            <span className="font-mono text-neutral-500 group-hover:translate-x-1 transition-transform shrink-0 mt-0.5">→</span>
                           </div>
                         </div>
                         <div className="px-5 py-4">
-                          <p className="font-mono text-xs text-neutral-400 leading-relaxed">{calc.desc}</p>
+                          <p className="font-mono text-xs text-neutral-500 leading-relaxed">{calc.desc}</p>
                         </div>
                       </Link>
                     ))}
@@ -136,19 +133,19 @@ export default async function CategorieCalcPage({ params }: Props) {
                       <Link
                         key={faq.href}
                         href={faq.href}
-                        className="group bg-surface-card border border-neutral-200 hover:border-primary-300 transition-all"
+                        className="group bg-surface-card border border-neutral-200 hover:border-neutral-400 transition-all"
                         style={{ boxShadow: '3px 3px 0 #E8E0D0' }}
                       >
                         <div className="px-5 pt-5 pb-4 border-b border-neutral-100 border-l-4 border-l-accent-400">
                           <div className="flex items-start justify-between gap-3">
-                            <p className="font-serif font-bold text-neutral-900 group-hover:text-primary-700 transition-colors leading-snug">
+                            <p className="font-serif font-bold text-neutral-900 group-hover:text-neutral-700 transition-colors leading-snug">
                               {faq.title}
                             </p>
-                            <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform shrink-0 mt-0.5">→</span>
+                            <span className="font-mono text-neutral-500 group-hover:translate-x-1 transition-transform shrink-0 mt-0.5">→</span>
                           </div>
                         </div>
                         <div className="px-5 py-4">
-                          <p className="font-mono text-xs text-neutral-400 leading-relaxed">{faq.description}</p>
+                          <p className="font-mono text-xs text-neutral-500 leading-relaxed">{faq.description}</p>
                         </div>
                       </Link>
                     ))}
@@ -161,7 +158,7 @@ export default async function CategorieCalcPage({ params }: Props) {
             <div className="lg:sticky lg:top-24 space-y-4">
               <div className="bg-surface-card border border-neutral-200" style={{ boxShadow: '3px 3px 0 #E8E0D0' }}>
                 <div className="px-5 py-4 border-b border-neutral-100">
-                  <p className="font-mono text-xs text-neutral-400 uppercase tracking-widest">Autres catégories</p>
+                  <p className="font-mono text-xs text-neutral-500 uppercase tracking-widest">Autres catégories</p>
                 </div>
                 <div>
                   {autres.map((c, i) => (
@@ -171,24 +168,24 @@ export default async function CategorieCalcPage({ params }: Props) {
                       className={`group flex items-center justify-between px-5 py-3.5 hover:bg-neutral-50 transition-colors ${i < autres.length - 1 ? 'border-b border-neutral-100' : ''}`}
                     >
                       <div>
-                        <p className="font-bold text-sm text-neutral-800 group-hover:text-primary-700 transition-colors">
+                        <p className="font-bold text-sm text-neutral-800 group-hover:text-neutral-900 transition-colors">
                           {c.label}
                         </p>
-                        <p className="font-mono text-xs text-neutral-400 mt-0.5">
+                        <p className="font-mono text-xs text-neutral-500 mt-0.5">
                           {c.calculateurs.filter(x => x.disponible).length} outil{c.calculateurs.filter(x => x.disponible).length > 1 ? 's' : ''}
                         </p>
                       </div>
-                      <span className="font-mono text-neutral-400 group-hover:text-primary-600 group-hover:translate-x-1 transition-all shrink-0">→</span>
+                      <span className="font-mono text-neutral-400 group-hover:text-neutral-700 group-hover:translate-x-1 transition-all shrink-0">→</span>
                     </Link>
                   ))}
                 </div>
               </div>
 
               <div className="px-5 py-4 border border-neutral-200 bg-surface-card">
-                <p className="font-mono text-xs text-neutral-400 leading-relaxed">
+                <p className="font-mono text-xs text-neutral-500 leading-relaxed">
                   Tous les calculs s&apos;exécutent dans votre navigateur. Aucune donnée ne nous parvient.
                 </p>
-                <p className="font-mono text-xs text-neutral-400 mt-2">Sources : CGI · BOFiP · INSEE</p>
+                <p className="font-mono text-xs text-neutral-500 mt-2">Sources : CGI · BOFiP · INSEE</p>
               </div>
             </div>
           </div>

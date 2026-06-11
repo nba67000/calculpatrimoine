@@ -6,13 +6,14 @@ import Link from 'next/link'
 import CrossLink from '@/components/CrossLink'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 import FAQAccordionClient from '@/components/FAQAccordionClient'
 import SchemaFAQ from '@/components/SchemaFAQ'
 import { FAQ_AV_FISCALITE_RACHAT } from '@/lib/schema/schemaData'
 
 
 export const metadata: Metadata = {
-  title: 'FAQ Fiscalite rachat assurance-vie 2026 : PFU vs IR | CalculPatrimoine',
+  title: 'FAQ Fiscalite rachat assurance-vie 2026 : PFU vs IR',
   description: "Questions frequentes sur la fiscalite des rachats d'assurance-vie : PFU 12,8 %, IR au bareme, abattement 8 ans, versements avant 2017, fractionnement.",
   alternates: { canonical: 'https://calculpatrimoine.fr/faq/assurance-vie-fiscalite-rachat' },
 }
@@ -131,7 +132,7 @@ const sections: FAQSection[] = [
             </p>
             <p>
               Le code source est ouvert et vérifiable sur{' '}
-              <a href="https://github.com/nba67000/calculpatrimoine" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">GitHub</a>.
+              <a href="https://github.com/nba67000/calculpatrimoine" target="_blank" rel="noopener noreferrer" className="text-neutral-900 hover:underline">GitHub</a>.
             </p>
           </>
         ),
@@ -145,33 +146,23 @@ export default function FAQAvFiscaliteRachatPage() {
     <>
       <SchemaFAQ items={FAQ_AV_FISCALITE_RACHAT} />
       <Header />
-      <div className="h-[3px] bg-accent-400 w-full" />
+      <PageHero
+        breadcrumb={[
+          { href: '/', label: 'Accueil' },
+          { href: '/faq', label: 'FAQ' },
+          { label: 'Fiscalité rachat AV' },
+        ]}
+        titre={<>Questions fréquentes<br />Fiscalité rachat assurance-vie</>}
+        description="PFU vs barème IR selon la TMI, abattement 8 ans, versements avant 2017, fractionnement, passage en succession."
+      />
       <main style={{ backgroundColor: '#F7F3EC' }}>
         <div className="max-w-4xl mx-auto px-6 py-16">
 
           <header className="mb-12">
-            <nav className="flex items-center gap-2 font-mono text-xs text-neutral-400 mb-8">
-              <Link href="/" className="hover:text-primary-600 transition-colors">Accueil</Link>
-              <span>/</span>
-              <Link href="/faq" className="hover:text-primary-600 transition-colors">FAQ</Link>
-              <span>/</span>
-              <span className="text-neutral-600">Fiscalité rachat AV</span>
-            </nav>
-
-            <div className="h-[2px] w-10 bg-accent-400 mb-6" />
-
-            <h1 className="font-serif text-4xl font-bold text-neutral-900 mb-4">
-              Questions fréquentes<br />Fiscalité rachat assurance-vie
-            </h1>
-            <p className="text-lg text-neutral-600 max-w-2xl mb-10">
-              PFU vs barème IR selon la TMI, abattement 8 ans, versements avant 2017,
-              fractionnement, passage en succession.
-            </p>
-
-            <Link href="/assurance-vie/fiscalite-rachat" className="block bg-primary-600 text-white rounded-xl p-6 hover:bg-primary-700 transition-colors group">
+            <Link href="/assurance-vie/fiscalite-rachat" className="block bg-neutral-900 text-white rounded-xl p-6 hover:bg-neutral-800 transition-colors group">
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="text-sm font-medium mb-1 text-primary-100">Calculateur Fiscalité rachat AV</div>
+                  <div className="text-sm font-medium mb-1 text-neutral-400">Calculateur Fiscalité rachat AV</div>
                   <div className="text-lg font-bold">Comparaison PFU vs IR sur votre rachat</div>
                 </div>
                 <div className="text-2xl group-hover:translate-x-1 transition-transform">→</div>
@@ -198,18 +189,18 @@ export default function FAQAvFiscaliteRachatPage() {
             ].map(link => (
               <Link key={link.href} href={link.href} className="group flex items-center justify-between py-5 border-b border-neutral-200 hover:bg-white transition-colors pr-4" style={{ borderLeft: '3px solid #D4AF37', paddingLeft: '1.25rem' }}>
                 <div>
-                  <p className="font-bold text-neutral-900 group-hover:text-primary-700 transition-colors mb-0.5">{link.label}</p>
+                  <p className="font-bold text-neutral-900 group-hover:text-neutral-900 transition-colors mb-0.5">{link.label}</p>
                   <p className="text-sm text-neutral-500">{link.desc}</p>
                 </div>
-                <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
+                <span className="font-mono text-neutral-500 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
               </Link>
             ))}
           </div>
 
-          <div className="bg-primary-700 p-8 text-center text-white mt-12">
+          <div className="bg-neutral-900 p-8 text-center text-white mt-12">
             <h3 className="font-serif text-2xl font-bold mb-3">Vous avez d&apos;autres questions ?</h3>
-            <p className="text-primary-200 mb-6 font-mono text-sm">Réponse par email sous 48h.</p>
-            <a href="mailto:contact@calculpatrimoine.fr" className="inline-block bg-white text-primary-700 px-8 py-3 font-medium hover:bg-neutral-100 transition-colors">Nous contacter →</a>
+            <p className="text-neutral-400 mb-6 font-mono text-sm">Réponse par email sous 48h.</p>
+            <a href="mailto:contact@calculpatrimoine.fr" className="inline-block bg-white text-neutral-900 px-8 py-3 font-medium hover:bg-neutral-100 transition-colors">Nous contacter →</a>
           </div>
 
         </div>

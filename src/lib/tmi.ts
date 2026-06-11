@@ -133,7 +133,7 @@ function evaluerAlertesTMI(p: {
   if (p.plafonnementActif) {
     warnings.push({
       type: 'warning',
-      message: `Vos enfants à charge réduisent normalement votre impôt, mais cette réduction est plafonnée à ${PLAFOND_DEMI_PART.toLocaleString('fr-FR')} € par demi-part au-delà du quotient de base (Art. 197-IV CGI). Pour vous, la réduction réelle est de ${p.reductionQFPlafond.toLocaleString('fr-FR')} € au lieu des ${Math.round(p.reductionQFBrute).toLocaleString('fr-FR')} € qu'elle aurait été sans ce plafond.`,
+      message: `Les enfants à charge baissent normalement l'impôt, mais la réduction est plafonnée à ${PLAFOND_DEMI_PART.toLocaleString('fr-FR')} € par demi-part au-delà du quotient de base (Art. 197-IV CGI). Ici, la réduction réelle est de ${p.reductionQFPlafond.toLocaleString('fr-FR')} € au lieu de ${Math.round(p.reductionQFBrute).toLocaleString('fr-FR')} € sans plafond.`,
     })
   }
 

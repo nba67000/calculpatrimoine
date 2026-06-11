@@ -1,6 +1,7 @@
 ﻿// src/app/politique-confidentialite/page.tsx
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 
 export const metadata = {
  title: 'Politique de Confidentialité - CalculPatrimoine',
@@ -12,16 +13,23 @@ export default function PolitiqueConfidentialitePage() {
  return (
  <>
  <Header />
- <div className="min-h-screen bg-neutral-50 py-12">
+ <PageHero
+   breadcrumb={[
+     { href: '/', label: 'Accueil' },
+     { label: 'Confidentialité' },
+   ]}
+   titre="Politique de confidentialité"
+   description="Aucune donnée personnelle identifiable n'est collectée. Les calculs s'exécutent dans votre navigateur."
+ />
+ <div className="bg-neutral-50 py-12">
  <div className="max-w-4xl mx-auto px-4">
- <h1 className="text-4xl font-bold mb-8">Politique de Confidentialité</h1>
 
  <div className="bg-white rounded-lg border border-neutral-200 p-8 space-y-8">
  
  {/* Intro */}
  <section>
- <div className="bg-primary-50 border border-primary-200 rounded-lg p-4 mb-6">
- <p className="text-primary-900 font-medium">
+ <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-4 mb-6">
+ <p className="text-neutral-900 font-medium">
  CalculPatrimoine ne collecte <strong>aucune donnée personnelle identifiable</strong> et n&apos;utilise aucun cookie de tracking.
  </p>
  </div>
@@ -37,30 +45,30 @@ export default function PolitiqueConfidentialitePage() {
  {/* Ce que nous NE collectons PAS */}
  <section>
  <h2 className="text-2xl font-semibold mb-4">Ce que nous NE collectons PAS</h2>
- <div className="bg-primary-50 border border-primary-200 rounded-lg p-6">
+ <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-6">
  <ul className="space-y-2 text-neutral-700">
  <li className="flex items-start gap-2">
- <span className="text-primary-600 font-bold">•</span>
+ <span className="text-neutral-900 font-bold">•</span>
  <span>Nom, prénom, adresse email ou numéro de téléphone</span>
  </li>
  <li className="flex items-start gap-2">
- <span className="text-primary-600 font-bold">•</span>
+ <span className="text-neutral-900 font-bold">•</span>
  <span>Adresse IP complète (elle est anonymisée, cf. ci-dessous)</span>
  </li>
  <li className="flex items-start gap-2">
- <span className="text-primary-600 font-bold">•</span>
+ <span className="text-neutral-900 font-bold">•</span>
  <span>Montants de capital, âges ou situations personnelles que vous saisissez dans les calculateurs</span>
  </li>
  <li className="flex items-start gap-2">
- <span className="text-primary-600 font-bold">•</span>
+ <span className="text-neutral-900 font-bold">•</span>
  <span>Cookies de tracking, cookies publicitaires ou cookies tiers</span>
  </li>
  <li className="flex items-start gap-2">
- <span className="text-primary-600 font-bold">•</span>
+ <span className="text-neutral-900 font-bold">•</span>
  <span>Données de navigation cross-site (pas de fingerprinting persistant)</span>
  </li>
  <li className="flex items-start gap-2">
- <span className="text-primary-600 font-bold">•</span>
+ <span className="text-neutral-900 font-bold">•</span>
  <span>Compte utilisateur, historique de calculs ou profils personnalisés</span>
  </li>
  </ul>
@@ -70,7 +78,7 @@ export default function PolitiqueConfidentialitePage() {
  {/* Ce que nous collectons */}
  <section>
  <h2 className="text-2xl font-semibold mb-4">Ce que nous collectons (anonyme et agrégé)</h2>
- <div className="bg-primary-50 border border-primary-200 rounded-lg p-6">
+ <div className="bg-neutral-50 border border-neutral-200 rounded-lg p-6">
  <p className="text-neutral-700 mb-4">
  Nous utilisons <strong>Vercel Web Analytics</strong>, une solution de mesure d&apos;audience
  sans cookies, intégrée à notre hébergeur Vercel. Elle nous permet de mesurer la fréquentation 
@@ -78,19 +86,19 @@ export default function PolitiqueConfidentialitePage() {
  </p>
  <ul className="space-y-2 text-neutral-700">
  <li className="flex items-start gap-2">
- <span className="text-primary-600 font-bold">✓</span>
+ <span className="text-neutral-900 font-bold">✓</span>
  <span>Pages visitées (sans identification de l&apos;utilisateur)</span>
  </li>
  <li className="flex items-start gap-2">
- <span className="text-primary-600 font-bold">✓</span>
+ <span className="text-neutral-900 font-bold">✓</span>
  <span>Pays et région d&apos;origine (niveau géographique large, pas de ville précise)</span>
  </li>
  <li className="flex items-start gap-2">
- <span className="text-primary-600 font-bold">✓</span>
+ <span className="text-neutral-900 font-bold">✓</span>
  <span>Type d&apos;appareil et navigateur (desktop/mobile/tablette, de manière agrégée)</span>
  </li>
  <li className="flex items-start gap-2">
- <span className="text-primary-600 font-bold">✓</span>
+ <span className="text-neutral-900 font-bold">✓</span>
  <span>Source de trafic (moteur de recherche, lien direct, etc.)</span>
  </li>
  </ul>
@@ -111,7 +119,7 @@ export default function PolitiqueConfidentialitePage() {
  <strong>Tous les calculs (rente viagère, assurance-vie, transmission) sont effectués 
  directement dans votre navigateur</strong>, côté client (frontend), grâce à JavaScript.
  </p>
- <p className="font-semibold text-primary-700">
+ <p className="font-semibold text-neutral-900">
  Aucune donnée que vous saisissez (âge, capital, situation familiale) n&apos;est 
  transmise à nos serveurs ou stockée où que ce soit.
  </p>
@@ -164,7 +172,7 @@ export default function PolitiqueConfidentialitePage() {
  </ul>
  <p className="mt-4">
  Pour exercer ces droits ou pour toute question concernant vos données personnelles, 
- contactez-nous à : <a href="mailto:contact@calculpatrimoine.fr" className="text-primary-600 hover:underline font-medium">contact@calculpatrimoine.fr</a>
+ contactez-nous à : <a href="mailto:contact@calculpatrimoine.fr" className="text-neutral-900 hover:underline font-medium">contact@calculpatrimoine.fr</a>
  </p>
  </div>
  </section>
@@ -237,7 +245,7 @@ export default function PolitiqueConfidentialitePage() {
  </p>
  <p className="mt-2">
  <strong>Email : </strong>{' '}
- <a href="mailto:contact@calculpatrimoine.fr" className="text-primary-600 hover:underline font-medium">
+ <a href="mailto:contact@calculpatrimoine.fr" className="text-neutral-900 hover:underline font-medium">
  contact@calculpatrimoine.fr
  </a>
  </p>

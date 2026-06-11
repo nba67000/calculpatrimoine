@@ -5,6 +5,7 @@ import Link from 'next/link'
 import CrossLink from '@/components/CrossLink'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 import LegalDisclaimer from '@/components/LegalDisclaimer'
 import FAQAccordionClient from '@/components/FAQAccordionClient'
 import SchemaFAQ from '@/components/SchemaFAQ'
@@ -12,7 +13,7 @@ import { FAQ_IFI } from '@/lib/schema/schemaData'
 
 
 export const metadata: Metadata = {
-  title: 'FAQ IFI 2026 - Impôt sur la fortune immobilière | CalculPatrimoine',
+  title: 'FAQ IFI 2026 - Impôt sur la fortune immobilière',
   description: "Seuil 1 300 000 €, barème progressif, abattement résidence principale 30 %, décote et plafonnement IFI + IR.",
 
   alternates: { canonical: 'https://calculpatrimoine.fr/faq/ifi' },
@@ -268,28 +269,18 @@ export default function FAQIFIPage() {
     <>
       <SchemaFAQ items={FAQ_IFI} />
       <Header />
-      <div className="h-[3px] bg-accent-400 w-full" />
+      <PageHero
+        breadcrumb={[
+          { href: '/', label: 'Accueil' },
+          { href: '/faq', label: 'FAQ' },
+          { label: 'IFI' },
+        ]}
+        titre="FAQ - Impôt sur la fortune immobilière (IFI)"
+        description={<>Tout ce qu&apos;il faut savoir sur l&apos;IFI : seuil, barème, abattement résidence principale, dettes déductibles, décote et plafonnement.</>}
+      />
       <div style={{ backgroundColor: '#F7F3EC' }}>
 
         <section className="max-w-4xl mx-auto px-6 py-12">
-          <nav className="flex items-center gap-2 font-mono text-xs text-neutral-400 mb-8">
-            <Link href="/" className="hover:text-primary-600 transition-colors">Accueil</Link>
-            <span>/</span>
-            <Link href="/faq" className="hover:text-primary-600 transition-colors">FAQ</Link>
-            <span>/</span>
-            <span className="text-neutral-600">IFI</span>
-          </nav>
-
-          <div className="h-[2px] w-10 bg-accent-400 mb-6" />
-
-          <h1 className="font-serif text-4xl font-bold text-neutral-900 mb-4">
-            FAQ - Impôt sur la fortune immobilière (IFI)
-          </h1>
-          <p className="text-lg text-neutral-600 max-w-2xl leading-relaxed mb-8">
-            Tout ce qu&apos;il faut savoir sur l&apos;IFI : seuil, barème, abattement résidence principale,
-            dettes déductibles, décote et plafonnement.
-          </p>
-
           <LegalDisclaimer />
         </section>
 
@@ -313,7 +304,7 @@ export default function FAQIFIPage() {
             </p>
             <Link
               href="/ifi"
-              className="inline-block bg-primary-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-700 transition-colors"
+              className="inline-block bg-neutral-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-neutral-800 transition-colors"
             >
               Simuler mon IFI 2026
             </Link>

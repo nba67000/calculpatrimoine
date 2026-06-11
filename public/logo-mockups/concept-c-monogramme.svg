@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80" role="img" aria-label="CalculPatrimoine">
+  <!-- Concept C : Monogramme géométrique. Un "C" carré avec une barre horizontale or à l'intérieur. -->
+  <!-- Le "C" évoque CalculPatrimoine, la barre or = signe d'addition / résultat fiscal. -->
+  <g transform="translate(8, 12)">
+    <!-- Le "C" stylisé : un carré ouvert à droite -->
+    <path d="M 56 0 L 0 0 L 0 56 L 56 56 L 56 44 L 12 44 L 12 12 L 56 12 Z" fill="currentColor"/>
+    <!-- Barre or horizontale au centre, comme un signe "=" -->
+    <rect x="24" y="24" width="32" height="8" fill="#D4AF37"/>
+  </g>
+  <text x="80" y="48" font-family="Inter, system-ui, sans-serif" font-weight="900" font-size="32" letter-spacing="-0.04em" fill="currentColor">
+    CalculPatrimoine
+  </text>
+</svg>

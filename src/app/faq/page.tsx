@@ -3,9 +3,10 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
-  title: 'FAQ - Questions fréquentes | CalculPatrimoine',
+  title: 'FAQ - Questions fréquentes',
   description: 'Toutes les réponses sur nos calculateurs patrimoniaux : rente viagère, assurance-vie, PER, TMI, transmission. Retrouvez la FAQ dédiée à chaque outil.',
   keywords: 'faq calculpatrimoine, questions fréquentes, aide calculateur, rente viagère, assurance vie, PER, TMI',
   alternates: { canonical: 'https://calculpatrimoine.fr/faq' },
@@ -60,26 +61,16 @@ export default function FAQIndexPage() {
   return (
     <>
       <Header />
-      <div className="h-[3px] bg-accent-400 w-full" />
+      <PageHero
+        breadcrumb={[
+          { href: '/', label: 'Accueil' },
+          { label: 'FAQ' },
+        ]}
+        titre="Questions fréquentes"
+        description="Retrouvez les réponses aux questions les plus courantes sur chacun de nos calculateurs."
+      />
       <main style={{ backgroundColor: '#F7F3EC' }}>
         <div className="max-w-4xl mx-auto px-6 py-16">
-
-          <header className="mb-12">
-            <nav className="flex items-center gap-2 font-mono text-xs text-neutral-400 mb-8">
-              <Link href="/" className="hover:text-primary-600 transition-colors">Accueil</Link>
-              <span>/</span>
-              <span className="text-neutral-600">FAQ</span>
-            </nav>
-
-            <div className="h-[2px] w-10 bg-accent-400 mb-6" />
-
-            <h1 className="font-serif text-4xl font-bold text-neutral-900 mb-4">
-              Questions fréquentes
-            </h1>
-            <p className="text-lg text-neutral-600 max-w-2xl">
-              Retrouvez les réponses aux questions les plus courantes sur chacun de nos calculateurs.
-            </p>
-          </header>
 
           <div className="border-t border-neutral-300">
             {FAQ_SECTIONS.map((section) => (
@@ -91,24 +82,24 @@ export default function FAQIndexPage() {
               >
                 <div>
                   <div className="flex items-center gap-3 mb-0.5">
-                    <p className="font-bold text-neutral-900 group-hover:text-primary-700 transition-colors">
+                    <p className="font-bold text-neutral-900 group-hover:text-neutral-900 transition-colors">
                       {section.label}
                     </p>
                     <span className="font-mono text-xs text-neutral-400">{section.count}</span>
                   </div>
                   <p className="text-sm text-neutral-500">{section.desc}</p>
                 </div>
-                <span className="font-mono text-primary-600 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
+                <span className="font-mono text-neutral-500 group-hover:translate-x-1 transition-transform ml-4 shrink-0">→</span>
               </Link>
             ))}
           </div>
 
-          <div className="bg-primary-700 p-8 text-center text-white mt-16">
+          <div className="bg-neutral-900 p-8 text-center text-white mt-16">
             <h3 className="font-serif text-2xl font-bold mb-3">Vous ne trouvez pas votre réponse ?</h3>
-            <p className="text-primary-200 mb-6 font-mono text-sm">Réponse par email sous 48h.</p>
+            <p className="text-neutral-400 mb-6 font-mono text-sm">Réponse par email sous 48h.</p>
             <a
               href="mailto:contact@calculpatrimoine.fr"
-              className="inline-block bg-white text-primary-700 px-8 py-3 font-medium hover:bg-neutral-100 transition-colors"
+              className="inline-block bg-white text-neutral-900 px-8 py-3 font-medium hover:bg-neutral-100 transition-colors"
             >
               Nous contacter →
             </a>
