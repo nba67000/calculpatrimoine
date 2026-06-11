@@ -4,6 +4,7 @@ import type { ReactNode } from 'react'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 import CrossLink from '@/components/CrossLink'
 import FAQAccordionClient from '@/components/FAQAccordionClient'
 import SchemaFAQ from '@/components/SchemaFAQ'
@@ -558,30 +559,20 @@ export default function FAQRenteViagerePage() {
     <>
       <SchemaFAQ items={FAQ_RENTE} />
       <Header />
-      <div className="h-[3px] bg-accent-400 w-full" />
+      <PageHero
+        breadcrumb={[
+          { href: '/', label: 'Accueil' },
+          { href: '/faq', label: 'FAQ' },
+          { label: 'Rente Viagère' },
+        ]}
+        titre={<>Questions fréquentes<br />Rente Viagère</>}
+        description="Fonctionnement, fiscalité, réversion, couple: les questions fréquentes sur la rente viagère, avec des exemples chiffrés."
+      />
       <main style={{ backgroundColor: '#F7F3EC' }}>
         <div className="max-w-4xl mx-auto px-6 py-16">
 
           {/* En-tête */}
           <header className="mb-12">
-            <nav className="flex items-center gap-2 font-mono text-xs text-neutral-400 mb-8">
-              <Link href="/" className="hover:text-primary-600 transition-colors">Accueil</Link>
-              <span>/</span>
-              <Link href="/faq" className="hover:text-primary-600 transition-colors">FAQ</Link>
-              <span>/</span>
-              <span className="text-neutral-600">Rente Viagère</span>
-            </nav>
-
-            <div className="h-[2px] w-10 bg-accent-400 mb-6" />
-
-            <h1 className="font-serif text-4xl font-bold text-neutral-900 mb-4">
-              Questions fréquentes<br />Rente Viagère
-            </h1>
-            <p className="text-lg text-neutral-600 max-w-2xl mb-10">
-              Fonctionnement, fiscalité, réversion, couple: les questions fréquentes
-              sur la rente viagère, avec des exemples chiffrés.
-            </p>
-
             {/* Lien vers calculateur */}
             <CrossLink
               title="Calculez votre rente en 30 secondes"

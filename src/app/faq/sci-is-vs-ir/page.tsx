@@ -5,6 +5,7 @@ import Link from 'next/link'
 import CrossLink from '@/components/CrossLink'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 import FAQAccordionClient from '@/components/FAQAccordionClient'
 import SchemaFAQ from '@/components/SchemaFAQ'
 import { FAQ_SCI_IS_IR } from '@/lib/schema/schemaData'
@@ -157,29 +158,19 @@ export default function FAQSciIsVsIrPage() {
     <>
       <SchemaFAQ items={FAQ_SCI_IS_IR} />
       <Header />
-      <div className="h-[3px] bg-accent-400 w-full" />
+      <PageHero
+        breadcrumb={[
+          { href: '/', label: 'Accueil' },
+          { href: '/faq', label: 'FAQ' },
+          { label: 'SCI IS vs IR' },
+        ]}
+        titre={<>Questions fréquentes<br />SCI à l&apos;IS vs à l&apos;IR</>}
+        description="Impôt annuel vs piège de la sortie, amortissements, option irréversible depuis 2019, place du déficit foncier."
+      />
       <main style={{ backgroundColor: '#F7F3EC' }}>
         <div className="max-w-4xl mx-auto px-6 py-16">
 
           <header className="mb-12">
-            <nav className="flex items-center gap-2 font-mono text-xs text-neutral-400 mb-8">
-              <Link href="/" className="hover:text-primary-600 transition-colors">Accueil</Link>
-              <span>/</span>
-              <Link href="/faq" className="hover:text-primary-600 transition-colors">FAQ</Link>
-              <span>/</span>
-              <span className="text-neutral-600">SCI IS vs IR</span>
-            </nav>
-
-            <div className="h-[2px] w-10 bg-accent-400 mb-6" />
-
-            <h1 className="font-serif text-4xl font-bold text-neutral-900 mb-4">
-              Questions fréquentes<br />SCI à l&apos;IS vs à l&apos;IR
-            </h1>
-            <p className="text-lg text-neutral-600 max-w-2xl mb-10">
-              Impôt annuel vs piège de la sortie, amortissements, option irréversible
-              depuis 2019, place du déficit foncier.
-            </p>
-
             <Link href="/sci-is-vs-ir" className="block bg-primary-600 text-white rounded-xl p-6 hover:bg-primary-700 transition-colors group">
               <div className="flex items-center justify-between">
                 <div>

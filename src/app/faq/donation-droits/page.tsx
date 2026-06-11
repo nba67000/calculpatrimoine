@@ -5,6 +5,7 @@ import Link from 'next/link'
 import CrossLink from '@/components/CrossLink'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 import FAQAccordionClient from '@/components/FAQAccordionClient'
 import SchemaFAQ from '@/components/SchemaFAQ'
 import LegalDisclaimer from '@/components/LegalDisclaimer'
@@ -397,30 +398,19 @@ export default function FAQDonationPage() {
     <>
       <SchemaFAQ items={FAQ_DONATION} />
       <Header />
-      <div className="h-[3px] bg-accent-400 w-full" />
+      <PageHero
+        breadcrumb={[
+          { href: '/', label: 'Accueil' },
+          { href: '/faq', label: 'FAQ' },
+          { label: 'Droits de donation' },
+        ]}
+        titre={<>Questions fréquentes<br />Droits de donation</>}
+        description={<>Abattements par lien de parenté, barème art. 777 CGI, rappel fiscal de 15 ans, don familial de sommes d&apos;argent : tout comprendre sur les droits de mutation à titre gratuit applicables aux donations.</>}
+      />
       <main style={{ backgroundColor: '#F7F3EC' }}>
         <div className="max-w-4xl mx-auto px-6 py-16">
 
           <header className="mb-12">
-            <nav className="flex items-center gap-2 font-mono text-xs text-neutral-400 mb-8" aria-label="Fil d'Ariane">
-              <Link href="/" className="hover:text-primary-600 transition-colors">Accueil</Link>
-              <span>/</span>
-              <Link href="/faq" className="hover:text-primary-600 transition-colors">FAQ</Link>
-              <span>/</span>
-              <span className="text-neutral-600">Droits de donation</span>
-            </nav>
-
-            <div className="h-[2px] w-10 bg-accent-400 mb-6" />
-
-            <h1 className="font-serif text-4xl font-bold text-neutral-900 mb-4">
-              Questions fréquentes<br />Droits de donation
-            </h1>
-            <p className="text-lg text-neutral-600 max-w-2xl mb-10">
-              Abattements par lien de parenté, barème art. 777 CGI, rappel fiscal de 15 ans, don
-              familial de sommes d&apos;argent : tout comprendre sur les droits de mutation à titre
-              gratuit applicables aux donations.
-            </p>
-
             <LegalDisclaimer />
 
             <Link

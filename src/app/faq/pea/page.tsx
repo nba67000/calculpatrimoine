@@ -5,6 +5,7 @@ import Link from 'next/link'
 import CrossLink from '@/components/CrossLink'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 import FAQAccordionClient from '@/components/FAQAccordionClient'
 import SchemaFAQ from '@/components/SchemaFAQ'
 import { FAQ_PEA } from '@/lib/schema/schemaData'
@@ -209,29 +210,19 @@ export default function FAQPeaPage() {
     <>
       <SchemaFAQ items={FAQ_PEA} />
       <Header />
-      <div className="h-[3px] bg-accent-400 w-full" />
+      <PageHero
+        breadcrumb={[
+          { href: '/', label: 'Accueil' },
+          { href: '/faq', label: 'FAQ' },
+          { label: 'PEA' },
+        ]}
+        titre={<>Questions fréquentes<br />PEA (Plan d&apos;Épargne en Actions)</>}
+        description="Plafond, fiscalité après 5 ans, prélèvements sociaux, passif fiscal latent, succession. Réponses factuelles avec références au CGI."
+      />
       <main style={{ backgroundColor: '#F7F3EC' }}>
         <div className="max-w-4xl mx-auto px-6 py-16">
 
           <header className="mb-12">
-            <nav className="flex items-center gap-2 font-mono text-xs text-neutral-400 mb-8">
-              <Link href="/" className="hover:text-primary-600 transition-colors">Accueil</Link>
-              <span>/</span>
-              <Link href="/faq" className="hover:text-primary-600 transition-colors">FAQ</Link>
-              <span>/</span>
-              <span className="text-neutral-600">PEA</span>
-            </nav>
-
-            <div className="h-[2px] w-10 bg-accent-400 mb-6" />
-
-            <h1 className="font-serif text-4xl font-bold text-neutral-900 mb-4">
-              Questions fréquentes<br />PEA (Plan d&apos;Épargne en Actions)
-            </h1>
-            <p className="text-lg text-neutral-600 max-w-2xl mb-10">
-              Plafond, fiscalité après 5 ans, prélèvements sociaux, passif fiscal latent,
-              succession. Réponses factuelles avec références au CGI.
-            </p>
-
             <Link
               href="/pea"
               className="block bg-primary-600 text-white rounded-xl p-6 hover:bg-primary-700 transition-colors group"

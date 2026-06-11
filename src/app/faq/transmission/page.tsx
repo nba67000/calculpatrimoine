@@ -5,6 +5,7 @@ import Link from 'next/link'
 import CrossLink from '@/components/CrossLink'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 import FAQAccordionClient from '@/components/FAQAccordionClient'
 import SchemaFAQ from '@/components/SchemaFAQ'
 import { FAQ_TRANSMISSION } from '@/lib/schema/schemaData'
@@ -300,29 +301,19 @@ export default function FAQTransmissionPage() {
     <>
       <SchemaFAQ items={FAQ_TRANSMISSION} />
       <Header />
-      <div className="h-[3px] bg-accent-400 w-full" />
+      <PageHero
+        breadcrumb={[
+          { href: '/', label: 'Accueil' },
+          { href: '/faq', label: 'FAQ' },
+          { label: 'Transmission Assurance-Vie' },
+        ]}
+        titre={<>Questions fréquentes<br />Transmission Assurance-Vie</>}
+        description={<>Article 990 I, Article 757 B, abattements par bénéficiaire, clause bénéficiaire - tout comprendre sur la fiscalité successorale de l&apos;assurance-vie.</>}
+      />
       <main style={{ backgroundColor: '#F7F3EC' }}>
         <div className="max-w-4xl mx-auto px-6 py-16">
 
           <header className="mb-12">
-            <nav className="flex items-center gap-2 font-mono text-xs text-neutral-400 mb-8">
-              <Link href="/" className="hover:text-primary-600 transition-colors">Accueil</Link>
-              <span>/</span>
-              <Link href="/faq" className="hover:text-primary-600 transition-colors">FAQ</Link>
-              <span>/</span>
-              <span className="text-neutral-600">Transmission Assurance-Vie</span>
-            </nav>
-
-            <div className="h-[2px] w-10 bg-accent-400 mb-6" />
-
-            <h1 className="font-serif text-4xl font-bold text-neutral-900 mb-4">
-              Questions fréquentes<br />Transmission Assurance-Vie
-            </h1>
-            <p className="text-lg text-neutral-600 max-w-2xl mb-10">
-              Article 990 I, Article 757 B, abattements par bénéficiaire, clause bénéficiaire -
-              tout comprendre sur la fiscalité successorale de l&apos;assurance-vie.
-            </p>
-
             <Link
               href="/assurance-vie/transmission"
               className="block bg-primary-600 text-white rounded-xl p-6 hover:bg-primary-700 transition-colors group"

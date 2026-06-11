@@ -1,5 +1,8 @@
 ﻿import type { Metadata } from 'next'
 import Link from 'next/link'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 import CrossLink from '@/components/CrossLink'
 import type { ReactElement } from 'react'
 import SchemaFAQ from '@/components/SchemaFAQ'
@@ -476,37 +479,19 @@ export default function FAQAssuranceViePage() {
  const categories = ['utilisation', 'fiscalite', 'cas-specifiques', 'optimisation'] as const
 
  return (
- <div className="min-h-screen bg-neutral-50">
-      <SchemaFAQ items={FAQ_ASSURANCE_VIE} />
- {/* Header */}
- <div className="bg-gradient-to-b from-primary-50 to-white border-b border-neutral-200">
- <div className="max-w-4xl mx-auto px-4 py-12">
- 
- {/* Breadcrumb */}
- <div className="flex items-center gap-2 text-sm text-neutral-600 mb-6">
- <Link href="/" className="hover:text-primary-600">
- Accueil
- </Link>
- <span>›</span>
- <Link href="/faq" className="hover:text-primary-600">
- FAQ
- </Link>
- <span>›</span>
- <span className="text-neutral-900 font-medium">Assurance-Vie</span>
- </div>
-
- {/* Titre */}
- <h1 className="text-5xl font-bold text-neutral-900 mb-6 leading-tight">
- Questions fréquentes<br />
- Assurance-Vie
- </h1>
- 
- <p className="text-xl text-neutral-700 leading-relaxed">
- PFU vs IR, abattement 8 ans, versements avant 2017: les mécanismes
- fiscaux du rachat d&apos;assurance-vie expliqués avec des chiffres.
- </p>
- </div>
- </div>
+ <>
+ <Header />
+ <SchemaFAQ items={FAQ_ASSURANCE_VIE} />
+ <PageHero
+   breadcrumb={[
+     { href: '/', label: 'Accueil' },
+     { href: '/faq', label: 'FAQ' },
+     { label: 'Assurance-Vie' },
+   ]}
+   titre={<>Questions fréquentes<br />Assurance-Vie</>}
+   description="PFU vs IR, abattement 8 ans, versements avant 2017 : les mécanismes fiscaux du rachat d'assurance-vie expliqués avec des chiffres."
+ />
+ <div className="bg-neutral-50">
 
  {/* Lien vers calculateur */}
  <div className="max-w-4xl mx-auto px-4 py-8">
@@ -624,5 +609,7 @@ export default function FAQAssuranceViePage() {
  </div>
  </div>
  </div>
+ <Footer />
+ </>
  )
 }

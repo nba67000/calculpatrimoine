@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PageHero from '@/components/PageHero'
 
 export const metadata: Metadata = {
   title: 'FAQ - Questions fréquentes | CalculPatrimoine',
@@ -60,26 +61,16 @@ export default function FAQIndexPage() {
   return (
     <>
       <Header />
-      <div className="h-[3px] bg-accent-400 w-full" />
+      <PageHero
+        breadcrumb={[
+          { href: '/', label: 'Accueil' },
+          { label: 'FAQ' },
+        ]}
+        titre="Questions fréquentes"
+        description="Retrouvez les réponses aux questions les plus courantes sur chacun de nos calculateurs."
+      />
       <main style={{ backgroundColor: '#F7F3EC' }}>
         <div className="max-w-4xl mx-auto px-6 py-16">
-
-          <header className="mb-12">
-            <nav className="flex items-center gap-2 font-mono text-xs text-neutral-400 mb-8">
-              <Link href="/" className="hover:text-primary-600 transition-colors">Accueil</Link>
-              <span>/</span>
-              <span className="text-neutral-600">FAQ</span>
-            </nav>
-
-            <div className="h-[2px] w-10 bg-accent-400 mb-6" />
-
-            <h1 className="font-serif text-4xl font-bold text-neutral-900 mb-4">
-              Questions fréquentes
-            </h1>
-            <p className="text-lg text-neutral-600 max-w-2xl">
-              Retrouvez les réponses aux questions les plus courantes sur chacun de nos calculateurs.
-            </p>
-          </header>
 
           <div className="border-t border-neutral-300">
             {FAQ_SECTIONS.map((section) => (
