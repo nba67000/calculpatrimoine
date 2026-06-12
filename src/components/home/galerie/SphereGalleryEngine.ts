@@ -20,10 +20,10 @@ const CARD_SHADOW = '#E8E0D0'
 
 // Rayon de la sphère et taille des cartes (unités monde).
 const RADIUS = 28
-const CARD_W = 12.5
-const CARD_H = 7.8125 // ratio 1280x800
+const CARD_W = 16
+const CARD_H = 10 // ratio 1536x960
 // Distance d'approche de la carte sélectionnée (remplit l'écran à fov 72).
-const SELECT_DIST = 6.8
+const SELECT_DIST = 8.4
 
 // Easing "Lenis-like" : interpolation exponentielle vers la cible.
 const EASE = 0.075
@@ -130,8 +130,8 @@ export class SphereGalleryEngine {
     const maxAnisotropy = this.renderer.capabilities.getMaxAnisotropy()
 
     data.forEach((card, i) => {
-      // y ∈ [-0.58, 0.58] : bande autour de l'horizon, lisible depuis le centre.
-      const y = n > 1 ? (1 - (i / (n - 1)) * 2) * 0.58 : 0
+      // y ∈ [-0.68, 0.68] : bande un peu plus haute pour aérer les tuiles agrandies.
+      const y = n > 1 ? (1 - (i / (n - 1)) * 2) * 0.68 : 0
       const ringR = Math.sqrt(1 - y * y)
       const phi = i * golden
       // Légère variation de profondeur pour le parallaxe.
@@ -431,8 +431,8 @@ function resolveFont(cssVar: string, fallback: string): string {
  * description grise, flèche or.
  */
 function createCardTexture(card: SphereCardData): THREE.CanvasTexture {
-  const W = 1280
-  const H = 800
+  const W = 1536
+  const H = 960
   const canvas = document.createElement('canvas')
   canvas.width = W
   canvas.height = H
@@ -441,15 +441,15 @@ function createCardTexture(card: SphereCardData): THREE.CanvasTexture {
   const sans = resolveFont('--font-inter', 'system-ui, sans-serif')
   const mono = 'ui-monospace, SFMono-Regular, Menlo, monospace'
 
-  const inset = 24 // marge pour loger l'ombre portée
+  const inset = 28 // marge pour loger l'ombre portée
 
   // Ombre portée façon "3px 3px 0" des cartes du site (décalée, nette).
-  roundRect(ctx, inset + 10, inset + 10, W - inset * 2, H - inset * 2, 34)
+  roundRect(ctx, inset + 12, inset + 12, W - inset * 2, H - inset * 2, 40)
   ctx.fillStyle = CARD_SHADOW
   ctx.fill()
 
   // Carte blanche + bordure fine
-  roundRect(ctx, inset, inset, W - inset * 2, H - inset * 2, 34)
+  roundRect(ctx, inset, inset, W - inset * 2, H - inset * 2, 40)
   ctx.fillStyle = CARD_BG
   ctx.fill()
   ctx.lineWidth = 3
@@ -458,44 +458,44 @@ function createCardTexture(card: SphereCardData): THREE.CanvasTexture {
 
   // Filet or à gauche (signature des cartes du site)
   ctx.fillStyle = ACCENT_OR
-  ctx.fillRect(inset, 150, 8, H - inset * 2 - 220)
+  ctx.fillRect(inset, 178, 9, H - inset * 2 - 264)
 
-  const padX = 92
+  const padX = 108
 
   // Eyebrow : catégorie en mono or, uppercase
   ctx.fillStyle = ACCENT_OR
-  ctx.font = `600 30px ${mono}`
+  ctx.font = `600 34px ${mono}`
   ctx.textBaseline = 'alphabetic'
-  ctx.fillText(card.categorie.toUpperCase(), padX, 142)
+  ctx.fillText(card.categorie.toUpperCase(), padX, 168)
 
   // Titre — anthracite
   ctx.fillStyle = '#1A1A1A'
-  ctx.font = `900 80px ${sans}`
+  ctx.font = `900 94px ${sans}`
   const titleLines = wrapText(ctx, card.nom, W - padX * 2, 2)
-  let y = 248
+  let y = 296
   for (const line of titleLines) {
     ctx.fillText(line, padX, y)
-    y += 92
+    y += 108
   }
 
   // Filet séparateur
   ctx.fillStyle = 'rgba(0,0,0,0.10)'
-  ctx.fillRect(padX, y - 36, W - padX * 2, 2)
+  ctx.fillRect(padX, y - 42, W - padX * 2, 2)
 
   // Description — gris foncé, lisible à distance
-  ctx.fillStyle = '#5A5550'
-  ctx.font = `400 42px ${sans}`
+  ctx.fillStyle = '#544F4A'
+  ctx.font = `400 50px ${sans}`
   const descLines = wrapText(ctx, card.desc, W - padX * 2, 4, true)
-  let dy = y + 38
+  let dy = y + 46
   for (const line of descLines) {
     ctx.fillText(line, padX, dy)
-    dy += 58
+    dy += 68
   }
 
   // Flèche or en bas à droite
   ctx.fillStyle = ACCENT_OR
-  ctx.font = `700 62px ${sans}`
-  ctx.fillText('→', W - padX - 48, H - 80)
+  ctx.font = `700 72px ${sans}`
+  ctx.fillText('→', W - padX - 56, H - 92)
 
   const texture = new THREE.CanvasTexture(canvas)
   texture.generateMipmaps = false
