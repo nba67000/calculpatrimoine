@@ -1,0 +1,237 @@
+(Transcrit par TurboScribe. Passez à Illimité pour supprimer ce message.)
+
+All right, so this will be a new series all about Cloud Code and SEO, so we're gonna do a full build here on how to start a website with Cloud Code and SEO. So some of the things that we're gonna look at in this video are keyword research, how we can use Cloud Code to help us with our keyword research and use MCPs to help us with the data. We're gonna be looking at content and tool creation, okay, it's like really important obviously to create good content. 
+
+We're saying or anything like that, that doesn't really work. You might get some temporary gains or something but it's not gonna work in the long run. Then we're gonna look at technical SEO, pretty simple stuff, nothing too crazy. 
+
+Then I'm gonna be looking at Cloud Cowork to actually help us get some links. Then we're gonna be talking about how to automate all this with scheduled tasks. I do want to touch a little bit at the end about using WordPress with Cloud Code because there's so many websites that already have WordPress, so you might have a client that uses WordPress or for some reason we might need to use WordPress. 
+
+So I think there's something to be learned there as well. So I'm gonna add a little section in at the end. I'll timestamp it so you can skip forward if you want to just see about that. 
+
+So a little bit about how we're going to be doing this. We're gonna be using Cloud Code in the terminal to develop a website. We're gonna be using Next.js because you can do like a static site generation which allows Google to easily read what's on the page. 
+
+We're gonna use a GitHub repo to send it off and store things there. We're gonna be using the SEMrush MCP to do our keyword research and help us out there. Then we're gonna deploy on Netlify and that's gonna be our live site.
+
+This is basically, we're just gonna go through the process of building a site out in this video and we're gonna go through all the aspects of SEO. If you don't know me, my name is Conor. I'm an SEO and marketer. 
+
+I've had more than 15 million views to my own websites through SEO. So I'm also keeping notes here in a Google Doc that you can run through and extra information and links and prompts and all of that. It's all completely free. 
+
+So just to start off really just to talk about what to build with. We're gonna be building with Next.js. You can use Next.js or Astro for the blog which is super fast. If you're building with something like React for example, then you know like lovable and all these tools. 
+
+They often use React but it's not really gonna show on Google because it's client-side rendering. So it's gonna be difficult for Google to read the page. It's not impossible. 
+
+I'm not saying that because I have some sites with React that are ranking in the top of Google. Super simple stuff that's like low competition. I'm not saying you can't rank with these websites. 
+
+You can. We're gonna be doing this in an SEO way. So search engine optimization. 
+
+We want to try and do the best for Google and search engines, chat GPT, all that stuff. If you do decide to build in React then you can use something like prerender.io to render the HTML. So basically you'll just show like Google a version of the HTML and so they can read and understand your content really well. 
+
+It's really important to think about how Google can see you know your website. It's gonna crawl your website and see often it's just gonna take the top like it's just gonna go what is this website all about and try to scan the top of your website to see what it is. So keep all the information right up at the top. 
+
+Most important stuff. Okay and we will be deploying with Netlify and Netlify has an extension where you can use this prerender. So in case you are using React. 
+
+So for this tutorial I just made a simple website and in Next.js just ask for a simple website. Ask Logcode to make me this simple website and I just put up a service of adding cloud code for SEO because that's what I'm doing right now. So I thought that would be something simple that we can do. 
+
+Okay so this is me in cloud code now and yeah just like I said before I just put a prompt in saying make me a Next.js website about making cloud code websites for SEO. And now we have this just on my local machine so we haven't deployed it or anything yet. We're just really at the very start. 
+
+So it's a good time to get into keyword research. So let's get into keyword research. So before we do that I think it's just important to think about these two different points of keyword research. 
+
+It's just millions of ways you can do keyword research. So so many. I mean everybody can have their own way of doing it but I feel like there is one way that is kind of commonly accepted among SEOs now and that's topical authority. 
+
+So we're gonna be going through topical authority for our new site which is gonna be you know the main topic is gonna be cloud code for SEO which is obviously what we're talking about here. But like you have to think about your main topic what it is for your business right. And one thing I just want to draw your attention to is intuition versus data. 
+
+I find this to be like I could talk about this for seven hours I mean. But I find intuition is probably the best way to do SEO keyword research or any sort of content research. What I mean by intuition is that you understand your audience and what they're asking. 
+
+So the best person often who can do keyword research for the business is the business owner because if they're in there every day and there people are asking them questions. So really what it is is like domain expertise. So when you are really really into the business you have this domain expertise you just know everything about the business. 
+
+So many years I didn't use any data for my keyword research at all because I knew exactly the questions that were gonna get me tons and tons of traffic. And that's how I ended up with millions and millions of traffic by just using my own intuition and my own domain expertise in the niche. And I didn't use data at all. 
+
+And then one of the main reasons was because it's an estimate and I knew that you know my intuition would probably know more than the data estimate. But in this case we are in a very different world because we are using cloud code to automate everything. And cloud code does not have intuition about the topic that we're going to talk about. 
+
+Because what's doing the work now in this case is not me. I'm not writing the article. I'm not choosing the topics. 
+
+I want to hand off everything to cloud right. So in this case data becomes really really valuable. And it's valuable because if you just use cloud by itself it's going to hallucinate and that is going to be a disaster for your website because you're going to be publishing blog posts that cloud thinks and just guesses. 
+
+But why not have a good estimate with data. So that's why we're going to be using an MCP to get good data. So to get data we're going to be using the SEM rush MCP. 
+
+So you will need to have a paid account. You can sign up here for free. I think they have a certain amount of days on a trial. 
+
+All right. So to use this we just need to add this into our terminal here. And now the MCP has been added to cloud. 
+
+OK so let's check it out here to see if we have it. OK so I need to open a new instance now to check it. I can see that I have it here. 
+
+You just go forward slash MCP and you can check which MCP servers you have. OK now it's just asking me to authenticate. And I did that. 
+
+I just opened this link and now I have it authenticated. OK and I got my search volume back. So there are one hundred and ten thousand searches a month for cloud code. 
+
+Amazing. Let's try cloud code for SEO. So I just put in some long tail keywords as well. 
+
+So you can see how it shows up now in cloud code. We can have different keywords the search volume involved in it. And it even does nice opportunities. 
+
+So that's pretty nice that cloud code can already do this. You know cloud API has a nice search volume and low competition. So I do like that. 
+
+It's pretty pretty good. And if you do want to check how many API credits you're using you can go into your SEMrush account and go into your profile here and then you can see how many API units you have. So if you have never heard of topical authority before you can see that there is generally a pillar page right. 
+
+And then you have different clusters. So it's like you kind of put topics together so that Google can see that OK this is a topic. This is a topic. 
+
+And then you link up and down to like supporting articles long tail keywords and then you have your bigger pages at the top. So that's kind of the idea with topical authority. So I made a prompt that you can also get in the documents here. 
+
+So this is the topical authority prompt So I'm going to ask cloud code to go through the topical authority prompt here and it's going to give me a 90 day roadmap of all the topics that I should produce. OK so now it has done its reports and it's got like it's done all the research here now for me and you can see now we have our pillars. These are SEO guides you know cloud SEO guide and then cloud code for SEO master guide. 
+
+That's kind of like our pillar post right. And then kind of go down you know get started a keyword keyword research a little bit of what I'm doing now. Content optimization run an SEO audit etc etc use cases. 
+
+So SEO use cases and then we have our detailed page specs. So all this information is going to be super important when we're doing our articles. So we also have our internal linking plan and it's going to do that as part of any topical map is like this page links to this page etc etc. 
+
+So it's great to have give cloud code all that information. And the key thing that you need to think about here is really you know we're trying to rank for this keyword cloud SEO. And if for example we just publish one blog post about cloud SEO it's you know it might do well if there's low competition. 
+
+But if we have 10 blog posts then Google is really going to see oh this is like this person is a real authority. So it might be you know something like getting started. Nobody's googling that. 
+
+But keyword research then is like OK boom you know that's like how to do keyword research with cloud. Then you can see that that's already gaining the topic authority that we're an expert if you give top like high quality guides. OK. 
+
+And it's now given us full topical authority cloud code for SEO everything to do with SEO SEO tools cloud AI cloud API and all of that is like finding our different competitors and what's winning and then all of the pages that we should create. Now where this really comes in handy with the SEM Rush MCP will be for something like low competition. So I like to do kind of a topical map as one parties like the round one is like if you put the topical map there that looks great. 
+
+But then afterwards I like to do a bit of like low competition. I like some quick wins or I always want to see some traffic coming fast. I'm pretty impatient like most people. 
+
+So let's try some low competition keywords and the best thing that I always do with clients and stuff is like find trending keywords and that really really works well. So I just said find me some extra keywords that are low competition with decent search volume that you miss with the SEM Rush. OK. 
+
+And it's found me some keywords. I'm not sure if AI writing tools is not high competition. I feel like that will be quite a lot of competition to be honest especially for a new website. 
+
+But can SEO be automated. I think that's a really good keyword. You see it's kind of like there is a bit of intuition where you just kind of go OK that's a really good. 
+
+You know people will want to do that business process automation right. There's 6600 people searching that every month and then some emerging opportunities. I love this type of stuff is like stuff that's just coming out. 
+
+For me it always gets the most traffic. So there's content audits. Yeah definitely really good. 
+
+So it's got some recommended actions that we can add to our pillars. So I'll just say OK I had that I just said add that to our topical map and save it in its own subfolder in this part. OK. 
+
+So that's basically it for the keyword research. We want to do all the keyword research in one go and then you know we don't want to be calling this API all the time and using up credits every single time. So it's good to get it done and then we're ready to get on to creating the content and how the Web site will look. 
+
+All right. So let's start talking about content kind of before we really get into the content side of it. I just thought it was a good time now to organize everything. 
+
+So when we started off we just did the code base right. The next day is a site that you see here. Then we did the research. 
+
+So what I did was kind of like put all of this together into one folder right. And now we're going to move on to the content folder. And I basically just asked Claude to organize everything for me into you know a code base research and then Claude MD. 
+
+So the Claude MD is kind of as it says here the brain of what we're doing here. I didn't put this at the start because you know I wasn't exactly sure what I was building. So sometimes it can be good to kind of like just do these parts and now get it into a nice organization because at this point we're going to add the content folder as well. 
+
+So when I kind of need the content to go into the research and into the code base etc. So it's going to be a little bit more complex. So we need a nice folder organize. 
+
+So what we're going to talk about this section is context. So what are we actually going to you know give the AI some context first because if it just goes off and writes itself it's not really good enough in my opinion. I've published like more than thousands of blog posts and it's fine. 
+
+I mean you might get something half decent but we want to get something amazing don't we. So we want to talk about context. We're going to put it into drafts right. 
+
+So we're just going to get our first draft going and written. But then we want to check it of course. And I just put here for an image right. 
+
+If you want to add images to our blog posts and then set to publish. So this is going to be kind of the thinking behind it. So. 
+
+So yeah back to the document about this video. So as usual with AI the most important thing is context like context is just super super important. So we can give the following context right and will really help. 
+
+So some some things that we can give are examples of good work. This will be really really important to show the AI what is good work. If it doesn't know what is good work then how is it supposed to you know replicate it right. 
+
+We can use YouTube transcripts right. For the example of this site that we're building now we could use this video to show OK this is how to you know create a cloud SEO with cloud code and then your own thoughts and expertise. So I'm using these like voice transcripts that you see a lot in this niche. 
+
+I guess it's only in this niche of AI that people are doing this. But like I use a lot now I use one called Willow and to just talk and give your own thoughts and expertise and then say OK cloud use that as well. So of course cloud will be doing the writing here so it has its own information too. 
+
+So yeah cloud is great. I mean it knows a lot so why not use that. So we can also use a web search firecrawler MCP so this can it's kind of like a scraper right so go off and scrape the content and bring it back as markdown as like all organized for what we need. 
+
+So it's super helpful that cloud can read that well. And then you can also give it your brand voice and style guides. I don't really go into that too much. 
+
+There's just a few things that I think is really important. And you know like it's down in the last paragraph there you can read this document if you want to learn more about what it is that I think is important. But one thing that I don't think is valid at all is this humanizing thing that is just absolute nonsense. 
+
+So like don't ever use any of this home humanizing tools. That's like the exact wrong way to do it. Basically what they're trying to do is pass bypass these AI written tools. 
+
+It's really dumb because they just change the word order and end up like with really bad writing and like the goal here is to make it better. Like we want to start with AI and then make it better not worse like that just makes no sense to me whatsoever. So don't do anything about that humanizing prompts anything like that is just rubbish. 
+
+Don't please don't. So let's move on. OK so I'm going to organize it like this is going to be content right folder then with the context all of these things the drafts the images right. 
+
+So this is the way that I want to set up my folder and we've got a bit more guide here. Yeah all of this is down in the PDF down below. So I'm just going to copy this now and put it into cloud code. 
+
+OK so it's just going to keep creating this now for me. So a lot of things I'm thinking about when writing is I keep sentences short right. People skim read a lot and if you just have a big block of text the worst thing ever right. 
+
+So two to four sentences is ideal and possibly my formatting would be like even one sentence in a paragraph. I often write like that even a couple of words for dramatic effect. All of this is like super important kind of like the rhythm of how you write. 
+
+If you think about like a lot of how writing is done on line it's like the A.I.'s rhythm is off. You can tell that the rhythm is wrong. So you need to tell cloud that.
+
+OK so it says now that it's done it says when you're ready to write just add three best existing pieces to writing examples that M.D. and any transcripts to transcripts. OK so now it's going to read this before it ever writes any. OK we'll also ask it how it's going to connect the research tab and the keyword. 
+
+So I'm going to ask it how we can best do that. How are you going to get the topics to write about. OK so I think I did put this in the cloud dot M.D. but let's test it out to see if it knows. 
+
+OK so it's not explicit. So I want it to be in the cloud M.D. I also want to know how it's going to be you know ticked off and stuff like that. So how are we going to do that. 
+
+How do you plan to tick off what is being done and what has not been done. Probably there's a better way to explain that. No what I meant was how do you plan to manage the contents like as in when one is done. 
+
+How do you plan to make sure that it's been done and you don't do it again. My brain is not working well. I got to think about how to explain this. 
+
+I think you know what I'm talking about but I can't figure out how to say it as well. OK. Content status. 
+
+Yeah. OK. OK.
+
+So before we're talking about the examples. So I just used Firecrawl there too. And I said can you use Firecrawl to scrape this page and use it as a good example of good writing. 
+
+So this is from a marketer milk. So it's really good website about marketing. So I really like the stuff here that this guy does.
+
+So I'm going to use this as an example. OK. And let's just get it started now and to do a test run before we had any images or anything like that. 
+
+I'll just say OK and let's do a test run of the first topic that you have and post it to the blog and that we have. So the idea really is just to build this up over time. It's not necessarily that we have to have the best thing straight away but let's see how it goes and then we're going to iterate and try and get this better and better. 
+
+OK. So my blog post is done now and obviously I have a lot of work to do still. And like I said and yeah I mean it's just not really good enough at all to be honest. 
+
+This is just I know apart from the styling obviously we haven't done the styling of the Web site and this is just a demo video but like this is really not good enough. This is exactly what I was talking about what I don't want is this kind of like heading and everything looks generically the same. That's what I hate. 
+
+Our eyes as humans just do not like this. This is fine I mean but look it's out of date. So tons and tons of problems here. 
+
+So I'm going to have to go through this and tell it all of the issues that we have. So that's just part of it. You have to iterate and try and get it better and better. 
+
+And so it does seem to be following the roadmap that we have and the workflow. But no it's definitely not. So I'm just going to have to go through this and ask it to you know fix the things and obviously like develop the Web site so that it looks better. 
+
+OK. It's kind of going to go too much into detail so I won't go further into that. But for adding images AI generated images we can just add like an MCP that will allow Claude to do that and then add that to the workflow as well. 
+
+I'll leave this one here it's kind of got like all the image models. So that's the one that I use. And then for screenshots as well there's a tool that you can use this one to actually call an API make a screenshot and do it for you that way. 
+
+So to add screenshots like in this niche it depends a little bit on the niche like in this niche an AI generated image isn't going to really help that much your blog post is it because it's about Claude code. Nobody needs a random image and do they have a code or anything like that. But if you think about a screenshot it could be pretty important for the tech niche for example. 
+
+So let's move on to technical SEO. So Claude is doing my technical SEO. Of course there's many more things that we can do but we'll just leave it there for now. 
+
+The next step I also want to do is like deploy it and just get the site live. It has updated the blog post so still don't like this to be honest. But I mean this is getting it making it a little bit more readable. 
+
+I think it does look a little bit nicer. It reads a little bit better than it used to. So another little bit of work we need to do but we're making progress. 
+
+All right. So it is finished the technical SEO and set up so it's all done here we can see everything that we asked for and the build is verified and yet it created the site map. So this is what you need to find if you check any Web site online they should have a site map. 
+
+It's just like the URL plus a site map or forward slash site map dot XML. And then you can see the different pages here. So let's get on to backlinks. 
+
+So I haven't really found a reliable way to automate backlink generation like just Claude goes out and gets me backlinks. So basically if you don't know like a backlink is any link that you get from another Web site. I've tried it before many times with Claude and fire crawl things like that. 
+
+I do believe we're getting close to it being automatic automated but the agents and all the captures and all that stuff probably if you're a super technical developer you probably have a way of doing this but I haven't figured that out. So if you want to put it in the comments to help other people that would be great. But for me what I'm using is Claude co-work and to work together to get a to get the backlink. 
+
+So I give kind of a list to Claude co-work and say OK let's do this together and it's kind of like having a partner basically. I guess that's the name Claude co-work where it can kind of like do most of the work and then I just log in. So I do this sometimes I'm doing other work and then like it just pops up and then it says OK go log in there. 
+
+And that's how I'm doing backlinks. It's actually quite that quite fast. I mean like you can get like seven or eight and 30 minutes or something like that because it's doing the bulk of the work is like you know writing in the descriptions or adding the icons and like clicking all the buttons and all of that courses cost tokens and stuff. 
+
+But it is super super helpful to do all that because I find backlinks the most boring thing in the world and just really boring boring work to keep clicks and keep clicking around and adding your links and then they don't want you to add your links all that stuff. So it's good to have a list and a list of places to put your backlink. And I think that yeah you really need to get links from the social media accounts. 
+
+Also pretty annoying to be honest to try to do all these backlinks with social media and stuff. But yeah I mean it just really helps nowadays for indexing and just to prove that you are like a real website and stuff like that. I think you do now is like Google for a while there you didn't need as many backlinks. 
+
+I think it's kind of clear now that if you want to build lots of content and like the way that we're doing it this website and all websites is like you want to have like content building. And from my experience over the last year or two since a dramatic change in the Google algorithm and it's basically it seems to be you can go between 50 and 100 articles without that many links really and you just build a few links or whatever. But if you're trying to scale up to 300 400 pages anything above that don't even mention 10,000 you're just gonna get like clap straight back down to nothing. 
+
+So and we're testing out to get decent traffic I mean but is it really worth it? Maybe it might be to some people and but not really a long-term business strategy I suppose. Another thing you can do is add a link to startup directories. So AI directories tons of those and another thing you can do is digital PR. 
+
+So this is probably one of the most legit ways of doing it because you know companies again we're just trying to prove to Google that we are company and that you know we're a real business or something. Google hates with these new like people who are just writing for the you know for the internet and stuff like that for whatever reason. I mean I used to provide super valuable content to Google and I don't do that anymore because they just don't appreciate that at all. 
+
+So I don't know why but maybe they just think it's not valuable or something and but anyway digital PR is a good way to you know make your brand stand out across the web. We're in a web right so there's all different websites so more publications and PR you can get and news sites that type of thing is really good idea. So to use co-work you just need to get the app onto your desktop and then just give a link you know all the links that you want to do and say okay help me I want to get some backlinks for this website and then yeah basically that's how it's gonna do. 
+
+It's really not that hard but it's just tedious. Okay so let's get into automation. So this is really where things get interesting. 
+
+So cloud code doesn't really have as many automation tools as like something like open cloud or something like that but they have released things that allows you to do scheduled tasks and that really is really valuable for SEO of course because SEO is like kind of boring work that you've got to do like every day. You can't just do like loads of it. It has to be something that you do every day. 
+
+So really interesting that we can do that. Here we have scheduled tasks. So scheduled tasks are only available on the web version. 
+
+I should say the web version and the desktop app. So you can find that up here in the desktop app. You have the chat, the co-work and then cloud code. 
+
+So here you can run scheduled tasks. So you just do a new task and you can go like new remote task and then you can do it at any point or new local task. So you could just do you know blog post publish or something like that and then just say right you can select the folder that you're in right that we're in here today and this website that we're making and then we could just say simply like go through the plan, find the next topic, write it, publish it etc and then it will just do that every single day but it's probably better if you do it in remote task and then use a github repository to actually store it and then that will send it to Netlify. 
+
+Netlify will see that this is there's a new update and it's going to deploy it so everything can work like that and yeah pretty cool automation basically because this is really about how to automate your SEO so really really that's probably the most powerful way. I haven't really done it fully but that is the theory behind it. You can also use these forward slash hooks so hooks fire automatically when something happens so every time Claude writes a new draft into your content folder then a hook can run an SEO check on it automatically so it's kind of like do this task and then automatically this next task will happen so again it's just trying to make that workflow happen automatically step by step and then there's also the loop commands if you want to just make Claude a bit more autonomous and stop asking you questions all the time. 
+
+Okay so I did say that I talk a little bit about WordPress as well so if you are running a blog on WordPress like for most people probably be an older blog or something like that and you want to use cloud code with it it is possible now and it's supported with the MCP like most people will be you know hosted with you know hosting.com or Kinsta or one of these hosts right that's generally how the web works so we can connect cloud code to WordPress and basically how you do it is you need to get an application password first I'll show you how to do that now and then run this in your terminal so whatever to open up your terminal and then just run this you need to change out these things here so in my case it would be conormartin.com and just change that and then API username we need to get a username and to do that we just go to WordPress here and go to users and then profile sorry all users and and then go to one go to your user and then down here there's an application password so we just need to add that so say cloud code and then there is a password and down there that you can't see that M you can use in here so and your username is just your WordPress username so that should be fine and let me know if you have any problems with that so you can tell it to create a draft post set categories add tags schedule publishing dates and push content live so really really cool ability to do that and honestly it's as you can see you know with the blog that we're setting up there can be really really valuable and because a lot of the things that and WordPress saves you a ton of time is the stuff the technical SEO it is a bit bloated I mean yeah of course there are some issues with it and there's too many features and so many things that you can do that are probably not really that necessary anymore with this ability to use AI for coding but I mean for all the older websites you're sure surely you're gonna work with people who have WordPress sites because
+
+(Ce fichier dure plus de 30 minutes. Passez à Illimité sur https://turboscribe.ai/fr/ pour transcrire des fichiers jusqu'à 10 heures.)
