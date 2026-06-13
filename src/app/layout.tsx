@@ -113,7 +113,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: 'https://calculpatrimoine.fr',
+    canonical: 'https://calculpatrimoine.fr/',
   },
 
   category: 'Finance',

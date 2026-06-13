@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: 'Plus de 14 calculateurs patrimoniaux basés sur les textes officiels. Aucun conseil, aucune donnée conservée.',
     type: 'website',
   },
-  alternates: { canonical: 'https://calculpatrimoine.fr' },
+  alternates: { canonical: 'https://calculpatrimoine.fr/' },
 }
 
 // Palette signature home : noir charbon + blanc + or discret (Qonto-like).
