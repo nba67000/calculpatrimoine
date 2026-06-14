@@ -67,6 +67,15 @@ complète :
 
 ---
 
+## Proposés (P3) - en attente de validation
+
+| Slug | Nom | Statut | Source | Note |
+|------|-----|--------|--------|------|
+| `donation/demembrement-soulte` | Donation-partage avec démembrement + soulte | `proposed` | /forum-watch 2026-06-14 | V2 potentielle de `donation/demembrement` : gérer un partage inégalitaire avec soulte chiffrée (droit de partage 2,5 % Art. 747 CGI). Issu du fil MoneyVox "Transmission RP à un des 2 enfants" (54276). |
+| `plus-value-immobiliere/demembrement` | Plus-value immobilière en démembrement | `proposed` | /forum-watch 2026-06-14 | Cession conjointe usufruitier + nu-propriétaire (Art. 150 U + 621 CGI, barème 669). Chaque branche calcule sa PV selon sa quote-part. Pas couvert par `/plus-value-immobiliere`. Issu du fil MoneyVox "Fiscalité vente RP+secondaire en nue-propriété" (54268). |
+
+---
+
 ## Journal des scans `/forum-watch`
 
 - **2026-05-31** : 5 catégories MoneyVox scannées, 13 fils retenus sur 30 jours.
@@ -87,6 +96,13 @@ complète :
   `deficit-foncier` et `vente-vs-donation-intrafamiliale`. La variante
   "déficit foncier SCI à l'IR" est fusionnée dans `deficit-foncier`.
 
+- **2026-06-14** : 5 catégories MoneyVox rescannées, 75 fils survolés,
+  14 retenus, 6 fetchés en détail. 4 réponses-calculs rédigées (neveu
+  vente vs donation 54245, versements enfants majeurs 54240, transmission
+  RP démembrement 54276, déficit foncier SCI à l'IR 54254). 2 idées
+  nouvelles ajoutées en P3 : `donation/demembrement-soulte` et
+  `plus-value-immobiliere/demembrement`.
+
 ---
 
 ## Règles de mise à jour
@@ -98,4 +114,4 @@ complète :
   une description minimale. Ne jamais faire un calculateur `proposed` sans
   validation humaine - seuls les `todo` sont autorisés à l'implémentation.
 
-Last updated: 2026-06-09 (ajout suivi `succession` - exonération Art. 796-0 ter CGI manquante, identifiée par `/verif-sources`).
+Last updated: 2026-06-14 (scan /forum-watch : 2 idées P3 ajoutées en proposed).
