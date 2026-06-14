@@ -63,7 +63,7 @@ complète :
   cette configuration. Implémenter : 3 champs UI optionnels (statut civil,
   âge ≥ 50 ou invalide, cohabitation 5 ans) qui basculent la part en exonéré
   TEPA dans `src/lib/succession.ts`. Lacune identifiée par `/verif-sources`
-  2026-06-09. Statut : `todo` · Priorité : `P2`.
+  2026-06-09. Statut : `done` (2026-06-14) · Priorité : `P2`.
 
 ---
 
@@ -114,4 +114,4 @@ complète :
   une description minimale. Ne jamais faire un calculateur `proposed` sans
   validation humaine - seuls les `todo` sont autorisés à l'implémentation.
 
-Last updated: 2026-06-14 (scan /forum-watch : 2 idées P3 ajoutées en proposed).
+Last updated: 2026-06-14 (succession V2 livrée : exonération Art. 796-0 ter frères/sœurs).

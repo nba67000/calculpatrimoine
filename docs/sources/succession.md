@@ -1,6 +1,6 @@
 # Sources - Succession : droits par héritier
 
-**Dernière vérification** : 2026-06-09 (création rétrospective)
+**Dernière vérification** : 2026-06-14 (extension TEPA Art. 796-0 ter)
 **Millésime fiscal** : Barème 2026 (abattements et tarifs inchangés depuis 2012)
 **Calculateur concerné** : `src/app/succession/page.tsx`
 
@@ -45,9 +45,11 @@ Le calculateur partage l'essentiel de ses sources avec `donation/droits` (mêmes
   - Statut : 👁 HUMAINE (Nicolas, 2026-06-09 : Loi TEPA art. 8 confirme la création de l'Art. 796-0 bis)
 
 - **Article 796-0 ter CGI** - Exonération frère/sœur célibataire, cohabitant 5 ans avec le défunt (créé par Loi TEPA art. 10)
-  - Statut : 👁 HUMAINE (Nicolas, 2026-06-09)
+  - Statut : 👁 HUMAINE (Nicolas, 2026-06-09) + cross-checks 2026-06-14 (service-public.gouv.fr F14198 ✅, BOFiP BOI-ENR-DMTG-10-20-10 §30/40/50 ✅)
   - Point clé : exonération totale si le frère/sœur (i) est célibataire/veuf/divorcé/séparé, (ii) est âgé de +50 ans **ou** invalide, **et** (iii) a constamment cohabité avec le défunt pendant les 5 années précédant le décès.
-  - **Cas NON TRAITÉ par le calculateur** — à ajouter dans la section "Cas non traités" ci-dessous.
+  - **Cas traité par le calculateur depuis 2026-06-14** (extension V2, voir section "Cas traités" ci-dessous).
+  - Tolérances administratives (BOFiP § 50) : domicile commun n'exige pas cohabitation continue ; hospitalisation / EHPAD admis si le départ est postérieur à l'achèvement des 5 ans.
+  - Jurisprudence : frères/sœurs **PACSÉS entre eux** exclus de l'exonération (statut non célibataire).
 
 ### Loi
 
@@ -64,14 +66,21 @@ Le calculateur partage l'essentiel de ses sources avec `donation/droits` (mêmes
   - Statut : ☐ NON TESTÉE (URL à reconstruire avec identifiant complet)
   - Référence textuelle utilisée dans le code : § 230 — "les sommes 757 B donnent ouverture aux droits de mutation par décès dans les conditions de droit commun".
 
+- **BOFiP BOI-ENR-DMTG-10-20-10** - Successions, exonérations motivées par la qualité du successeur (Art. 796-0 ter)
+  - Statut : ✅ OK (testée 2026-06-14 via URL identifiant complet `BOI-ENR-DMTG-10-20-10-20180619`)
+  - URL : https://bofip.impots.gouv.fr/bofip/1772-PGP.html/identifiant=BOI-ENR-DMTG-10-20-10-20180619
+  - § 30 : statut civil exigé au jour de l'ouverture de la succession (pas besoin que la condition remonte aux 5 années antérieures).
+  - § 40 : âge >50 ans **ou** infirmité empêchant de travailler ; aucun taux d'invalidité minimal fixé légalement.
+  - § 50 : domicile commun au sens des Art. 102 et s. Code civil ; tolérance hospitalisation / EHPAD admise.
+
 ---
 
 ## Sources de vérification croisée (URLs stables)
 
 - **service-public.gouv.fr - F14198** - "Comment sont calculés les droits de succession ?"
-  - Statut : ☐ NON TESTÉE
-  - URL probable : https://www.service-public.gouv.fr/particuliers/vosdroits/F14198
-  - À tester au prochain audit.
+  - Statut : ✅ OK (testée 2026-06-14)
+  - URL : https://www.service-public.gouv.fr/particuliers/vosdroits/F14198
+  - Confirme les 3 conditions cumulatives Art. 796-0 ter : (i) cohabitation 5 ans, (ii) célibataire/veuf/divorcé/séparé, (iii) +50 ans ou infirmité empêchant de travailler.
 
 - **impots.gouv.fr** - Page "Succession"
   - Statut : ☐ NON TESTÉE
@@ -109,7 +118,9 @@ Identiques à `docs/sources/donation-droits.md` (barème ligne directe, époux/P
 | Légifrance Art. 788 CGI | Abattement défaut Art. 788 IV : 1 594 € | 1 594 € | ✅ | 2026-06-09 |
 | Légifrance Art. 779 CGI | Tous abattements 100 000 / 15 932 / 7 967 / 159 325 € | identiques | ✅ | 2026-06-09 |
 | Légifrance Loi TEPA 2007 art. 8 et 10 | Crée Art 796-0 bis et 796-0 ter CGI | n/a | ✅ | 2026-06-09 |
-| Légifrance Art. 796-0 ter CGI | Exonération frère/sœur célibataire +50 ans cohabitant 5 ans | non implémenté | ✅ (vu, à implémenter) | 2026-06-09 |
+| Légifrance Art. 796-0 ter CGI | Exonération frère/sœur célibataire +50 ans cohabitant 5 ans | implémenté V2 le 2026-06-14 | ✅ | 2026-06-09 |
+| BOFiP BOI-ENR-DMTG-10-20-10-20180619 | Tolérances admin (hospitalisation, EHPAD, statut civil au jour d'ouverture) | non décisif numériquement | ✅ (testé URL 2026-06-14) | 2026-06-14 |
+| service-public.gouv.fr F14198 | Les 3 conditions cumulatives Art. 796-0 ter | n/a | ✅ (testé URL 2026-06-14) | 2026-06-14 |
 
 ---
 
@@ -157,7 +168,8 @@ Source : JSDoc inline `src/lib/succession.ts:75-82`.
 ### Ce que le calculateur **traite**
 
 - Succession en ligne directe (enfants, parents, ascendants).
-- Exonération totale du conjoint / partenaire PACS (Loi TEPA).
+- Exonération totale du conjoint / partenaire PACS (Loi TEPA Art. 796-0 bis).
+- Exonération totale du frère/sœur cohabitant (Loi TEPA Art. 796-0 ter) — extension V2 du 2026-06-14, 3 conditions cumulatives.
 - Frères/sœurs, neveux/nièces, parents éloignés, non-parents.
 - Personne handicapée (cumul abattement Art. 779-II).
 - Rappel fiscal Art. 784 sur 15 ans.
@@ -165,7 +177,6 @@ Source : JSDoc inline `src/lib/succession.ts:75-82`.
 
 ### Ce que le calculateur **ne traite pas** (volontairement)
 
-- **Art. 796-0 ter CGI** - exonération frère/sœur célibataire, +50 ans ou invalide, cohabitant avec le défunt depuis 5 ans (créé par Loi TEPA art. 10). Confirmé textuellement par Nicolas le 2026-06-09. **À ajouter au backlog** : option UI "frère/sœur cohabitant" pour basculer en exonération.
 - Pacte Dutreil (transmission d'entreprise, Art. 787 B CGI - exonération 75 % sous engagement de conservation).
 - Réversion d'usufruit, démembrement successoral.
 - Réduction de droits pour charges de famille (Art. 780 CGI, abrogée par LF 2017).
@@ -182,10 +193,11 @@ Source : JSDoc inline `src/lib/succession.ts:75-82`.
 | Date | Vérifié par | Changements | Commit |
 |------|-------------|-------------|--------|
 | 2026-06-09 | Claude Code (/verif-sources rétrospectif) | Création initiale du fichier sources | _audit-2026-06-09_ |
+| 2026-06-14 | Claude Code (/nouveau-calculateur) | Implémentation Art. 796-0 ter (exonération TEPA frères/sœurs) ; cross-check service-public F14198 ✅ + BOFiP BOI-ENR-DMTG-10-20-10 §30/40/50 ✅ | _à venir_ |
 
 ### Points de vigilance
 
 - ✅ Le calculateur applique l'abattement défaut Art. 788 IV (**1 594 €**) au petit-enfant en succession, **différent** du 31 865 € applicable en donation (Art. 790 B). **Confirmé textuellement par Nicolas le 2026-06-09**.
 - L'exonération TEPA conjoint suppose une situation d'union officielle (mariage ou PACS) en vigueur au décès — pas de concubinage. Confirmé par Art. 796-0 bis CGI.
-- **Lacune connue Art. 796-0 ter** : exonération totale frère/sœur célibataire +50 ans cohabitant 5 ans. Non gérée — à ajouter au backlog comme amélioration V1.x.
+- ✅ Art. 796-0 ter implémenté en V2 (2026-06-14). 3 conditions cumulatives strictes : statut civil (célibataire/veuf/divorcé/séparé), âge >50 ans OU infirmité empêchant de travailler, cohabitation 5 ans. **Le frère/sœur PACSÉ entre eux est exclu** (jurisprudence : le PACS confère un statut non célibataire). Le calculateur signale via warning quand l'exonération s'applique.
 - La rentrée des primes 757 B dans le calcul est documentée dans le code mais sourcée sur un BOFiP non re-testé. Cross-check à faire au prochain `/verif-sources`.

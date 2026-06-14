@@ -93,6 +93,47 @@ const sections: FAQSection[] = [
           </p>
         ),
       },
+      {
+        question: 'Un frère ou une sœur peut-il être totalement exonéré ?',
+        answer: (
+          <>
+            <p className="mb-3">
+              Oui, dans un cas précis prévu par la loi TEPA 2007 (Art. 796-0 ter CGI). Le
+              frère ou la sœur du défunt est exonéré de droits de succession si{' '}
+              <strong>trois conditions sont cumulativement réunies au jour du décès</strong> :
+            </p>
+            <ul className="list-disc pl-6 mb-3 space-y-1">
+              <li>
+                Être <strong>célibataire, veuf, divorcé ou séparé de corps</strong>. Les
+                frères et sœurs mariés ou pacsés (y compris pacsés entre eux selon la
+                jurisprudence) ne sont pas éligibles.
+              </li>
+              <li>
+                Avoir <strong>plus de 50 ans</strong> ou être atteint d&apos;une infirmité
+                empêchant de subvenir à ses besoins par le travail (aucun taux d&apos;invalidité
+                minimal légalement fixé).
+              </li>
+              <li>
+                Avoir été <strong>constamment domicilié avec le défunt pendant les 5 années
+                précédant le décès</strong>. L&apos;administration admet une tolérance lorsque
+                le départ du logement commun est lié à une hospitalisation ou un placement
+                en EHPAD (BOFiP BOI-ENR-DMTG-10-20-10 § 50).
+              </li>
+            </ul>
+            <p className="mb-3">
+              Quand ces trois conditions sont remplies, la part successorale est exonérée
+              en totalité, comme pour le conjoint. À défaut, le frère ou la sœur reste soumis
+              à l&apos;abattement de 15 932 € puis au barème 35 % / 45 % (Art. 779-IV et 777
+              CGI).
+            </p>
+            <p className="text-sm text-neutral-600">
+              Le calculateur applique cette exonération automatiquement : sélectionnez
+              « Frère ou sœur » comme lien et renseignez les trois cases dédiées sous
+              l&apos;héritier concerné.
+            </p>
+          </>
+        ),
+      },
     ],
   },
   {

@@ -11,8 +11,8 @@ import MethodologieSection from '@/components/MethodologieSection'
 
 export const metadata: Metadata = {
   title: 'Calculateur droits de succession 2026 par héritier',
-  description: 'Calculez les droits de succession par héritier : abattements Art. 779 CGI, barème Art. 777, exonération conjoint/PACS Loi TEPA, rappel 15 ans.',
-  keywords: 'droits succession, calculateur succession, abattement succession, barème succession, exonération conjoint TEPA, rappel 15 ans',
+  description: 'Calculez les droits de succession par héritier : abattements Art. 779 CGI, barème Art. 777, exonération conjoint/PACS et frère/sœur cohabitant (Loi TEPA), rappel 15 ans.',
+  keywords: 'droits succession, calculateur succession, abattement succession, barème succession, exonération conjoint TEPA, exonération frère sœur 796-0 ter, rappel 15 ans',
   alternates: { canonical: 'https://calculpatrimoine.fr/succession' },
 }
 
@@ -34,11 +34,13 @@ export default function SuccessionPage() {
       titre={<>Calculateur Succession<br />Droits par héritier 2026</>}
       description="Calculez les droits de succession dus par chaque héritier selon le lien de parenté
         avec le défunt. Abattements Art. 779 CGI, barème Art. 777, exonération totale conjoint/PACS
-        (Loi TEPA 2007), prise en compte des donations antérieures (rappel 15 ans, Art. 784 CGI)."
+        (Art. 796-0 bis CGI) et frère/sœur cohabitant (Art. 796-0 ter CGI, Loi TEPA 2007),
+        prise en compte des donations antérieures (rappel 15 ans, Art. 784 CGI)."
       features={[
         'Barème 2026 (Art. 777 CGI)',
         'Abattements Art. 779',
         'Exonération conjoint TEPA',
+        'Exonération frère/sœur 796-0 ter',
         'Rappel 15 ans',
         'Jusqu\'à 8 héritiers',
       ]}
@@ -52,7 +54,10 @@ export default function SuccessionPage() {
             <>
               Barème 2026 de l&apos;article 777 CGI (inchangé depuis LF 2011). Abattements
               Art. 779 CGI applicables aux successions ouvertes en 2026. Le conjoint et le
-              partenaire de PACS sont totalement exonérés (Art. 796-0 bis CGI, Loi TEPA 2007).
+              partenaire de PACS sont totalement exonérés (Art. 796-0 bis CGI, Loi TEPA 2007
+              art. 8). Le frère ou la sœur cohabitant remplissant les 3 conditions cumulatives
+              (célibataire/veuf/divorcé/séparé, &gt;50 ans ou invalide, cohabitation 5 ans) est
+              également exonéré (Art. 796-0 ter CGI, Loi TEPA 2007 art. 10).
             </>
           }
         />

@@ -198,4 +198,144 @@ describe('calculerSuccession', () => {
       expect(r.totalDroits).toBe(0)
     })
   })
+
+  // ---------------------------------------------------------------------------
+  // Exonération Art. 796-0 ter CGI (frère/sœur cohabitant, Loi TEPA 2007 art. 10)
+  // Source primaire : BOFiP BOI-ENR-DMTG-10-20-10 §§ 30-50
+  //                   service-public.gouv.fr fiche F14198 (vérifiée 2026-06-14)
+  // ---------------------------------------------------------------------------
+  describe('exonération Art. 796-0 ter (frère/sœur cohabitant)', () => {
+    it('3 conditions remplies → exonération totale, droits 0 €', () => {
+      // BOFiP § 30/40/50 : célibataire + >50 ans + cohabitation 5 ans = exonéré
+      // Référence : sans exonération, abattement 15 932 € puis 35 %/45 % donnerait
+      //             50 000 - 15 932 = 34 068 → 35 % × 24 430 + 45 % × 9 638 = 12 888 €
+      // Avec exonération 796-0 ter : 0 €.
+      const r = calculerSuccession({
+        actifNetSuccessoral: 50000,
+        heritiers: [
+          {
+            id: '1', nom: 'Frère', lien: 'frere_soeur', partRecue: 50000,
+            donationsAnterieures: 0,
+            statutCivilTEPA: 'celibataire',
+            ageSup50OuInvalide: true,
+            cohabitation5AnsDefunt: true,
+          },
+        ],
+      })
+      expect(r.detailHeritiers[0].exonereLoiTEPA).toBe(true)
+      expect(r.detailHeritiers[0].motifExoneration).toBe('frere_soeur_796_0_ter')
+      expect(r.detailHeritiers[0].droits).toBe(0)
+      expect(r.detailHeritiers[0].netRecu).toBe(50000)
+      expect(r.totalDroits).toBe(0)
+    })
+
+    it('frère/sœur PACSÉ entre eux → exclu de l\'exonération (jurisprudence Cass.)', () => {
+      // Statut "pacse" bloque l'exonération même si âge et cohabitation OK.
+      // Droits calculés normalement : 12 888 € sur 50 000 €.
+      const r = calculerSuccession({
+        actifNetSuccessoral: 50000,
+        heritiers: [
+          {
+            id: '1', nom: 'Sœur pacsée', lien: 'frere_soeur', partRecue: 50000,
+            donationsAnterieures: 0,
+            statutCivilTEPA: 'pacse',
+            ageSup50OuInvalide: true,
+            cohabitation5AnsDefunt: true,
+          },
+        ],
+      })
+      expect(r.detailHeritiers[0].exonereLoiTEPA).toBe(false)
+      expect(r.detailHeritiers[0].motifExoneration).toBeUndefined()
+      expect(r.detailHeritiers[0].droits).toBe(12888)
+    })
+
+    it('marié → exclu, retour au barème frère/sœur standard', () => {
+      const r = calculerSuccession({
+        actifNetSuccessoral: 50000,
+        heritiers: [
+          {
+            id: '1', nom: 'Frère marié', lien: 'frere_soeur', partRecue: 50000,
+            donationsAnterieures: 0,
+            statutCivilTEPA: 'marie',
+            ageSup50OuInvalide: true,
+            cohabitation5AnsDefunt: true,
+          },
+        ],
+      })
+      expect(r.detailHeritiers[0].exonereLoiTEPA).toBe(false)
+      expect(r.detailHeritiers[0].droits).toBe(12888)
+    })
+
+    it('âge ≤50 ans et non invalide → exclu', () => {
+      const r = calculerSuccession({
+        actifNetSuccessoral: 50000,
+        heritiers: [
+          {
+            id: '1', nom: 'Frère 45 ans', lien: 'frere_soeur', partRecue: 50000,
+            donationsAnterieures: 0,
+            statutCivilTEPA: 'celibataire',
+            ageSup50OuInvalide: false,
+            cohabitation5AnsDefunt: true,
+          },
+        ],
+      })
+      expect(r.detailHeritiers[0].exonereLoiTEPA).toBe(false)
+      expect(r.detailHeritiers[0].droits).toBe(12888)
+      // Warning info doit signaler la condition manquante
+      expect(r.warnings.some(w => w.message.includes('âge') || w.message.includes('invalidité'))).toBe(true)
+    })
+
+    it('cohabitation manquante → exclu', () => {
+      const r = calculerSuccession({
+        actifNetSuccessoral: 50000,
+        heritiers: [
+          {
+            id: '1', nom: 'Frère non cohabitant', lien: 'frere_soeur', partRecue: 50000,
+            donationsAnterieures: 0,
+            statutCivilTEPA: 'celibataire',
+            ageSup50OuInvalide: true,
+            cohabitation5AnsDefunt: false,
+          },
+        ],
+      })
+      expect(r.detailHeritiers[0].exonereLoiTEPA).toBe(false)
+      expect(r.detailHeritiers[0].droits).toBe(12888)
+    })
+
+    it('agrégation TEPA + primes 757 B : exonération couvre l\'agrégat', () => {
+      // Cohérence avec le silo conjoint : si la part successorale d'un frère/sœur
+      // exonéré 796-0 ter est entièrement exemptée, les primes 757 B agrégées le
+      // sont également (assimilation par l'Art. 757 B aux droits ordinaires).
+      // Sans exonération : agrégat 50 000 + 30 000 = 80 000 - 15 932 = 64 068 taxable
+      //                    → 35 % × 24 430 + 45 % × 39 638 = 8 550 + 17 837 = 26 388 €
+      // Avec exonération 796-0 ter : 0 € (toute la part agrégée est exonérée).
+      const r = calculerSuccession({
+        actifNetSuccessoral: 50000,
+        heritiers: [
+          {
+            id: '1', nom: 'Frère cohabitant + AV', lien: 'frere_soeur', partRecue: 50000,
+            donationsAnterieures: 0,
+            primes757B: 30000,
+            statutCivilTEPA: 'celibataire',
+            ageSup50OuInvalide: true,
+            cohabitation5AnsDefunt: true,
+          },
+        ],
+      })
+      expect(r.detailHeritiers[0].partRecue).toBe(80000) // agrégat exposé
+      expect(r.detailHeritiers[0].droits).toBe(0)
+      expect(r.detailHeritiers[0].netRecu).toBe(80000)
+    })
+
+    it('cas non-régression : frère sans champs TEPA renseignés (V1) → comportement V1 préservé', () => {
+      // Mêmes inputs qu'un test V1 historique : pas de champs TEPA, l'exonération
+      // ne se déclenche pas, le calcul retombe sur le barème standard.
+      const r = calculerSuccession({
+        actifNetSuccessoral: 50000,
+        heritiers: [h({ id: '1', nom: 'Frère', lien: 'frere_soeur', partRecue: 50000 })],
+      })
+      expect(r.detailHeritiers[0].exonereLoiTEPA).toBe(false)
+      expect(r.detailHeritiers[0].droits).toBe(12888)
+    })
+  })
 })

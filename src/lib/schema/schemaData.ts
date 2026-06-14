@@ -325,7 +325,7 @@ export const FAQ_ASSURANCE_VIE: FAQSchemaItem[] = [
   {
     question: "Quelle est la différence entre PFU et IR + PS ?",
     answer:
-      "Le PFU (Prélèvement Forfaitaire Unique) est un taux fixe de 30 % (12,8 % impôt + 17,2 % prélèvements sociaux). L'IR + PS correspond à votre TMI + 17,2 %. Comparaison : TMI 0 % → IR + PS = 17,2 % vs PFU 30 % ; TMI 11 % → IR + PS = 28,2 % vs PFU 30 % ; TMI 30 % → IR + PS = 47,2 % vs PFU 30 %. En dessous de TMI 11 %, l'IR est plus avantageux.",
+      "Le PFU (Prélèvement Forfaitaire Unique) est un taux fixe de 31,4 % (12,8 % impôt + 18,6 % prélèvements sociaux depuis la LF 2025-1403 du 30/12/2025). L'IR + PS correspond à votre TMI + 18,6 %. Comparaison : TMI 0 % → IR + PS = 18,6 % vs PFU 31,4 % ; TMI 11 % → IR + PS = 29,6 % vs PFU 31,4 % ; TMI 30 % → IR + PS = 48,6 % vs PFU 31,4 %. En dessous de TMI 11 %, l'IR est plus avantageux.",
   },
   {
     question: "Comment fonctionne l'abattement de 4 600 € / 9 200 € ?",
@@ -340,7 +340,7 @@ export const FAQ_ASSURANCE_VIE: FAQSchemaItem[] = [
   {
     question: "Qu'est-ce que la règle du 27 septembre 2017 ?",
     answer:
-      "Les versements effectués avant le 27/09/2017 bénéficient d'un taux d'imposition réduit pour les contrats de plus de 8 ans : 7,5 % d'impôt au lieu de 12,8 %, soit 24,7 % au total avec les prélèvements sociaux, au lieu de 30 %. Cette mesure a été instaurée par la loi de finances 2018.",
+      "Les versements effectués avant le 27/09/2017 bénéficient d'un taux d'imposition réduit pour les contrats de plus de 8 ans : 7,5 % d'impôt au lieu de 12,8 %, soit 26,1 % au total avec les prélèvements sociaux (depuis la hausse de la CSG à 10,6 % par la LF 2025-1403 du 30/12/2025), au lieu de 31,4 %. Cette mesure a été instaurée par la loi de finances 2018.",
   },
   {
     question: "Que se passe-t-il si j'ai versé plus de 150 000 € sur mon contrat ?",
@@ -381,7 +381,7 @@ export const HOWTO_ASSURANCE_VIE: { name: string; description: string; totalTime
     {
       name: "Comparez PFU et IR selon votre TMI",
       text:
-        "Entrez votre TMI pour comparer le PFU (30 % forfaitaire) et l'imposition au barème IR + prélèvements sociaux (17,2 %). Le calculateur recommande l'option la moins taxée selon votre situation et affiche la différence chiffrée.",
+        "Entrez votre TMI pour comparer le PFU (31,4 % forfaitaire) et l'imposition au barème IR + prélèvements sociaux (18,6 %). Le calculateur recommande l'option la moins taxée selon votre situation et affiche la différence chiffrée.",
       url: "https://calculpatrimoine.fr/assurance-vie/fiscalite-rachat#comparaison",
     },
   ],
@@ -551,7 +551,7 @@ export const FAQ_PLUS_VALUE: FAQSchemaItem[] = [
   {
     question: "Pourquoi IR et prélèvements sociaux ont-ils des abattements différents ?",
     answer:
-      "L'IR et les prélèvements sociaux sont deux impôts distincts avec leurs propres barèmes d'exonération. L'IR de 19 % est totalement exonéré après 22 ans de détention (Art. 150 VC CGI). Les prélèvements sociaux de 17,2 % ne le sont qu'après 30 ans (Art. 150 VD CGI). Entre 22 et 30 ans, vous ne payez plus l'IR mais encore une fraction des prélèvements sociaux.",
+      "L'IR et les prélèvements sociaux sont deux impôts distincts avec leurs propres barèmes d'exonération. L'IR de 19 % est totalement exonéré après 22 ans de détention (Art. 150 VC CGI). Les prélèvements sociaux de 18,6 % ne le sont qu'après 30 ans (Art. 150 VD CGI). Entre 22 et 30 ans, vous ne payez plus l'IR mais encore une fraction des prélèvements sociaux.",
   },
   {
     question: "Le forfait travaux de 15 % est-il toujours applicable ?",
@@ -588,7 +588,7 @@ export const FAQ_PEA: FAQSchemaItem[] = [
   {
     question: "Qu'est-ce que le PEA et qui peut en ouvrir un ?",
     answer:
-      "Le PEA (Plan d'Épargne en Actions) est une enveloppe fiscale créée en 1992 (Art. 163 quinquies D CGI) qui permet d'investir en actions européennes en bénéficiant d'une exonération d'impôt sur le revenu sur les plus-values après 5 ans. Seuls les prélèvements sociaux (17,2 %) restent dus. Un seul PEA par personne, réservé aux résidents fiscaux français majeurs. Un couple peut détenir deux PEA distincts.",
+      "Le PEA (Plan d'Épargne en Actions) est une enveloppe fiscale créée en 1992 (Art. 163 quinquies D CGI) qui permet d'investir en actions européennes en bénéficiant d'une exonération d'impôt sur le revenu sur les plus-values après 5 ans. Seuls les prélèvements sociaux (18,6 %) restent dus. Un seul PEA par personne, réservé aux résidents fiscaux français majeurs. Un couple peut détenir deux PEA distincts.",
   },
   {
     question: "Quel plafond de versement sur un PEA ?",
@@ -603,12 +603,12 @@ export const FAQ_PEA: FAQSchemaItem[] = [
   {
     question: "Comment est imposé un retrait avant 5 ans ?",
     answer:
-      "Un retrait avant 5 ans entraîne la clôture automatique du PEA et l'imposition des gains au prélèvement forfaitaire unique de 30 % (12,8 % d'impôt sur le revenu + 17,2 % de prélèvements sociaux), sauf cas particuliers : licenciement, invalidité, retraite anticipée, qui n'entraînent que les prélèvements sociaux.",
+      "Un retrait avant 5 ans entraîne la clôture automatique du PEA et l'imposition des gains au prélèvement forfaitaire unique de 31,4 % (12,8 % d'impôt sur le revenu + 18,6 % de prélèvements sociaux depuis la LF 2025-1403), sauf cas particuliers : licenciement, invalidité, retraite anticipée, qui n'entraînent que les prélèvements sociaux.",
   },
   {
     question: "Et après 5 ans ?",
     answer:
-      "Après 5 ans de détention, les plus-values sont totalement exonérées d'impôt sur le revenu (Art. 157-5° bis CGI). Seuls les prélèvements sociaux de 17,2 % restent dus, calculés sur la fraction de plus-value du retrait. Le PEA reste ouvert et permet de continuer à verser et retirer librement.",
+      "Après 5 ans de détention, les plus-values sont totalement exonérées d'impôt sur le revenu (Art. 157-5° bis CGI). Seuls les prélèvements sociaux de 18,6 % restent dus, calculés sur la fraction de plus-value du retrait. Le PEA reste ouvert et permet de continuer à verser et retirer librement.",
   },
   {
     question: "Les dividendes sont-ils taxés à l'intérieur du PEA ?",
@@ -623,7 +623,7 @@ export const FAQ_PEA: FAQSchemaItem[] = [
   {
     question: "Qu'est-ce que le passif fiscal latent d'un PEA ?",
     answer:
-      "Le passif latent est l'impôt qui serait dû si le PEA était soldé aujourd'hui. Même exonéré d'impôt sur le revenu après 5 ans, le PEA reste soumis aux prélèvements sociaux de 17,2 % sur la fraction de plus-value du retrait. Sur un PEA à 100 000 € dont 40 000 € de plus-value latente, le passif est de 40 000 × 17,2 % = 6 880 €. Cette information complète la valeur brute affichée par le courtier.",
+      "Le passif latent est l'impôt qui serait dû si le PEA était soldé aujourd'hui. Même exonéré d'impôt sur le revenu après 5 ans, le PEA reste soumis aux prélèvements sociaux de 18,6 % sur la fraction de plus-value du retrait. Sur un PEA à 100 000 € dont 40 000 € de plus-value latente, le passif est de 40 000 × 18,6 % = 7 440 €. Cette information complète la valeur brute affichée par le courtier.",
   },
   {
     question: "Le PEA est-il imposé à la succession ?",
@@ -661,6 +661,11 @@ export const FAQ_SUCCESSION: FAQSchemaItem[] = [
     question: "Le conjoint paie-t-il des droits de succession ?",
     answer:
       "Non. Le conjoint survivant marié ou pacsé est totalement exonéré de droits de succession depuis la loi TEPA de 2007 (Art. 796-0 bis CGI). Cette exonération couvre l'ensemble de la part recueillie par le conjoint, sans plafond. Le concubin notoire n'en bénéficie pas et subit le barème de 60 % applicable aux tiers.",
+  },
+  {
+    question: "Un frère ou une sœur peut-il être totalement exonéré de droits de succession ?",
+    answer:
+      "Oui, dans un cas précis prévu par la loi TEPA 2007 (Art. 796-0 ter CGI). Le frère ou la sœur est exonéré si trois conditions sont cumulativement réunies au jour du décès : (1) être célibataire, veuf, divorcé ou séparé de corps - les frères et sœurs mariés ou pacsés sont exclus, y compris pacsés entre eux ; (2) avoir plus de 50 ans ou être atteint d'une infirmité empêchant de subvenir à ses besoins par le travail ; (3) avoir été constamment domicilié avec le défunt pendant les 5 années précédant le décès, avec tolérance pour un départ en EHPAD ou hospitalisation (BOFiP BOI-ENR-DMTG-10-20-10 § 50). À défaut, le frère ou la sœur reste soumis à l'abattement de 15 932 € puis au barème 35 % / 45 %.",
   },
   {
     question: "Comment fonctionne le rappel fiscal de 15 ans ?",
@@ -764,7 +769,7 @@ export const FAQ_CSG_RETRAITE: FAQSchemaItem[] = [
   {
     question: "La CSG s'applique-t-elle aussi aux rentes PER ?",
     answer:
-      "Oui. Une rente PER en sortie est imposée comme une pension : abattement 10 % puis intégration au barème IR, et CSG retraite au taux applicable selon votre RFR (4,3 / 7,4 / 9,1 %). Sortie en capital : seuls les gains sont taxés au PFU 12,8 % + PS 17,2 %, sans CSG retraite.",
+      "Oui. Une rente PER en sortie est imposée comme une pension : abattement 10 % puis intégration au barème IR, et CSG retraite au taux applicable selon votre RFR (4,3 / 7,4 / 9,1 %). Sortie en capital : seuls les gains sont taxés au PFU 12,8 % + PS 18,6 %, sans CSG retraite.",
   },
   {
     question: "Comment réduire mon RFR ?",
@@ -786,7 +791,7 @@ export const FAQ_SCI_IS_IR: FAQSchemaItem[] = [
   {
     question: "Quelle différence entre une SCI à l'IR et à l'IS ?",
     answer:
-      "SCI à l'IR : la SCI elle-même ne paie pas d'impôt. Les loyers (après charges) sont partagés entre les associés selon leur part dans la SCI, et chacun les déclare dans sa propre déclaration d'impôts comme revenus fonciers, taxés à sa tranche IR + 17,2 % de prélèvements sociaux. On parle de SCI « translucide » : l'impôt passe à travers la SCI pour atterrir chez les associés. SCI à l'IS : la SCI est une société soumise à l'impôt sur les sociétés : 15 % jusqu'à 42 500 € de bénéfice, 25 % au-delà. Les amortissements du bien sont déductibles.",
+      "SCI à l'IR : la SCI elle-même ne paie pas d'impôt. Les loyers (après charges) sont partagés entre les associés selon leur part dans la SCI, et chacun les déclare dans sa propre déclaration d'impôts comme revenus fonciers, taxés à sa tranche IR + 18,6 % de prélèvements sociaux. On parle de SCI « translucide » : l'impôt passe à travers la SCI pour atterrir chez les associés. SCI à l'IS : la SCI est une société soumise à l'impôt sur les sociétés : 15 % jusqu'à 42 500 € de bénéfice, 25 % au-delà. Les amortissements du bien sont déductibles.",
   },
   {
     question: "Pourquoi l'IS donne-t-il souvent un impôt annuel plus bas ?",
@@ -880,7 +885,7 @@ export const FAQ_PLUS_VALUE_LMNP: FAQSchemaItem[] = [
   {
     question: "Comment calcule-t-on la plus-value LMNP ?",
     answer:
-      "Plus-value = Prix de vente − (Prix d'acquisition − amortissements pratiqués). Les amortissements sont donc déduits du prix d'acquisition pour aboutir au prix de revient ajusté. Le résultat suit ensuite le régime des plus-values des particuliers : IR 19 % + PS 17,2 %, abattements par durée de détention, surtaxe au-delà de 50 000 €.",
+      "Plus-value = Prix de vente − (Prix d'acquisition − amortissements pratiqués). Les amortissements sont donc déduits du prix d'acquisition pour aboutir au prix de revient ajusté. Le résultat suit ensuite le régime des plus-values des particuliers : IR 19 % + PS 18,6 %, abattements par durée de détention, surtaxe au-delà de 50 000 €.",
   },
   {
     question: "Les abattements par durée s'appliquent-ils ?",
@@ -922,7 +927,7 @@ export const FAQ_PER_SORTIE: FAQSchemaItem[] = [
   {
     question: "Comment est imposée une sortie en capital ?",
     answer:
-      "Imposition séparée des versements et des gains. Les versements déductibles sont taxés à l'IR (au barème, après quotient familial). Les gains correspondants sont taxés au PFU de 30 % (12,8 % IR + 17,2 % PS). Si les versements n'étaient pas déductibles (option de ne pas déduire à l'entrée), seuls les gains sont imposés au PFU.",
+      "Imposition séparée des versements et des gains. Les versements déductibles sont taxés à l'IR (au barème, après quotient familial). Les gains correspondants sont taxés au PFU de 31,4 % (12,8 % IR + 18,6 % PS). Si les versements n'étaient pas déductibles (option de ne pas déduire à l'entrée), seuls les gains sont imposés au PFU.",
   },
   {
     question: "Comment est imposée une sortie en rente ?",
@@ -942,7 +947,7 @@ export const FAQ_PER_SORTIE: FAQSchemaItem[] = [
   {
     question: "La sortie anticipée est-elle plus avantageuse fiscalement ?",
     answer:
-      "Pour l'acquisition de la résidence principale, oui : les versements sont taxés à l'IR mais les gains restent au PFU. Pour les accidents de la vie (chômage de fin de droits, invalidité, décès du conjoint, surendettement, cessation d'activité non salariée), les versements ET les gains sont exonérés d'IR ; seuls les PS 17,2 % s'appliquent sur les gains.",
+      "Pour l'acquisition de la résidence principale, oui : les versements sont taxés à l'IR mais les gains restent au PFU. Pour les accidents de la vie (chômage de fin de droits, invalidité, décès du conjoint, surendettement, cessation d'activité non salariée), les versements ET les gains sont exonérés d'IR ; seuls les PS 18,6 % s'appliquent sur les gains.",
   },
   {
     question: "Mes données sont-elles stockées quelque part ?",
@@ -959,7 +964,7 @@ export const FAQ_VENTE_DONATION: FAQSchemaItem[] = [
   {
     question: "Vendre ou donner un bien à un proche : quelle différence fiscale ?",
     answer:
-      "La vente déclenche deux impôts. Côté vendeur : impôt sur la plus-value immobilière (19 % d'IR + 17,2 % de prélèvements sociaux, avec abattements selon la durée de détention). Côté acheteur : les « frais de notaire » usuels, dont la plus grosse part est un impôt sur la mutation appelé DMTO (Droits de Mutation à Titre Onéreux, environ 5,80 % du prix). La donation déclenche un seul impôt, payé par celui qui reçoit : les droits de donation, calculés selon le lien de parenté (barème Art. 777 CGI) après abattement (Art. 779 CGI - par exemple 100 000 € pour un enfant). Le calculateur compare les deux régimes en cumulé.",
+      "La vente déclenche deux impôts. Côté vendeur : impôt sur la plus-value immobilière (19 % d'IR + 18,6 % de prélèvements sociaux, avec abattements selon la durée de détention). Côté acheteur : les « frais de notaire » usuels, dont la plus grosse part est un impôt sur la mutation appelé DMTO (Droits de Mutation à Titre Onéreux, environ 5,80 % du prix). La donation déclenche un seul impôt, payé par celui qui reçoit : les droits de donation, calculés selon le lien de parenté (barème Art. 777 CGI) après abattement (Art. 779 CGI - par exemple 100 000 € pour un enfant). Le calculateur compare les deux régimes en cumulé.",
   },
   {
     question: "Pourquoi vendre peut être plus coûteux que donner ?",
@@ -1011,7 +1016,7 @@ export const FAQ_PRET_INTRAFAMILIAL: FAQSchemaItem[] = [
   {
     question: "Le prêt est-il imposable pour le prêteur ?",
     answer:
-      "Les intérêts perçus sont imposables comme des revenus de capitaux mobiliers : option entre PFU 30 % ou barème IR + PS 17,2 %. Le capital remboursé n'est pas imposable. À ne pas confondre avec une donation : le prêt n'utilise pas l'abattement Art. 779 et la créance reste dans le patrimoine du prêteur.",
+      "Les intérêts perçus sont imposables comme des revenus de capitaux mobiliers : option entre PFU 31,4 % ou barème IR + PS 18,6 %. Le capital remboursé n'est pas imposable. À ne pas confondre avec une donation : le prêt n'utilise pas l'abattement Art. 779 et la créance reste dans le patrimoine du prêteur.",
   },
   {
     question: "Que devient le prêt en cas de décès du prêteur ?",
@@ -1100,7 +1105,7 @@ export const FAQ_COMPARATEUR_LOCATIF: FAQSchemaItem[] = [
   {
     question: "Quels véhicules de placement compare-t-on ?",
     answer:
-      "Trois enveloppes : PEA (exonération IR après 5 ans, PS 17,2 % au retrait), assurance-vie (PFU ou IR après abattement annuel, PS 17,2 %), CTO (PFU 30 % à chaque revenu, sans avantage d'enveloppe). Chaque enveloppe a sa propre fiscalité de sortie, intégrée au calcul du net final.",
+      "Trois enveloppes : PEA (exonération IR après 5 ans, PS 18,6 % au retrait), assurance-vie (PFU ou IR après abattement annuel, PS 18,6 %), CTO (PFU 31,4 % à chaque revenu, sans avantage d'enveloppe). Chaque enveloppe a sa propre fiscalité de sortie, intégrée au calcul du net final.",
   },
   {
     question: "Que faire de la liquidité et de la diversification ?",
@@ -1122,7 +1127,7 @@ export const FAQ_AV_FISCALITE_RACHAT: FAQSchemaItem[] = [
   {
     question: "Comment est imposé un rachat d'assurance-vie ?",
     answer:
-      "Seule la fraction de plus-value du rachat est imposée (règle proportionnelle : le rachat partiel se compose d'une part de capital et d'une part de gain au prorata). Cette plus-value est soumise au PFU 30 % (12,8 % IR + 17,2 % PS), ou au barème IR + PS sur option globale du foyer pour l'année. L'abattement annuel après 8 ans (4 600 € célibataire, 9 200 € couple) joue uniquement sur la fraction IR, pas sur les PS.",
+      "Seule la fraction de plus-value du rachat est imposée (règle proportionnelle : le rachat partiel se compose d'une part de capital et d'une part de gain au prorata). Cette plus-value est soumise au PFU 31,4 % (12,8 % IR + 18,6 % PS), ou au barème IR + PS sur option globale du foyer pour l'année. L'abattement annuel après 8 ans (4 600 € célibataire, 9 200 € couple) joue uniquement sur la fraction IR, pas sur les PS.",
   },
   {
     question: "Quand est-il avantageux d'opter pour le barème IR plutôt que le PFU ?",
@@ -1137,7 +1142,7 @@ export const FAQ_AV_FISCALITE_RACHAT: FAQSchemaItem[] = [
   {
     question: "L'abattement annuel s'applique-t-il aussi aux PS ?",
     answer:
-      "Non. L'abattement de 4 600 € (célibataire) ou 9 200 € (couple) après 8 ans s'applique uniquement à la fraction IR de la plus-value. Les prélèvements sociaux de 17,2 % sont dus dès le premier euro de plus-value, sans abattement. Cette règle réduit fortement le gain réel de l'abattement quand la TMI est basse.",
+      "Non. L'abattement de 4 600 € (célibataire) ou 9 200 € (couple) après 8 ans s'applique uniquement à la fraction IR de la plus-value. Les prélèvements sociaux de 18,6 % sont dus dès le premier euro de plus-value, sans abattement. Cette règle réduit fortement le gain réel de l'abattement quand la TMI est basse.",
   },
   {
     question: "Le rachat fractionné est-il fiscalement intéressant ?",
@@ -1161,7 +1166,7 @@ export const FAQ_AV_FISCALITE_RACHAT: FAQSchemaItem[] = [
 export const HOWTO_PLUS_VALUE: { name: string; description: string; totalTime: string; steps: HowToStep[] } = {
   name: "Comment calculer la plus-value immobilière sur une résidence secondaire",
   description:
-    "Simulez l'imposition de votre plus-value immobilière : IR 19 %, prélèvements sociaux 17,2 %, abattements par durée de détention, surtaxe et exonérations.",
+    "Simulez l'imposition de votre plus-value immobilière : IR 19 %, prélèvements sociaux 18,6 %, abattements par durée de détention, surtaxe et exonérations.",
   totalTime: "PT5M",
   steps: [
     {
@@ -1191,7 +1196,7 @@ export const HOWTO_PLUS_VALUE: { name: string; description: string; totalTime: s
     {
       name: "Lisez l'impôt total et la surtaxe éventuelle",
       text:
-        "Le calculateur affiche l'IR de 19 % et les prélèvements sociaux de 17,2 % après abattements, la surtaxe éventuelle si la plus-value nette IR dépasse 50 000 €, et l'impôt total à payer. Le notaire prélèvera ce montant directement sur le prix de vente.",
+        "Le calculateur affiche l'IR de 19 % et les prélèvements sociaux de 18,6 % après abattements, la surtaxe éventuelle si la plus-value nette IR dépasse 50 000 €, et l'impôt total à payer. Le notaire prélèvera ce montant directement sur le prix de vente.",
       url: "https://calculpatrimoine.fr/plus-value-immobiliere#resultat",
     },
   ],

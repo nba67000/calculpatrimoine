@@ -10,6 +10,7 @@ import type {
   SuccessionInputs,
   HeritierSuccession,
   LienHeritier,
+  StatutCivilTEPA,
 } from '@/types/succession'
 import { useCalculator } from '@/hooks/useCalculator'
 import AlertList from '@/components/AlertList'
@@ -21,6 +22,15 @@ import { formatEur, formatNombre } from '@/lib/formatters'
 const LIENS: Array<{ value: LienHeritier; label: string }> = (
   Object.entries(LIBELLE_LIEN) as Array<[LienHeritier, string]>
 ).map(([value, label]) => ({ value, label }))
+
+const STATUTS_CIVILS_TEPA: Array<{ value: StatutCivilTEPA; label: string }> = [
+  { value: 'celibataire', label: 'Célibataire' },
+  { value: 'veuf',        label: 'Veuf / veuve' },
+  { value: 'divorce',     label: 'Divorcé(e)' },
+  { value: 'separe',      label: 'Séparé(e) de corps' },
+  { value: 'marie',       label: 'Marié(e)' },
+  { value: 'pacse',       label: 'Pacsé(e)' },
+]
 
 const DEFAULT_INPUTS: SuccessionInputs = {
   actifNetSuccessoral: 600000,
@@ -181,6 +191,69 @@ export default function SuccessionCalculator() {
                       />
                     </div>
                   </div>
+
+                  {h.lien === 'frere_soeur' && (
+                    <div className="border-t border-neutral-100 pt-3 mt-2 space-y-3">
+                      <p className="font-mono text-[10px] uppercase tracking-wider text-neutral-400">
+                        Exonération Loi TEPA frère/sœur (Art. 796-0 ter CGI)
+                      </p>
+                      <p className="text-xs text-neutral-500">
+                        L&apos;exonération totale s&apos;applique si les 3 conditions cumulatives sont
+                        remplies au jour du décès.
+                      </p>
+
+                      <div>
+                        <label className="text-xs text-neutral-500 block mb-1">
+                          1. Statut civil au jour du décès
+                        </label>
+                        <select
+                          value={h.statutCivilTEPA ?? ''}
+                          onChange={(e) => {
+                            const v = e.target.value
+                            modifierHeritier(h.id, {
+                              statutCivilTEPA: v === '' ? undefined : (v as StatutCivilTEPA),
+                            })
+                          }}
+                          className="w-full px-3 py-2 border border-neutral-200 rounded text-sm"
+                        >
+                          <option value="">— non renseigné —</option>
+                          {STATUTS_CIVILS_TEPA.map(s => (
+                            <option key={s.value} value={s.value}>{s.label}</option>
+                          ))}
+                        </select>
+                      </div>
+
+                      <label className="flex items-start gap-2 text-sm text-neutral-700">
+                        <input
+                          type="checkbox"
+                          checked={h.ageSup50OuInvalide ?? false}
+                          onChange={(e) =>
+                            modifierHeritier(h.id, { ageSup50OuInvalide: e.target.checked })
+                          }
+                          className="mt-0.5"
+                        />
+                        <span>
+                          2. Âge supérieur à 50 ans <strong>ou</strong> infirmité empêchant de
+                          subvenir à ses besoins par le travail
+                        </span>
+                      </label>
+
+                      <label className="flex items-start gap-2 text-sm text-neutral-700">
+                        <input
+                          type="checkbox"
+                          checked={h.cohabitation5AnsDefunt ?? false}
+                          onChange={(e) =>
+                            modifierHeritier(h.id, { cohabitation5AnsDefunt: e.target.checked })
+                          }
+                          className="mt-0.5"
+                        />
+                        <span>
+                          3. Cohabitation constante avec le défunt pendant les 5 années précédant
+                          le décès (tolérance hospitalisation / EHPAD admise)
+                        </span>
+                      </label>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -222,8 +295,17 @@ export default function SuccessionCalculator() {
                       </span>
                     </p>
                     {d.exonereLoiTEPA && (
-                      <span className="font-mono text-xs text-green-700 bg-green-50 px-2 py-0.5 border border-green-200">
-                        Exonéré TEPA
+                      <span
+                        className="font-mono text-xs text-green-700 bg-green-50 px-2 py-0.5 border border-green-200"
+                        title={
+                          d.motifExoneration === 'frere_soeur_796_0_ter'
+                            ? 'Exonération Art. 796-0 ter CGI (frère/sœur cohabitant, Loi TEPA 2007 art. 10)'
+                            : 'Exonération Art. 796-0 bis CGI (conjoint / PACS, Loi TEPA 2007 art. 8)'
+                        }
+                      >
+                        {d.motifExoneration === 'frere_soeur_796_0_ter'
+                          ? 'Exonéré 796-0 ter'
+                          : 'Exonéré TEPA'}
                       </span>
                     )}
                   </div>
