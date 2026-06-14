@@ -268,7 +268,7 @@ const sections: FAQSection[] = [
                 </tr>
                 <tr>
                   <td className="border border-neutral-300 px-4 py-2">Capital (part plus-value)</td>
-                  <td className="border border-neutral-300 px-4 py-2">PFU 30 % (ou IR + 17,2 %)</td>
+                  <td className="border border-neutral-300 px-4 py-2">PFU 31,4 % (ou IR + 18,6 %)</td>
                 </tr>
                 <tr>
                   <td className="border border-neutral-300 px-4 py-2">Rente viagère</td>

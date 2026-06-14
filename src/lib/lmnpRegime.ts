@@ -13,15 +13,17 @@ import type {
 import type { CalculatorModule, HowToSchema } from '@/lib/calculators/types'
 import type { FAQSchemaItem } from '@/components/SchemaFAQ'
 import { formatEurRounded as eur, formatLigne as ligne } from '@/lib/formatters'
+import { TAUX_PS_CAPITAL } from '@/lib/fiscal/taux'
 
 export const SOURCES_LMNP_REGIME = [
   { label: 'Article 50-0 CGI', desc: 'Régime micro-BIC : abattements et seuils' },
   { label: 'Article 32 CGI', desc: 'Conditions d\'option pour le régime réel' },
   { label: 'Loi de finances 2025 art. 84', desc: 'Réforme meublé touristique non classé (abattement 30 %, seuil 15 000 €)' },
-  { label: 'Article L. 136-7 CSS', desc: 'Prélèvements sociaux 17,2 % sur les revenus LMNP' },
+  { label: 'Article L. 136-7 CSS', desc: 'Assiette CSG sur les revenus LMNP' },
+  { label: 'Article L. 136-8 CSS', desc: 'Taux PS porté à 18,6 % par LF 2025-1403 (CSG 10,6 %) depuis revenus 2025' },
 ]
 
-const PS = 0.172
+const PS = TAUX_PS_CAPITAL
 
 const PARAMS_MEUBLE: Record<TypeMeuble, { abattement: number; seuil: number; label: string }> = {
   classique:              { abattement: 0.50, seuil: 77700,  label: 'Meublé classique (location longue durée)' },
@@ -37,8 +39,8 @@ const PARAMS_MEUBLE: Record<TypeMeuble, { abattement: number; seuil: number; lab
  * @example
  * // Loyers 20 000 €/an, charges 4 000 €, amortissements 6 000 €, TMI 30 %,
  * // meublé classique.
- * // Micro : 20 000 × 50 % = 10 000 imposable → 30 % + 17,2 % = 4 720 €
- * // Réel : 20 000 − 4 000 − 6 000 = 10 000 imposable → 4 720 €
+ * // Micro : 20 000 × 50 % = 10 000 imposable → 30 % + 18,6 % = 4 860 €
+ * // Réel : 20 000 − 4 000 − 6 000 = 10 000 imposable → 4 860 €
  * // Égalité ici.
  */
 export function calculerLmnpRegime(inputs: LmnpRegimeInputs): LmnpRegimeResults {

@@ -15,10 +15,10 @@ function defaults(over: Partial<SciRegimeInputs> = {}): SciRegimeInputs {
 }
 
 describe('calculerSciRegime', () => {
-  it('IR : 24k - 4k - 6k = 14k revenu foncier → impôt 6 608 € (30% + 17,2%)', () => {
+  it('IR : 24k - 4k - 6k = 14k revenu foncier → impôt 6 804 € (30% + 18,6% LF 2025-1403)', () => {
     const r = calculerSciRegime(defaults())
     expect(r.revenuFoncier).toBe(14000)
-    expect(r.totalAnnuelIr).toBe(Math.round(14000 * (0.30 + 0.172)))
+    expect(r.totalAnnuelIr).toBe(Math.round(14000 * (0.30 + 0.186)))
   })
 
   it('IS : 24k - 4k - 6k - 8k = 6k bénéfice → 900 € (15%)', () => {

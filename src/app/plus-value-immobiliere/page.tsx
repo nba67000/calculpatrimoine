@@ -13,11 +13,11 @@ import { getPillarBreadcrumb } from '@/lib/calculators/breadcrumb'
 
 export const metadata: Metadata = {
   title: 'Plus-value immobilière : calculateur IR et PS 2026',
-  description: 'Calculez l\'impôt sur votre plus-value immobilière (19 % IR + 17,2 % PS). Abattements par durée, surtaxe, forfait travaux. Résidence secondaire et locatif.',
+  description: 'Calculez l\'impôt sur votre plus-value immobilière (19 % IR + 18,6 % PS). Abattements par durée, surtaxe, forfait travaux. Résidence secondaire et locatif.',
   keywords: 'plus-value immobilière, calculateur, impôt, prélèvements sociaux, abattement, durée détention, résidence secondaire, surtaxe',
   openGraph: {
     title: 'Calculateur plus-value immobilière, IR + PS + surtaxe',
-    description: 'Simulez la fiscalité de votre cession immobilière : 19 % IR, 17,2 % PS, abattements pour durée, surtaxe éventuelle.',
+    description: 'Simulez la fiscalité de votre cession immobilière : 19 % IR, 18,6 % PS, abattements pour durée, surtaxe éventuelle.',
     type: 'article',
     images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'CalculPatrimoine' }],
   },
@@ -52,9 +52,9 @@ export default function PlusValueImmobilierePage() {
       breadcrumb={[...getPillarBreadcrumb('/plus-value-immobiliere'), { label: 'Plus-value immobilière' }]}
       titre={<>Plus-value immobilière :<br />calculateur 2026</>}
       description="Calculez l'impôt sur votre cession immobilière : IR 19 %, prélèvements sociaux
-        17,2 %, abattements pour durée de détention, surtaxe. Résidence secondaire, bien locatif."
+        18,6 %, abattements pour durée de détention, surtaxe. Résidence secondaire, bien locatif."
       features={[
-        'IR 19 % + PS 17,2 %',
+        'IR 19 % + PS 18,6 %',
         'Abattements 6e–30e année',
         'Surtaxe Art. 1609 nonies G',
         'Forfait frais 7,5 % et travaux 15 %',
@@ -77,7 +77,7 @@ export default function PlusValueImmobilierePage() {
                 ['Abattement PS (6e-21e an)', '1,65 % × (n − 5)'],
                 ['Abattement PS (22e an)', '28 % ; + 9 %/an jusqu\'à 30 ans'],
                 ['IR', 'PV nette IR × 19 %'],
-                ['Prélèvements sociaux', 'PV nette PS × 17,2 %'],
+                ['Prélèvements sociaux', 'PV nette PS × 18,6 %'],
                 ['Surtaxe (si PV nette IR > 50 000 €)', '2 % à 6 % avec tempérament par seuil'],
               ].map(([label, val]) => (
                 <div key={label} className="font-mono">
@@ -117,7 +117,7 @@ export default function PlusValueImmobilierePage() {
 
             <p>
               <strong>Plus vous gardez longtemps, moins vous payez, et à partir d&apos;un certain stade, vous ne payez plus rien.</strong>{' '}
-              Deux taxes s&apos;appliquent sur le gain : l&apos;impôt sur le revenu (19 %) et les prélèvements sociaux (17,2 %).
+              Deux taxes s&apos;appliquent sur le gain : l&apos;impôt sur le revenu (19 %) et les prélèvements sociaux (18,6 %).
               Chaque année supplémentaire de détention réduit les impôts, mais les deux taxes s&apos;annulent
               à des moments différents. Après 22 ans de détention : l&apos;impôt sur le revenu tombe à zéro.
               Après 30 ans : les prélèvements sociaux aussi. Avant ces seuils, vous payerez quelque chose.
@@ -178,7 +178,7 @@ export default function PlusValueImmobilierePage() {
             </div>
 
             <div>
-              <h3 className="font-mono text-xs uppercase tracking-wider text-neutral-500 mb-3">Prélèvements sociaux (CSG/CRDS) : 17,2 %</h3>
+              <h3 className="font-mono text-xs uppercase tracking-wider text-neutral-500 mb-3">Prélèvements sociaux (CSG/CRDS) : 18,6 %</h3>
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-neutral-200">
@@ -216,7 +216,7 @@ export default function PlusValueImmobilierePage() {
               },
               {
                 q: 'Pourquoi l\'impôt et les « prélèvements sociaux » ne disparaissent pas au même moment ?',
-                r: 'Ce sont deux taxes différentes qui suivent des règles différentes. L\'impôt sur le revenu (19 %) disparaît complètement après 22 ans. Les prélèvements sociaux, la CSG et la CRDS que vous connaissez sur vos fiches de paie, eux, ne disparaissent qu\'après 30 ans. Donc entre 22 et 30 ans de détention, vous ne payez plus les 19 % mais vous payez encore une partie des 17,2 %.',
+                r: 'Ce sont deux taxes différentes qui suivent des règles différentes. L\'impôt sur le revenu (19 %) disparaît complètement après 22 ans. Les prélèvements sociaux, la CSG et la CRDS que vous connaissez sur vos fiches de paie, eux, ne disparaissent qu\'après 30 ans. Donc entre 22 et 30 ans de détention, vous ne payez plus les 19 % mais vous payez encore une partie des 18,6 %.',
               },
               {
                 q: 'La taxe supplémentaire au-dessus de 50 000 €, comment ça marche ?',

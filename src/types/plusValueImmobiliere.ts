@@ -44,11 +44,11 @@ export interface PlusValueImmobiliereResults {
 
   // Bases imposables
   pvNetteIR: number             // Base de l'impôt 19 %
-  pvNettePS: number             // Base des prélèvements sociaux 17,2 %
+  pvNettePS: number             // Base des prélèvements sociaux 18,6 %
 
   // Impôts
   impotRevenu: number           // pvNetteIR × 19 %
-  prelevementsSociaux: number   // pvNettePS × 17,2 %
+  prelevementsSociaux: number   // pvNettePS × 18,6 %
   surtaxe: number               // Si pvNetteIR > 50 000 € (Art. 1609 nonies G CGI)
   totalImpots: number
   netPercu: number              // prixCession − totalImpots

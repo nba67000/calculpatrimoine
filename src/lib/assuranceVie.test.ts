@@ -39,21 +39,21 @@ function inputsBase(overrides: Partial<AssuranceVieInputs> = {}): AssuranceVieIn
 // (encours ≤ 150 000 € → taux IR 7,5 %, pas 12,8 %)
 // ---------------------------------------------------------------------------
 describe('calculerFiscaliteRachat - contrat > 8 ans', () => {
-  it('encours ≤ 150 000 € → taux PFU global ≈ 24,7 % (7,5 % IR + 17,2 % PS)', () => {
+  it('encours ≤ 150 000 € → taux PFU global ≈ 26,1 % (7,5 % IR + 18,6 % PS - LF 2025-1403)', () => {
     const r = calculerFiscaliteRachat(inputsBase({ encoursTotalContrats: 100000 }))
     expect(r.ancienneteContrat).toBeGreaterThanOrEqual(8)
     // plusValueTaxable = 8000 − 4600 = 3400
     expect(r.plusValueTaxable).toBe(3400)
-    // taux effectif PFU ≈ 24,7 % sur la plus-value taxable
+    // taux effectif PFU ≈ 26,1 % sur la plus-value taxable
     const tauxPFU = r.optionPFU.totalPrelevement / r.plusValueTaxable
-    expect(tauxPFU).toBeCloseTo(0.247, 3)
+    expect(tauxPFU).toBeCloseTo(0.261, 3)
   })
 
-  it('encours > 150 000 € → taux PFU supérieur à 24,7 % (prorata 7,5 %/12,8 %)', () => {
+  it('encours > 150 000 € → taux PFU supérieur à 26,1 % (prorata 7,5 %/12,8 %)', () => {
     const r = calculerFiscaliteRachat(inputsBase({ encoursTotalContrats: 200000 }))
     const tauxPFU = r.optionPFU.totalPrelevement / r.plusValueTaxable
-    // 150k/200k × 7,5% + 50k/200k × 12,8% = 5,625% + 3,2% = 8,825% IR + 17,2% PS = 26,025%
-    expect(tauxPFU).toBeCloseTo(0.26025, 3)
+    // 150k/200k × 7,5% + 50k/200k × 12,8% = 5,625% + 3,2% = 8,825% IR + 18,6% PS = 27,425%
+    expect(tauxPFU).toBeCloseTo(0.27425, 3)
   })
 
   it('abattement célibataire 4 600 € après 8 ans', () => {
@@ -68,15 +68,15 @@ describe('calculerFiscaliteRachat - contrat > 8 ans', () => {
 })
 
 // ---------------------------------------------------------------------------
-// Contrat < 8 ans → flat tax 30 % sans abattement
+// Contrat < 8 ans → flat tax 31,4 % sans abattement (CSG 10,6 % LF 2025-1403)
 // ---------------------------------------------------------------------------
 describe('calculerFiscaliteRachat - contrat < 8 ans', () => {
-  it("taux PFU = 30 % (12,8 % IR + 17,2 % PS), pas d'abattement", () => {
+  it("taux PFU = 31,4 % (12,8 % IR + 18,6 % PS), pas d'abattement", () => {
     const r = calculerFiscaliteRachat(inputsBase({ dateOuverture: new Date('2024-01-01') }))
     expect(r.ancienneteContrat).toBeLessThan(8)
     expect(r.abattementApplicable).toBe(0)
     const tauxPFU = r.optionPFU.totalPrelevement / r.plusValueTaxable
-    expect(tauxPFU).toBeCloseTo(0.30, 5)
+    expect(tauxPFU).toBeCloseTo(0.314, 5)
   })
 
   it('warning présent signalant la durée restante avant 8 ans', () => {

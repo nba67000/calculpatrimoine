@@ -91,7 +91,7 @@ export const FAQS_BY_CATEGORY: Record<string, FaqLink[]> = {
     {
       href: '/faq/pea',
       title: 'FAQ PEA',
-      description: 'Plafond 150 000 EUR, exoneration apres 5 ans, prelevements sociaux 17,2 %, passif fiscal latent.',
+      description: 'Plafond 150 000 EUR, exoneration apres 5 ans, prelevements sociaux 18,6 %, passif fiscal latent.',
     },
   ],
 

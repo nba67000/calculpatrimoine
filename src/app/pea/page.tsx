@@ -11,7 +11,7 @@ import MethodologieSection from '@/components/MethodologieSection'
 
 export const metadata: Metadata = {
   title: 'PEA : fiscalité retrait + bilan latent (calculateur 2026)',
-  description: 'Calculez le net d\'un retrait PEA après prélèvements sociaux (17,2 %, exonération IR au-delà de 5 ans). Bilan en 3 vues : valeur brute, net de sortie, passif fiscal latent.',
+  description: 'Calculez le net d\'un retrait PEA après prélèvements sociaux (18,6 %, exonération IR au-delà de 5 ans). Bilan en 3 vues : valeur brute, net de sortie, passif fiscal latent.',
   keywords: 'PEA fiscalité, retrait PEA, prélèvements sociaux PEA, plus-value PEA, passif fiscal latent, exonération PEA 5 ans, plafond PEA 150000',
   alternates: { canonical: 'https://calculpatrimoine.fr/pea' },
 }
@@ -38,7 +38,7 @@ export default function PeaPage() {
         impôts différés)."
       features={[
         'Exonération IR > 5 ans',
-        'PS 17,2 % sur PV',
+        'PS 18,6 % sur PV',
         'Bilan 3 vues',
         'Passif latent chiffré',
         'Warning < 5 ans',

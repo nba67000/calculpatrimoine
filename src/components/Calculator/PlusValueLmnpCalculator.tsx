@@ -111,7 +111,7 @@ export default function PlusValueLmnpCalculator() {
               <span className="text-neutral-500">IR 19 %</span>
               <span className="text-right">{formatEur(results.resultatStandard.impotRevenu)}</span>
               <span className="text-right font-medium">{formatEur(results.resultatLmnp.impotRevenu)}</span>
-              <span className="text-neutral-500">PS 17,2 %</span>
+              <span className="text-neutral-500">PS 18,6 %</span>
               <span className="text-right">{formatEur(results.resultatStandard.prelevementsSociaux)}</span>
               <span className="text-right font-medium">{formatEur(results.resultatLmnp.prelevementsSociaux)}</span>
               <span className="text-neutral-500">Surtaxe</span>
@@ -135,7 +135,7 @@ export default function PlusValueLmnpCalculator() {
         <CrossLink
           href="/plus-value-immobiliere"
           title="Plus-value immobilière hors LMNP"
-          description="Régime standard, sans réintégration des amortissements : IR 19 % + PS 17,2 %, abattements par durée."
+          description="Régime standard, sans réintégration des amortissements : IR 19 % + PS 18,6 %, abattements par durée."
         />
         <CrossLink
           href="/lmnp-reel-vs-micro"

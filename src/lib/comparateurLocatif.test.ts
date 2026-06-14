@@ -24,28 +24,28 @@ describe('calculerComparateurLocatif', () => {
     expect(r.totalNetPlacement).toBeGreaterThan(200000)
   })
 
-  it('PEA après 5 ans : exonéré IR, PS 17,2% seulement', () => {
+  it('PEA après 5 ans : exonéré IR, PS 18,6% seulement (LF 2025-1403)', () => {
     const r = calculerComparateurLocatif(
       defaults({ rendementPlacementBrut: 5, dureeAnnees: 10, vehiculePlacement: 'pea' }),
     )
-    // PEA exonéré IR donc impôt = gains × 17,2 %
+    // PEA exonéré IR donc impôt = gains × 18,6 %
     const gainsAttendu = 200000 * (Math.pow(1.05, 10) - 1)
-    const impotAttendu = gainsAttendu * 0.172
+    const impotAttendu = gainsAttendu * 0.186
     expect(r.impotSortiePlacement).toBeCloseTo(Math.round(impotAttendu), -1)
   })
 
-  it('CTO : PFU 30% sur gains', () => {
+  it('CTO : PFU 31,4% sur gains (CSG 10,6 % LF 2025-1403)', () => {
     const r = calculerComparateurLocatif(defaults({ vehiculePlacement: 'cto', dureeAnnees: 10 }))
     const gains = 200000 * (Math.pow(1.06, 10) - 1)
-    expect(r.impotSortiePlacement).toBeCloseTo(Math.round(gains * 0.30), -1)
+    expect(r.impotSortiePlacement).toBeCloseTo(Math.round(gains * 0.314), -1)
   })
 
   it('locatif micro-foncier : abattement 30%', () => {
     const r = calculerComparateurLocatif(defaults({ regimeLocatif: 'micro_foncier' }))
     // Loyer brut = 10 000, frais = 3 000, net = 7 000
-    // Imposable micro = 7000 × 70 % = 4900 × (30 + 17,2) % = 2312,8
-    // Net après impôt = 7000 - 2312,8 = 4687,2 × 20 ans = 93 744
-    expect(r.loyersCumulesNets).toBeCloseTo(93744, -2)
+    // Imposable micro = 7000 × 70 % = 4900 × (30 + 18,6) % = 2381,4
+    // Net après impôt = 7000 - 2381,4 = 4618,6 × 20 ans ≈ 92 372
+    expect(r.loyersCumulesNets).toBeCloseTo(92372, -2)
   })
 
   it('PV immo abattements appliqués à 20 ans (IR ≈ 90%, PS ≈ 33%)', () => {

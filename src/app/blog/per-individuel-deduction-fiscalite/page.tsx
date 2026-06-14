@@ -84,11 +84,11 @@ export default function ArticlePERPage() {
                 },
                 {
                   terme: 'Le PFU (Prélèvement Forfaitaire Unique)',
-                  def: "Un taux fixe de 30 % sur les gains financiers : intérêts, dividendes, plus-values. Composé de 12,8 % d'impôt sur le revenu et 17,2 % de prélèvements sociaux. Aussi appelé « flat tax ». Pour : simple et prévisible, peu importe vos revenus.",
+                  def: "Un taux fixe de 31,4 % sur les gains financiers : intérêts, dividendes, plus-values. Composé de 12,8 % d'impôt sur le revenu et 18,6 % de prélèvements sociaux (CSG portée à 10,6 % par la LF 2025-1403 du 30/12/2025). Aussi appelé « flat tax ». Pour : simple et prévisible, peu importe vos revenus.",
                 },
                 {
                   terme: 'Les prélèvements sociaux',
-                  def: "Cotisations prélevées sur les revenus du capital — épargne, placements, loyers — au taux global de 17,2 %. Décomposés en CSG (9,2 %), CRDS (0,5 %) et autres contributions. S'ajoutent à l'impôt sur le revenu et restent dus même si vous n'êtes pas imposable.",
+                  def: "Cotisations prélevées sur les revenus du capital — épargne, placements, loyers — au taux global de 18,6 %. Décomposées en CSG (10,6 %, depuis la LF 2025-1403), CRDS (0,5 %) et prélèvement de solidarité (7,5 %). S'ajoutent à l'impôt sur le revenu et restent dues même si vous n'êtes pas imposable.",
                 },
                 {
                   terme: 'La rente viagère',
@@ -350,7 +350,7 @@ export default function ArticlePERPage() {
               <div className="bg-surface-card border border-neutral-200 p-5">
                 <p className="font-mono text-xs text-neutral-500 uppercase tracking-wider mb-3">Les gains accumulés</p>
                 <p className="text-sm text-neutral-700 leading-relaxed mb-3">
-                  Les intérêts et plus-values générés pendant la phase d&apos;épargne sont taxés au taux fixe de 30 % : 12,8 % d&apos;IR + 17,2 % de prélèvements sociaux. Ce taux s&apos;applique peu importe vos revenus à la retraite.
+                  Les intérêts et plus-values générés pendant la phase d&apos;épargne sont taxés au taux fixe de 31,4 % : 12,8 % d&apos;IR + 18,6 % de prélèvements sociaux. Ce taux s&apos;applique peu importe vos revenus à la retraite.
                 </p>
                 <p className="font-mono text-xs text-neutral-400 border-t border-neutral-100 pt-3">
                   Exemple : 5 000 euros de gains → 1 500 euros d&apos;impôt (30 %).
@@ -377,7 +377,7 @@ export default function ArticlePERPage() {
             <div className="border-l-4 border-warning-400 bg-warning-50 px-5 py-4 my-6">
               <p className="font-mono text-xs text-warning-700 uppercase tracking-wider mb-1">Attention</p>
               <p className="text-sm text-warning-700 leading-relaxed">
-                En sortie en rente, les prélèvements sociaux (17,2 %) s&apos;ajoutent sur une fraction de la rente, calculée selon votre âge au moment où vous commencez à la percevoir. Ce coût en plus n&apos;existe pas en sortie capital sur la partie versements, qui ne supporte que l&apos;IR.
+                En sortie en rente, les prélèvements sociaux (18,6 %) s&apos;ajoutent sur une fraction de la rente, calculée selon votre âge au moment où vous commencez à la percevoir. Ce coût en plus n&apos;existe pas en sortie capital sur la partie versements, qui ne supporte que l&apos;IR.
               </p>
             </div>
 
@@ -683,7 +683,7 @@ export default function ArticlePERPage() {
                   </div>
                   <div>
                     <p className="text-neutral-400 mb-0.5">4. Impôt à la sortie sur les gains</p>
-                    <p>Gains × 30 % (12,8 % IR + 17,2 % prélèvements sociaux)</p>
+                    <p>Gains × 31,4 % (12,8 % IR + 18,6 % prélèvements sociaux)</p>
                   </div>
                 </div>
               </div>

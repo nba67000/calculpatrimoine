@@ -30,7 +30,7 @@ const sections: FAQSection[] = [
           <>
             <p className="mb-3">
               La vente déclenche deux impôts. Côté vendeur : impôt sur la plus-value
-              immobilière (19 % d&apos;IR + 17,2 % de prélèvements sociaux, avec abattements
+              immobilière (19 % d&apos;IR + 18,6 % de prélèvements sociaux, avec abattements
               selon la durée de détention). Côté acheteur : les « frais de notaire »
               usuels, dont la plus grosse part est un impôt sur la mutation appelé DMTO
               (Droits de Mutation à Titre Onéreux, environ 5,80 % du prix).

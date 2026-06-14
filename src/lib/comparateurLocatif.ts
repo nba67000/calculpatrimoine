@@ -8,8 +8,8 @@
 //   Loyers + valorisation linéaires, frais en % du loyer brut.
 //   Régime micro-foncier (abattement 30 %) ou réel nu (abattement frais réels = fraisChargesPct).
 // - Placement : capitalisation composée au taux brut. Fiscalité à la sortie
-//   selon véhicule : PEA exonéré IR après 5 ans (PS 17,2 %), AV abattement
-//   4 600 €/an après 8 ans puis PFU 30 %, CTO PFU 30 % sur gains.
+//   selon véhicule : PEA exonéré IR après 5 ans (PS 18,6 %), AV abattement
+//   4 600 €/an après 8 ans puis PFU 31,4 %, CTO PFU 31,4 % sur gains.
 // - Pas de TVA, pas de surtaxe PV immo, pas de plafond PEA.
 
 import type {
@@ -21,17 +21,19 @@ import type {
 import type { CalculatorModule, HowToSchema } from '@/lib/calculators/types'
 import type { FAQSchemaItem } from '@/components/SchemaFAQ'
 import { formatEurRounded as eur, formatLigne as ligne } from '@/lib/formatters'
+import { TAUX_PS_CAPITAL, TAUX_PFU_GLOBAL } from '@/lib/fiscal/taux'
 
 export const SOURCES_COMPARATEUR_LOCATIF = [
   { label: 'Art. 150 U et s. CGI', desc: 'Plus-values immobilières des particuliers' },
   { label: 'Art. 14 et s. CGI', desc: 'Revenus fonciers (locatif nu) - régimes micro-foncier (abattement 30 %) et réel' },
-  { label: 'Art. 200 A CGI', desc: 'PFU 30 % sur les gains des placements financiers (hors PEA/AV durée)' },
+  { label: 'Art. 200 A CGI', desc: 'PFU 31,4 % sur les gains des placements financiers (hors PEA/AV durée)' },
   { label: 'Art. 150-0 A CGI', desc: 'Régime PEA - exonération IR après 5 ans, PS toujours dus' },
   { label: 'Art. 125-0 A CGI', desc: 'Régime assurance-vie - abattement annuel après 8 ans' },
+  { label: 'Art. L136-8 CSS', desc: 'Taux CSG sur revenus du capital porté à 10,6 % par LF 2025-1403 (PS totaux 18,6 % depuis revenus 2025)' },
 ]
 
-const PS = 0.172
-const PFU = 0.30
+const PS = TAUX_PS_CAPITAL
+const PFU = TAUX_PFU_GLOBAL
 const IR_PV_IMMO = 0.19
 const ABATTEMENT_AV_SEUL = 4600
 const ABATTEMENT_MICRO_FONCIER = 0.30
@@ -69,9 +71,9 @@ function fiscalitePlacement(
   if (gains === 0) return 0
 
   if (vehicule === 'pea') {
-    // Après 5 ans : exonéré IR, PS 17,2 % sur gains
+    // Après 5 ans : exonéré IR, PS 18,6 % sur gains
     if (dureeAnnees >= 5) return gains * PS
-    // Avant 5 ans : PFU 30 % sur gains
+    // Avant 5 ans : PFU 31,4 % sur gains
     return gains * PFU
   }
 
@@ -79,7 +81,7 @@ function fiscalitePlacement(
     if (dureeAnnees >= 8) {
       // Abattement 4 600 € (simpl. : pour 1 année de rachat)
       const imposable = Math.max(0, gains - ABATTEMENT_AV_SEUL)
-      // Au-delà : PFU 30 % (simpl. : on ignore le seuil 150k€)
+      // Au-delà : PFU 31,4 % (simpl. : on ignore le seuil 150k€)
       return imposable * PFU
     }
     return gains * PFU
@@ -201,7 +203,7 @@ const FAQ_COMPARATEUR: FAQSchemaItem[] = [
   },
   {
     question: "Pourquoi le PEA et l'assurance-vie sont-ils traités différemment ?",
-    answer: "PEA : après 5 ans, les gains sont exonérés d'IR mais restent soumis aux PS 17,2 %. Assurance-vie : après 8 ans, abattement annuel de 4 600 € (seul) sur les gains avant PFU 30 %. Ces régimes spécifiques peuvent rendre le placement plus rentable que prévu vs le locatif imposé au TMI sur les loyers.",
+    answer: "PEA : après 5 ans, les gains sont exonérés d'IR mais restent soumis aux PS 18,6 %. Assurance-vie : après 8 ans, abattement annuel de 4 600 € (seul) sur les gains avant PFU 31,4 %. Ces régimes spécifiques peuvent rendre le placement plus rentable que prévu vs le locatif imposé au TMI sur les loyers.",
   },
 ]
 

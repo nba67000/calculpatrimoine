@@ -43,7 +43,7 @@ export interface VenteVsDonationResults {
   pvNetteIR: number
   /** Impôt sur la plus-value (19 %). */
   irPlusValue: number
-  /** Prélèvements sociaux (17,2 %). */
+  /** Prélèvements sociaux (18,6 %, LF 2025-1403). */
   psPlusValue: number
   /** Surtaxe Art. 1609 nonies G (si PV nette IR > 50 000 €). */
   surtaxePV: number

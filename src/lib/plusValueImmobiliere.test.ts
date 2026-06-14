@@ -22,16 +22,17 @@ function base(overrides: Partial<PlusValueImmobiliereInputs> = {}): PlusValueImm
 // Cas nominaux - issus du JSDoc (Art. 150 U, 150 VB, 150 VC CGI)
 // ---------------------------------------------------------------------------
 describe('calculerPlusValueImmobiliere - cas nominaux', () => {
-  it('8 ans détention, PV brute 75 000 € - IR 11 685 €, PS 12 261 €, surtaxe 1 230 €', () => {
+  it('8 ans détention, PV brute 75 000 € - IR 11 685 €, PS 13 259 €, surtaxe 1 230 € (PS 18,6 % LF 2025-1403)', () => {
     // frais forfait = 200000 × 7,5% = 15000, travaux = 200000 × 15% = 30000
     // prixRevient = 245000, pvBrute = 75000
     // 8 ans : abattement IR = (8-5) × 6% = 18%, PS = (8-5) × 1,65% = 4,95%
+    // PS = 75000 × (1 - 0.0495) × 18,6 % = 71 287,5 × 18,6 % = 13 259,5 ≈ 13 259
     const r = calculerPlusValueImmobiliere(base())
     expect(r.pvBrute).toBe(75000)
     expect(r.impotRevenu).toBe(11685)
-    expect(r.prelevementsSociaux).toBe(12261)
+    expect(r.prelevementsSociaux).toBe(13259)
     expect(r.surtaxe).toBe(1230)
-    expect(r.totalImpots).toBe(25176)
+    expect(r.totalImpots).toBe(26174)
   })
 
   it('moins-value - totalImpots 0 €', () => {

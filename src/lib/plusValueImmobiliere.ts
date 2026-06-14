@@ -4,6 +4,7 @@ import type { PlusValueImmobiliereInputs, PlusValueImmobiliereResults } from '@/
 import type { CalculatorModule } from '@/lib/calculators/types'
 import { FAQ_PLUS_VALUE, HOWTO_PLUS_VALUE } from '@/lib/schema/schemaData'
 import { formatEurRounded as eur, formatPct as pct, formatLigne as ligne } from '@/lib/formatters'
+import { TAUX_PS_CAPITAL } from '@/lib/fiscal/taux'
 
 export const SOURCES_PLUS_VALUE = [
   { href: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000053544910', label: 'Article 150 U du CGI', desc: "Champ d'application - plus-values immobilières des particuliers" },
@@ -18,7 +19,7 @@ export const SOURCES_PLUS_VALUE = [
 // --- Constantes fiscales ---
 
 const TAUX_IR = 0.19                     // Art. 200 B CGI
-const TAUX_PS = 0.172                    // Art. L.136-7 CSS (2° du I) - plus-values Art. 150 U à 150 UC CGI
+const TAUX_PS = TAUX_PS_CAPITAL          // Art. L136-8 I 2° CSS (LF 2025-1403) - 18,6 % depuis revenus 2025
 const FORFAIT_FRAIS = 0.075              // Art. 150 VB CGI
 const FORFAIT_TRAVAUX = 0.15             // Art. 150 VB CGI (si détention > 5 ans)
 const SEUIL_EXONERATION_PRIX = 15000    // Art. 150 U II 6° CGI
@@ -232,7 +233,7 @@ export function calculerPlusValueImmobiliere(
   if (anneesAvantExoIR === 0 && anneesAvantExoPS > 0) {
     warnings.push({
       type: 'info',
-      message: `Bien exonéré d'IR (22 ans de détention). Les prélèvements sociaux (17,2 %) restent dus jusqu'à ${anneesAvantExoPS} an${anneesAvantExoPS > 1 ? 's' : ''} de détention supplémentaire${anneesAvantExoPS > 1 ? 's' : ''} (exonération totale à 30 ans).`,
+      message: `Bien exonéré d'IR (22 ans de détention). Les prélèvements sociaux (18,6 %) restent dus jusqu'à ${anneesAvantExoPS} an${anneesAvantExoPS > 1 ? 's' : ''} de détention supplémentaire${anneesAvantExoPS > 1 ? 's' : ''} (exonération totale à 30 ans).`,
     })
   }
 
@@ -361,7 +362,7 @@ export function formatContextePlusValue(inputs: PlusValueImmobiliereInputs, r: P
       ligne('Abattement IR', `${pct(r.tauxAbattementIR)} → base ${eur(r.pvNetteIR)}`),
       ligne('Abattement PS', `${pct(r.tauxAbattementPS)} → base ${eur(r.pvNettePS)}`),
       ligne('IR 19 %', eur(r.impotRevenu)),
-      ligne('Prélèvements sociaux 17,2 %', eur(r.prelevementsSociaux)),
+      ligne('Prélèvements sociaux 18,6 %', eur(r.prelevementsSociaux)),
     )
     if (r.surtaxe > 0) {
       lines.push(ligne(`Surtaxe (taux eff. ${pct(r.tauxSurtaxeEffectif, 2)})`, eur(r.surtaxe)))

@@ -48,7 +48,7 @@ const sections: FAQSection[] = [
             <p>
               Les amortissements sont déduits du prix d&apos;acquisition pour aboutir au prix
               de revient ajusté. Le résultat suit ensuite le régime des plus-values des
-              particuliers : IR 19 % + PS 17,2 %, abattements par durée de détention,
+              particuliers : IR 19 % + PS 18,6 %, abattements par durée de détention,
               surtaxe au-delà de 50 000 €.
             </p>
           </>

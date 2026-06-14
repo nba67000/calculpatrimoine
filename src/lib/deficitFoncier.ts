@@ -150,7 +150,7 @@ export function calculerDeficitFoncier(
   if (deficitTotal === 0 && revenuFoncierNet > 0) {
     optimisations.push({
       type: 'info',
-      message: `Revenu foncier net positif de ${eur(revenuFoncierNet)} : il s'ajoute à votre revenu imposable et coûte ${eur((revenuFoncierNet * inputs.tmi) / 100)} d'IR (TMI ${inputs.tmi} %), plus 17,2 % de prélèvements sociaux. Regrouper des travaux à venir sur une seule année fiscale crée un déficit imputable sur le revenu global.`,
+      message: `Revenu foncier net positif de ${eur(revenuFoncierNet)} : il s'ajoute à votre revenu imposable et coûte ${eur((revenuFoncierNet * inputs.tmi) / 100)} d'IR (TMI ${inputs.tmi} %), plus 18,6 % de prélèvements sociaux. Regrouper des travaux à venir sur une seule année fiscale crée un déficit imputable sur le revenu global.`,
     })
   }
 
@@ -209,7 +209,7 @@ const FAQ_DEFICIT_FONCIER: FAQSchemaItem[] = [
   },
   {
     question: "Le déficit foncier réduit-il aussi les prélèvements sociaux ?",
-    answer: "Non. Les prélèvements sociaux (17,2 %) ne s'appliquent que sur le revenu foncier net positif. En déficit, vous ne payez ni IR ni PS sur la location, mais l'imputation sur le revenu global ne réduit que l'impôt sur le revenu (pas les PS dus sur d'autres revenus).",
+    answer: "Non. Les prélèvements sociaux (18,6 %) ne s'appliquent que sur le revenu foncier net positif. En déficit, vous ne payez ni IR ni PS sur la location, mais l'imputation sur le revenu global ne réduit que l'impôt sur le revenu (pas les PS dus sur d'autres revenus).",
   },
   {
     question: "Le mécanisme s'applique-t-il à une location meublée ?",

@@ -92,21 +92,21 @@ const faqItems: FAQItem[] = [
  <>
  <p className="mb-3">
  <strong>PFU (Prélèvement Forfaitaire Unique)</strong> :<br />
- Taux fixe de 30% (12,8% impôt + 17,2% prélèvements sociaux), 
+ Taux fixe de 31,4% (12,8% impôt + 18,6% prélèvements sociaux depuis LF 2025-1403),
  quelle que soit votre tranche d&apos;imposition.
  </p>
  <p className="mb-3">
  <strong>IR + PS (Impôt sur le Revenu + Prélèvements Sociaux)</strong> :<br />
- Votre Tranche Marginale d&apos;Imposition (TMI) + 17,2% de prélèvements sociaux.
+ Votre Tranche Marginale d&apos;Imposition (TMI) + 18,6% de prélèvements sociaux.
  </p>
  <p className="mb-3">
  <strong>Comment comparer les deux ?</strong>
  </p>
  <ul className="list-disc list-inside space-y-1 mb-3">
- <li>TMI à 0% : IR + PS = 17,2% | PFU = 30%</li>
- <li>TMI à 11% : IR + PS = 28,2% | PFU = 30%</li>
- <li>TMI à 30% : IR + PS = 47,2% | PFU = 30%</li>
- <li>TMI à 41% : IR + PS = 58,2% | PFU = 30%</li>
+ <li>TMI à 0% : IR + PS = 18,6% | PFU = 31,4%</li>
+ <li>TMI à 11% : IR + PS = 29,6% | PFU = 31,4%</li>
+ <li>TMI à 30% : IR + PS = 48,6% | PFU = 31,4%</li>
+ <li>TMI à 41% : IR + PS = 59,6% | PFU = 31,4%</li>
  </ul>
  <p className="bg-neutral-50 border-l-4 border-accent-400 p-3 rounded text-sm">
  Le calculateur affiche les deux montants côte à côte et met en évidence l&apos;option la moins taxée. À TMI ≤ 11 %, l&apos;IR + PS est systématiquement moins coûteux que le PFU.
@@ -194,15 +194,15 @@ const faqItems: FAQItem[] = [
  </p>
  <ul className="list-disc list-inside mb-3">
  <li>7,5% d&apos;impôt (au lieu de 12,8%)</li>
- <li>+ 17,2% de prélèvements sociaux</li>
- <li>= <strong>24,7% au total</strong> (au lieu de 30%)</li>
+ <li>+ 18,6% de prélèvements sociaux</li>
+ <li>= <strong>26,1% au total</strong> (au lieu de 31,4%)</li>
  </ul>
  <p className="mb-3">
  Cette mesure a été instaurée par la loi de finances 2018.
  </p>
  <p className="bg-neutral-50 border-l-4 border-accent-400 p-4 rounded">
  <strong>À noter :</strong> Si vous avez versé avant cette date, indiquez-le
- dans le calculateur, c&apos;est la variable qui fait passer le taux de 30 % à 24,7 %.
+ dans le calculateur, c&apos;est la variable qui fait passer le taux de 31,4 % à 26,1 %.
  </p>
  </>
  )
@@ -341,12 +341,12 @@ const faqItems: FAQItem[] = [
  </div>
  <div className="bg-neutral-50 p-4 rounded">
  <strong>3. Choix PFU vs IR</strong><br />
- TMI à 11% : IR + PS = 28,2% | PFU = 30%<br />
- TMI à 30% : IR + PS = 47,2% | PFU = 30%
+ TMI à 11% : IR + PS = 29,6% | PFU = 31,4%<br />
+ TMI à 30% : IR + PS = 48,6% | PFU = 31,4%
  </div>
  <div className="bg-neutral-50 p-4 rounded">
  <strong>4. Versements avant 27/09/2017</strong><br />
- Taux réduit à 24,7% au lieu de 30% pour ces versements
+ Taux réduit à 26,1% au lieu de 31,4% pour ces versements
  </div>
  <div className="bg-neutral-50 p-4 rounded">
  <strong>5. Timing du rachat</strong><br />

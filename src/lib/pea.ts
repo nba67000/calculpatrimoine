@@ -1,7 +1,8 @@
 // src/lib/pea.ts
 //
 // Calculateur PEA :
-// (1) Fiscalité de sortie : exonéré IR après 5 ans, PS 17,2 % toujours dus.
+// (1) Fiscalité de sortie : exonéré IR après 5 ans, PS 18,6 % toujours dus
+//     (Art. L136-8 I 2° CSS, LF 2025-1403 du 30/12/2025, applicable au 1/1/2026).
 // (2) Bilan patrimonial brut/net/passif latent : un PEA de 500 k€ ne vaut pas
 //     500 k€ « net » car la CSG latente sur la plus-value n'est pas encore
 //     réalisée. Trois vues coexistent (cf. discussion Reddit r/vosfinances).
@@ -10,16 +11,18 @@ import type { PeaInputs, PeaResults } from '@/types/pea'
 import type { CalculatorModule, HowToSchema } from '@/lib/calculators/types'
 import type { FAQSchemaItem } from '@/components/SchemaFAQ'
 import { formatEurRounded as eur, formatPct as pct, formatLigne as ligne } from '@/lib/formatters'
+import { TAUX_PS_CAPITAL, TAUX_PFU_GLOBAL } from '@/lib/fiscal/taux'
 
 export const SOURCES_PEA = [
   { label: 'Article L. 221-30 et s. Code monétaire et financier', desc: 'Régime juridique du PEA' },
   { label: 'Article 150-0 A CGI', desc: 'Régime fiscal des plus-values de valeurs mobilières et exonération PEA' },
   { label: 'Article 157, 5° bis CGI', desc: 'Exonération d\'IR sur les gains du PEA après 5 ans de détention' },
-  { label: 'Article L. 136-7 CSS', desc: 'Prélèvements sociaux 17,2 % sur les gains du PEA (toujours dus)' },
+  { label: 'Article L. 136-7 CSS', desc: 'Assiette CSG des gains du PEA (taux 10,6 % par Art. L136-8 I 2° CSS, LF 2025-1403)' },
+  { label: 'Article L. 136-8 CSS', desc: 'Taux CSG sur produits de placement porté à 10,6 % par LF 2025-1403 du 30/12/2025, applicable au 1er janvier 2026' },
 ]
 
-const PS = 0.172
-const PFU = 0.30  // avant 5 ans
+const PS = TAUX_PS_CAPITAL
+const PFU = TAUX_PFU_GLOBAL  // avant 5 ans : 31,4 % (12,8 IR + 18,6 PS)
 
 /**
  * Calculs PEA : bilan + sortie partielle ou totale.
@@ -31,8 +34,8 @@ const PFU = 0.30  // avant 5 ans
  * // PEA 7 ans, valeur 100 k€, versements 60 k€, retrait 30 k€
  * // PV latente = 40 k€ → 40 % de la valeur
  * // PV dans le retrait = 30 k€ × 40 % = 12 k€
- * // Impôt = 12 k€ × 17,2 % = 2 064 € (IR exonéré, > 5 ans)
- * // Net retrait = 27 936 €
+ * // Impôt = 12 k€ × 18,6 % = 2 232 € (IR exonéré, > 5 ans)
+ * // Net retrait = 27 768 €
  */
 export function calculerPea(inputs: PeaInputs): PeaResults {
   const warnings: PeaResults['warnings'] = []
@@ -63,7 +66,7 @@ export function calculerPea(inputs: PeaInputs): PeaResults {
   if (!exonerationIrActive && inputs.agePeaAnnees > 0) {
     warnings.push({
       type: 'danger',
-      message: `Votre PEA a ${inputs.agePeaAnnees.toFixed(1)} ans. Un retrait avant 5 ans entraîne la clôture du plan et la flat tax de 30 % (12,8 % d'IR + 17,2 % de prélèvements sociaux) sur l'ensemble des gains. Après 5 ans, l'IR disparaît : il ne reste que les prélèvements sociaux (17,2 %).`,
+      message: `Votre PEA a ${inputs.agePeaAnnees.toFixed(1)} ans. Un retrait avant 5 ans entraîne la clôture du plan et la flat tax de 31,4 % (12,8 % d'IR + 18,6 % de prélèvements sociaux) sur l'ensemble des gains. Après 5 ans, l'IR disparaît : il ne reste que les prélèvements sociaux (18,6 %).`,
     })
   }
 
@@ -119,7 +122,7 @@ export function calculerPea(inputs: PeaInputs): PeaResults {
 const FAQ_PEA: FAQSchemaItem[] = [
   {
     question: "Quels sont les prélèvements sur un retrait PEA après 5 ans ?",
-    answer: "Après 5 ans, les gains du PEA sont exonérés d'impôt sur le revenu (Art. 157-5° bis CGI). Les prélèvements sociaux (17,2 %) restent toujours dus sur la part plus-value du retrait. Avant 5 ans, le PFU 30 % s'applique (12,8 % IR + 17,2 % PS) sur l'ensemble des gains.",
+    answer: "Après 5 ans, les gains du PEA sont exonérés d'impôt sur le revenu (Art. 157-5° bis CGI). Les prélèvements sociaux (18,6 %) restent toujours dus sur la part plus-value du retrait. Avant 5 ans, le PFU 31,4 % s'applique (12,8 % IR + 18,6 % PS) sur l'ensemble des gains.",
   },
   {
     question: "Pourquoi un PEA à 500 k€ ne vaut-il pas vraiment 500 k€ ?",

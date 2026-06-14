@@ -13,7 +13,7 @@ import { FAQ_PEA } from '@/lib/schema/schemaData'
 
 export const metadata: Metadata = {
   title: 'FAQ PEA 2026 : fiscalite, plafond, passif latent',
-  description: "Questions frequentes sur le PEA : plafond 150 000 EUR, exoneration apres 5 ans, prelevements sociaux 17,2 %, passif fiscal latent.",
+  description: "Questions frequentes sur le PEA : plafond 150 000 EUR, exoneration apres 5 ans, prelevements sociaux 18,6 %, passif fiscal latent.",
   alternates: { canonical: 'https://calculpatrimoine.fr/faq/pea' },
 }
 
@@ -39,7 +39,7 @@ const sections: FAQSection[] = [
               Le PEA (Plan d&apos;Épargne en Actions) est une enveloppe fiscale créée en 1992
               (Art. 163 quinquies D CGI) qui permet d&apos;investir en actions européennes en
               bénéficiant d&apos;une exonération d&apos;impôt sur le revenu sur les plus-values
-              après 5 ans. Seuls les prélèvements sociaux (17,2 %) restent dus.
+              après 5 ans. Seuls les prélèvements sociaux (18,6 %) restent dus.
             </p>
             <p>
               Un seul PEA par personne, réservé aux résidents fiscaux français majeurs. Un
@@ -92,8 +92,8 @@ const sections: FAQSection[] = [
         answer: (
           <p>
             Un retrait avant 5 ans entraîne la clôture automatique du PEA et
-            l&apos;imposition des gains au prélèvement forfaitaire unique de 30 % (12,8 %
-            d&apos;impôt sur le revenu + 17,2 % de prélèvements sociaux), sauf cas
+            l&apos;imposition des gains au prélèvement forfaitaire unique de 31,4 % (12,8 %
+            d&apos;impôt sur le revenu + 18,6 % de prélèvements sociaux depuis la LF 2025-1403), sauf cas
             particuliers : licenciement, invalidité, retraite anticipée, qui n&apos;entraînent
             que les prélèvements sociaux.
           </p>
@@ -105,7 +105,7 @@ const sections: FAQSection[] = [
           <p>
             Après 5 ans de détention, les plus-values sont totalement exonérées
             d&apos;impôt sur le revenu (Art. 157-5° bis CGI). Seuls les prélèvements sociaux
-            de 17,2 % restent dus, calculés sur la fraction de plus-value du retrait. Le
+            de 18,6 % restent dus, calculés sur la fraction de plus-value du retrait. Le
             PEA reste ouvert et permet de continuer à verser et retirer librement.
           </p>
         ),
@@ -144,12 +144,12 @@ const sections: FAQSection[] = [
             <p className="mb-3">
               Le passif latent est l&apos;impôt qui serait dû si le PEA était soldé
               aujourd&apos;hui. Même exonéré d&apos;impôt sur le revenu après 5 ans, le PEA
-              reste soumis aux prélèvements sociaux de 17,2 % sur la fraction de
+              reste soumis aux prélèvements sociaux de 18,6 % sur la fraction de
               plus-value du retrait.
             </p>
             <p className="mb-3">
               Sur un PEA à 100 000 € dont 40 000 € de plus-value latente, le passif est
-              de 40 000 × 17,2 % = 6 880 €.
+              de 40 000 × 18,6 % = 7 440 €.
             </p>
             <p>
               Cette information complète la valeur brute affichée par le courtier et permet
@@ -251,7 +251,7 @@ export default function FAQPeaPage() {
           <div className="border-t border-neutral-300">
             {[
               { href: '/faq/assurance-vie', label: 'FAQ Assurance-Vie', desc: 'L\'autre enveloppe défiscalisée : PFU vs IR sur les rachats, abattement 8 ans.' },
-              { href: '/faq/tmi', label: 'FAQ TMI', desc: 'Votre tranche détermine l\'arbitrage PFU 30 % vs barème IR sur les autres placements.' },
+              { href: '/faq/tmi', label: 'FAQ TMI', desc: 'Votre tranche détermine l\'arbitrage PFU 31,4 % vs barème IR sur les autres placements.' },
               { href: '/faq', label: 'Toutes les FAQ', desc: 'Assurance-vie, PER, transmission, IFI et autres sujets.' },
             ].map(link => (
               <Link

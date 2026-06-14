@@ -118,9 +118,9 @@ export default function ComparateurLocatifCalculator() {
               <select value={inputs.vehiculePlacement}
                 onChange={e => set('vehiculePlacement', e.target.value as VehiculePlacement)}
                 className="w-full px-3 py-2 border border-neutral-200 rounded">
-                <option value="pea">PEA (exonéré IR après 5 ans, PS 17,2 %)</option>
+                <option value="pea">PEA (exonéré IR après 5 ans, PS 18,6 %)</option>
                 <option value="assurance_vie">Assurance-vie (abattement 4 600 € après 8 ans)</option>
-                <option value="cto">CTO (PFU 30 %)</option>
+                <option value="cto">CTO (PFU 31,4 %)</option>
               </select>
             </div>
           </div>
@@ -175,7 +175,7 @@ export default function ComparateurLocatifCalculator() {
         <CrossLink
           href="/plus-value-immobiliere"
           title="Impôt à la sortie du locatif"
-          description="Le calculateur ignore la fiscalité à la revente : IR 19 % + PS 17,2 %, abattements par durée de détention."
+          description="Le calculateur ignore la fiscalité à la revente : IR 19 % + PS 18,6 %, abattements par durée de détention."
         />
         <CrossLink
           href="/lmnp-reel-vs-micro"
@@ -185,7 +185,7 @@ export default function ComparateurLocatifCalculator() {
         <CrossLink
           href="/pea"
           title="Si vous penchez placement : enveloppe PEA"
-          description="Après 5 ans, le PEA est exonéré d'IR sur les plus-values, seuls les PS 17,2 % restent."
+          description="Après 5 ans, le PEA est exonéré d'IR sur les plus-values, seuls les PS 18,6 % restent."
         />
       </div>
 

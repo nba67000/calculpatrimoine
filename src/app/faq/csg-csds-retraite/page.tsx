@@ -104,7 +104,7 @@ const sections: FAQSection[] = [
               Oui. Une rente PER en sortie est imposée comme une pension : abattement 10 %
               puis intégration au barème IR, et CSG retraite au taux applicable selon votre
               RFR (4,3 / 7,4 / 9,1 %). Sortie en capital : seuls les gains sont taxés au
-              PFU 12,8 % + PS 17,2 %, sans CSG retraite.
+              PFU 12,8 % + PS 18,6 %, sans CSG retraite.
             </p>
             <div className="mt-4">
               <CrossLink

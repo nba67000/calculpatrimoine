@@ -32,7 +32,7 @@ const sections: FAQSection[] = [
               <strong>SCI à l&apos;IR</strong> : la SCI elle-même ne paie pas d&apos;impôt.
               Les loyers (après charges) sont partagés entre les associés selon leur part
               dans la SCI, et chacun les déclare dans sa propre déclaration d&apos;impôts
-              comme revenus fonciers, taxés à sa tranche IR + 17,2 % de prélèvements
+              comme revenus fonciers, taxés à sa tranche IR + 18,6 % de prélèvements
               sociaux. On parle de SCI « translucide » : l&apos;impôt passe à travers la SCI
               pour atterrir chez les associés.
             </p>

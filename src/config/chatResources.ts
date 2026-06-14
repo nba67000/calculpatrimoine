@@ -97,7 +97,7 @@ export const CALCULATEURS: RessourceCalculateur[] = [
     type: 'calculateur',
     slug: 'plus-value-immobiliere',
     titre: 'Plus-value immobilière',
-    description: 'Calcule la fiscalité d\'une cession immobilière : IR 19 %, PS 17,2 %, abattements par durée de détention, surtaxe sur PV > 50 000 €.',
+    description: 'Calcule la fiscalité d\'une cession immobilière : IR 19 %, PS 18,6 %, abattements par durée de détention, surtaxe sur PV > 50 000 €.',
     motsCles: ['plus-value', 'immobilier', 'cession', 'abattement détention', 'surtaxe', '150 VC', '757 B', 'notaire', 'résidence secondaire'],
   },
 ]

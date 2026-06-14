@@ -260,13 +260,13 @@ export default function ArticleTMIPage() {
             </div>
 
             <h3 className="font-serif text-xl font-bold text-neutral-900 mb-3 mt-8">
-              Assurance-vie : PFU 30 % ou barème, qui gagne
+              Assurance-vie : PFU 31,4 % ou barème, qui gagne
             </h3>
 
             <p className="text-neutral-700 mb-4">
               À un rachat d&apos;assurance-vie, vous avez le choix entre le prélèvement forfaitaire
-              unique (PFU) à 12,8 % d&apos;impôt sur le revenu (plus 17,2 % de prélèvements sociaux),
-              ou le barème progressif (votre TMI plus 17,2 % de prélèvements sociaux).
+              unique (PFU) à 12,8 % d&apos;impôt sur le revenu (plus 18,6 % de prélèvements sociaux),
+              ou le barème progressif (votre TMI plus 18,6 % de prélèvements sociaux).
             </p>
 
             <div className="bg-neutral-50 border border-neutral-200 p-5 my-6 font-mono text-sm">
@@ -287,20 +287,20 @@ export default function ArticleTMIPage() {
             </h3>
 
             <p className="text-neutral-700 mb-4">
-              Pour les plus-values sur titres hors PEA, c&apos;est pareil : PFU 30 % par défaut, ou
+              Pour les plus-values sur titres hors PEA, c&apos;est pareil : PFU 31,4 % par défaut, ou
               option pour le barème. Si votre TMI passe sous 12,8 %, le barème reste plus avantageux
               côté impôt sur le revenu.
             </p>
 
             <p className="text-neutral-700 mb-4">
-              Pour les plus-values immobilières, autre logique (taux fixe 19 % d&apos;IR et 17,2 %
+              Pour les plus-values immobilières, autre logique (taux fixe 19 % d&apos;IR et 18,6 %
               de PS) : votre TMI ne joue pas. Voir le calculateur dédié pour le détail des
               abattements pour durée de détention.
             </p>
 
             <p className="text-xs text-neutral-500 font-mono">
               Source :{' '}
-              <span className="font-medium text-neutral-700">Article 200 A du CGI</span> (PFU 30 %)
+              <span className="font-medium text-neutral-700">Article 200 A du CGI</span> (PFU 31,4 %)
             </p>
           </section>
 

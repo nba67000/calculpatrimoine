@@ -31,7 +31,7 @@ const sections: FAQSection[] = [
           <p>
             Seule la fraction de plus-value du rachat est imposée (règle proportionnelle :
             le rachat partiel se compose d&apos;une part de capital et d&apos;une part de gain
-            au prorata). Cette plus-value est soumise au PFU 30 % (12,8 % IR + 17,2 % PS),
+            au prorata). Cette plus-value est soumise au PFU 31,4 % (12,8 % IR + 18,6 % PS),
             ou au barème IR + PS sur option globale du foyer pour l&apos;année.
             L&apos;abattement annuel après 8 ans (4 600 € célibataire, 9 200 € couple) joue
             uniquement sur la fraction IR, pas sur les PS.
@@ -79,7 +79,7 @@ const sections: FAQSection[] = [
           <p>
             Non. L&apos;abattement de 4 600 € (célibataire) ou 9 200 € (couple) après 8 ans
             s&apos;applique uniquement à la fraction IR de la plus-value. Les prélèvements
-            sociaux de 17,2 % sont dus dès le premier euro de plus-value, sans abattement.
+            sociaux de 18,6 % sont dus dès le premier euro de plus-value, sans abattement.
             Cette règle réduit fortement le gain réel de l&apos;abattement quand la TMI est
             basse.
           </p>

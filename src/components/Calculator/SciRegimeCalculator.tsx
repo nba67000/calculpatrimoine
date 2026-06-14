@@ -114,7 +114,7 @@ export default function SciRegimeCalculator() {
               <span className="text-right">{formatEur(results.revenuFoncier)}</span>
               <span className="text-neutral-500">IR ({inputs.tmiAssocies} %)</span>
               <span className="text-right">{formatEur(results.irAnnuel)}</span>
-              <span className="text-neutral-500">PS 17,2 %</span>
+              <span className="text-neutral-500">PS 18,6 %</span>
               <span className="text-right">{formatEur(results.psAnnuel)}</span>
               <span className="font-bold pt-2 border-t">Impôt annuel</span>
               <span className="text-right font-bold text-red-700 pt-2 border-t">{formatEur(results.totalAnnuelIr)}</span>

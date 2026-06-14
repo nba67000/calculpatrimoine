@@ -19,18 +19,19 @@ function defaults(over: Partial<PerSortieInputs> = {}): PerSortieInputs {
 }
 
 describe('calculerPerSortie', () => {
-  it('capital 100k, 70% versements, TMI 11% → impôt IR 7 700 € + PFU 9 000 €', () => {
+  it('capital 100k, 70% versements, TMI 11% → impôt IR 7 700 € + PFU 9 420 € (LF 2025-1403)', () => {
     const r = calculerPerSortie(defaults({ tmiRetraite: 11 }))
     expect(r.impotVersements).toBe(7700)
-    expect(r.impotGains).toBe(9000)
-    expect(r.netCapital).toBe(100000 - 7700 - 9000)
+    // PFU 31,4 % × 30 000 gains = 9 420
+    expect(r.impotGains).toBe(9420)
+    expect(r.netCapital).toBe(100000 - 7700 - 9420)
   })
 
-  it('TMI 0% → impôt versements nul, seul PFU sur gains', () => {
+  it('TMI 0% → impôt versements nul, seul PFU sur gains (31,4 %)', () => {
     const r = calculerPerSortie(defaults({ tmiRetraite: 0 }))
     expect(r.impotVersements).toBe(0)
-    expect(r.impotGains).toBe(9000)
-    expect(r.netCapital).toBe(91000)
+    expect(r.impotGains).toBe(9420)
+    expect(r.netCapital).toBe(100000 - 9420)
   })
 
   it('rente : abattement 10% + TMI + PS 9,1%', () => {

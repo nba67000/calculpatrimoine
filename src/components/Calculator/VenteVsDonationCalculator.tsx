@@ -184,7 +184,7 @@ export default function VenteVsDonationCalculator() {
               <span className="text-right">{formatEur(results.pvNetteIR)}</span>
               <span className="text-neutral-500">IR sur PV (19 %)</span>
               <span className="text-right">{formatEur(results.irPlusValue)}</span>
-              <span className="text-neutral-500">PS sur PV (17,2 %)</span>
+              <span className="text-neutral-500">PS sur PV (18,6 %)</span>
               <span className="text-right">{formatEur(results.psPlusValue)}</span>
               {results.surtaxePV > 0 && (
                 <>

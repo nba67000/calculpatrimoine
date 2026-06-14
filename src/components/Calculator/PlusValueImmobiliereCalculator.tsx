@@ -348,7 +348,7 @@ export default function PlusValueImmobiliereCalculator() {
                   <p className="text-xs text-neutral-600 mt-1">−{formatEur(results.abattementIR)}</p>
                 </div>
                 <div className="bg-neutral-50 rounded-lg p-3">
-                  <p className="text-xs text-neutral-500 mb-1">Abattement PS (17,2 %)</p>
+                  <p className="text-xs text-neutral-500 mb-1">Abattement PS (18,6 %)</p>
                   <p className="text-lg font-bold text-neutral-900">{formatPct(results.tauxAbattementPS)}</p>
                   <p className="text-xs text-neutral-600 mt-1">−{formatEur(results.abattementPS)}</p>
                 </div>
@@ -382,11 +382,11 @@ export default function PlusValueImmobiliereCalculator() {
                 </div>
                 <div className="border-t border-neutral-100 pt-3">
                   <div className="flex justify-between mb-1">
-                    <span className="text-neutral-600">Plus-value nette taxée à 17,2 %</span>
+                    <span className="text-neutral-600">Plus-value nette taxée à 18,6 %</span>
                     <span className="font-medium">{formatEur(results.pvNettePS)}</span>
                   </div>
                   <div className="flex justify-between text-red-700">
-                    <span>Prélèvements sociaux 17,2 %</span>
+                    <span>Prélèvements sociaux 18,6 %</span>
                     <span className="font-bold">{formatEur(results.prelevementsSociaux)}</span>
                   </div>
                 </div>

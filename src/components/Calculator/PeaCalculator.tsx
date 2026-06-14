@@ -64,7 +64,7 @@ export default function PeaCalculator() {
                 className="w-full" />
               <p className="text-xs text-neutral-500 mt-1">
                 Seuil clé : à partir de 5 ans, l&apos;impôt sur le revenu disparaît et il ne reste que les
-                prélèvements sociaux (17,2 %) sur la plus-value. Avant 5 ans, retirer = flat tax 30 % +
+                prélèvements sociaux (18,6 %) sur la plus-value. Avant 5 ans, retirer = flat tax 31,4 % +
                 clôture du plan.
               </p>
             </div>
@@ -120,7 +120,7 @@ export default function PeaCalculator() {
               <span className="text-neutral-500">Part PV dans la valeur</span>
               <span className="text-right">{formatPct(results.partPlusValueDansValeur, 1)}</span>
               <span className="text-neutral-500">Régime applicable</span>
-              <span className="text-right">{results.exonerationIrActive ? 'PS 17,2 % (>5 ans)' : 'PFU 30 % (<5 ans)'}</span>
+              <span className="text-right">{results.exonerationIrActive ? 'PS 18,6 % (>5 ans)' : 'PFU 31,4 % (<5 ans)'}</span>
             </div>
           </div>
 

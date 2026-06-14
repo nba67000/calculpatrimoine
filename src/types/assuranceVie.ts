@@ -28,7 +28,7 @@ export interface FiscaliteOption {
  nom: 'PFU' | 'IR';
  description: string;
  impotSurRevenu: number; // Impôt sur le revenu seul
- prelevementsSociaux: number; // Prélèvements sociaux 17,2%
+ prelevementsSociaux: number; // Prélèvements sociaux 18,6% (LF 2025-1403)
  totalPrelevement: number; // Total à payer
  netPercu: number; // Montant net perçu après impôts
  tauxEffectif: number; // Taux effectif global (en %)

@@ -4,6 +4,13 @@ import type { AssuranceVieInputs, AssuranceVieResults, FiscaliteOption } from '@
 import type { CalculatorModule } from '@/lib/calculators/types'
 import { FAQ_ASSURANCE_VIE, HOWTO_ASSURANCE_VIE } from '@/lib/schema/schemaData'
 import { formatEurRounded as eur, formatPct as pct, formatLigne as ligne } from '@/lib/formatters'
+import {
+  TAUX_PS_CAPITAL,
+  TAUX_PFU_GLOBAL,
+  TAUX_PFU_AV_REDUIT_GLOBAL,
+  TAUX_PFU_AV_REDUIT_IR,
+  TAUX_PFU_IR,
+} from '@/lib/fiscal/taux'
 
 export const SOURCES_ASSURANCE_VIE = [
   // Légifrance + BOFiP partiellement retirés le 2026-05-31 (HTTP 404 ou re-route vers mauvais doc).
@@ -12,7 +19,7 @@ export const SOURCES_ASSURANCE_VIE = [
   // URL restaurée le 2026-05-31 (crawl round 1 : LEGIARTI alternatif valide).
   { href: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000047288653', label: 'Article 990 I du CGI', desc: 'Prélèvement spécifique sur versements > 150 000 €' },
   { href: 'https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000036339197', label: 'Loi de finances 2018 (article 28)', desc: 'Réforme PFU (flat tax), date pivot du 27 septembre 2017' },
-  { label: 'Article L136-7 du Code de la Sécurité Sociale' },
+  { label: 'Article L136-7 du Code de la Sécurité Sociale', desc: 'Assiette CSG sur produits AV - taux porté à 10,6 % par LF 2025-1403 (Art. L136-8 I 2° CSS) au 1er janvier 2026' },
   { label: 'BOFiP RPPM-RCM-20-10-20' },
 ]
 
@@ -39,9 +46,9 @@ const SEUIL_ENCOURS_PFU_REDUIT = 150_000
  * 7,5% si encours total ≤ 150 000€, sinon prorata 7,5%/12,8% (Art. 125-0 A CGI).
  */
 function tauxIRPost2017(encoursTotalContrats: number): number {
- if (encoursTotalContrats <= SEUIL_ENCOURS_PFU_REDUIT) return 0.075
+ if (encoursTotalContrats <= SEUIL_ENCOURS_PFU_REDUIT) return TAUX_PFU_AV_REDUIT_IR
  const ratioReduit = SEUIL_ENCOURS_PFU_REDUIT / encoursTotalContrats
- return ratioReduit * 0.075 + (1 - ratioReduit) * 0.128
+ return ratioReduit * TAUX_PFU_AV_REDUIT_IR + (1 - ratioReduit) * TAUX_PFU_IR
 }
 
 /**
@@ -56,12 +63,12 @@ function calculerTauxPFU(
 ): { tauxMoyen: number; detailAvant2017: null | { plusValueAvant2017: number; plusValueApres2017: number; tauxAvant: number; tauxApres: number; avantage: number } } {
 
  if (anciennete < 8) {
- // Contrat < 8 ans : 30% (12,8% IR + 17,2% PS)
- return { tauxMoyen: 0.30, detailAvant2017: null }
+ // Contrat < 8 ans : 31,4 % (12,8 % IR + 18,6 % PS - Art. L136-8 CSS LF 2025-1403)
+ return { tauxMoyen: TAUX_PFU_GLOBAL, detailAvant2017: null }
  }
 
  // Contrat > 8 ans : taux post-2017 dépend du seuil 150 000€
- const tauxPost = tauxIRPost2017(encoursTotalContrats) + 0.172
+ const tauxPost = tauxIRPost2017(encoursTotalContrats) + TAUX_PS_CAPITAL
 
  if (versementAvant2017 === 0) {
  return { tauxMoyen: tauxPost, detailAvant2017: null }
@@ -72,22 +79,22 @@ function calculerTauxPFU(
  const plusValueAvant2017 = plusValueDansRachat * ratioAvant2017
  const plusValueApres2017 = plusValueDansRachat - plusValueAvant2017
 
- // Avant 2017 : toujours 7,5% + 17,2% = 24,7%
- const impotAvant = plusValueAvant2017 * 0.247
+ // Avant 2017 : toujours 7,5 % + 18,6 % = 26,1 %
+ const impotAvant = plusValueAvant2017 * TAUX_PFU_AV_REDUIT_GLOBAL
  const impotApres = plusValueApres2017 * tauxPost
 
  const tauxMoyen = plusValueDansRachat > 0
  ? (impotAvant + impotApres) / plusValueDansRachat
- : 0.247
+ : TAUX_PFU_AV_REDUIT_GLOBAL
 
  return {
  tauxMoyen,
  detailAvant2017: {
  plusValueAvant2017,
  plusValueApres2017,
- tauxAvant: 0.247,
+ tauxAvant: TAUX_PFU_AV_REDUIT_GLOBAL,
  tauxApres: tauxPost,
- avantage: plusValueAvant2017 * (tauxPost - 0.247)
+ avantage: plusValueAvant2017 * (tauxPost - TAUX_PFU_AV_REDUIT_GLOBAL)
  }
  }
 }
@@ -162,14 +169,14 @@ function evaluerAlertesAV(p: {
     const tauxApresPct = (p.detailAvant2017.tauxApres * 100).toFixed(1)
     optimisations.push({
       type: 'info',
-      message: `Vos versements faits avant le 27 septembre 2017 (date à laquelle la flat tax a remplacé l'ancien régime) sont taxés au taux réduit historique de 24,7 % au lieu de ${tauxApresPct} %. Économie sur ce rachat : ${Math.round(p.partAvant2017.avantage).toLocaleString('fr-FR')} €.`,
+      message: `Vos versements faits avant le 27 septembre 2017 (date à laquelle la flat tax a remplacé l'ancien régime) sont taxés au taux réduit historique de 26,1 % au lieu de ${tauxApresPct} %. Économie sur ce rachat : ${Math.round(p.partAvant2017.avantage).toLocaleString('fr-FR')} €.`,
     })
   }
 
   if (p.tmi <= 11 && p.optionMoinsImposee !== 'IR') {
     warnings.push({
       type: 'info',
-      message: `Avec votre TMI à ${p.tmi} %, l'écart entre l'imposition au barème de l'IR (+ 17,2 % de prélèvements sociaux) et la flat tax à 30 % (PFU) est de ${Math.round(p.difference).toLocaleString('fr-FR')} €. Le graphique ci-dessus montre laquelle des deux coûte le moins cher pour ce rachat.`,
+      message: `Avec votre TMI à ${p.tmi} %, l'écart entre l'imposition au barème de l'IR (+ 18,6 % de prélèvements sociaux) et la flat tax à 31,4 % (PFU) est de ${Math.round(p.difference).toLocaleString('fr-FR')} €. Le graphique ci-dessus montre laquelle des deux coûte le moins cher pour ce rachat.`,
     })
   }
 
@@ -217,8 +224,8 @@ export function calculerFiscaliteRachat(inputs: AssuranceVieInputs): AssuranceVi
  const optionPFU: FiscaliteOption = {
  nom: 'PFU',
  description: 'Prélèvement Forfaitaire Unique (Flat Tax)',
- impotSurRevenu: plusValueTaxable * (calculPFU.tauxMoyen - 0.172), // IR seul
- prelevementsSociaux: plusValueTaxable * 0.172,
+ impotSurRevenu: plusValueTaxable * (calculPFU.tauxMoyen - TAUX_PS_CAPITAL), // IR seul
+ prelevementsSociaux: plusValueTaxable * TAUX_PS_CAPITAL,
  totalPrelevement: impotPFU,
  netPercu: inputs.montantRachat - impotPFU,
  tauxEffectif: (impotPFU / inputs.montantRachat) * 100
@@ -227,7 +234,7 @@ export function calculerFiscaliteRachat(inputs: AssuranceVieInputs): AssuranceVi
  // 7. Calcul OPTION IR + PS
  const tauxIR = inputs.tmi / 100
  const impotIR = plusValueTaxable * tauxIR
- const prelevementsSociaux = plusValueTaxable * 0.172
+ const prelevementsSociaux = plusValueTaxable * TAUX_PS_CAPITAL
  const totalIR = impotIR + prelevementsSociaux
  
  const optionIR: FiscaliteOption = {
@@ -247,7 +254,7 @@ export function calculerFiscaliteRachat(inputs: AssuranceVieInputs): AssuranceVi
  // 9. Détail versements avant 2017
  const partAvant2017 = calculPFU.detailAvant2017 ? {
  montant: calculPFU.detailAvant2017.plusValueAvant2017,
- tauxFiscal: 24.7,
+ tauxFiscal: 26.1,
  avantage: calculPFU.detailAvant2017.avantage
  } : null
  

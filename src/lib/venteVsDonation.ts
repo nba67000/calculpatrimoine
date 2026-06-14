@@ -54,7 +54,7 @@ const LIEN_TO_FISCAL: Record<LienBeneficiaire, LienFiscal> = {
  * Compare le coût fiscal d'une vente et d'une donation d'un même bien
  * immobilier à un proche.
  *
- * Côté vente : on calcule la plus-value imposable (IR 19 % + PS 17,2 % +
+ * Côté vente : on calcule la plus-value imposable (IR 19 % + PS 18,6 % +
  * surtaxe éventuelle) puis on ajoute les droits d'enregistrement DMTO payés
  * par l'acheteur (~5,80665 % par défaut).
  *
@@ -179,7 +179,7 @@ export function calculerVenteVsDonation(
   ) {
     optimisations.push({
       type: 'info',
-      message: `À ${pvResults.anneesDetention} ans de détention, l'exonération IR n'est pas encore acquise. En attendant ${pvResults.anneesAvantExoIR} année(s) supplémentaire(s) avant la vente, vous économiseriez l'IR 19 % sur la PV. L'exonération PS totale (17,2 %) est acquise à 30 ans.`,
+      message: `À ${pvResults.anneesDetention} ans de détention, l'exonération IR n'est pas encore acquise. En attendant ${pvResults.anneesAvantExoIR} année(s) supplémentaire(s) avant la vente, vous économiseriez l'IR 19 % sur la PV. L'exonération PS totale (18,6 %) est acquise à 30 ans.`,
     })
   }
 

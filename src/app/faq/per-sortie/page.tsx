@@ -42,7 +42,7 @@ const sections: FAQSection[] = [
           <p>
             Imposition séparée des versements et des gains. Les versements déductibles
             sont taxés à l&apos;IR (au barème, après quotient familial). Les gains correspondants
-            sont taxés au PFU de 30 % (12,8 % IR + 17,2 % PS). Si les versements
+            sont taxés au PFU de 31,4 % (12,8 % IR + 18,6 % PS). Si les versements
             n&apos;étaient pas déductibles (option de ne pas déduire à l&apos;entrée), seuls les
             gains sont imposés au PFU.
           </p>
@@ -107,7 +107,7 @@ const sections: FAQSection[] = [
             taxés à l&apos;IR mais les gains restent au PFU. Pour les accidents de la vie
             (chômage de fin de droits, invalidité, décès du conjoint, surendettement,
             cessation d&apos;activité non salariée), les versements ET les gains sont
-            exonérés d&apos;IR ; seuls les PS 17,2 % s&apos;appliquent sur les gains.
+            exonérés d&apos;IR ; seuls les PS 18,6 % s&apos;appliquent sur les gains.
           </p>
         ),
       },

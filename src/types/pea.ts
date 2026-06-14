@@ -25,7 +25,7 @@ export interface PeaResults {
   pvDansRetrait: number
   impotSurRetrait: number
   netRetrait: number
-  tauxAppliqueRetrait: number    // 0 (avant 5 ans non détenu , pas codé), 17,2 (>5 ans) ou 30 (<5 ans simplifié)
+  tauxAppliqueRetrait: number    // 0 (avant 5 ans non détenu, pas codé), 18,6 (>5 ans, LF 2025-1403) ou 31,4 (<5 ans simplifié)
   exonerationIrActive: boolean   // true si âge >= 5 ans
 
   warnings: Array<{ type: 'danger' | 'warning' | 'info'; message: string }>

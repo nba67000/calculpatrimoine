@@ -21,17 +21,17 @@ describe('calculerLmnpRegime', () => {
     expect(r.microApplicable).toBe(true)
   })
 
-  it('micro-BIC 20k loyers, 50% abattement, TMI 30 → 4 720 € impôt', () => {
+  it('micro-BIC 20k loyers, 50% abattement, TMI 30 → 4 860 € impôt (PS 18,6 % LF 2025-1403)', () => {
     const r = calculerLmnpRegime(defaults())
-    // Base = 10000, IR = 3000, PS = 1720, total = 4720
+    // Base = 10000, IR = 3000, PS = 1860, total = 4860
     expect(r.beneficeImposableMicro).toBe(10000)
-    expect(r.totalImpotMicro).toBe(4720)
+    expect(r.totalImpotMicro).toBe(4860)
   })
 
-  it('régime réel 20k - 4k charges - 6k amort = 10k → même 4 720 €', () => {
+  it('régime réel 20k - 4k charges - 6k amort = 10k → même 4 860 €', () => {
     const r = calculerLmnpRegime(defaults())
     expect(r.beneficeImposableReel).toBe(10000)
-    expect(r.totalImpotReel).toBe(4720)
+    expect(r.totalImpotReel).toBe(4860)
   })
 
   it('réel avantageux si charges + amort > 50 % loyers', () => {

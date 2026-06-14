@@ -54,9 +54,9 @@ export default function AssuranceViePage() {
               {[
                 ['Plus-value dans le rachat', 'Montant rachat × (PV totale ÷ Capital total)'],
                 ['Abattement (si > 8 ans)', '4 600 € (seul) ou 9 200 € (couple)'],
-                ['PFU versements après 27/09/2017', '12,8 % IR + 17,2 % PS = 30 %'],
-                ['PFU versements avant 27/09/2017', '7,5 % IR + 17,2 % PS = 24,7 %'],
-                ['IR + Prélèvements sociaux', 'TMI utilisateur + 17,2 %'],
+                ['PFU versements après 27/09/2017', '12,8 % IR + 18,6 % PS = 31,4 %'],
+                ['PFU versements avant 27/09/2017', '7,5 % IR + 18,6 % PS = 26,1 %'],
+                ['IR + Prélèvements sociaux', 'TMI utilisateur + 18,6 %'],
                 ['Option retenue', 'min(totalPFU, totalIR)'],
               ].map(([label, val]) => (
                 <div key={label} className="font-mono">
@@ -95,13 +95,13 @@ export default function AssuranceViePage() {
             </p>
             <p>
               <strong>Vous avez le choix entre PFU et IR.</strong>{' '}
-              PFU (Flat Tax) : taux fixe de 30 % (12,8 % IR + 17,2 % PS).
-              IR + PS : votre TMI + 17,2 % de prélèvements sociaux.
+              PFU (Flat Tax) : taux fixe de 31,4 % (12,8 % IR + 18,6 % PS depuis LF 2025-1403).
+              IR + PS : votre TMI + 18,6 % de prélèvements sociaux.
             </p>
             <p>
               <strong>Versements avant le 27/09/2017.</strong>{' '}
-              Les versements effectués avant cette date bénéficient d&apos;un taux réduit de 24,7 %
-              (7,5 % IR + 17,2 % PS) au lieu de 30 %.
+              Les versements effectués avant cette date bénéficient d&apos;un taux réduit de 26,1 %
+              (7,5 % IR + 18,6 % PS) au lieu de 31,4 %.
             </p>
           </div>
         </div>

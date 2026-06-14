@@ -112,7 +112,7 @@ function evaluerAlertesPER(
 
   warnings.push({
     type: 'info',
-    message: `Cette économie est reportée, pas annulée. À la retraite, au moment de récupérer l'argent : la part qui correspond à vos versements sera imposée à l'IR (au barème de l'année concernée), les gains seront soumis aux prélèvements sociaux (17,2 %). L'avantage final dépend donc de l'écart entre votre TMI aujourd'hui (${tmi} %) et votre TMI à la retraite.`,
+    message: `Cette économie est reportée, pas annulée. À la retraite, au moment de récupérer l'argent : la part qui correspond à vos versements sera imposée à l'IR (au barème de l'année concernée), les gains seront soumis aux prélèvements sociaux (18,6 %). L'avantage final dépend donc de l'écart entre votre TMI aujourd'hui (${tmi} %) et votre TMI à la retraite.`,
   })
 
   if (detail.partNonDeductible > 0) {

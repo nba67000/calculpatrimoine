@@ -8,6 +8,7 @@ import type { PerSortieInputs, PerSortieResults } from '@/types/perSortie'
 import type { CalculatorModule, HowToSchema } from '@/lib/calculators/types'
 import type { FAQSchemaItem } from '@/components/SchemaFAQ'
 import { formatEurRounded as eur, formatLigne as ligne } from '@/lib/formatters'
+import { TAUX_PFU_GLOBAL } from '@/lib/fiscal/taux'
 
 export const SOURCES_PER_SORTIE = [
   // Cf. docs/broken-links-to-fix.md et docs/sources/per-sortie.md
@@ -15,10 +16,11 @@ export const SOURCES_PER_SORTIE = [
   // déductibles relève du § 5 b bis (qui rattache au régime pensions § 5 a),
   // pas d'un "5° bis" inexistant.
   { label: 'Article 158 § 5 b bis CGI', desc: 'Rente PER (versements déductibles) imposée au régime pensions de retraite avec abattement 10 % (renvoi au § 5 a)' },
-  { label: 'Article 200 A B 1° CGI', desc: 'PFU 30 % (12,8 % IR + 17,2 % PS) sur la fraction "plus-values" du capital sorti' },
+  { label: 'Article 200 A B 1° CGI', desc: 'PFU 31,4 % (12,8 % IR + 18,6 % PS) sur la fraction "plus-values" du capital sorti' },
   { label: 'Article 158 § 5 b quinquies 1° CGI', desc: 'Capital PER versements déductibles imposé à l\'IR au barème SANS abattement 10 %' },
   { label: 'Article 163 quatervicies CGI', desc: 'Régime de déductibilité à l\'entrée : détermine l\'imposition à la sortie' },
   { label: 'Article L. 136-1-2 II 11° CSS', desc: 'Rente PER versements déductibles exclue de l\'assiette CSG L. 136-1-2 ; bascule sur le régime pensions L. 136-8 (4 paliers selon RFR, taux normal 9,1 %)' },
+  { label: 'Article L. 136-8 CSS', desc: 'Taux CSG sur produits de placement porté à 10,6 % par LF 2025-1403 du 30/12/2025 (PFU global 31,4 % au 1er janvier 2026)' },
 ]
 
 // Taux PS sur pensions de retraite (taux normal , simplification : on n'évalue
@@ -26,15 +28,15 @@ export const SOURCES_PER_SORTIE = [
 const PS_PENSION_NORMAL = 0.091  // CSG 8,3 + CRDS 0,5 + CASA 0,3 = 9,1 %
 const ABATTEMENT_PENSION = 0.10  // Art. 158-5° bis CGI
 
-// PFU sur la fraction plus-values du capital
-const PFU = 0.30                 // 12,8 % IR + 17,2 % PS
+// PFU sur la fraction plus-values du capital (Art. 200 A CGI + L136-8 LF 2025-1403)
+const PFU = TAUX_PFU_GLOBAL      // 31,4 % (12,8 % IR + 18,6 % PS)
 
 /**
  * Compare la sortie en capital et la sortie en rente d'un PER individuel.
  *
  * Hypothèses simplificatrices :
  * - Capital : versements déductibles imposés au barème IR (TMI à la retraite),
- *   gains imposés au PFU 30 % (12,8 + 17,2 PS).
+ *   gains imposés au PFU 31,4 % (12,8 + 18,6 PS).
  * - Rente : régime des pensions (Art. 158-5° bis CGI) , abattement 10 %, IR
  *   au barème (TMI), CSG/CRDS/CASA 9,1 % (taux normal, simplification).
  * - Comparaison cumulée : capital = montant net immédiat ; rente = rente
@@ -44,8 +46,8 @@ const PFU = 0.30                 // 12,8 % IR + 17,2 % PS
  * // Capital 100 k€, 70 % versements déductibles, TMI retraite 11 %, âge 65,
  * // espérance 85, taux rente 4 %, mode capital.
  * calculerPerSortie({...})
- * // → capital : 70 000 × 11 % + 30 000 × 30 % = 7 700 + 9 000 = 16 700 € d'impôt
- * //   net capital : 83 300 €.
+ * // → capital : 70 000 × 11 % + 30 000 × 31,4 % = 7 700 + 9 420 = 17 120 € d'impôt
+ * //   net capital : 82 880 €.
  */
 export function calculerPerSortie(inputs: PerSortieInputs): PerSortieResults {
   const warnings: PerSortieResults['warnings'] = []
@@ -133,7 +135,7 @@ export function calculerPerSortie(inputs: PerSortieInputs): PerSortieResults {
 const FAQ_PER_SORTIE: FAQSchemaItem[] = [
   {
     question: "Comment est taxée la sortie en capital d'un PER ?",
-    answer: "La fraction du capital correspondant aux versements déductibles est imposée à l'IR au barème (votre TMI à la retraite). La fraction correspondant aux gains est imposée au PFU 30 % (12,8 % IR + 17,2 % PS). Le total dépend donc du mix versements/gains et de votre TMI.",
+    answer: "La fraction du capital correspondant aux versements déductibles est imposée à l'IR au barème (votre TMI à la retraite). La fraction correspondant aux gains est imposée au PFU 31,4 % (12,8 % IR + 18,6 % PS). Le total dépend donc du mix versements/gains et de votre TMI.",
   },
   {
     question: "Comment est taxée la sortie en rente d'un PER ?",

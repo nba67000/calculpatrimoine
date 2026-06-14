@@ -72,7 +72,7 @@ const sections: FAQSection[] = [
         answer: (
           <p>
             Les intérêts perçus sont imposables comme des revenus de capitaux mobiliers :
-            option entre PFU 30 % ou barème IR + PS 17,2 %. Le capital remboursé n&apos;est pas
+            option entre PFU 31,4 % ou barème IR + PS 18,6 %. Le capital remboursé n&apos;est pas
             imposable. À ne pas confondre avec une donation : le prêt n&apos;utilise pas
             l&apos;abattement Art. 779 et la créance reste dans le patrimoine du prêteur.
           </p>

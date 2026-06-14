@@ -73,7 +73,7 @@ export default function ArticleAssuranceViePage() {
                 },
                 {
                   terme: 'PFU - Prélèvement Forfaitaire Unique',
-                  def: "Un taux fixe de 30 % sur les gains financiers : 12,8 % d'impôt sur le revenu + 17,2 % de prélèvements sociaux. Aussi appelé « flat tax ». S'applique par défaut sur vos rachats, sauf si vous demandez l'option IR.",
+                  def: "Un taux fixe de 31,4 % sur les gains financiers : 12,8 % d'impôt sur le revenu + 18,6 % de prélèvements sociaux (CSG portée à 10,6 % par la LF 2025-1403 du 30/12/2025). Aussi appelé « flat tax ». S'applique par défaut sur vos rachats, sauf si vous demandez l'option IR.",
                 },
                 {
                   terme: 'TMI - Taux Marginal d\'Imposition',
@@ -246,14 +246,14 @@ export default function ArticleAssuranceViePage() {
               <div className="bg-surface-card border border-neutral-200 p-5">
                 <p className="font-mono text-xs text-neutral-500 uppercase tracking-wider mb-2">Option 1 - PFU (Prélèvement Forfaitaire Unique)</p>
                 <p className="text-sm text-neutral-700 mb-3">
-                  Taux fixe de 30 % sur vos plus-values, peu importe votre tranche d&apos;imposition. Composé de 12,8 % d&apos;impôt sur le revenu et 17,2 % de prélèvements sociaux. C&apos;est l&apos;option par défaut, appliquée automatiquement si vous ne demandez rien.
+                  Taux fixe de 31,4 % sur vos plus-values, peu importe votre tranche d&apos;imposition. Composé de 12,8 % d&apos;impôt sur le revenu et 18,6 % de prélèvements sociaux (CSG portée à 10,6 % par la LF 2025-1403). C&apos;est l&apos;option par défaut, appliquée automatiquement si vous ne demandez rien.
                 </p>
                 <p className="font-mono text-xs text-neutral-400">Pour : simple. Contre : coûteux si votre taux marginal est bas.</p>
               </div>
               <div className="bg-surface-card border border-neutral-200 p-5">
                 <p className="font-mono text-xs text-neutral-500 uppercase tracking-wider mb-2">Option 2 - IR + prélèvements sociaux</p>
                 <p className="text-sm text-neutral-700 mb-3">
-                  Vos plus-values rejoignent votre revenu imposable et sont taxées à votre taux marginal, plus 17,2 % de prélèvements sociaux. Vous devez le demander explicitement à la déclaration.
+                  Vos plus-values rejoignent votre revenu imposable et sont taxées à votre taux marginal, plus 18,6 % de prélèvements sociaux. Vous devez le demander explicitement à la déclaration.
                 </p>
                 <p className="font-mono text-xs text-neutral-400">Pour : souvent moins cher à TMI 0 ou 11 %. Contre : à demander à la main chaque année.</p>
               </div>
@@ -272,11 +272,11 @@ export default function ArticleAssuranceViePage() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-neutral-200 font-mono text-xs">
-                  <tr><td className="py-2 text-neutral-700">0 %</td><td className="py-2">17,2 %</td><td className="py-2">30 %</td><td className="py-2 text-neutral-900">Le PFU coûte 74 % de plus</td></tr>
-                  <tr><td className="py-2 text-neutral-700">11 %</td><td className="py-2">28,2 %</td><td className="py-2">30 %</td><td className="py-2 text-neutral-900">Le PFU coûte 6 % de plus</td></tr>
-                  <tr><td className="py-2 text-neutral-700">30 %</td><td className="py-2">47,2 %</td><td className="py-2">30 %</td><td className="py-2 text-accent-600">L&apos;IR coûte 57 % de plus</td></tr>
-                  <tr><td className="py-2 text-neutral-700">41 %</td><td className="py-2">58,2 %</td><td className="py-2">30 %</td><td className="py-2 text-accent-600">L&apos;IR coûte 94 % de plus</td></tr>
-                  <tr><td className="py-2 text-neutral-700">45 %</td><td className="py-2">62,2 %</td><td className="py-2">30 %</td><td className="py-2 text-accent-600">L&apos;IR coûte 107 % de plus</td></tr>
+                  <tr><td className="py-2 text-neutral-700">0 %</td><td className="py-2">18,6 %</td><td className="py-2">31,4 %</td><td className="py-2 text-neutral-900">Le PFU coûte 69 % de plus</td></tr>
+                  <tr><td className="py-2 text-neutral-700">11 %</td><td className="py-2">29,6 %</td><td className="py-2">31,4 %</td><td className="py-2 text-neutral-900">Le PFU coûte 6 % de plus</td></tr>
+                  <tr><td className="py-2 text-neutral-700">30 %</td><td className="py-2">48,6 %</td><td className="py-2">31,4 %</td><td className="py-2 text-accent-600">L&apos;IR coûte 55 % de plus</td></tr>
+                  <tr><td className="py-2 text-neutral-700">41 %</td><td className="py-2">59,6 %</td><td className="py-2">31,4 %</td><td className="py-2 text-accent-600">L&apos;IR coûte 90 % de plus</td></tr>
+                  <tr><td className="py-2 text-neutral-700">45 %</td><td className="py-2">63,6 %</td><td className="py-2">31,4 %</td><td className="py-2 text-accent-600">L&apos;IR coûte 103 % de plus</td></tr>
                 </tbody>
               </table>
             </div>
@@ -302,15 +302,15 @@ export default function ArticleAssuranceViePage() {
               Si vous avez fait des versements avant le 27 septembre 2017, vous bénéficiez d&apos;un taux réduit sur ces versements, à condition que votre contrat ait plus de 8 ans.
             </p>
             <p className="text-neutral-700 mb-6">
-              Pourquoi cette date pivot ? La loi de finances 2018 a créé le PFU à 30 %. Pour ne pas pénaliser rétroactivement les épargnants qui avaient ouvert leur contrat sous l&apos;ancien régime, le législateur a accordé un taux préférentiel sur les versements antérieurs.
+              Pourquoi cette date pivot ? La loi de finances 2018 a créé le PFU à 30 % (porté à 31,4 % depuis la LF 2025-1403 du 30/12/2025 qui a relevé la CSG à 10,6 %). Pour ne pas pénaliser rétroactivement les épargnants qui avaient ouvert leur contrat sous l&apos;ancien régime, le législateur a accordé un taux préférentiel sur les versements antérieurs.
             </p>
 
             <div className="bg-neutral-50 border border-neutral-200 p-5 my-6">
               <p className="font-mono text-xs text-neutral-400 uppercase tracking-wider mb-3">Taux applicable aux versements avant le 27/09/2017, contrat de plus de 8 ans</p>
               <div className="font-mono text-sm space-y-1 text-neutral-800">
                 <p>Taux d&apos;imposition sur le revenu : 7,5 % (au lieu de 12,8 %)</p>
-                <p>Prélèvements sociaux : 17,2 % (inchangés)</p>
-                <p className="font-bold text-neutral-900 pt-2 border-t border-neutral-200 mt-2">Total : 24,7 % au lieu de 30 %</p>
+                <p>Prélèvements sociaux : 18,6 % (CSG 10,6 % depuis LF 2025-1403)</p>
+                <p className="font-bold text-neutral-900 pt-2 border-t border-neutral-200 mt-2">Total : 26,1 % au lieu de 31,4 %</p>
               </div>
               <p className="mt-3 text-sm text-neutral-700">Sur 10 000 euros de plus-value, ça fait 530 euros d&apos;économie.</p>
             </div>
@@ -327,9 +327,9 @@ export default function ArticleAssuranceViePage() {
                 <p>Plus-value totale : 30 000 euros</p>
                 <p>Versements avant 2017 : 50 000 euros soit 71 % du total</p>
                 <p>Versements après 2017 : 20 000 euros soit 29 % du total</p>
-                <p className="pt-2">Plus-value liée aux versements pré-2017 : 30 000 × 71 % = 21 300 euros → taxée à 24,7 %</p>
-                <p>Plus-value liée aux versements post-2017 : 30 000 × 29 % = 8 700 euros → taxée à 30 %</p>
-                <p className="font-bold text-neutral-900 pt-2 border-t border-neutral-200 mt-2">Taux moyen effectif : 26,2 %</p>
+                <p className="pt-2">Plus-value liée aux versements pré-2017 : 30 000 × 71 % = 21 300 euros → taxée à 26,1 %</p>
+                <p>Plus-value liée aux versements post-2017 : 30 000 × 29 % = 8 700 euros → taxée à 31,4 %</p>
+                <p className="font-bold text-neutral-900 pt-2 border-t border-neutral-200 mt-2">Taux moyen effectif : 27,6 %</p>
               </div>
             </div>
 
@@ -411,8 +411,8 @@ export default function ArticleAssuranceViePage() {
                 titre: '3. Laisser le PFU s\'appliquer sans vérifier',
                 desc: 'Le PFU s\'applique automatiquement si vous ne demandez rien. Avec une TMI à 11 %, l\'option IR est moins taxée que le PFU. Mais elle ne s\'applique jamais par défaut.',
                 cols: [
-                  { label: 'PFU par défaut', lines: ['Plus-value taxable : 10 000 euros', 'Taux : 30 %', 'Impôt : 3 000 euros'] },
-                  { label: 'Option IR + prél. sociaux', lines: ['Plus-value taxable : 10 000 euros', 'Taux : 11 % + 17,2 % = 28,2 %', 'Impôt : 2 820 euros'] },
+                  { label: 'PFU par défaut', lines: ['Plus-value taxable : 10 000 euros', 'Taux : 31,4 %', 'Impôt : 3 140 euros'] },
+                  { label: 'Option IR + prél. sociaux', lines: ['Plus-value taxable : 10 000 euros', 'Taux : 11 % + 18,6 % = 29,6 %', 'Impôt : 2 960 euros'] },
                 ],
                 cout: '180 euros sur cet exemple, beaucoup plus sur de gros montants',
               },
@@ -437,11 +437,11 @@ export default function ArticleAssuranceViePage() {
             <div className="mb-10">
               <h3 className="font-bold text-neutral-900 mb-2">4. Oublier les versements avant 2017</h3>
               <p className="text-sm text-neutral-700 mb-4 leading-relaxed">
-                Vous avez ouvert votre contrat en 2010 et versé 100 000 euros. Vous croyez que tout est taxé à 30 % ? Faux. Vos versements avant le 27 septembre 2017 bénéficient du taux réduit de 24,7 %.
+                Vous avez ouvert votre contrat en 2010 et versé 100 000 euros. Vous croyez que tout est taxé à 31,4 % ? Faux. Vos versements avant le 27 septembre 2017 bénéficient du taux réduit de 26,1 %.
               </p>
               <div className="bg-neutral-50 border border-neutral-200 p-4 font-mono text-xs text-neutral-700 space-y-1">
-                <p>Taux 30 % sur 20 000 euros de plus-value : 6 000 euros d&apos;impôt</p>
-                <p>Taux 24,7 % sur 20 000 euros de plus-value : 4 940 euros d&apos;impôt</p>
+                <p>Taux 31,4 % sur 20 000 euros de plus-value : 6 280 euros d&apos;impôt</p>
+                <p>Taux 26,1 % sur 20 000 euros de plus-value : 5 220 euros d&apos;impôt</p>
                 <p className="font-bold text-accent-600 pt-1">Économie : 1 060 euros. Automatiquement.</p>
               </div>
             </div>
@@ -452,11 +452,11 @@ export default function ArticleAssuranceViePage() {
                 Vous retirez 50 000 euros, vous croyez payer des impôts sur 50 000 euros. C&apos;est l&apos;erreur la plus fréquente, et celle qui génère le plus d&apos;angoisse inutile.
               </p>
               <div className="bg-neutral-50 border border-neutral-200 p-4 font-mono text-xs space-y-1.5 text-neutral-700">
-                <p>Impôt imaginé : 50 000 × 30 % = <strong>15 000 euros</strong></p>
+                <p>Impôt imaginé : 50 000 × 31,4 % = <strong>15 700 euros</strong></p>
                 <div className="border-t border-neutral-200 pt-2 mt-1 space-y-1">
                   <p>Règle proportionnelle : plus-value dans le rachat = 50 000 × 30 % = 15 000 euros</p>
                   <p>Abattement des 8 ans : 15 000 − 4 600 = 10 400 euros taxables</p>
-                  <p className="font-bold text-neutral-900">Impôt réel : 10 400 × 30 % = 3 120 euros</p>
+                  <p className="font-bold text-neutral-900">Impôt réel : 10 400 × 31,4 % = 3 266 euros</p>
                 </div>
               </div>
             </div>
@@ -480,9 +480,9 @@ export default function ArticleAssuranceViePage() {
                   { label: 'Règle proportionnelle', val: 'Plus-value dans le rachat : 50 000 × (30 000 ÷ 100 000) = 15 000 euros' },
                   { label: 'Abattement 8 ans', val: 'Plus-value taxable : 15 000 − 4 600 = 10 400 euros' },
                 ],
-                pfu: '10 400 × 30 % = 3 120 euros',
-                ir: '10 400 × (0 % + 17,2 %) = 1 789 euros',
-                conclusion: 'À TMI 0 %, l\'option IR fait économiser 1 331 euros. Jean doit le demander explicitement à la déclaration.',
+                pfu: '10 400 × 31,4 % = 3 266 euros',
+                ir: '10 400 × (0 % + 18,6 %) = 1 934 euros',
+                conclusion: 'À TMI 0 %, l\'option IR fait économiser 1 332 euros. Jean doit le demander explicitement à la déclaration.',
                 gagnant: 'IR',
               },
               {
@@ -494,9 +494,9 @@ export default function ArticleAssuranceViePage() {
                   { label: 'Règle proportionnelle', val: 'Plus-value dans le rachat : 30 000 × 30 % = 9 000 euros' },
                   { label: 'Abattement 8 ans', val: 'Plus-value taxable : 9 000 − 4 600 = 4 400 euros' },
                 ],
-                pfu: '4 400 × 30 % = 1 320 euros',
-                ir: '4 400 × (41 % + 17,2 %) = 2 561 euros',
-                conclusion: 'À TMI 41 %, le PFU fait économiser 1 241 euros. Et il s\'applique par défaut, donc rien à faire.',
+                pfu: '4 400 × 31,4 % = 1 382 euros',
+                ir: '4 400 × (41 % + 18,6 %) = 2 622 euros',
+                conclusion: 'À TMI 41 %, le PFU fait économiser 1 240 euros. Et il s\'applique par défaut, donc rien à faire.',
                 gagnant: 'PFU',
               },
               {
@@ -507,10 +507,10 @@ export default function ArticleAssuranceViePage() {
                 etapes: [
                   { label: 'Règle proportionnelle', val: 'Plus-value dans le rachat : 60 000 × 30 % = 18 000 euros' },
                   { label: 'Abattement couple (9 200 euros)', val: 'Plus-value taxable : 18 000 − 9 200 = 8 800 euros' },
-                  { label: 'Taux réduit pré-2017', val: 'Tous les versements datent d\'avant 2017 → taux PFU réduit à 24,7 %' },
+                  { label: 'Taux réduit pré-2017', val: 'Tous les versements datent d\'avant 2017 → taux PFU réduit à 26,1 %' },
                 ],
-                pfu: '8 800 × 24,7 % = 2 174 euros',
-                ir: '8 800 × (11 % + 17,2 %) = 2 482 euros',
+                pfu: '8 800 × 26,1 % = 2 297 euros',
+                ir: '8 800 × (11 % + 18,6 %) = 2 605 euros',
                 conclusion: 'Le PFU à taux réduit fait économiser 308 euros. Les versements pré-2017 basculent l\'arbitrage côté PFU malgré un TMI faible.',
                 gagnant: 'PFU',
               },
@@ -647,8 +647,8 @@ export default function ArticleAssuranceViePage() {
                 <div className="bg-neutral-50 border border-neutral-200 p-5 font-mono text-xs text-neutral-700 space-y-3">
                   <div><p className="text-neutral-400 mb-0.5">1. Règle proportionnelle</p><p>PV dans le rachat = Montant retiré × (PV totale ÷ Capital total)</p></div>
                   <div><p className="text-neutral-400 mb-0.5">2. Plus-value taxable</p><p>PV taxable = PV dans le rachat − Abattement annuel</p></div>
-                  <div><p className="text-neutral-400 mb-0.5">3. Impôt au PFU</p><p>Impôt = PV taxable × 30 % (ou 24,7 % si versements avant 2017)</p></div>
-                  <div><p className="text-neutral-400 mb-0.5">4. Impôt à l&apos;IR + prélèvements sociaux</p><p>Impôt = PV taxable × (TMI + 17,2 %)</p></div>
+                  <div><p className="text-neutral-400 mb-0.5">3. Impôt au PFU</p><p>Impôt = PV taxable × 31,4 % (ou 26,1 % si versements avant 2017)</p></div>
+                  <div><p className="text-neutral-400 mb-0.5">4. Impôt à l&apos;IR + prélèvements sociaux</p><p>Impôt = PV taxable × (TMI + 18,6 %)</p></div>
                 </div>
               </div>
             </div>

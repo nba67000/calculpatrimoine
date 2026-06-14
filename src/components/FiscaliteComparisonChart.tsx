@@ -83,7 +83,7 @@ export default function FiscaliteComparisonChart({
  <span className="font-medium">{optionPFU.impotSurRevenu.toLocaleString('fr-FR')}€</span>
  </div>
  <div className="flex justify-between">
- <span>Prélèvements sociaux (17,2%) :</span>
+ <span>Prélèvements sociaux (18,6%) :</span>
  <span className="font-medium">{optionPFU.prelevementsSociaux.toLocaleString('fr-FR')}€</span>
  </div>
  <div className="flex justify-between font-bold text-neutral-900 pt-2 border-t">
@@ -133,7 +133,7 @@ export default function FiscaliteComparisonChart({
  <span className="font-medium">{optionIR.impotSurRevenu.toLocaleString('fr-FR')}€</span>
  </div>
  <div className="flex justify-between">
- <span>Prélèvements sociaux (17,2%) :</span>
+ <span>Prélèvements sociaux (18,6%) :</span>
  <span className="font-medium">{optionIR.prelevementsSociaux.toLocaleString('fr-FR')}€</span>
  </div>
  <div className="flex justify-between font-bold text-neutral-900 pt-2 border-t">

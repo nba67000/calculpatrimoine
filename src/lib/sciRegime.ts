@@ -14,16 +14,18 @@ import type { SciRegimeInputs, SciRegimeResults } from '@/types/sciRegime'
 import type { CalculatorModule, HowToSchema } from '@/lib/calculators/types'
 import type { FAQSchemaItem } from '@/components/SchemaFAQ'
 import { formatEurRounded as eur, formatLigne as ligne } from '@/lib/formatters'
+import { TAUX_PS_CAPITAL } from '@/lib/fiscal/taux'
 
 export const SOURCES_SCI_REGIME = [
   { label: 'Article 8 CGI', desc: 'SCI translucide à l\'IR : revenus fonciers imposés au nom des associés' },
   { label: 'Article 206 CGI', desc: 'Option de la SCI pour l\'IS' },
   { label: 'Article 219 I-b CGI', desc: 'Taux réduit IS 15 % jusqu\'à 42 500 € de bénéfice' },
   { label: 'Article 14 et s. CGI', desc: 'Régime des revenus fonciers (location nue)' },
-  { label: 'Article L. 136-7 CSS', desc: 'Prélèvements sociaux 17,2 % sur les revenus fonciers' },
+  { label: 'Article L. 136-7 CSS', desc: 'Assiette CSG sur les revenus fonciers' },
+  { label: 'Article L. 136-8 CSS', desc: 'Taux PS porté à 18,6 % par LF 2025-1403 (CSG 10,6 %) depuis revenus 2025' },
 ]
 
-const PS = 0.172
+const PS = TAUX_PS_CAPITAL
 const TAUX_IS_REDUIT = 0.15
 const SEUIL_IS_REDUIT = 42500
 const TAUX_IS_NORMAL = 0.25
@@ -34,7 +36,7 @@ const TAUX_IS_NORMAL = 0.25
  *
  * @example
  * // Loyers 24 000, charges 4 000, intérêts 6 000, amortissements 8 000, TMI 30 %
- * // IR : 24 - 4 - 6 = 14 k → 14 k × (30 + 17,2) = 6 608 €
+ * // IR : 24 - 4 - 6 = 14 k → 14 k × (30 + 18,6) = 6 804 €
  * // IS : 24 - 4 - 6 - 8 = 6 k → 6 k × 15 % = 900 €
  * // (les chiffres comparent l'impôt annuel uniquement)
  */

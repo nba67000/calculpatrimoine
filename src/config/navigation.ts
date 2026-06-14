@@ -127,7 +127,7 @@ export const CATEGORIES_CALC: CategorieCalc[] = [
       {
         href: '/pea',
         nom: 'PEA - Fiscalité + bilan latent',
-        desc: 'Retrait après 5 ans (PS 17,2 %) + bilan brut/net/passif fiscal latent.',
+        desc: 'Retrait après 5 ans (PS 18,6 %) + bilan brut/net/passif fiscal latent.',
         disponible: true,
       },
       {
@@ -153,7 +153,7 @@ export const CATEGORIES_CALC: CategorieCalc[] = [
       {
         href: '/plus-value-immobiliere',
         nom: 'Plus-value immobilière',
-        desc: 'Fiscalité de la cession : IR 19 %, PS 17,2 %, abattements par durée de détention, surtaxe.',
+        desc: 'Fiscalité de la cession : IR 19 %, PS 18,6 %, abattements par durée de détention, surtaxe.',
         disponible: true,
       },
       {

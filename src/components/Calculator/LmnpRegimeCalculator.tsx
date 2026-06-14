@@ -131,7 +131,7 @@ export default function LmnpRegimeCalculator() {
               <span className="text-right">{formatEur(results.beneficeImposableMicro)}</span>
               <span className="text-neutral-500">IR</span>
               <span className="text-right">{formatEur(results.irMicro)}</span>
-              <span className="text-neutral-500">PS 17,2 %</span>
+              <span className="text-neutral-500">PS 18,6 %</span>
               <span className="text-right">{formatEur(results.psMicro)}</span>
               <span className="font-bold pt-2 border-t">Total impôt</span>
               <span className="text-right font-bold text-red-700 pt-2 border-t">{formatEur(results.totalImpotMicro)}</span>
@@ -149,7 +149,7 @@ export default function LmnpRegimeCalculator() {
               <span className="text-right">{formatEur(results.beneficeImposableReel)}</span>
               <span className="text-neutral-500">IR</span>
               <span className="text-right">{formatEur(results.irReel)}</span>
-              <span className="text-neutral-500">PS 17,2 %</span>
+              <span className="text-neutral-500">PS 18,6 %</span>
               <span className="text-right">{formatEur(results.psReel)}</span>
               <span className="font-bold pt-2 border-t">Total impôt</span>
               <span className="text-right font-bold text-red-700 pt-2 border-t">{formatEur(results.totalImpotReel)}</span>

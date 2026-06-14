@@ -30,34 +30,70 @@ présents dans `docs/sources/` ou `chatResources.ts`) :
 
 ---
 
+## 👁 Textes intégraux confirmés humainement par Nicolas (2026-06-14)
+
+Nicolas a fourni les **textes intégraux** depuis Légifrance pour les 13 articles ci-dessous. Leurs **références textuelles sont confirmées** ainsi que les **chiffres-clés appliqués** dans le code. Les URLs LEGIARTI restent cassées (côté Légifrance) mais ce n'est plus bloquant — la **référence textuelle** prime sur l'URL (cf. CLAUDE.md §6).
+
+**Conséquence pratique** : les calculateurs qui utilisent ces articles peuvent être considérés **conformes au sourçage** (👁 HUMAINE) jusqu'au prochain crawl Légifrance qui retrouvera une URL stable.
+
+| Article | Version applicable | Chiffres-clés confirmés | Fichiers impactés |
+|---------|---------------------|--------------------------|--------------------|
+| **Art 125-0 A CGI** (rachat AV) | LF 2021-1900 art. 35 | Abattement annuel 4 600 €/9 200 € (couple) ; PFU 7,5 % (≥8 ans) ou 12,8 % (<8 ans) | `src/lib/assuranceVie.ts`, blog AV, FAQ AV |
+| **Art L136-7 CSS** (PS placements) | LF 2026-103 art. 24 | Assiette CSG sur produits AV (a/b/c du 3° II) | `src/lib/assuranceVie.ts`, blog AV, `docs/sources/assurance-vie-fiscalite-rachat.md` |
+| **Art 163 quatervicies CGI** (PER déduction) | LF 2026-103 art. 10 | Déduction PER : 10 % revenus pro plafonné à 8 × PASS ; report 5 ans ; conjoint cumulable | `src/lib/per.ts`, blog PER, `docs/sources/per-individuel.md`, `chatResources.ts` |
+| **Art L224-1 CMF** (PER définition) | Loi 2019-486 art. 71 | Définition PER + sortie rente/capital | `src/lib/per.ts`, blog PER |
+| **Art 158 CGI** (revenu imposable) | LF 2026-103 art. 9 | Abattement pensions 10 % plafond **4 399 €** (min 450 €) ; rente viagère à titre onéreux : **70/50/40/30 %** selon âge entrée (<50/50-59/60-69/>69) ; abattement dividendes 40 % | `src/lib/tmi.ts`, `src/lib/per.ts`, blog rente, `docs/sources/tmi.md` |
+| **Art 964 CGI** (IFI seuil) | LF 2017-1837 art. 31 | Seuil patrimoine taxable **1 300 000 €** | `src/lib/ifi.ts`, `docs/sources/ifi.md` |
+| **Art 977 CGI** (barème IFI) | LF 2017-1837 art. 31 | 6 tranches : 0 % jusqu'à 800 k€ / 0,50 % / 0,70 % / 1,00 % / 1,25 % / 1,50 % au-delà de 10 M€ + décote 17 500 − 1,25 % P (entre 1,3 et 1,4 M€) | `src/lib/ifi.ts`, `docs/sources/ifi.md` |
+| **Art 973 CGI** (évaluation IFI) | LF 2023-1322 art. 27 | Abattement **30 %** RP du propriétaire ; règles dettes intra-groupe | `src/lib/ifi.ts`, `docs/sources/ifi.md` |
+| **Art 974 CGI** (passif IFI) | LF 2018-1317 art. 48 | Dettes déductibles ; prêts in fine : amortissement linéaire fictif ; plafonnement 50 % au-delà de 60 % de la valeur pour patrimoine > 5 M€ | `src/lib/ifi.ts`, `docs/sources/ifi.md` |
+| **Art 979 CGI** (plafonnement IFI) | LF 2018-1317 art. 202 | Plafonnement IFI + IR ≤ **75 %** des revenus mondiaux N-1 | `src/lib/ifi.ts`, `docs/sources/ifi.md` |
+| **Art 777 CGI** (tarifs DMTG) | LF 2014-1655 art. 61 | Tableau I (ligne directe) : 5/10/15/20/30/40/45 % aux seuils 8 072 / 12 109 / 15 932 / 552 324 / 902 838 / 1 805 677 € ; Tableau II (époux/PACS) : 5/10/15/20/30/40/45 % aux seuils 8 072 / 15 932 / 31 865 / 552 324 / 902 838 / 1 805 677 € ; Tableau III (collatéraux) : frères/sœurs 35 %/45 % (seuil 24 430 €), parents 4e degré 55 %, autres 60 % | `src/lib/donation.ts`, `src/lib/succession.ts`, `src/lib/transmission.ts`, `chatResources.ts`, `docs/sources/donation-droits.md`, `docs/sources/succession.md` |
+| **Art 197 CGI** (barème IR + QF) | LF 2026-103 art. 4 | Barème 2026 (revenus 2025) : 0 / 11 / 30 / 41 / 45 % aux seuils **11 600 / 29 579 / 84 577 / 181 917 €** ; plafond QF **1 807 € / demi-part** ; décote 897 € (célib) / 1 483 € (couple) ; majoration parent isolé 4 262 € | `src/lib/tmi.ts`, `chatResources.ts`, `docs/sources/tmi.md` |
+| **Art 83 CGI** (frais pro) | LF 2026-103 art. 78 | Plafond frais pro forfaitaire **14 426 €** (rev. 2024) ; minimum 504 € ; barème kilométrique 40 premiers km | `src/lib/per.ts` |
+| **Art 784 CGI** (rappel 15 ans) | LF 2016-1917 art. 32 | Durée du rappel : **15 ans** ; reconstitution des donations antérieures dans les **tranches les plus élevées** du barème (Art. 779/790 B/D/E/F) | `src/lib/donation.ts`, `src/lib/succession.ts` |
+| **Art 790 G CGI** (don familial argent) | LF 2023-1322 art. 118 | Abattement **31 865 €** tous les 15 ans ; donateur **< 80 ans** ; donataire ≥ 18 ans ou émancipé ; lien : enfant, petit-enfant, arrière-petit-enfant ou (à défaut de descendance) neveu/nièce/petit-neveu/petite-nièce par représentation ; non pris en compte pour le rappel 784 (point III) | `src/lib/donation.ts` |
+| **Art 790 E CGI** (don entre époux) | LF 2012-958 art. 5 | Abattement **80 724 €** entre époux ou partenaires de PACS | `src/lib/donation.ts` |
+| **Art L136-8 CSS** ⚠️ MAJ MAJEURE | LF 2025-1403 du 30/12/2025 art. 12 | CSG sur produits du capital portée à **10,6 %** (était 9,2 %). Total PS = 10,6 + 0,5 CRDS + 7,5 prélèvement solidarité = **18,6 %** (était 17,2 %). Calendrier : L136-6 → revenus 2025 ; L136-7 → 1/1/2026 | `src/lib/fiscal/taux.ts` + 16 libs migrées |
+| **Art 199 septies CGI** | LF 2023-1322 art. 12 | Réduction d'impôt 25 % primes assurance (handicap) ; plafond 1 525 € + 300 € par personne à charge ; pas d'usage direct dans nos calculateurs (mentionné par Art. 125-0 A pour exonération sortie en rente) | n/a (référence textuelle uniquement) |
+| **Art 235 ter CGI** | LF 2018-1203 art. 26 | Prélèvement de solidarité **7,5 %** sur revenus du patrimoine et produits de placement (composante du 18,6 %) | `src/lib/fiscal/taux.ts` |
+
+**Précision IR 2026 (Art. 197)** : le barème actuel dans `src/lib/tmi.ts` doit être confronté à ces valeurs. Si déjà à jour → laisser. Sinon → tâche à inscrire au prochain `/verif-sources`.
+
+**Migration PS 17,2 % → 18,6 % (Art. L136-8 LF 2025-1403)** : effectuée le 2026-06-14. Module centralisé `src/lib/fiscal/taux.ts` créé. 16 libs + 12 pages + 3 articles blog mis à jour. 282 tests vitest passent. Build Next.js OK.
+
+---
+
 ## ❌ Légifrance , articles confirmés morts (HTTP 404)
 
-| Article | Ancien LEGIARTI | Fichiers à mettre à jour quand l'URL valide est trouvée |
-|---|---|---|
-| Art 125-0 A CGI (rachat AV) | LEGIARTI000047956718 | `src/lib/assuranceVie.ts`, `src/app/blog/assurance-vie-fiscalite-rachat/page.tsx` (×3), `src/app/faq/assurance-vie/page.tsx` |
-| Art L136-7 CSS (prélèvements sociaux) | LEGIARTI000047958086 | `src/lib/assuranceVie.ts`, `src/app/blog/assurance-vie-fiscalite-rachat/page.tsx` |
-| Art L136-7 CSS (autre version) | LEGIARTI000037985080 | `docs/sources/assurance-vie-fiscalite-rachat.md` |
-| Art 163 quatervicies CGI (déduction PER) | LEGIARTI000048776042 | `src/lib/per.ts`, `docs/sources/per-individuel.md` |
-| Art 163 quatervicies CGI (chatResources) | LEGIARTI000047605786 | `src/config/chatResources.ts` |
-| Art 163 quatervicies CGI (blog) | LEGIARTI000037985573 | `src/app/blog/per-individuel-deduction-fiscalite/page.tsx` (×2) |
-| Art L224-1 CMF (blog) | LEGIARTI000038612513 | `src/app/blog/per-individuel-deduction-fiscalite/page.tsx` |
-| Art 158-5° bis CGI | LEGIARTI000044979614 | `src/app/blog/per-...`, `src/app/blog/rente-viagere-seuil-rentabilite/page.tsx` |
-| Art 964 CGI (seuil IFI) | LEGIARTI000036472764 | `src/lib/ifi.ts`, `docs/sources/ifi.md` |
-| Art 977 CGI (barème IFI) | LEGIARTI000036473012 | `src/lib/ifi.ts`, `docs/sources/ifi.md` |
-| Art 973 CGI (abattement RP IFI) | LEGIARTI000036472780 | `src/lib/ifi.ts`, `docs/sources/ifi.md` |
-| Art 974 CGI (dettes IFI) | LEGIARTI000036472786 | `src/lib/ifi.ts`, `docs/sources/ifi.md` |
-| Art 979 CGI (plafond IFI+IR) | LEGIARTI000036473018 | `src/lib/ifi.ts`, `docs/sources/ifi.md` |
-| Art 777 CGI (donation lib) | LEGIARTI000041464063 | `src/lib/donation.ts`, `docs/sources/donation-droits.md` |
-| Art 777 CGI (chatResources) | LEGIARTI000044981950 | `src/config/chatResources.ts` |
-| Art 779 CGI (lib version) | LEGIARTI000048845104 | `docs/sources/donation-droits.md` (le lib utilise désormais la version `26292566` qui fonctionne) |
-| Art 784 CGI (rappel 15 ans) | LEGIARTI000041464760 | `src/lib/donation.ts`, `docs/sources/donation-droits.md` |
-| Art 790 G CGI (don familial) | LEGIARTI000041464661 | `src/lib/donation.ts`, `docs/sources/donation-droits.md` |
-| Art 790 E CGI (don entre époux) | LEGIARTI000038588107 | `src/lib/donation.ts` |
-| Art 990 I CGI (lib version) | LEGIARTI000045583309 | `src/app/blog/assurance-vie-fiscalite-rachat/page.tsx` source , les libs utilisent désormais la version `47288653` qui fonctionne |
-| Art 83 CGI (frais professionnels) | LEGIARTI000044986838 | `src/lib/per.ts` |
-| Articles L.224-1 et s. CMF (section) | LEGITEXT000006072026/LEGISCTA000038619671/ | `src/lib/per.ts` |
-| Articles 777 et s. (transmission) | LEGIARTI000042160878 | `src/lib/transmission.ts` |
-| Art 197 CGI (chatResources) | LEGIARTI000044981244 | `src/config/chatResources.ts` |
+Légende : 👁 = texte intégral confirmé manuellement par Nicolas le 2026-06-14 — la **référence textuelle prime** sur l'URL (cf. section dédiée plus haut). Les autres lignes attendent encore une vérification humaine ou un nouveau crawl.
+
+| Article | Ancien LEGIARTI | Statut | Fichiers à mettre à jour quand l'URL valide est trouvée |
+|---|---|---|---|
+| Art 125-0 A CGI (rachat AV) | LEGIARTI000047956718 | 👁 2026-06-14 | `src/lib/assuranceVie.ts`, `src/app/blog/assurance-vie-fiscalite-rachat/page.tsx` (×3), `src/app/faq/assurance-vie/page.tsx` |
+| Art L136-7 CSS (prélèvements sociaux) | LEGIARTI000047958086 | 👁 2026-06-14 | `src/lib/assuranceVie.ts`, `src/app/blog/assurance-vie-fiscalite-rachat/page.tsx` |
+| Art L136-7 CSS (autre version) | LEGIARTI000037985080 | 👁 2026-06-14 | `docs/sources/assurance-vie-fiscalite-rachat.md` |
+| Art 163 quatervicies CGI (déduction PER) | LEGIARTI000048776042 | 👁 2026-06-14 | `src/lib/per.ts`, `docs/sources/per-individuel.md` |
+| Art 163 quatervicies CGI (chatResources) | LEGIARTI000047605786 | 👁 2026-06-14 | `src/config/chatResources.ts` |
+| Art 163 quatervicies CGI (blog) | LEGIARTI000037985573 | 👁 2026-06-14 | `src/app/blog/per-individuel-deduction-fiscalite/page.tsx` (×2) |
+| Art L224-1 CMF (blog) | LEGIARTI000038612513 | 👁 2026-06-14 | `src/app/blog/per-individuel-deduction-fiscalite/page.tsx` |
+| Art 158-5° bis CGI | LEGIARTI000044979614 | 👁 2026-06-14 (Art 158 confirmé) | `src/app/blog/per-...`, `src/app/blog/rente-viagere-seuil-rentabilite/page.tsx` |
+| Art 964 CGI (seuil IFI) | LEGIARTI000036472764 | 👁 2026-06-14 | `src/lib/ifi.ts`, `docs/sources/ifi.md` |
+| Art 977 CGI (barème IFI) | LEGIARTI000036473012 | 👁 2026-06-14 | `src/lib/ifi.ts`, `docs/sources/ifi.md` |
+| Art 973 CGI (abattement RP IFI) | LEGIARTI000036472780 | 👁 2026-06-14 | `src/lib/ifi.ts`, `docs/sources/ifi.md` |
+| Art 974 CGI (dettes IFI) | LEGIARTI000036472786 | 👁 2026-06-14 | `src/lib/ifi.ts`, `docs/sources/ifi.md` |
+| Art 979 CGI (plafond IFI+IR) | LEGIARTI000036473018 | 👁 2026-06-14 | `src/lib/ifi.ts`, `docs/sources/ifi.md` |
+| Art 777 CGI (donation lib) | LEGIARTI000041464063 | 👁 2026-06-14 | `src/lib/donation.ts`, `docs/sources/donation-droits.md` |
+| Art 777 CGI (chatResources) | LEGIARTI000044981950 | 👁 2026-06-14 | `src/config/chatResources.ts` |
+| Art 779 CGI (lib version) | LEGIARTI000048845104 | À crawler | `docs/sources/donation-droits.md` (le lib utilise désormais la version `26292566` qui fonctionne) |
+| Art 784 CGI (rappel 15 ans) | LEGIARTI000041464760 | 👁 2026-06-14 | `src/lib/donation.ts`, `docs/sources/donation-droits.md` |
+| Art 790 G CGI (don familial) | LEGIARTI000041464661 | 👁 2026-06-14 | `src/lib/donation.ts`, `docs/sources/donation-droits.md` |
+| Art 790 E CGI (don entre époux) | LEGIARTI000038588107 | 👁 2026-06-14 | `src/lib/donation.ts` |
+| Art 990 I CGI (lib version) | LEGIARTI000045583309 | À crawler | `src/app/blog/assurance-vie-fiscalite-rachat/page.tsx` source , les libs utilisent désormais la version `47288653` qui fonctionne |
+| Art 83 CGI (frais professionnels) | LEGIARTI000044986838 | 👁 2026-06-14 | `src/lib/per.ts` |
+| Articles L.224-1 et s. CMF (section) | LEGITEXT000006072026/LEGISCTA000038619671/ | 👁 2026-06-14 (Art L224-1 confirmé) | `src/lib/per.ts` |
+| Articles 777 et s. (transmission) | LEGIARTI000042160878 | 👁 2026-06-14 (Art 777 confirmé) | `src/lib/transmission.ts` |
+| Art 197 CGI (chatResources) | LEGIARTI000044981244 | 👁 2026-06-14 | `src/config/chatResources.ts` |
 
 ## ⚠️ Légifrance , articles confirmés pointant vers le MAUVAIS contenu
 

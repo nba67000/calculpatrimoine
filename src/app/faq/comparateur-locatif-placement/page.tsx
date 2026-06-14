@@ -72,9 +72,9 @@ const sections: FAQSection[] = [
           <>
             <p className="mb-3">Trois enveloppes :</p>
             <ul className="list-disc pl-6 mb-3 space-y-1">
-              <li>PEA : exonération IR après 5 ans, PS 17,2 % au retrait</li>
-              <li>Assurance-vie : PFU ou IR après abattement annuel, PS 17,2 %</li>
-              <li>CTO : PFU 30 % à chaque revenu, sans avantage d&apos;enveloppe</li>
+              <li>PEA : exonération IR après 5 ans, PS 18,6 % au retrait</li>
+              <li>Assurance-vie : PFU ou IR après abattement annuel, PS 18,6 %</li>
+              <li>CTO : PFU 31,4 % à chaque revenu, sans avantage d&apos;enveloppe</li>
             </ul>
             <p>Chaque enveloppe a sa propre fiscalité de sortie, intégrée au calcul du net final.</p>
             <div className="mt-4">

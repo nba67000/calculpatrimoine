@@ -19,28 +19,28 @@ describe('calculerPea', () => {
     expect(r.partPlusValueDansValeur).toBe(40)
   })
 
-  it('exonération IR après 5 ans → taux 17,2 % sur retrait', () => {
+  it('exonération IR après 5 ans → taux 18,6 % sur retrait (CSG 10,6 % LF 2025-1403)', () => {
     const r = calculerPea(defaults({ agePeaAnnees: 7 }))
     expect(r.exonerationIrActive).toBe(true)
-    expect(r.tauxAppliqueRetrait).toBeCloseTo(17.2)
-    // PV dans retrait = 30k × 40 % = 12k → impôt = 12k × 17,2 % = 2064
+    expect(r.tauxAppliqueRetrait).toBeCloseTo(18.6)
+    // PV dans retrait = 30k × 40 % = 12k → impôt = 12k × 18,6 % = 2232
     expect(r.pvDansRetrait).toBe(12000)
-    expect(r.impotSurRetrait).toBe(2064)
-    expect(r.netRetrait).toBe(27936)
+    expect(r.impotSurRetrait).toBe(2232)
+    expect(r.netRetrait).toBe(27768)
   })
 
-  it('avant 5 ans → PFU 30 %', () => {
+  it('avant 5 ans → PFU 31,4 %', () => {
     const r = calculerPea(defaults({ agePeaAnnees: 3 }))
     expect(r.exonerationIrActive).toBe(false)
-    expect(r.tauxAppliqueRetrait).toBeCloseTo(30)
+    expect(r.tauxAppliqueRetrait).toBeCloseTo(31.4)
     expect(r.warnings.some(w => w.type === 'danger')).toBe(true)
   })
 
   it('bilan : brut, net sortie, passif latent', () => {
     const r = calculerPea(defaults({ montantRetrait: 0 }))
     expect(r.vueBrute).toBe(100000)
-    expect(r.passifLatentEstime).toBe(Math.round(40000 * 0.172))
-    expect(r.vueNetteSortie).toBe(60000 + Math.round(40000 * 0.828))
+    expect(r.passifLatentEstime).toBe(Math.round(40000 * 0.186))
+    expect(r.vueNetteSortie).toBe(60000 + Math.round(40000 * (1 - 0.186)))
   })
 
   it('PV = 0 si valeur = versements', () => {

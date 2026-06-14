@@ -13,7 +13,7 @@ import { FAQ_PLUS_VALUE } from '@/lib/schema/schemaData'
 
 export const metadata: Metadata = {
   title: 'FAQ Plus-Value Immobilière - Résidence secondaire',
-  description: "Abattements pour durée de détention, IR 19 %, prélèvements sociaux 17,2 %, surtaxe. Questions fréquentes sur la plus-value immobilière.",
+  description: "Abattements pour durée de détention, IR 19 %, prélèvements sociaux 18,6 %, surtaxe. Questions fréquentes sur la plus-value immobilière.",
 
   alternates: { canonical: 'https://calculpatrimoine.fr/faq/plus-value-immobiliere' },
 }
@@ -153,7 +153,7 @@ const sections: FAQSection[] = [
                 <strong>IR 19 %</strong> (Art. 150 VC CGI) : exonération totale après <strong>22 ans</strong>.
               </li>
               <li>
-                <strong>PS 17,2 %</strong> (Art. 150 VD CGI) : exonération totale seulement après <strong>30 ans</strong>.
+                <strong>PS 18,6 %</strong> (Art. 150 VD CGI) : exonération totale seulement après <strong>30 ans</strong>.
               </li>
             </ul>
             <p className="mb-3">
@@ -468,7 +468,7 @@ const sections: FAQSection[] = [
             </p>
             <ul className="list-disc pl-6 mb-3 space-y-1">
               <li>IR 19 % (Art. 200 B CGI)</li>
-              <li>Prélèvements sociaux 17,2 %</li>
+              <li>Prélèvements sociaux 18,6 %</li>
               <li>Surtaxe éventuelle (Art. 1609 nonies G CGI)</li>
             </ul>
             <p className="mb-3">
@@ -495,7 +495,7 @@ const sections: FAQSection[] = [
           <>
             <p className="mb-3">
               Oui, pour l&apos;essentiel. La résidence secondaire et les biens locatifs (immeubles de rapport,
-              appartements loués) sont imposés selon les <strong>mêmes règles</strong> : IR 19 %, PS 17,2 %,
+              appartements loués) sont imposés selon les <strong>mêmes règles</strong> : IR 19 %, PS 18,6 %,
               abattements identiques pour durée de détention, surtaxe éventuelle.
             </p>
             <p className="mb-3">
